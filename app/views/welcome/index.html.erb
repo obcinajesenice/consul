@@ -16,9 +16,15 @@
 <%= render "header", header: @header %>
 
 <main>
-  <%= render "feeds" %>
-
-
+  <%#= render "feeds" %>
+<div class="welcome">
+  <%= render "custom/hp_1idejapredlagaj" %>
+  <%= render "custom/hp_2glasuj" %>
+  <%= render "custom/hp_3uresnicen" %>
+  <%= render "custom/hp_4registriraj" %>
+  <%= render "custom/hp_5zelisvec" %>
+</div>
+<!--
   <div class="row">
     <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
       <%= render "cards" %>
@@ -34,4 +40,5 @@
                 recommended_debates: @recommended_debates,
                 recommended_proposals: @recommended_proposals %>
   <% end %>
+  -->
 </main>

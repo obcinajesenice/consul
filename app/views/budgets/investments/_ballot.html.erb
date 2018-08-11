@@ -6,7 +6,7 @@
       <span class="icon-check-circle"
             title="<%= t("budgets.investments.investment.already_added") %>">
       </span>
-      <p class="investment-project-amount">
+      <p class="investment-project-amount dnd_voted_yes">
         <%= investment.formatted_price %>
       </p>
       <% if investment.should_show_ballots? %>
@@ -23,7 +23,7 @@
   <% else %>
 
     <div class="add in-favor">
-      <p class="investment-project-amount">
+      <p class="investment-project-amount dnd_voted_no">
         <%= investment.formatted_price %>
       </p>
       <% if investment.should_show_ballots? %>

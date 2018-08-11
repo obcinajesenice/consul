@@ -93,3 +93,47 @@
   font-weight: bold;
   font-style: normal;
 }
+
+
+
+// 03. Montserrat
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/*
+@font-face {
+  font-family: 'Montserrat - Regular';
+  src: font-url('Montserrat-Regular.eot');
+  src: font-url('Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+  font-url('Montserrat-Regular.woff2') format('woff2'),
+  font-url('Montserrat-Regular.woff') format('woff'),
+  font-url('Montserrat-Regular.ttf') format('truetype'),
+  font-url('Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat - Black';
+  src: font-url('Montserrat-Black.eot');
+  src: font-url('Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+  font-url('Montserrat-Black.woff2') format('woff2'),
+  font-url('Montserrat-Black.woff') format('woff'),
+  font-url('Montserrat-Black.ttf') format('truetype'),
+  font-url('Montserrat-Black.svg#Montserrat-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat - Semi Bold';
+  src: font-url('Montserrat-SemiBold.eot');
+  src: font-url('Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+  font-url('Montserrat-SemiBold.woff2') format('woff2'),
+  font-url('Montserrat-SemiBold.woff') format('woff'),
+  font-url('Montserrat-SemiBold.ttf') format('truetype'),
+  font-url('Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,900&subset=latin-ext');

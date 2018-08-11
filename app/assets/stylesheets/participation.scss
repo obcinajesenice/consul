@@ -909,14 +909,19 @@
 
     .investment-project-amount,
     .budget-investment-amount {
-      color: $budget;
+      color: #00ab7e;
       font-size: rem-calc(20);
       font-weight: bold;
       margin-bottom: 0;
     }
-
+    .investment-project-amount.dnd_voted_yes{
+      color: $brand;
+    }
+    .investment-project-amount.dnd_voted_no{
+      color: #6d3986;
+    }
     .button-support {
-      background: $budget;
+      background: #00ab7e;
       color: #fff;
 
       &:hover {
@@ -937,7 +942,7 @@
     }
 
     .remove .icon-check-circle {
-      color: $budget;
+      color: #00ab7e;
       display: block;
       font-size: rem-calc(70);
       line-height: rem-calc(70);
@@ -1263,8 +1268,8 @@
     }
 
     .button {
-      background: #fff;
-      color: $budget;
+      background-color: #00ab7e;
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -1320,7 +1325,7 @@
 
   .button {
     background: #fff;
-    color: $brand;
+    background: $brand;
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
@@ -1354,17 +1359,27 @@
     display: inline-block;
     margin-bottom: $line-height / 2;
 
+    background-color: #00ab7e;
+    color: #ffffff;
     &:hover {
       background: $highlight;
       text-decoration: none;
+      color: $text;
+      span {
+        color: $text;
+      }
     }
 
     a {
       display: block;
       padding: $line-height / 2;
-
+      color: #ffffff;
       &:hover {
         text-decoration: none;
+        color: $text;
+        span {
+          color: $text;
+        }
       }
     }
 
@@ -1373,9 +1388,12 @@
     }
 
     span {
-      color: $text;
+      color: #ffffff;
       display: block;
       font-size: $small-font-size;
+      &:hover{
+        color: $text;
+      }
     }
   }
 }
@@ -1389,7 +1407,7 @@
   }
 
   .progress-meter {
-    background: #fdcb10;
+    background: $delete;
     border-radius: 0;
     transition: width 2s;
   }
@@ -1468,15 +1486,17 @@
   }
 
   .subtitle {
-    border-left: 2px solid $budget;
+    border-left: 2px solid $brand;
     margin: $line-height / 2 0;
     padding-left: $line-height / 2;
   }
 
   .amount-spent {
-    background: $success-bg;
+    /*background: $success-bg;*/
+    background-color: rgba(70, 57, 134, 0.2);
     font-weight: normal;
     padding: $line-height / 2;
+    border-radius: rem-calc(6);
 
     span {
       font-size: rem-calc(24);
@@ -1490,7 +1510,9 @@
   margin-left: 0;
 
   li {
-    background: #f9f9f9;
+    background-color: rgba(0, 171, 126, 0.2);
+    border-radius: rem-calc(6);
+
     line-height: $line-height;
     margin-bottom: $line-height / 4;
     padding: $line-height $line-height / 2;

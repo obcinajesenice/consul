@@ -2,7 +2,7 @@
 
   <div class="top-links">
     <div class="row">
-      <%= render "shared/locale_switcher" %>
+      <%#= render "shared/locale_switcher" %>
       <div class="hide-for-small-only">
         <%= render "shared/top_links" %>
       </div>
@@ -19,7 +19,7 @@
 
       <div class="top-bar-title">
         <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
+          <%= image_tag(image_path_for('custom/logo.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
         <% end %>
       </div>
 

@@ -3,3 +3,148 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.dnd_bg_green{
+  background-color: rgba(0, 171, 126, 0.2);
+}
+.dnd_bg_purple{
+  background-color: rgba(70, 57, 134, 0.2);
+}
+.colorgreen{
+  color: $brand;
+}
+.colorpurple{
+  color: #a166aa; /*9f50ae*/
+}
+.colorred{
+  color: #f05e24; /*f04b1d*/
+}
+.bg_lightblue{
+  background: #def4ee;
+}
+
+.margin0auto{
+  margin: 0 auto;
+}
+.textcenter{
+  text-align: center;
+}
+.paddingtop130_230{
+  padding: 65px 0 230px 0
+}
+.padding_tb_80{
+  padding: 80px 0;
+}
+.padding_tb_100{
+  padding: 100px 0;
+}
+.home-page{
+  .welcome {
+    //font-family: "Montserrat - Regular";
+    font-family: 'Montserrat', sans-serif!important;
+    font-weight: 400;
+    p{
+      color: #000000;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    b{
+      font-weight: 600;
+    }
+    .title1{
+      //font-family: "Montserrat - Black";
+      font-family: 'Montserrat', sans-serif!important;
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 45px;
+      text-transform: uppercase;
+      padding: 0 0 20px 0;
+      margin: 0;
+    }
+    .title2{
+      //font-family: 'Montserrat - Semi Bold';
+      font-family: 'Montserrat', sans-serif!important;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 45px;
+      padding: 0 0 20px 0;
+
+    }
+    .title3{
+      font-family: 'Montserrat', sans-serif!important;
+    }
+
+    .registrirajbtn{
+      color: #ffffff;
+      background-color: #f05e24;
+      min-width: 320px;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 45px;
+      text-transform: uppercase;
+    }
+
+    .img_nagovor{
+      width: 200px;
+      position: absolute;
+      left: 75px;
+    }
+    .img_predlagaj{
+      width: 390px;
+    }
+    .img_glasuj{
+      width: 380px;
+    }
+    .img_uresnicen{
+      width: 590px;
+    }
+    .img_registriraj{
+      width: 255px;
+      position: absolute;
+      right: 0;
+      top: 150px;
+    }
+
+    .more_button{
+      position: absolute;
+      bottom: 20px;
+      right: -60px;
+    }
+
+    .imasidejopredlagaj{
+      background-image: image-url('custom/hp_predlagaj_bg.png');
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+    .uresnicenprojekt{
+      background-image: image-url('custom/hp_uresnicen_projekt_bg.png');
+      background-position: top;
+      background-repeat: no-repeat;
+      padding: 80px 0 180px 0;
+    }
+    .padding_predlagaj{
+      padding: 150px 0 150px 100px;
+    }
+
+.box_registriraj{
+
+}
+.box_zelisvec{
+
+}
+.padding_glasuj{
+  padding: 150px 0 150px 0;
+}
+.padding_uresnicen{
+  padding: 150px 0 150px 100px;
+}
+.padding_zelisvec{
+  padding: 0 0 0 100px;
+}
+    .posrelative{
+      position: relative;
+    }
+
+  }
+}
