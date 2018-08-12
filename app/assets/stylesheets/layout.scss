@@ -578,6 +578,9 @@ header {
       @include breakpoint(medium up) {
         height: auto;
       }
+      @include breakpoint(small) {
+        height: auto;
+      }
     }
   }
 }
