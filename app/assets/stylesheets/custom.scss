@@ -44,21 +44,21 @@
 
 .paddingtop130_230 {
   padding: 65px 0 230px 0;
-  @include breakpoint(small) {
+  @include breakpoint(medium down) {
     padding: 30px 0 100px 0;
   }
 }
 
 .padding_tb_80 {
   padding: 80px 0;
-  @include breakpoint(small) {
+  @include breakpoint(medium down) {
     padding: 40px 0;
   }
 }
 
 .padding_tb_100 {
   padding: 100px 0;
-  @include breakpoint(small) {
+  @include breakpoint(medium down) {
     padding: 50px 0;
   }
 
@@ -114,7 +114,7 @@
       width: 200px;
       position: absolute;
       left: 75px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         width: 100px;
         opacity: 0.5;
       }
@@ -122,19 +122,19 @@
     }
     .img_predlagaj {
       width: 390px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         width: 180px;
       }
     }
     .img_glasuj {
       width: 380px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         width: 180px;
       }
     }
     .img_uresnicen {
       width: 590px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         width: 200px;
       }
 
@@ -144,7 +144,7 @@
       position: absolute;
       right: 0;
       top: 150px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         width: 120px;
         opacity: 0.5;
       }
@@ -154,7 +154,7 @@
       position: absolute;
       bottom: 20px;
       right: -60px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         position: relative;
         bottom: auto;
         right: auto;
@@ -172,7 +172,7 @@
       background-position: top;
       background-repeat: no-repeat;
       padding: 80px 0 180px 0;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         padding: 40px 0 90px 0;
       }
     }
@@ -185,7 +185,7 @@
     }
     .padding_predlagaj {
       padding: 150px 0 150px 100px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         padding: 0;
         text-align: center;
       }
@@ -193,21 +193,21 @@
 
     .padding_glasuj {
       padding: 150px 0 150px 0;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         padding: 0;
         text-align: center;
       }
     }
     .padding_uresnicen {
       padding: 150px 0 150px 100px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         padding: 0;
         text-align: center;
       }
     }
     .padding_zelisvec {
       padding: 0 0 0 100px;
-      @include breakpoint(small) {
+      @include breakpoint(medium down) {
         padding: 0;
         text-align: center;
       }
