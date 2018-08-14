@@ -136,7 +136,8 @@
   .progress {
     background: lighten($proposals, 35%);
     border: 1px solid lighten($proposals, 35%);
-    height: rem-calc(14);
+    //height: rem-calc(14);
+    height: 20px;
     position: relative;
 
     .meter {
@@ -434,14 +435,15 @@
     font-weight: bold;
 
     a {
-      color: $link !important;
+      /*color: $link !important;*/
+      color: $text-medium;
     }
   }
 
   aside {
 
     h2 {
-      border-top: 2px solid $brand;
+      border-top: 3px solid $brand;
       display: inline-block;
       font-size: rem-calc(16);
       margin: -1px 0 rem-calc(12);
@@ -915,10 +917,10 @@
       margin-bottom: 0;
     }
     .investment-project-amount.dnd_voted_yes{
-      color: $brand;
+      color: #6d3986;
     }
     .investment-project-amount.dnd_voted_no{
-      color: #6d3986;
+      color: $brand;
     }
     .button-support {
       background: #00ab7e;
@@ -1354,10 +1356,12 @@
 .groups-and-headings {
 
   .heading {
-    border: 1px solid $border;
-    border-radius: rem-calc(3);
+    border: 0px solid $border;
+    //border-radius: rem-calc(3);
+    border-radius: 5px;
     display: inline-block;
     margin-bottom: $line-height / 2;
+    font-weight: $font-weight-semibold400;
 
     background-color: #00ab7e;
     color: #ffffff;
@@ -1374,6 +1378,7 @@
       display: block;
       padding: $line-height / 2;
       color: #ffffff;
+      text-align: center;
       &:hover {
         text-decoration: none;
         color: $text;
@@ -1489,14 +1494,18 @@
     border-left: 2px solid $brand;
     margin: $line-height / 2 0;
     padding-left: $line-height / 2;
+    a{
+      color: $link;
+    }
   }
 
   .amount-spent {
     /*background: $success-bg;*/
     background-color: rgba(70, 57, 134, 0.2);
-    font-weight: normal;
+    font-weight: $font-weight-semibold400;
     padding: $line-height / 2;
-    border-radius: rem-calc(6);
+    //border-radius: rem-calc(6);
+    border-radius: 8px;
 
     span {
       font-size: rem-calc(24);
@@ -1511,12 +1520,14 @@
 
   li {
     background-color: rgba(0, 171, 126, 0.2);
-    border-radius: rem-calc(6);
+    //border-radius: rem-calc(6);
+    border-radius: 8px;
 
     line-height: $line-height;
     margin-bottom: $line-height / 4;
     padding: $line-height $line-height / 2;
     position: relative;
+    font-size: 18px;
 
     a {
       color: $text;

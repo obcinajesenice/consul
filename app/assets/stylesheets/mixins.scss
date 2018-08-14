@@ -11,7 +11,7 @@
 @mixin logo {
   color: #fff;
   display: inline-block;
-  font-family: 'Lato' !important;
+  font-family: 'Montserrat', sans-serif;
   font-size: rem-calc(24);
   font-weight: lighter;
 
@@ -102,7 +102,7 @@
   }
 
   .button {
-    font-weight: normal;
+    font-weight: $font-weight-semibold400;
   }
 
   .progress-bar {

@@ -215,3 +215,39 @@
 
   }
 }
+
+.progress {
+  height: 20px;
+}
+.button{
+  border-radius: 8px;
+  /*border: 2px solid $brand;*/
+  border-width: 2px!important;
+}
+strong,
+b {
+  font-weight: $font-weight-bold700;
+  line-height: inherit;
+}
+.button.expanded.budget{
+  background: $brand;
+}
+.ballotcenter{
+  float: none;
+  margin: 0 auto;
+}
+.ballotcenter.column.end:last-child:last-child{
+  float: none;
+}
+.delete {
+  border-bottom: 1px solid $delete;
+  color: $delete;
+  font-size: $small-font-size;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid #fff;
+    color: $delete;
+  }
+}

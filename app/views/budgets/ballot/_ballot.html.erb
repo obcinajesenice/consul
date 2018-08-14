@@ -21,7 +21,7 @@
 <div class="row ballot">
   <% ballot_groups = @ballot.groups.order(name: :asc) %>
   <% ballot_groups.each do |group| %>
-    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end">
+    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end ballotcenter">
       <div class="margin-top ballot-content">
         <div class="subtitle">
           <h3>
@@ -54,7 +54,7 @@
 
   <% no_balloted_groups = @budget.groups.order(name: :asc) - ballot_groups %>
   <% no_balloted_groups.each do |group| %>
-    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end">
+    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end ballotcenter">
       <div class="margin-top ballot-content">
         <div class="subtitle">
           <h3>

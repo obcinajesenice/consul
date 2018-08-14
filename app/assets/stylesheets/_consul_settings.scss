@@ -10,13 +10,14 @@
 // 1. CONSUL variables
 // --------------------
 
-$base-font-size:      17px;
+$base-font-size:      16px;
 $base-line:           rem-calc(26);
 $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
 $brand:             #00ab7e;
+$linkcolor:             #004a83;
 $dark:              darken($brand, 10%);
 
 $text:              #222;
@@ -25,7 +26,8 @@ $text-light:        #bfbfbf;
 
 $border:            #dee0e3;
 
-$link:              $brand;
+/*$link:              $brand;*/
+$link:              $linkcolor;
 $link-hover:        darken($link, 20%);
 
 $debates:           $brand;
@@ -71,15 +73,19 @@ $color-alert:       #a94442;
 $black: #222;
 $white: #fff;
 
-$body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
-
+$body-font-family: 'Montserrat', sans-serif;
+$font-weight-semibold400: 600;
+$font-weight-semibold600: 700;
+$font-weight700: 700;
+$font-weight900: 900;
+$font-weight-bold700: 700;
 $header-font-family: $body-font-family;
 
 $global-radius: rem-calc(3);
 
 $button-radius: $global-radius;
 
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-serif: 'Montserrat', sans-serif;
 
 $header-styles: (
   small: (
