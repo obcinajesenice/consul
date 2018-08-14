@@ -892,9 +892,9 @@ footer {
 
 .categories a,
 .geozone a {
-  background: $highlight;
+  /*background: $highlight;
   color: $link;
-
+*/
   &:hover,
   &.is-active {
     background: $brand;

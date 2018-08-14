@@ -242,7 +242,8 @@ b {
 .delete {
   border-bottom: 1px solid $delete;
   color: $delete;
-  font-size: $small-font-size;
+  font-size: 12px;
+  font-weight: $font-weight-semibold400;
 
   &:hover,
   &:active,
@@ -250,4 +251,7 @@ b {
     border-bottom: 1px solid #fff;
     color: $delete;
   }
+}
+input::placeholder {
+  font-style: italic;
 }
