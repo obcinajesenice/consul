@@ -882,7 +882,7 @@ footer {
   //font-size: $small-font-size;
   font-size: 11px;
   margin-bottom: $line-height / 3;
-  padding: $line-height / 4 $line-height / 3;
+  padding: $line-height / 4 $line-height / 2;
   text-decoration: none;
 
   &:hover {
@@ -2547,7 +2547,7 @@ table {
   }
 
   .document-link {
-    background-color: rgba(0, 171, 126, 0.2);
+    background-color: $dnd_bg_green;
     /*opacity: 0.8;*/
 
     border: 2px solid rgba(0, 171, 126, 0);

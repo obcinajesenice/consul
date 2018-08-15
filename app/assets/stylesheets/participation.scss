@@ -1501,15 +1501,17 @@
 
   .amount-spent {
     /*background: $success-bg;*/
-    background-color: rgba(70, 57, 134, 0.2);
+    background-color: $dnd_bg_purple;
     font-weight: $font-weight-semibold400;
-    padding: $line-height / 2;
+    padding: 9px $line-height / 2;
     //border-radius: rem-calc(6);
     border-radius: 8px;
+    font-size: 16px;
 
     span {
       font-size: rem-calc(24);
       font-weight: bold;
+      font-weight: 24px;
     }
   }
 }
@@ -1519,7 +1521,7 @@
   margin-left: 0;
 
   li {
-    background-color: rgba(0, 171, 126, 0.2);
+    background-color: $dnd_bg_green;
     //border-radius: rem-calc(6);
     border-radius: 8px;
 
@@ -1527,7 +1529,7 @@
     margin-bottom: $line-height / 4;
     padding: $line-height $line-height / 2;
     position: relative;
-    font-size: 18px;
+    font-size: 16px;
 
     a {
       color: $text;
@@ -1536,6 +1538,7 @@
     span {
       display: block;
       font-style: italic;
+      font-size: 18px;
     }
 
     .remove-investment-project {

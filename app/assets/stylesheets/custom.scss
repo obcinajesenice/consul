@@ -5,11 +5,11 @@
 //
 
 .dnd_bg_green {
-  background-color: rgba(0, 171, 126, 0.2);
+  background-color: $dnd_bg_green;
 }
 
 .dnd_bg_purple {
-  background-color: rgba(70, 57, 134, 0.2);
+  background-color: $dnd_bg_purple;
 }
 
 .colorgreen {
@@ -232,6 +232,20 @@ b {
 .button.expanded.budget{
   background: $brand;
 }
+.button.hollow{
+  display: inline-block;
+  width: max-content;
+  font-size: 12px;
+}
+.button.medium{
+  font-size: 12px;
+}
+.document-link strong{
+  font-size: 12px;
+}
+.document-link small{
+  font-size: 12px;
+}
 .ballotcenter{
   float: none;
   margin: 0 auto;
@@ -253,5 +267,5 @@ b {
   }
 }
 input::placeholder {
-  font-style: italic;
+  font-style: normal;
 }
