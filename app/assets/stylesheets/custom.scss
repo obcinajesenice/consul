@@ -163,14 +163,16 @@
     }
 
     .imasidejopredlagaj {
-      background-image: image-url('custom/hp_predlagaj_bg.png');
+      /*background-image: image-url('custom/hp_predlagaj_bg.png');*/
+      background-image: image-url('custom/svg/ozadje1.svg');
       background-position: bottom;
-      background-repeat: no-repeat;
+      background-repeat: repeat-x;
     }
     .uresnicenprojekt {
-      background-image: image-url('custom/hp_uresnicen_projekt_bg.png');
+      /*background-image: image-url('custom/hp_uresnicen_projekt_bg.png');*/
+      background-image: image-url('custom/svg/ozadje2.svg');
       background-position: top;
-      background-repeat: no-repeat;
+      background-repeat: repeat-x;
       padding: 80px 0 180px 0;
       @include breakpoint(medium down) {
         padding: 40px 0 90px 0;
