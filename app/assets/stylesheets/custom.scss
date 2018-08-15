@@ -43,7 +43,7 @@
 }
 
 .paddingtop130_230 {
-  padding: 65px 0 230px 0;
+  padding: 65px 0 330px 0;
   @include breakpoint(medium down) {
     padding: 30px 0 100px 0;
   }
@@ -165,14 +165,16 @@
     .imasidejopredlagaj {
       /*background-image: image-url('custom/hp_predlagaj_bg.png');*/
       background-image: image-url('custom/svg/ozadje1.svg');
-      background-position: bottom;
       background-repeat: repeat-x;
+      background-position: bottom;
+
     }
     .uresnicenprojekt {
       /*background-image: image-url('custom/hp_uresnicen_projekt_bg.png');*/
       background-image: image-url('custom/svg/ozadje2.svg');
-      background-position: top;
       background-repeat: repeat-x;
+      background-position: top;
+
       padding: 80px 0 180px 0;
       @include breakpoint(medium down) {
         padding: 40px 0 90px 0;
