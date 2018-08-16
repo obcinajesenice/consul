@@ -20,7 +20,7 @@ sl:
         not_enough_money_html: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
         no_ballots_allowed: Faza izbiranja je končana
         different_heading_assigned_html: "Glasoval si že za drugačen naslov: %{heading_link}"
-        change_ballot: Spremeni svoje glasove
+        change_ballot: spremeniš svoje glasove
     groups:
       show:
         title: Izberi možnost
