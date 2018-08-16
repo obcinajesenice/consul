@@ -21,14 +21,14 @@ sl:
       email_digest_label: Prejmi povzetek obvestil v zvezi s predlogi
       official_position_badge_label: Pokaži značko z uradnim položajem
       title: Moj račun
-      user_permission_debates: Sodeluj v debatah
+      user_permission_debates: Sodeluješ v debatah
       user_permission_info: S svojim računom lahko ...
       user_permission_proposal: Ustvariš nove predloge
       user_permission_support_proposal: Podpiraš predloge
       user_permission_title: Sodelovanje
       user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
-      user_permission_votes: Sodeluj v končnem glasovanju
+      user_permission_votes: Sodeluješ v končnem glasovanju
       username_label: Uporabniško ime
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
