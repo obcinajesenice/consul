@@ -90,7 +90,7 @@ sl:
             one: "<strong>Glasoval/-a si za en predlog s stroški %{amount_spent}</strong>"
             other: "<strong>Glasoval/-a si za %{count} predlogov s stroški %{amount_spent}</strong>"
           voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
-          voted_info_link: spremeni svoj glas
+          voted_info_link: spremeniš svoj glas
           different_heading_assigned_html: "V drugem naslovu imaš aktivna glasovanja: %{heading_link}"
           change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} in začneš znova."
           check_ballot_link: "preveri moja glasovanja"
