@@ -187,7 +187,7 @@ sl:
     error: Napaka
     errors: Napake
     not_saved_html: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
-    policy: Politika zasebnosti
+    policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
     spending_proposal: Predlog porabe
@@ -225,7 +225,7 @@ sl:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
       participation_title: Sodelovanje
-      privacy: Politika zasebnosti
+      privacy: Politiko zasebnosti
       transparency_text: Ugotovi karkoli o mestu.
       transparency_title: Transparentnost
       transparency_url: https://transparency.consul
