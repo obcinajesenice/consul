@@ -891,6 +891,7 @@ footer {
 
   &:hover {
     background: $brand;
+    color: #FFFFFF;
   }
 }
 
@@ -1124,9 +1125,9 @@ form {
 
   &.success,
   &.notice {
-    background-color: $brand;
-    border-color: $brand;
-    color: #FFFFFF;
+    background-color: $dnd_alert;
+    border-color: $dnd_alert;
+    color: $dnd_black;
   }
 
   &.primary {
@@ -2088,7 +2089,7 @@ table {
     &.is-author,
     &.is-admin,
     &.is-moderator {
-      background: rgba(70, 219, 145, 0.3);
+      background: $dnd_bg_green;
       padding: $line-height / 4 $line-height / 2;
     }
 
@@ -2103,7 +2104,7 @@ table {
     &.is-author,
     &.is-admin,
     &.is-moderator {
-      background: rgba(45, 144, 248, 0.15);
+      background: $dnd_bg_green;
     }
   }
 }

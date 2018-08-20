@@ -17,7 +17,7 @@ $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
 $brand:             #00ab7e;
-$linkcolor:             #004a83;
+$linkcolor:             #7d338a;
 $dark:              darken($brand, 10%);
 
 $text:              #222;
@@ -70,7 +70,8 @@ $color-alert:       #a94442;
 
 $dnd_bg_green: rgba(0, 171, 126, 0.08);
 $dnd_bg_purple: rgba(109, 57, 134, 0.2);
-$dnd_alert: rgba(240, 94, 36, 0.08);
+/*$dnd_alert: rgba(240, 94, 36, 0.08);*/
+$dnd_alert: #fef2ee;
 $dnd_black: #000000;
 // 2. Foundation settings overrides
 // ---------------------------------

@@ -1696,6 +1696,11 @@
 
   .header {
     background: $highlight;
+    color: #ffffff;
+    .back,
+    .icon-angle-left{
+      color: #ffffff;
+    }
   }
 
   .big-number-stat {
