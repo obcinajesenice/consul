@@ -21,14 +21,14 @@ sl:
       email_digest_label: Prejmi povzetek obvestil v zvezi s predlogi
       official_position_badge_label: Pokaži značko z uradnim položajem
       title: Moj račun
-      user_permission_debates: Sodeluj v debatah
-      user_permission_info: S svojim računom lahko...
+      user_permission_debates: Sodeluješ v debatah
+      user_permission_info: S svojim računom lahko ...
       user_permission_proposal: Ustvariš nove predloge
       user_permission_support_proposal: Podpiraš predloge
       user_permission_title: Sodelovanje
       user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
-      user_permission_votes: Sodeluj v končnem glasovanju
+      user_permission_votes: Sodeluješ v končnem glasovanju
       username_label: Uporabniško ime
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
@@ -187,7 +187,7 @@ sl:
     error: Napaka
     errors: Napake
     not_saved_html: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
-    policy: Politika zasebnosti
+    policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
     spending_proposal: Predlog porabe
@@ -225,7 +225,7 @@ sl:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
       participation_title: Sodelovanje
-      privacy: Politika zasebnosti
+      privacy: Politiko zasebnosti
       transparency_text: Ugotovi karkoli o mestu.
       transparency_title: Transparentnost
       transparency_url: https://transparency.consul

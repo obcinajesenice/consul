@@ -20,7 +20,7 @@ sl:
         not_enough_money_html: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
         no_ballots_allowed: Faza izbiranja je končana
         different_heading_assigned_html: "Glasoval si že za drugačen naslov: %{heading_link}"
-        change_ballot: Spremeni svoje glasove
+        change_ballot: spremeniš svoje glasove
     groups:
       show:
         title: Izberi možnost
@@ -36,7 +36,7 @@ sl:
       selecting: Izbiranje projektov
       valuating: Vrednotenje projektov
       publishing_prices: Objavljanje cen projektov
-      balloting: Glasovanje o projektov
+      balloting: Glasovanje o projektih
       reviewing_ballots: Pregled glasovanj
       finished: Končan proračun
     index:
@@ -82,15 +82,15 @@ sl:
           placeholder: Išči investicijske projekte ...
           title: Išči
         search_results_html:
-          one: " vsebuje pojem <strong>'%{search_term}'</strong>"
-          other: " vsebuje pojem <strong>'%{search_term}'</strong>"
+          one: " s pojmom <strong>'%{search_term}'</strong>"
+          other: " s pojmom <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Moja glasovanja
           voted_html:
             one: "<strong>Glasoval/-a si za en predlog s stroški %{amount_spent}</strong>"
             other: "<strong>Glasoval/-a si za %{count} predlogov s stroški %{amount_spent}</strong>"
           voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
-          voted_info_link: spremeni svoj glas
+          voted_info_link: spremeniš svoj glas
           different_heading_assigned_html: "V drugem naslovu imaš aktivna glasovanja: %{heading_link}"
           change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} in začneš znova."
           check_ballot_link: "preveri moja glasovanja"

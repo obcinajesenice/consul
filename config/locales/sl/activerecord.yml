@@ -147,7 +147,7 @@ sl:
       user:
         login: "E-naslov ali uporabniško ime"
         email: "E-naslov"
-        username: "Uporabnišk oime"
+        username: "Uporabniško ime"
         password_confirmation: "Potrditev gesla"
         password: "Geslo"
         current_password: "Trenutno geslo"
