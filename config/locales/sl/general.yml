@@ -66,7 +66,7 @@ sl:
     orders:
       most_voted: Največ glasov
       newest: Novejši naprej
-      oldest: Starejši glasovanj
+      oldest: Starejši naprej
       most_commented: Največ komentarjev
     select_order: Uredi po
     show:
@@ -619,7 +619,7 @@ sl:
     followable:
       budget_investment:
         create:
-          notice_html: "Zdaj slediš tmeu naložbenemu projektu! </br> O morebitnih spremembah te bomo obveščali sproti."
+          notice_html: "Zdaj slediš temu naložbenemu projektu! </br> O morebitnih spremembah te bomo obveščali sproti."
         destroy:
           notice_html: "Prenehal/-a si slediti temu naložbenemu projektu! </br> Nič več ne boš dobival/-a obvestil o tem projektu."
       proposal:
