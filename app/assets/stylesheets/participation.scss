@@ -917,17 +917,17 @@
       margin-bottom: 0;
     }
     .investment-project-amount.dnd_voted_yes{
-      color: #6d3986;
+      color: $budget;
     }
     .investment-project-amount.dnd_voted_no{
       color: $brand;
     }
     .button-support {
-      background: #00ab7e;
+      background: $brand;
       color: #fff;
 
       &:hover {
-        background: $budget-hover;
+        background: $budget;
         color: #fff;
         cursor: pointer;
       }
@@ -1366,11 +1366,11 @@
     background-color: #00ab7e;
     color: #ffffff;
     &:hover {
-      background: $highlight;
+      background: $budget;
       text-decoration: none;
-      color: $text;
+      color: #ffffff;
       span {
-        color: $text;
+        color: #ffffff;
       }
     }
 
@@ -1381,9 +1381,9 @@
       text-align: center;
       &:hover {
         text-decoration: none;
-        color: $text;
+        color: #FFFFFF;
         span {
-          color: $text;
+          color: #FFFFFF;
         }
       }
     }
@@ -1397,7 +1397,7 @@
       display: block;
       font-size: $small-font-size;
       &:hover{
-        color: $text;
+        color: #ffffff;
       }
     }
   }

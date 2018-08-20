@@ -45,6 +45,7 @@ $budget:            #7e328a;
 $budget-hover:      #7571bf;
 
 $highlight:         #e7f2fc;
+$highlight:         $budget;
 $highlight-soft:    #f3f8fd;
 $light:             #f5f7fa;
 $featured:          #ffdc5c;
@@ -69,7 +70,8 @@ $color-alert:       #a94442;
 
 $dnd_bg_green: rgba(0, 171, 126, 0.08);
 $dnd_bg_purple: rgba(109, 57, 134, 0.2);
-
+$dnd_alert: rgba(240, 94, 36, 0.08);
+$dnd_black: #000000;
 // 2. Foundation settings overrides
 // ---------------------------------
 

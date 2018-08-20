@@ -108,6 +108,9 @@
       font-weight: 400;
       line-height: 45px;
       text-transform: uppercase;
+      &:hover{
+        background-color: $budget;
+      }
     }
 
     .img_nagovor {
@@ -272,4 +275,22 @@ b {
 }
 input::placeholder {
   font-style: normal;
+}
+
+.subnavigation a:hover{
+  color: $brand;
+}
+.submenu a:hover{
+  color: $brand;
+}
+.highlight {
+  color: #FFFFFF;
+}
+.button.warning{
+  background: $brand;
+  color: #FFFFFF;
+  &:hover{
+    background: $budget;
+    color: #FFFFFF;
+  }
 }
