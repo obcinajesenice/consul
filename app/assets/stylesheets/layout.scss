@@ -932,7 +932,7 @@ footer {
   background-color: $brand;
 
   @include breakpoint(medium) {
-    min-height: $line-height * 42;
+    min-height: $line-height * 55;
   }
 
   h1 {
