@@ -154,10 +154,10 @@
     }
 
     .more_button a{
-      width: 78px;
-      height: 78px;
+      width: 80px;
+      height: 80px;
       display: inline-block;
-      background: url("custom/more.png") center no-repeat;
+      background: url("custom/svg/noun_more.svg") center no-repeat;
       color: #FFFFFF;
       position: absolute;
       bottom: 20px;
@@ -169,8 +169,7 @@
         text-align: center;
       }
       &:hover{
-
-        background: url("custom/more_o.png") center no-repeat;
+        background: url("custom/svg/noun_more_h.svg") center no-repeat;
       }
     }
 
