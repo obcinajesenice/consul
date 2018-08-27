@@ -207,7 +207,7 @@ a {
 }
 
 .icon-check {
-  color: $check;
+  color: $brand;
 }
 
 .wrapper {
@@ -1259,7 +1259,7 @@ form {
     }
 
     .icon-check {
-      color: $check;
+      color: $brand;
     }
 
     .icon-x {
@@ -1299,7 +1299,7 @@ form {
   position: relative;
 
   &::before {
-    background: $border;
+    background: $dnd_alert;
     content: '';
     height: 100%;
     left: 7px;
@@ -1310,7 +1310,7 @@ form {
 }
 
 .notification {
-  border: 1px solid $border;
+  border: 1px solid $dnd_alert;
   display: block;
   margin-bottom: $line-height / 4;
   margin-left: $line-height;
@@ -1327,11 +1327,11 @@ form {
   }
 
   &.unread {
-    background: $highlight-soft;
-    border: 1px solid $highlight;
+    background: $dnd_alert;
+    border: 1px solid $dnd_alert;
 
     &:hover {
-      background: $highlight;
+      background: $dnd_alert;
     }
   }
 
@@ -1957,14 +1957,14 @@ table {
   padding-right: $line-height / 2;
 
   .already-verified {
-    color: $check;
+    color: $brand;
     line-height: $line-height * 2;
 
     .icon-check {
       font-size: rem-calc(24);
       line-height: rem-calc(45);
       vertical-align: middle;
-      color: $check;
+      color: $brand;
     }
   }
 }
@@ -1974,7 +1974,7 @@ table {
   margin-top: $line-height;
 
   h1 {
-    color: $check;
+    color: $brand;
 
     .icon-check {
       line-height: rem-calc(30);

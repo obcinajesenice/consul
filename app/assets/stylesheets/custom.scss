@@ -49,6 +49,13 @@
   }
 }
 
+.padding_tb_20 {
+  padding: 20px 0;
+  @include breakpoint(medium down) {
+    padding: 10px 0;
+  }
+}
+
 .padding_tb_80 {
   padding: 80px 0;
   @include breakpoint(medium down) {
@@ -61,7 +68,6 @@
   @include breakpoint(medium down) {
     padding: 50px 0;
   }
-
 }
 
 .home-page {
@@ -317,6 +323,19 @@ input::placeholder {
   border-bottom: 1px solid #FFFFFF;
   color: $budget;
 }
-.leaflet-container a {
+#map .leaflet-container a {
   color: $budget;
+}
+.advanced-search, .js-advanced-search-title{
+  display: none;
+}
+.budget-investment-new .panel h3{
+  margin-top: 0;
+  color: $brand;
+}
+.budget-investment-new .panel p{
+
+}
+.budget-investment-new .panel li{
+  font-size: 14px;
 }
