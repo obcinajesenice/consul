@@ -3,6 +3,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include BudgetsHelper
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -37,7 +38,7 @@ module Budgets
       else
         @investments = investments.page(params[:page]).per(10).for_render
       end
-
+      @budgets_coordinates = current_budget_map_locations
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
