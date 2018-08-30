@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="small-12 medium-8 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
+      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: false, } %>
     </div>
 
     <div class="small-12 column">
@@ -45,14 +45,16 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.label :location, t("budgets.investments.form.location") %>
+      <%= f.label :location, 'Vpiši ime svoje krajevne skupnosti' %>
       <%= f.text_field :location, label: false %>
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :organization_name %>
+    <%= f.label :price, 'Ocena vrednosti investicije' %>
+      <%= f.text_field :price, label: false %>
     </div>
 
+    <!--
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
       <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
@@ -72,6 +74,7 @@
                         class: 'js-tag-list tag-autocomplete',
                         data: {js_url: suggest_tags_path} %>
     </div>
+    -->
 
     <% unless current_user.manager? %>
 

@@ -46,7 +46,8 @@
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
-                                  budgets_path,
+                                  #budgets_path,
+                                  '/budgets/1/investments?heading_id=1',
                                   controller_name == "budgets" || controller_name == "investments",
                                   accesskey: "5",
                                   title: t("shared.go_to_page") + t("layouts.header.budgets") %>

@@ -128,7 +128,7 @@ module Budgets
       def investment_params
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
-                      :organization_name, :location, :terms_of_service, :skip_map,
+                      :organization_name, :location, :terms_of_service, :skip_map, :price,
                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom])
