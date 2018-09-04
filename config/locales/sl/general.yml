@@ -449,7 +449,7 @@ sl:
         other: "%{count} komentarjev"
         zero: Brez komentarjev
       reason_for_supports_necessary: 1 % cenzusa
-      support: Podpora
+      support: Glasuj za predlog!
       support_title: Podpri ta predlog
       supports:
         one: 1 podpornik
@@ -822,7 +822,7 @@ sl:
     organizations: Organizacijam ni dovoljeno glasovati.
     signin: vpisati
     signup: registrirati
-    supports: Podpora
+    supports: Glasovi
     unauthenticated: Za nadaljevanje se moraš %{signin} ali %{signup}.
     verified_only: Samo verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
     verify_account: potrdi svoj račun

@@ -24,7 +24,7 @@
             <% if @ballot.valid_heading?(@heading) %>
               <div class="progress-bar-nav" data-fixed-bar>
                 <h2>
-                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                  <%= @heading.name %>
                 </h2>
                 <div id="progress_bar" class="no-margin-top">
                   <%= render 'budgets/ballot/progress_bar' %>
@@ -32,7 +32,7 @@
               </div>
             <% else %>
               <h2>
-                <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                <%= @heading.name %>
               </h2>
               <div class="small-12 medium-9">
                 <div class="callout warning margin-top">
@@ -49,7 +49,7 @@
             <% end %>
           <% else %>
             <h2 class="margin-top">
-              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+              <%= @heading.name %>
             </h2>
             <h3>
               <span class="tagline"><%= t("budgets.investments.header.price") %></span>

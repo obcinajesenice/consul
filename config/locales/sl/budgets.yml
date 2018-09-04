@@ -97,7 +97,7 @@ sl:
           zero: Nisi glasoval za noben naložbeni projekt v tej skupini.
           verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
           verify_account: "Verificiraj svoj račun"
-          create: "Ustvari proračunsko naložbo"
+          create: "Dodaj svoj predlog!"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
           sign_in: "vpisati"
           sign_up: "prijaviti"
@@ -140,7 +140,7 @@ sl:
           one: 1 podpora
           other: "%{count} podpor"
           zero: brez podpore
-        give_support: Podpora
+        give_support: Glasuj za predlog!
       header:
         check_ballot: Preveri moja glasovanja
         different_heading_assigned_html: "Imaš aktivna glasovanja v drugem naslovu: %{heading_link}"

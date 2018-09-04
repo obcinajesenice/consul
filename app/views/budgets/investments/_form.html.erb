@@ -44,23 +44,21 @@
       </div>
     <% end %>
 
+    <!--
     <div class="small-12 column">
       <%= f.label :location, 'Vpiši ime svoje krajevne skupnosti' %>
       <%= f.text_field :location, label: false %>
     </div>
+    -->
 
+    
     <div class="small-12 column">
-    <%= f.label :price, 'Ocena vrednosti investicije' %>
-      <%= f.text_field :price, label: false %>
-    </div>
-
-    <!--
-    <div class="small-12 column">
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+      <!-- <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p> -->
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
+        <%= f.label :category_tag_list, 'Krajevne skupnosti' %>
+        <p class="help-text" id="tags-list-help-text"><%= 'V katerih krajevnih skupnostih bi se tvoj predlog izvajal?' %></p>
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
@@ -74,7 +72,12 @@
                         class: 'js-tag-list tag-autocomplete',
                         data: {js_url: suggest_tags_path} %>
     </div>
-    -->
+
+    <div class="small-12 column">
+    <%= f.label :price, 'Ocena vrednosti investicije' %>
+      <%= f.text_field :price, label: false %>
+    </div>
+    
 
     <% unless current_user.manager? %>
 
@@ -92,7 +95,7 @@
     <% end %>
 
     <div class="actions small-12 medium-6 large-4 end column">
-      <%= f.submit(nil, class: "button expanded") %>
+      <%= f.submit('Ustvari predlog', class: "button expanded") %>
     </div>
   </div>
 <% end %>

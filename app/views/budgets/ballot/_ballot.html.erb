@@ -1,6 +1,6 @@
 <div class="expanded budget no-margin-top padding">
   <div class="row">
-    <%= back_link_to @ballot_referer %>
+    <%= back_link_to '/budgets/1/investments?heading_id=1' %>
 
     <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
 
@@ -29,7 +29,7 @@
           </h3>
           <%= link_to t("budgets.ballots.show.remaining",
                       amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe,
-                      budget_group_path(@budget, group) %>
+                      'budgets/1/investments?heading_id=1' %>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
@@ -60,7 +60,7 @@
           <h3>
             <%= group.name %>
           </h3>
-          <%= link_to t("budgets.ballots.show.no_balloted_group_yet"), budget_group_path(@budget, group) %>
+          <%= link_to t("budgets.ballots.show.no_balloted_group_yet"), '/budgets/1/investments?heading_id=1' %>
         </div>
       </div>
     </div>
