@@ -26,14 +26,14 @@
 
               <% if investment.author.hidden? || investment.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
+                <!-- <span class="author">
                   <%= t("budgets.investments.show.author_deleted") %>
-                </span>
+                </span> -->
               <% else %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
+                <!-- <span class="author">
                   <%= investment.author.name %>
-                </span>
+                </span> -->
                 <% if investment.author.official? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= investment.author.official_level %>">

@@ -15,14 +15,14 @@
 
               <% if spending_proposal.author.hidden? || spending_proposal.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
+                <!-- <span class="author">
                   <%= t("spending_proposals.show.author_deleted") %>
-                </span>
+                </span> -->
               <% else %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
+                <!-- <span class="author">
                   <%= spending_proposal.author.name %>
-                </span>
+                </span> -->
                 <% if spending_proposal.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= spending_proposal.author.official_level %>">
