@@ -73,27 +73,30 @@
       }
       return null;
     }
-    function eraseCookie(name) {   
-      document.cookie = name+'=; Max-Age=-99999999;';  
+    function eraseCookie(name) {
+      document.cookie = name+'=; Max-Age=-99999999;';
     }
-    
+
     var clicked = false;
-    
+
     var computer = getCookie('computer');
     if (!computer) {
       setCookie('computer', Math.random().toString(36).substring(7), 30);
       computer = getCookie('computer');
     }
-    
+
     $(document).ready(function() {
       $('.button-support').on('click', function(e) {
         console.log(e);
         if (!clicked) {
           _this = e.currentTarget;
           var code = prompt('Prosim vpiši svojo kodo.');
-    
+
+          var user = $('html').attr('data-current-user-id');
+          console.log('user', user);
+
           if (code !== null && code !== '') {
-            $.get('https://api.djnd.si/locker/unlock/?code=' + code + '&computer=' + computer, function(r) {
+            $.get('https://api.djnd.si/locker/unlock/?code=' + code + '&computer=' + computer + '&username=' + user, function(r) {
               if (r === '1') {
                 clicked = true;
                 $(_this).click();
