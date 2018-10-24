@@ -113,27 +113,27 @@ feature 'Commenting polls' do
   end
 
   scenario 'Turns links into html links' do
-    create :comment, commentable: poll, body: 'Built with https://rubyonrails.org/'
+    create :comment, commentable: poll, body: 'Built with http://rubyonrails.org/'
 
     visit poll_path(poll)
 
     within first('.comment') do
-      expect(page).to have_content 'Built with https://rubyonrails.org/'
-      expect(page).to have_link('https://rubyonrails.org/', href: 'https://rubyonrails.org/')
-      expect(find_link('https://rubyonrails.org/')[:rel]).to eq('nofollow')
-      expect(find_link('https://rubyonrails.org/')[:target]).to eq('_blank')
+      expect(page).to have_content 'Built with http://rubyonrails.org/'
+      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
+      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
+      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
     end
   end
 
   scenario 'Sanitizes comment body for security' do
     create :comment, commentable: poll,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> https://www.url.com"
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit poll_path(poll)
 
     within first('.comment') do
-      expect(page).to have_content "click me https://www.url.com"
-      expect(page).to have_link('https://www.url.com', href: 'https://www.url.com')
+      expect(page).to have_content "click me http://www.url.com"
+      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end

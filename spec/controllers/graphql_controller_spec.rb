@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# Useful resource: https://graphql.org/learn/serving-over-http/
+# Useful resource: http://graphql.org/learn/serving-over-http/
 
 def parser_error_raised?(response)
   data_is_empty = response['data'].nil?

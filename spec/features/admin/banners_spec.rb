@@ -10,7 +10,7 @@ feature 'Admin banners magement' do
     background do
       @banner1 = create(:banner, title: "Banner number one",
                   description:  "This is the text of banner number one and is not active yet",
-                  target_url:  "https://www.url.com",
+                  target_url:  "http://www.url.com",
                   post_started_at: (Time.current + 4.days),
                   post_ended_at:   (Time.current + 10.days),
                   background_color: '#FF0000',
@@ -18,7 +18,7 @@ feature 'Admin banners magement' do
 
       @banner2 = create(:banner, title: "Banner number two",
                   description:  "This is the text of banner number two and is not longer active",
-                  target_url:  "https://www.url.com",
+                  target_url:  "http://www.url.com",
                   post_started_at: (Time.current - 10.days),
                   post_ended_at:   (Time.current - 3.days),
                   background_color: '#00FF00',
@@ -26,7 +26,7 @@ feature 'Admin banners magement' do
 
       @banner3 = create(:banner, title: "Banner number three",
                   description:  "This is the text of banner number three and has style banner-three",
-                  target_url:  "https://www.url.com",
+                  target_url:  "http://www.url.com",
                   post_started_at: (Time.current - 1.day),
                   post_ended_at:   (Time.current + 10.days),
                   background_color: '#0000FF',
@@ -34,7 +34,7 @@ feature 'Admin banners magement' do
 
       @banner4 = create(:banner, title: "Banner number four",
                   description:  "This is the text of banner number four and has style banner-one",
-                  target_url:  "https://www.url.com",
+                  target_url:  "http://www.url.com",
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
                   background_color: '#FFF000',
@@ -42,7 +42,7 @@ feature 'Admin banners magement' do
 
       @banner5 = create(:banner, title: "Banner number five",
                   description:  "This is the text of banner number five and has style banner-two",
-                  target_url:  "https://www.url.com",
+                  target_url:  "http://www.url.com",
                   post_started_at: (DateTime.current - 10.days),
                   post_ended_at:   (DateTime.current + 10.days),
                   background_color: '#FFFF00',
@@ -126,7 +126,7 @@ feature 'Admin banners magement' do
   scenario 'Edit banner with live refresh', :js do
     banner1 = create(:banner, title: 'Hello',
                               description: 'Wrong text',
-                              target_url:  'https://www.url.com',
+                              target_url:  'http://www.url.com',
                               post_started_at: (Time.current + 4.days),
                               post_ended_at:   (Time.current + 10.days),
                               background_color: '#FF0000',
@@ -164,7 +164,7 @@ feature 'Admin banners magement' do
   scenario 'Delete a banner' do
     create(:banner, title: 'Ugly banner',
                     description: 'Bad text',
-                    target_url:  'https://www.url.com',
+                    target_url:  'http://www.url.com',
                     post_started_at: (Time.current + 4.days),
                     post_ended_at:   (Time.current + 10.days),
                     background_color: '#FF0000',

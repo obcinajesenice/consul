@@ -56,7 +56,7 @@ Setting["transparency_url"] = nil
 Setting["opendata_url"] = "/opendata"
 
 # Public-facing URL of the app.
-Setting["url"] = "https://example.com"
+Setting["url"] = "http://example.com"
 
 # CONSUL installation's organization name
 Setting["org_name"] = "CONSUL"
@@ -112,7 +112,7 @@ Setting['mailer_from_name'] = 'CONSUL'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
 
 # Verification settings
-Setting['verification_offices_url'] = 'https://oficinas-atencion-ciudadano.url/'
+Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
 # Proposal improvement url path ('/help/proposal-improvement')

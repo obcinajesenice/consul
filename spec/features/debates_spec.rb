@@ -221,12 +221,12 @@ feature 'Debates' do
 
     expect(page).to have_content 'Debate created successfully.'
     expect(page).to have_content 'Testing auto link'
-    expect(page).to have_link('www.example.org', href: 'https://www.example.org')
+    expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
   scenario 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
-    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> https://example.org"
+    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
     visit new_debate_path
@@ -238,7 +238,7 @@ feature 'Debates' do
 
     expect(page).to have_content 'Debate created successfully.'
     expect(page).to have_content 'Testing auto link'
-    expect(page).to have_link('https://example.org', href: 'https://example.org')
+    expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
     expect(page.html).not_to include "<script>alert('hey')</script>"
 

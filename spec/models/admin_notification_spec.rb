@@ -27,18 +27,25 @@ describe AdminNotification do
       expect(admin_notification.link).to be_nil
     end
 
-    it 'fixes a link without https://' do
+    it 'fixes a link without http://' do
       admin_notification.link = 'lol.consul.dev'
 
       expect(admin_notification).to be_valid
-      expect(admin_notification.link).to eq('https://lol.consul.dev')
+      expect(admin_notification.link).to eq('http://lol.consul.dev')
     end
 
-    it 'fixes a link with wwww. but without https://' do
+    it 'fixes a link with wwww. but without http://' do
       admin_notification.link = 'www.lol.consul.dev'
 
       expect(admin_notification).to be_valid
-      expect(admin_notification.link).to eq('https://www.lol.consul.dev')
+      expect(admin_notification.link).to eq('http://www.lol.consul.dev')
+    end
+
+    it 'does not modify a link with http://' do
+      admin_notification.link = 'http://lol.consul.dev'
+
+      expect(admin_notification).to be_valid
+      expect(admin_notification.link).to eq('http://lol.consul.dev')
     end
 
     it 'does not modify a link with https://' do
@@ -48,18 +55,11 @@ describe AdminNotification do
       expect(admin_notification.link).to eq('https://lol.consul.dev')
     end
 
-    it 'does not modify a link with https://' do
-      admin_notification.link = 'https://lol.consul.dev'
+    it 'does not modify a link with http://wwww.' do
+      admin_notification.link = 'http://www.lol.consul.dev'
 
       expect(admin_notification).to be_valid
-      expect(admin_notification.link).to eq('https://lol.consul.dev')
-    end
-
-    it 'does not modify a link with https://wwww.' do
-      admin_notification.link = 'https://www.lol.consul.dev'
-
-      expect(admin_notification).to be_valid
-      expect(admin_notification.link).to eq('https://www.lol.consul.dev')
+      expect(admin_notification.link).to eq('http://www.lol.consul.dev')
     end
   end
 

@@ -87,7 +87,7 @@ feature 'Proposals' do
 
       within("ul.pagination") do
         expect(page).to have_content("1")
-        expect(page).to have_link('2', href: 'https://www.example.com/proposals?page=2')
+        expect(page).to have_link('2', href: 'http://www.example.com/proposals?page=2')
         expect(page).not_to have_content("3")
         click_link "Next", exact: false
       end
@@ -121,7 +121,7 @@ feature 'Proposals' do
     expect(page).to have_content proposal.code
     expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
-    expect(page).to have_content "https://external_documention.es"
+    expect(page).to have_content "http://external_documention.es"
     expect(page).to have_content proposal.author.name
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))
@@ -177,7 +177,7 @@ feature 'Proposals' do
   context "Embedded video" do
 
     scenario "Show YouTube video" do
-      proposal = create(:proposal, video_url: "https://www.youtube.com/watch?v=a7UFm6ErMPU")
+      proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://www.youtube.com/embed/a7UFm6ErMPU'
@@ -215,7 +215,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
@@ -233,7 +233,7 @@ feature 'Proposals' do
     expect(page).to have_content '¿Would you like to give assistance to war refugees?'
     expect(page).to have_content 'In summary, what we want is...'
     expect(page).to have_content 'This is very important because...'
-    expect(page).to have_content 'https://rescue.org/refugees'
+    expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'https://www.youtube.com/watch?v=yPQfcG-eimk'
     expect(page).to have_content author.name
     expect(page).to have_content 'Refugees'
@@ -251,7 +251,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
@@ -279,7 +279,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: 'This is a question'
     fill_in 'proposal_summary', with: 'This is the summary'
     fill_in 'proposal_description', with: 'This is the description'
-    fill_in 'proposal_external_url', with: 'https://google.com/robots.txt'
+    fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
     fill_in 'proposal_responsible_name', with: 'Some other robot'
     check 'proposal_terms_of_service'
 
@@ -301,7 +301,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: 'This is a question'
     fill_in 'proposal_summary', with: 'This is the summary'
     fill_in 'proposal_description', with: 'This is the description'
-    fill_in 'proposal_external_url', with: 'https://google.com/robots.txt'
+    fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
     fill_in 'proposal_responsible_name', with: 'Some other robot'
     check 'proposal_terms_of_service'
 
@@ -321,7 +321,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
@@ -346,7 +346,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
@@ -376,7 +376,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
@@ -411,12 +411,12 @@ feature 'Proposals' do
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
-    expect(page).to have_link('www.example.org', href: 'https://www.example.org')
+    expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
   scenario 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
-    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> https://example.org"
+    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
     visit new_proposal_path
@@ -434,7 +434,7 @@ feature 'Proposals' do
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
-    expect(page).to have_link('https://example.org', href: 'https://example.org')
+    expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
     expect(page.html).not_to include "<script>alert('hey')</script>"
 
@@ -457,7 +457,7 @@ feature 'Proposals' do
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       check 'proposal_terms_of_service'
@@ -485,7 +485,7 @@ feature 'Proposals' do
       fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
       fill_in 'proposal_summary', with: 'In summary, what we want is...'
       fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       check 'proposal_terms_of_service'
@@ -636,7 +636,7 @@ feature 'Proposals' do
     fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'Basically...'
     fill_in 'proposal_description', with: "Let's do something to end child poverty"
-    fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
 
     click_button "Save changes"
@@ -1831,7 +1831,7 @@ feature 'Successful proposals' do
       fill_in 'proposal_summary', with: 'In summary what we want is...'
       fill_in 'proposal_question', with: 'Would you like to?'
       fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'https://rescue.org/refugees'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
       fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
       check 'proposal_terms_of_service'

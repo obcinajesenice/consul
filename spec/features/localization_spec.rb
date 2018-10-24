@@ -6,7 +6,7 @@ feature 'Localization' do
     card = create(:widget_card, title: 'Bienvenido a CONSUL',
                                 description: 'Software libre para la participación ciudadana.',
                                 link_text: 'Más información',
-                                link_url: 'https://consulproject.org/',
+                                link_url: 'http://consulproject.org/',
                                 header: true)
 
     visit root_path(locale: :es)

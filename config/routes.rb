@@ -47,6 +47,6 @@ Rails.application.routes.draw do
   get 'help/faq',         to: 'pages#show', id: 'help/faq/index',         as: 'faq'
 
   # Static pages
-  get '/blog' => redirect("https://blog.consul/")
+  get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
 end

@@ -38,7 +38,7 @@ class AdminNotification < ActiveRecord::Base
   def complete_link_url
     return unless link.present?
     unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
-      self.link = "https://#{self.link}"
+      self.link = "http://#{self.link}"
     end
   end
 end

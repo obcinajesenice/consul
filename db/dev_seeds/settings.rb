@@ -24,7 +24,7 @@ section "Creating Settings" do
   Setting.create(key: 'telegram_handle', value: 'CONSUL')
   Setting.create(key: 'instagram_handle', value: 'CONSUL')
   Setting.create(key: 'blog_url', value: '/blog')
-  Setting.create(key: 'url', value: 'https://localhost:3000')
+  Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
   Setting.create(key: 'place_name', value: 'City')
 
@@ -58,7 +58,7 @@ section "Creating Settings" do
   Setting.create(key: 'meta_title', value: 'CONSUL')
   Setting.create(key: 'meta_description', value: 'Citizen Participation & Open Gov Application')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
-  Setting.create(key: 'verification_offices_url', value: 'https://oficinas-atencion-ciudadano.url/')
+  Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
   Setting.create(key: 'proposal_improvement_path', value: nil)
   Setting.create(key: 'map_latitude', value: 40.41)
