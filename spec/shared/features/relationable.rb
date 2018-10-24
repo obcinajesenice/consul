@@ -64,7 +64,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_on("Add related content")
 
     within("#related_content") do
-      fill_in 'url', with: "http://invalidurl.com"
+      fill_in 'url', with: "https://invalidurl.com"
       click_button "Add"
     end
 

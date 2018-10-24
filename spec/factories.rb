@@ -165,7 +165,7 @@ FactoryBot.define do
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
     description          'Proposal description'
     question             'Proposal question'
-    external_url         'http://external_documention.es'
+    external_url         'https://external_documention.es'
     video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
@@ -218,7 +218,7 @@ FactoryBot.define do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
     feasible_explanation 'This proposal is not viable because...'
-    external_url         'http://external_documention.org'
+    external_url         'https://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
   end

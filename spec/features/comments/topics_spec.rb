@@ -121,15 +121,15 @@ feature 'Commenting topics from proposals' do
   scenario 'Turns links into html links' do
     community = proposal.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic, body: 'Built with http://rubyonrails.org/'
+    create :comment, commentable: topic, body: 'Built with https://rubyonrails.org/'
 
     visit community_topic_path(community, topic)
 
     within first('.comment') do
-      expect(page).to have_content 'Built with http://rubyonrails.org/'
-      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
-      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
-      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
+      expect(page).to have_content 'Built with https://rubyonrails.org/'
+      expect(page).to have_link('https://rubyonrails.org/', href: 'https://rubyonrails.org/')
+      expect(find_link('https://rubyonrails.org/')[:rel]).to eq('nofollow')
+      expect(find_link('https://rubyonrails.org/')[:target]).to eq('_blank')
     end
   end
 
@@ -137,13 +137,13 @@ feature 'Commenting topics from proposals' do
     community = proposal.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> https://www.url.com"
 
     visit community_topic_path(community, topic)
 
     within first('.comment') do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
+      expect(page).to have_content "click me https://www.url.com"
+      expect(page).to have_link('https://www.url.com', href: 'https://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end
@@ -676,15 +676,15 @@ feature 'Commenting topics from budget investments' do
   scenario 'Turns links into html links' do
     community = investment.community
     topic = create(:topic, community: community)
-    create :comment, commentable: topic, body: 'Built with http://rubyonrails.org/'
+    create :comment, commentable: topic, body: 'Built with https://rubyonrails.org/'
 
     visit community_topic_path(community, topic)
 
     within first('.comment') do
-      expect(page).to have_content 'Built with http://rubyonrails.org/'
-      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
-      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
-      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
+      expect(page).to have_content 'Built with https://rubyonrails.org/'
+      expect(page).to have_link('https://rubyonrails.org/', href: 'https://rubyonrails.org/')
+      expect(find_link('https://rubyonrails.org/')[:rel]).to eq('nofollow')
+      expect(find_link('https://rubyonrails.org/')[:target]).to eq('_blank')
     end
   end
 
@@ -692,13 +692,13 @@ feature 'Commenting topics from budget investments' do
     community = investment.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> https://www.url.com"
 
     visit community_topic_path(community, topic)
 
     within first('.comment') do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
+      expect(page).to have_content "click me https://www.url.com"
+      expect(page).to have_link('https://www.url.com', href: 'https://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end

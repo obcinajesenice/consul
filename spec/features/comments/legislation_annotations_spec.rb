@@ -138,31 +138,31 @@ feature 'Commenting legislation questions' do
 
   scenario 'Turns links into html links' do
     legislation_annotation = create :legislation_annotation, author: user
-    legislation_annotation.comments << create(:comment, body: 'Built with http://rubyonrails.org/')
+    legislation_annotation.comments << create(:comment, body: 'Built with https://rubyonrails.org/')
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
     within all('.comment').last do
-      expect(page).to have_content 'Built with http://rubyonrails.org/'
-      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
-      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
-      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
+      expect(page).to have_content 'Built with https://rubyonrails.org/'
+      expect(page).to have_link('https://rubyonrails.org/', href: 'https://rubyonrails.org/')
+      expect(find_link('https://rubyonrails.org/')[:rel]).to eq('nofollow')
+      expect(find_link('https://rubyonrails.org/')[:target]).to eq('_blank')
     end
   end
 
   scenario 'Sanitizes comment body for security' do
     create :comment, commentable: legislation_annotation,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> https://www.url.com"
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
     within all('.comment').last do
-      expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
+      expect(page).to have_content "click me https://www.url.com"
+      expect(page).to have_link('https://www.url.com', href: 'https://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end

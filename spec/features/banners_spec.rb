@@ -6,7 +6,7 @@ feature 'Banner' do
     create(:web_section, name: 'homepage')
     banner = create(:banner, title: 'Hello',
                       description: 'Banner description',
-                      target_url:  'http://www.url.com',
+                      target_url:  'https://www.url.com',
                       post_started_at: (Time.current - 4.days),
                       post_ended_at:   (Time.current + 10.days),
                       background_color: '#FF0000',

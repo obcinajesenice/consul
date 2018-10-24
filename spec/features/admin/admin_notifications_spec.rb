@@ -73,7 +73,7 @@ feature "Admin Notifications" do
     fill_in_admin_notification_form(segment_recipient: 'Proposal authors',
                                     title: 'This is a title',
                                     body: 'This is a body',
-                                    link: 'http://www.dummylink.dev')
+                                    link: 'https://www.dummylink.dev')
 
     click_button "Create Admin notification"
 
@@ -81,7 +81,7 @@ feature "Admin Notifications" do
     expect(page).to have_content "Proposal authors"
     expect(page).to have_content "This is a title"
     expect(page).to have_content "This is a body"
-    expect(page).to have_content "http://www.dummylink.dev"
+    expect(page).to have_content "https://www.dummylink.dev"
   end
 
   context "Update" do
@@ -105,7 +105,7 @@ feature "Admin Notifications" do
       expect(page).to have_content "All users"
       expect(page).to have_content "Other title"
       expect(page).to have_content "Other body"
-      expect(page).not_to have_content "http://www.dummylink.dev"
+      expect(page).not_to have_content "https://www.dummylink.dev"
     end
 
     scenario "Sent notification can not be updated" do

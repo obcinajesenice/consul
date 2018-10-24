@@ -21,14 +21,14 @@ feature 'Verify Letter' do
   end
 
   scenario 'Go to office instead of send letter' do
-    Setting["verification_offices_url"] = "http://offices.consul"
+    Setting["verification_offices_url"] = "https://offices.consul"
     user = create(:user, residence_verified_at: Time.current,
                          confirmed_phone:       "611111111")
 
     login_as(user)
     visit new_letter_path
 
-    expect(page).to have_link "Citizen Support Offices", href: "http://offices.consul"
+    expect(page).to have_link "Citizen Support Offices", href: "https://offices.consul"
   end
 
   scenario "Deny access unless verified residence" do
