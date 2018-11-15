@@ -1,9 +1,9 @@
 # config valid only for current version of Capistrano
 lock '~> 3.10.1'
 
-def deploysecret(key)
+def deploysecret(key, default_value = 'undefined')
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, 'undefined')
+  @deploy_secrets_yml.fetch(key.to_s, default_value)
 end
 
 set :rails_env, fetch(:stage)
@@ -13,9 +13,9 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, deploysecret(:repo_url)
 
-set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
+set :revision, `git rev-parse --short #{deploysecret(:branch, 'master')}`.strip
 
 set :log_level, :info
 set :pty, true
@@ -47,14 +47,14 @@ namespace :deploy do
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
-  after :published, 'refresh_sitemap'
+  # after :published, 'refresh_sitemap'
 
   after :finishing, 'deploy:cleanup'
 end
 
 task :install_bundler_gem do
   on roles(:app) do
-    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
+    execute "source ~/.rvm/scripts/rvm; rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
   end
 end
 
