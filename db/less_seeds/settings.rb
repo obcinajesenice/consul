@@ -1,4 +1,6 @@
 section "Creating Settings" do
+  # TODO: adjust settings accordingly
+
   Setting.create(key: 'official_level_1_name',
                  value: I18n.t('seeds.settings.official_level_1_name'))
   Setting.create(key: 'official_level_2_name',
@@ -26,11 +28,11 @@ section "Creating Settings" do
   Setting.create(key: 'blog_url', value: '/blog')
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
-  Setting.create(key: 'place_name', value: 'Testna občina')
+  Setting.create(key: 'place_name', value: 'City')
 
   Setting.create(key: 'feature.debates', value: "false")
   Setting.create(key: 'feature.proposals', value: "true")
-  Setting.create(key: 'feature.polls', value: "false")
+  Setting.create(key: 'feature.polls', value: "true")
   Setting.create(key: 'feature.spending_proposals', value: nil)
   Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
   Setting.create(key: 'feature.budgets', value: "true")
@@ -38,7 +40,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.facebook_login', value: "true")
   Setting.create(key: 'feature.google_login', value: "true")
   Setting.create(key: 'feature.signature_sheets', value: "true")
-  Setting.create(key: 'feature.legislation', value: "false")
+  Setting.create(key: 'feature.legislation', value: "true")
   Setting.create(key: 'feature.user.recommendations', value: "true")
   Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
   Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
@@ -62,8 +64,8 @@ section "Creating Settings" do
   Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
   Setting.create(key: 'min_age_to_participate', value: '16')
   Setting.create(key: 'proposal_improvement_path', value: nil)
-  Setting.create(key: 'map_latitude', value: 46.06)
-  Setting.create(key: 'map_longitude', value: 14.39)
+  Setting.create(key: 'map_latitude', value: 40.41)
+  Setting.create(key: 'map_longitude', value: -3.7)
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 

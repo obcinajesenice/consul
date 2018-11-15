@@ -16,11 +16,11 @@ end
 def add_image_to(imageable)
   # imageable should respond to #title & #author
   imageable.image = Image.create!({
-                                    imageable: imageable,
-                                    title: imageable.title,
-                                    attachment: INVESTMENT_IMAGE_FILES.sample,
-                                    user: imageable.author
-                                  })
+    imageable: imageable,
+    title: imageable.title,
+    attachment: INVESTMENT_IMAGE_FILES.sample,
+    user: imageable.author
+  })
   imageable.save
 end
 
@@ -61,21 +61,17 @@ section "Creating Budgets" do
 
   Budget.all.each do |budget|
     budget.phases.all.each do |phase|
-      enabled = true
-      summary = "#{phase.kind.capitalize} summary should not be that long."
-      description = "#{phase.kind.capitalize} description should be a bit longer and should probably mention some more details about each phase."
       if PHASES_TO_DISABLE.include?(phase.kind)
-        enabled = false
+        phase.update(enabled: false)
       end
-      phase.update(enabled: enabled, summary: summary, description: description)
     end
   end
 end
 
 section "Creating Investments" do
-  tags = ActsAsTaggableOn::Tag.category.limit(10)
+  tags = Faker::Lorem.words(10)
   100.times do
-    heading = Budget.last.headings.all.sample
+    heading = Budget::Heading.all.sample
 
     investment = Budget::Investment.create!(
       author: User.all.sample,
@@ -107,8 +103,8 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10) / 100.to_f,
-                         longitude: Setting['map_longitude'].to_f + rand(-10..10) / 100.to_f,
+      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
                          zoom: Setting['map_zoom'],
                          investment_id: investment.id)
     end
