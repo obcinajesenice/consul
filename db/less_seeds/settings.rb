@@ -32,7 +32,7 @@ section "Creating Settings" do
 
   Setting.create(key: 'feature.debates', value: "false")
   Setting.create(key: 'feature.proposals', value: "true")
-  Setting.create(key: 'feature.polls', value: "true")
+  Setting.create(key: 'feature.polls', value: "false")
   Setting.create(key: 'feature.spending_proposals', value: nil)
   Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
   Setting.create(key: 'feature.budgets', value: "true")
@@ -40,7 +40,7 @@ section "Creating Settings" do
   Setting.create(key: 'feature.facebook_login', value: "true")
   Setting.create(key: 'feature.google_login', value: "true")
   Setting.create(key: 'feature.signature_sheets', value: "true")
-  Setting.create(key: 'feature.legislation', value: "true")
+  Setting.create(key: 'feature.legislation', value: "false")
   Setting.create(key: 'feature.user.recommendations', value: "true")
   Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
   Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
