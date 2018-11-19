@@ -62,8 +62,8 @@ section "Creating Budgets" do
   Budget.all.each do |budget|
     budget.phases.all.each do |phase|
       enabled = true
-      summary = "#{phase.kind.capitalize} summary"
-      description = "#{phase.kind.capitalize} description"
+      summary = "#{phase.kind.capitalize} summary should not be that long."
+      description = "#{phase.kind.capitalize} description should be a bit longer and should probably mention some more details about each phase."
       if PHASES_TO_DISABLE.include?(phase.kind)
         enabled = false
       end
