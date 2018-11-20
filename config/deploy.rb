@@ -46,7 +46,8 @@ namespace :deploy do
   before :starting, 'install_bundler_gem' # install bundler gem
 
   after :publishing, 'deploy:restart'
-  after :published, 'delayed_job:restart'
+  # after :published, 'delayed_job:restart'
+  after :published, 'restart_unicorn'
   # after :published, 'refresh_sitemap'
 
   after :finishing, 'deploy:cleanup'
@@ -55,6 +56,12 @@ end
 task :install_bundler_gem do
   on roles(:app) do
     execute "source ~/.rvm/scripts/rvm; rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
+  end
+end
+
+task :restart_unicorn do
+  on roles(:app) do
+    execute "/etc/init.d/unicorn_consul stop; /etc/init.d/unicorn_consul start;"
   end
 end
 
