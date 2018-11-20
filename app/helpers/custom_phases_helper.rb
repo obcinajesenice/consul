@@ -10,9 +10,13 @@ module CustomPhasesHelper
   end
 
   def custom_phases
-    custom_phases = init_custom_phases
-    custom_phases = custom_phases_descriptions(custom_phases)
-    custom_phases_links(custom_phases)
+    custom_phases = {}
+    if current_budget&.phases
+      custom_phases = init_custom_phases
+      custom_phases = custom_phases_descriptions(custom_phases)
+      custom_phases = custom_phases_links(custom_phases)
+    end
+    custom_phases
   end
 
   def init_custom_phases
