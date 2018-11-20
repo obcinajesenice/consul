@@ -1,24 +1,40 @@
-@import 'social-share-button';
-@import 'custom/fonts';
-@import 'custom/foundation_and_overrides';
-@import 'mixins';
-@import 'custom/admin'; // TODO: fix admin
-@import 'custom/layout';
-@import 'icons';
-@import 'custom/icons';
-//@import 'participation'; // TODO: remove this?
-@import "custom/pages";
-@import 'leaflet';
+.welcome-columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 5px 0;
 
-//@import 'legislation';
-//@import 'legislation_process';
-//@import 'community';
-//@import 'c3';
-//@import 'annotator.min';
-//@import 'annotator_overrides';
-//@import 'jquery-ui/datepicker';
-//@import 'datepicker_overrides';
-//@import 'jquery-ui/autocomplete';
-//@import 'autocomplete_overrides';
-//@import 'jquery-ui/sortable';
+  .welcome-column {
+    flex: 1;
+    border: 1px solid gray;
+    margin: 2px;
+    padding: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
 
+@media screen and (max-width: 980px) {
+  .welcome-columns .welcome-column {
+    margin-bottom: 5px;
+    flex-basis: 40%;
+    &:nth-last-child(2) {
+      margin-right: 0;
+    }
+    &:last-child {
+      flex-basis: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .welcome-columns .welcome-column {
+    flex-basis: 100%;
+    margin: 0 0 5px 0;
+  }
+}
