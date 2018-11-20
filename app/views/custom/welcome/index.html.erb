@@ -11,9 +11,6 @@
 <main>
   <article class="welcome-columns">
     <% if current_budget.present? %>
-      <div>
-        ups
-      </div>
       <% @custom_phases.each do |_, phase| %>
         <% if phase.enabled %>
           <section class="welcome-column">
@@ -28,7 +25,7 @@
       <% end %>
     <% else %>
       <section class="welcome-column">
-        <h2 style="text-align: center;">TODO: NO BUDGET (no budget or drafting) SCREEN!</h2>
+        <h2 style="text-align: center;">TODO: NO BUDGET (no budget or drafting) SCREEN! ups</h2>
       </section>
     <% end %>
   </article>
