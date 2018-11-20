@@ -45,10 +45,9 @@ namespace :deploy do
   #before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
   #before :starting, 'install_bundler_gem' # install bundler gem
 
-  after :publishing, 'deploy:restart'
-  # after :published, 'delayed_job:restart'
-  after :published, 'restart_unicorn'
-  # after :published, 'refresh_sitemap'
+  # after :publishing, 'deploy:restart'
+  after :publishing, 'restart_unicorn'
+  after :published, 'delayed_job:restart'
 
   after :finishing, 'deploy:cleanup'
 end
@@ -61,7 +60,7 @@ end
 
 task :restart_unicorn do
   on roles(:app) do
-    execute "/etc/init.d/unicorn_consul stop; /etc/init.d/unicorn_consul start;"
+    execute "/etc/init.d/unicorn_consul restart;"
   end
 end
 
