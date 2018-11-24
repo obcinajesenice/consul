@@ -1,6 +1,4 @@
 section "Creating Settings" do
-  # TODO: adjust settings accordingly
-
   Setting.create(key: 'official_level_1_name',
                  value: I18n.t('seeds.settings.official_level_1_name'))
   Setting.create(key: 'official_level_2_name',
@@ -28,7 +26,7 @@ section "Creating Settings" do
   Setting.create(key: 'blog_url', value: '/blog')
   Setting.create(key: 'url', value: 'http://localhost:3000')
   Setting.create(key: 'org_name', value: 'CONSUL')
-  Setting.create(key: 'place_name', value: 'City')
+  Setting.create(key: 'place_name', value: 'Testna občina')
 
   Setting.create(key: 'feature.debates', value: "false")
   Setting.create(key: 'feature.proposals', value: "true")
