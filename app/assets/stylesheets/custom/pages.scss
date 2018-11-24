@@ -1,323 +1,90 @@
-// Login / Registration
-
-.auth-page {
-  background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
-
-  h1 {
-    color: $white;
-    margin-top: rem-calc(100);
-    text-align: center;
-  }
-
-  h2 {
-    color: $rhino;
-    font-weight: 800;
-    margin-bottom: rem-calc(30);
-    text-align: center;
-  }
-
-  a:not(.page-title):not(.action-button):not(.site-title) {
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .button-oauth-login {
-    text-decoration: none !important;
-
-    &:hover {
-      text-decoration: underline !important;
-    }
-  }
-
-  .smaller-text {
-    font-size: $tiny-font-size;
-  }
-
-  .button-holder {
-    text-align: center;
-  }
-
-  .checkbox {
-    font-size: 14px;
-  }
-}
-
-.auth-form {
-  background-color: $white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.83);
-  border: 1px solid #d7d7d7;
-  border-radius: 10px;
-  margin-bottom: rem-calc(100);
-  opacity: 0.99;
-
-  .auth-form-content {
-    margin: rem-calc(30);
-  }
-}
-
-.auth-divider {
-  border-bottom: 1px solid $border;
-  height: rem-calc(14);
-  margin: $line-height 0;
-  text-align: center;
-
-  &.custom-divider {
-    border-bottom: 1px solid $minsk;
-  }
-
-  span {
-    background: #fff;
-    font-weight: bold;
-    padding: 0 $line-height / 2;
-  }
-}
-
-// Landing page
-
-.no-budget {
-  padding-top: rem-calc(100);
-  text-align: center;
-  width: 100%;
-}
-
-.phase-enrichment {
-  background: image-url('custom_phases.png') no-repeat;
-  background-size: 1675px 300px;
-
-  &.accepting {
-    background-position: -20px 0;
-    height: 274px;
-    width: 372px;
-  }
-
-  &.selecting {
-    background-position: -729px -35px;
-    height: 262px;
-    width: 324px;
-  }
-
-  &.balloting {
-    background-position: -729px -35px;
-    height: 262px;
-    width: 324px;
-  }
-
-  &.finished {
-    background-position: -1363px -19px;
-    height: 281px;
-    width: 312px;
-  }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 240dpi) {
-  .phase-enrichment {
-    background: image-url('custom_phases@2x.png') no-repeat;
-    background-size: 1675px 300px;
-  }
-}
-
 .welcome-columns {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 
   .welcome-column {
-    background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
     color: $white;
-    flex-grow: 1;
-    flex-basis: 0;
-    margin: 0;
-    padding-bottom: 300px;
-
-    a {
-      color: $white;
-
-      &:hover {
-        color: $white;
-      }
-    }
-
-    .linkable:hover .action-button {
-      background-color: $mandys-pink-hover;
-      color: $black;
-    }
+    flex: 1;
+    padding: 10px;
 
     .column-content {
-      padding: rem-calc(90) rem-calc(40);
+      padding: rem-calc(90) rem-calc(50);
 
-      h1 {
-        letter-spacing: 2px;
+      .enrichment {
+        background: image-url('custom_phases.png') no-repeat;
+        background-size: 1675px 300px;
       }
 
-      .action-button {
-        color: $black;
-        margin-top: 25px;
-        position: absolute;
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min--moz-device-pixel-ratio: 1.5),
+      only screen and (min-resolution: 240dpi) {
+        .enrichment {
+          background: image-url('custom_phases@2x.png') no-repeat;
+          background-size: 1675px 300px;
+        }
       }
     }
 
-    .phase-enrichment {
-      margin: 0 auto;
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
 
     &.accepting {
       background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
+
+      .enrichment {
+        background-position: 0 -55px;
+        height: 219px;
+        width: 392px;
+      }
     }
 
     &.selecting {
-      background-image: linear-gradient(to top, #433a9c 0%, #3a3a7a 100%);
+      background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
     }
 
     &.balloting {
       background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
+
+      .enrichment {
+        background-position: -729px -45px;
+        height: 252px;
+        width: 324px;
+      }
     }
 
     &.finished {
       background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%);
-    }
-  }
-}
 
-// Investments
-
-.phase-title {
-  color: #32366a;
-  font-weight: 800;
-}
-
-.phase-description {
-  border-bottom: 1.5px solid #32366a;
-  margin: 0 0 1rem 0;
-  padding: 1rem 0;
-
-  .column {
-    padding: 0;
-  }
-
-  .phase-enrichment {
-    margin-top: -55px;
-    position: absolute;
-  }
-}
-
-.budget-investments {
-  .budget-investment-holder {
-    .budget-investment {
-      border: 1px solid #d7d7d7;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
-
-      .budget-investment-content {
-        padding: rem-calc(15);
-
-        a {
-          color: $rhino;
-        }
-
-        .investment-title {
-          color: $black;
-
-          h3 {
-            line-height: rem-calc(23);
-            height: rem-calc(72);
-          }
-
-          &:hover {
-            color: $rhino;
-          }
-        }
-
-        .investment-project-info {
-          font-size: rem-calc($tiniest-font-size);;
-        }
-
-        .investment-project-description {
-          line-height: rem-calc(24);
-          height: rem-calc(72);
-          margin-bottom: rem-calc(40);
-        }
-      }
-
-      .panel {
-        margin-bottom: rem-calc(12);
-        min-height: rem-calc(192);
-        padding: 0 rem-calc(15) 0;
-      }
-
-      .image-holder {
-        text-align: center;
-
-        img {
-          height: 205px;
-          width: 100%;
-        }
+      .enrichment {
+        background-position: -1363px -39px;
+        width: 312px;
+        height: 261px;
       }
     }
   }
 }
 
-// Investment show
-
-.budget-investment-show {
-  p {
-    font-size: $large-font-size;
-  }
-
-  figcaption {
-    font-size: $small-font-size;
-  }
-
-  .back {
-    font-weight: 600;
-    margin-top: rem-calc(50);
-  }
-
-  .tags {
-    margin-left: rem-calc(10);
-  }
-
-  .flag-content {
-    margin-left: rem-calc(10);
-    font-size: $tiniest-font-size;
-
-    a {
-      text-decoration: underline;
-    }
-  }
-
-  .image-preview {
-    margin-bottom: rem-calc(40);
-
-    img {
-      height: rem-calc(385);
-      width: 100%;
-    }
-  }
-
-  .budget-investment-info {
-    margin-top: rem-calc(20);
-  }
-}
-
-// New investment
-
-.budget-investment-new {
-  h1 {
-    color: $rhino;
-  }
-
-  .js-tag-list {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 980px) {
   .welcome-columns .welcome-column {
-    flex-grow: 0;
+    margin-bottom: 5px;
+    flex-basis: 40%;
+
+    &:last-child {
+      flex-basis: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .welcome-columns .welcome-column {
     flex-basis: 100%;
+    margin: 0 0 5px 0;
   }
 }

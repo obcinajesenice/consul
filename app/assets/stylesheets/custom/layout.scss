@@ -34,13 +34,9 @@
   background-color: $brand;
 }
 
-:focus {
-  outline: 0;
-}
-
 html,
 body {
-  height: auto;
+  height: 100%;
   margin: 0;
 }
 
@@ -55,25 +51,13 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-weight: 800;
-}
-
-h1 {
-  line-height: 1em;
-}
-
-h2 {
-  font-weight: 600;
-}
-
-h3 {
-  line-height: rem-calc(24);
+  font-weight: 700;
 }
 
 p {
   font-size: $small-font-size;
   font-weight: 400;
-  line-height: $line-height;
+  line-height: $base-line;
 }
 
 a {
@@ -82,50 +66,22 @@ a {
   &:hover,
   &:active {
     color: $link-hover;
+    text-decoration: underline;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $link-hover;
+    }
   }
 
   &:focus {
     color: $link-hover;
+    outline: 3px solid #ffbf47;
   }
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: image-url('dropdown-triangle.png') #eee no-repeat 150px 8px;
-  border-radius: 8px;
-  font-size: $base-font-size;
-  height: 2rem;
-  line-height: 1rem;
-  padding: 5px 35px 5px 5px;
-
-  &.on-form {
-    border: 2px solid $input-gray;
-    height: 3rem;
-  }
-
-  &.on-view {
-    border: 1px solid $mandys-pink;
-    font-weight: 600;
-    width: rem-calc(180);
-  }
-}
-
-select::-ms-expand {
-  display: none; /* remove default arrow in IE 10 and 11 */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 240dpi) {
-  select {
-    background: image-url('dropdown-triangle@2x.png') #eee no-repeat 150px 8px;
-  }
-}
-
-.main-indented-content {
-  margin: 0 rem-calc(80px);
 }
 
 .row {
@@ -167,63 +123,11 @@ only screen and (min-resolution: 240dpi) {
 .action-button {
   background-color: $mandys-pink;
   border-radius: 20px;
-  cursor: pointer;
-  display: inline-block;
-
-  &:hover {
-    background-color: $mandys-pink-hover;
-  }
-
-  &.transparent {
-    background-color: transparent;
-    border: 1px solid $mandys-pink;
-
-    &:hover {
-      background-color: $mandys-pink-hover;
-    }
-  }
-
-  &.large {
-    padding: rem-calc(11) rem-calc(16);
-  }
-
-  &.huge {
-    font-size: rem-calc(24);
-    font-weight: 700;
-    padding: rem-calc(15) rem-calc(20);
-  }
 }
 
 .large-description {
   font-size: $large-font-size;
 }
-
-.ordering {
-  clear: both;
-  margin-bottom: $line-height / 2;
-
-  a {
-    color: $black;
-    display: inline-block;
-    font-size: $base-font-size;
-    font-weight: 600;
-    position: relative;
-    text-align: left;
-    text-transform: uppercase;
-
-    span {
-      color: $black;
-    }
-  }
-
-  .is-active {
-    .triangle-down {
-      border-top: 11px solid $mandys-pink;
-    }
-  }
-}
-
-// ---------
 
 .clear {
   clear: both;
@@ -297,6 +201,10 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
+.no-margin-top {
+  margin-top: rem-calc(-24);
+}
+
 .padding {
   padding-bottom: $line-height;
   padding-top: $line-height;
@@ -315,6 +223,9 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .wrapper {
+  min-height: 100%;
+  margin: 0 auto (-$line-height) * 12;
+  height: auto !important;
   height: 100%;
 }
 
@@ -441,10 +352,12 @@ only screen and (min-resolution: 240dpi) {
 .back,
 .icon-angle-left {
   clear: both;
-  color: $black;
+  color: $text-medium;
   display: inline-block;
-  font-size: $base-font-size;
-  text-transform: uppercase;
+}
+
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
 }
 
 .tabs-content {
@@ -519,9 +432,8 @@ only screen and (min-resolution: 240dpi) {
   text-transform: uppercase;
 }
 
-.site-title {
+.page-title {
   font-size: rem-calc(20);
-  font-weight: 600;
 }
 
 // 02. Header
@@ -548,7 +460,6 @@ header {
 
 .top-bar {
   background: $white !important;
-  box-shadow: 0 0 43px rgba(0, 0, 0, 0.21);
   color: $black;
   padding: rem-calc(4.5) 20px;
 
@@ -682,7 +593,7 @@ header {
   background: $mandys-pink;
   color: $black;
   font-size: $tiniest-font-size;
-  padding: 0 rem-calc(20);
+  padding: 0 20px;
 
   a {
     margin: 0 rem-calc(6);
@@ -848,39 +759,22 @@ header {
 // ----------
 
 footer {
-  background-color: $input-gray;
-  color: $black;
-  font-size: $tiny-font-size;
-  height: rem-calc(100);
+  color: $text;
 
-  .logo-holder {
-    padding-left: rem-calc(80px);
+  .logo a {
+    font-family: 'Lato' !important;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  .links-holder {
-    padding-right: rem-calc(20);
-    text-align: right;
-  }
+  p {
+    font-size: $small-font-size;
 
-  .logo {
-    background: image-url('municipality.png') no-repeat;
-    background-size: 175px 61px;
-    display: block;
-    height: rem-calc(61);
-    margin-top: rem-calc(22);
-    width: 175px;
-  }
-
-  .footer-links {
-    margin-top: rem-calc(40);
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min--moz-device-pixel-ratio: 1.5),
-  only screen and (min-resolution: 240dpi) {
-    .logo {
-      background: image-url('municipality@2x.png') no-repeat;
-      background-size: 175px 61px;
+    &.info a {
+      text-decoration: underline;
     }
   }
 
@@ -888,41 +782,55 @@ footer {
   a:active,
   a:focus {
     color: $text;
+    text-decoration: underline;
 
     &:hover {
-      color: $link-hover;
+      color: $text-medium;
     }
+  }
+
+  .footer-sections {
+    padding-left: 0;
+  }
+
+  .title {
+    font-weight: bold;
+    text-decoration: none;
   }
 }
 
-.home-page footer {
-  background-color: $white;
+.footer {
+  background: #f1f1f1;
+  margin-top: $line-height * 2;
+  padding-top: $line-height;
+}
+
+.subfooter {
+  border-top: 1px solid $text-light;
+  font-size: $small-font-size;
+  padding-top: $line-height / 2;
 }
 
 // 04. Tags
 // --------
 
-.tags {
-  display: inline-block;
-}
-
-.tags a,
+.tags a ,
 .tag-cloud a,
 .categories a,
 .geozone a,
 .sidebar-links a,
 .tags span {
-  background-color: $input-gray;
-  border-radius: rem-calc(4);
-  color: $black;
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
   display: inline-block;
-  font-size: $tiniest-font-size;
+  font-size: $small-font-size;
   margin-bottom: $line-height / 3;
   padding: $line-height / 4 $line-height / 3;
   text-decoration: none;
 
-  &.selected, &:hover {
-    background-color: $mandys-pink;
+  &:hover {
+    background: #e0e0e0;
   }
 }
 
@@ -946,6 +854,67 @@ footer {
   margin: -1px 0 $line-height / 2;
   padding-top: $line-height / 4;
   text-transform: uppercase;
+}
+
+// 05. Auth pages
+// --------------
+
+.auth-page {
+
+  .wrapper {
+    margin: 0 auto (-$line-height) * 14;
+  }
+}
+
+.auth-image {
+  background: $brand image-url('auth_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include breakpoint(medium) {
+    min-height: $line-height * 42;
+  }
+
+  h1 {
+    margin-top: $line-height;
+
+    a {
+      color: #fff;
+      display: block;
+      text-align: center;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.auth-form {
+
+  @include breakpoint(medium) {
+    padding-top: $line-height * 4;
+  }
+
+  p,
+  a,
+  .checkbox {
+    font-size: $small-font-size;
+  }
+}
+
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: rem-calc(14);
+  margin: $line-height 0;
+  text-align: center;
+
+  span {
+    background: #fff;
+    font-weight: bold;
+    padding: 0 $line-height / 2;
+  }
 }
 
 // 06. Forms
@@ -996,7 +965,7 @@ form {
 
   label {
     font-size: $base-font-size;
-    font-weight: 600;
+    font-weight: bold;
     line-height: $line-height;
   }
 
@@ -1018,9 +987,7 @@ form {
   }
 
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
-    background: $white;
-    border: 2px solid $input-gray;
-    border-radius: 8px;
+    background: #f8f8f8;
     height: $line-height * 2;
     margin-bottom: rem-calc(16);
 
@@ -2513,8 +2480,64 @@ table {
   }
 
   ul li {
-    display: inline-block;
+    padding-top: $line-height / 2;
+
+    &:not(:first-child) {
+      border-top: 1px solid $highlight;
+    }
   }
+
+  .document-link {
+    background: $highlight-soft;
+    border: 2px solid $highlight;
+    border-radius: rem-calc(5);
+    display: block;
+    margin: $line-height / 2 0;
+    padding: 0 $line-height / 2;
+    position: relative;
+
+    .icon-document {
+      color: #007bb7;
+      display: inline-block;
+      font-size: rem-calc(24);
+      line-height: $line-height;
+      vertical-align: middle;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.document-link a {
+  word-wrap: break-word;
+}
+
+.additional-document-link {
+  background: $highlight-soft;
+  border: 1px solid $highlight;
+  display: block;
+  margin: $line-height / 2 0;
+  padding: $line-height / 2;
+  position: relative;
+
+  a {
+    word-wrap: break-word;
+  }
+
+  .icon-document {
+    color: #007bb7;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    vertical-align: middle;
+  }
+}
+
+.document-divider {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
 }
 
 // 21. Related content
