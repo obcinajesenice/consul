@@ -21,3 +21,5 @@ assets_path = Rails.application.config.assets.paths
 %w[images fonts javascripts].each do |asset|
   assets_path.insert(0, Rails.root.join("app", "assets", asset, "custom").to_s)
 end
+
+Rails.application.config.assets.precompile += %w( custom.scss )
