@@ -1,13 +1,9 @@
 <header>
 
   <div class="top-links">
-    <div class="row">
-<!--      TODO: hide locale_switcher-->
-      <%= render "shared/locale_switcher" %>
       <div class="hide-for-small-only">
         <%= render "shared/top_links" %>
       </div>
-    </div>
   </div>
 
   <div class="row">
@@ -19,15 +15,14 @@
       </span>
 
       <div class="top-bar-title">
-        <%= link_to root_path, accesskey: "0" do %>
-          <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
+        <%= link_to root_path, accesskey: "0", class: 'page-title' do %>
+          Participatorni proračun
         <% end %>
       </div>
 
       <div id="responsive-menu">
         <div class="top-bar-right">
           <ul class="menu" data-responsive-menu="medium-dropdown">
-            <!-- TODO: help link-->
             <li>
               <%= layout_menu_link_to t("layouts.header.help"),
                                       help_path,
@@ -35,7 +30,6 @@
                                       accesskey: "6",
                                       title: t("shared.go_to_page") + t("layouts.header.help") %>
             </li>
-            <%= render "shared/admin_login_items" %>
             <%= render "layouts/notification_item" %>
             <%= render "devise/menu/login_items" %>
           </ul>

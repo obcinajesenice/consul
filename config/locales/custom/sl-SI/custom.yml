@@ -1,9 +1,9 @@
 sl-SI:
   custom:
     headings:
-      accepting: Oddaj predlog
+      accepting: Predlagaj
       selecting: Izbor
       balloting: Glasuj
-      finished: Izvedba
+      finished: Izvedi
     buttons:
       submit: "Dodaj svoj predlog!"

@@ -1,0 +1,90 @@
+.welcome-columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .welcome-column {
+    color: $white;
+    flex: 1;
+    padding: 10px;
+
+    .column-content {
+      padding: rem-calc(90) rem-calc(50);
+
+      .enrichment {
+        background: image-url('custom_phases.png') no-repeat;
+        background-size: 1675px 300px;
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min--moz-device-pixel-ratio: 1.5),
+      only screen and (min-resolution: 240dpi) {
+        .enrichment {
+          background: image-url('custom_phases@2x.png') no-repeat;
+          background-size: 1675px 300px;
+        }
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.accepting {
+      background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
+
+      .enrichment {
+        background-position: 0 -55px;
+        height: 219px;
+        width: 392px;
+      }
+    }
+
+    &.selecting {
+      background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
+    }
+
+    &.balloting {
+      background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
+
+      .enrichment {
+        background-position: -729px -45px;
+        height: 252px;
+        width: 324px;
+      }
+    }
+
+    &.finished {
+      background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%);
+
+      .enrichment {
+        background-position: -1363px -39px;
+        width: 312px;
+        height: 261px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .welcome-columns .welcome-column {
+    margin-bottom: 5px;
+    flex-basis: 40%;
+
+    &:last-child {
+      flex-basis: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .welcome-columns .welcome-column {
+    flex-basis: 100%;
+    margin: 0 0 5px 0;
+  }
+}
