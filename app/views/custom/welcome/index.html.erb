@@ -14,15 +14,24 @@
       <% @custom_phases.each do |_, phase| %>
         <% if phase.enabled %>
           <section class="welcome-column <%= phase.kind %>">
+            <% if phase.url %>
+              <a class="linkable" href="<%= phase.url %>">
+            <% end %>
             <div class="column-content">
               <h1><%= t("custom.headings.#{phase.kind}") %>!</h1>
               <h2><%= strip_tags(phase.summary) %></h2>
               <p class="large-description"><%= strip_tags(phase.description) %></p>
               <% if phase.url %>
-                <a href="<%= phase.url %>" class="action-button">TODO</a>
+                <span class="action-button large">
+                  <%= t("devise_views.sessions.new.submit") %>
+                  <!-- TODO: icon-->
+                </span>
               <% end %>
-              <div class="enrichment"></div>
             </div>
+            <div class="enrichment"></div>
+            <% if phase.url %>
+              </a>
+            <% end %>
           </section>
         <% end %>
       <% end %>
