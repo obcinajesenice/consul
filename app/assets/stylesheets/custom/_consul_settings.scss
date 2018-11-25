@@ -23,6 +23,7 @@ $dark: darken($brand, 10%);
 
 $white: #FFFFFF;
 $mandys-pink: #f7d3c9;
+$mandys-pink-hover: #f0b9ad;
 $black: #000000;
 
 $text: #222;
@@ -32,7 +33,7 @@ $text-light: #bfbfbf;
 $border: #dee0e3;
 
 $link: $black;
-$link-hover: lighten($black, 20%);
+$link-hover: $black;
 
 $debates: $brand;
 
