@@ -36,6 +36,7 @@
 
 html,
 body {
+  background-color: #f7d3c9;
   height: 100%;
   margin: 0;
 }
@@ -44,6 +45,7 @@ body {
   font-size: $base-font-size;
 }
 
+// TODO: fix weight
 h1,
 h2,
 h3,
@@ -51,7 +53,15 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 600;
 }
 
 p {
@@ -66,16 +76,6 @@ a {
   &:hover,
   &:active {
     color: $link-hover;
-    text-decoration: underline;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $link-hover;
-    }
   }
 
   &:focus {
@@ -123,6 +123,11 @@ a {
 .action-button {
   background-color: $mandys-pink;
   border-radius: 20px;
+  display: inline-block;
+
+  &.large {
+    padding: 0.6875rem 1rem;
+  }
 }
 
 .large-description {
@@ -814,7 +819,7 @@ footer {
 // 04. Tags
 // --------
 
-.tags a ,
+.tags a,
 .tag-cloud a,
 .categories a,
 .geozone a,
