@@ -39,6 +39,6 @@ require_relative 'dev_seeds/notifications'
 require_relative 'dev_seeds/widgets'
 require_relative 'dev_seeds/admin_notifications'
 require_relative 'dev_seeds/legislation_proposals'
-require_relative 'dev_seeds/content_blocks'
+require_relative 'less_seeds/content_blocks'
 
 log "All less seeds created successfuly 👍"
