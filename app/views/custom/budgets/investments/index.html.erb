@@ -1,11 +1,6 @@
 <% provide :title do %><%= t('budgets.investments.index.title') %>
 <% end %>
-<!-- TODO: header_addon-->
-<% content_for :header_addon do %>
-  <%= render "shared/search_form",
-             search_path: budget_investments_path(budget_id: @budget.id, page: 1),
-             i18n_namespace: "budgets.investments.index.search_form" %>
-<% end %>
+
 <% content_for :canonical do %>
   <% if @heading.present? %>
     <%= render "shared/canonical",
@@ -26,7 +21,7 @@
 
   <% if params[:search].present? || params[:advanced_search].present? %>
     <!--    TODO: search header -->
-    <div class="highlight no-margin-top padding margin-bottom">
+    <div class="highlight no-margin-top margin-bottom">
       <div class="row">
         <div class="small-12 column">
           <h2><%= t("shared.search_results") %></h2>
@@ -41,68 +36,38 @@
     </div>
   <% end %>
 
+<!--  TODO: remove all this?-->
+<!--  <div class="row">-->
+<!--    <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">-->
+
+<!--      <!--      TODO: I Don't even know what's this-->
+      <%# if @current_filter == "unfeasible" %>
+<!--        <div class="small-12 margin-bottom">-->
+<!--          <h2><%#= t("budgets.investments.index.unfeasible") %>: <%#= @heading.name %></h2>-->
+<!--          <div class="callout primary margin">-->
+            <%#= t("budgets.investments.index.unfeasible_text") %>
+<!--          </div>-->
+<!--        </div>-->
+      <%# elsif @heading.present? %>
+<!--        <div class="row">-->
+<!--          <div class="small-12 column">-->
+            <%#= render "view_mode" %>
+<!--          </div>-->
+<!--        </div>-->
+      <%# end %>
+<!--    </div>-->
+
+<!--  </div>-->
+
   <div class="row">
-    <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
+    <h2 class="phase-title">Že oddani predlogi</h2>
 
-      <!--      TODO: I Don't even know what's this-->
-      <% if @current_filter == "unfeasible" %>
-        <div class="small-12 margin-bottom">
-          <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
-          <div class="callout primary margin">
-            <%= t("budgets.investments.index.unfeasible_text") %>
-          </div>
-        </div>
-      <% elsif @heading.present? %>
-        <div class="row">
-          <div class="small-12 column">
-            <%= render "view_mode" %>
-          </div>
-        </div>
-      <% end %>
+<!--    TODO: -->
+    <%#= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-      <!--      TODO: remove for now-->
-      <%#= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
-
-      <div>
-        <p>TODO:</p>
-        <p><%= current_budget.current_phase.summary %></p>
-        <p><%= current_budget.current_phase.description %></p>
-        <p>TODO: categories</p>
-        <p>TODO: trending</p>
-        <p>TODO: search</p>
-        <p>TODO: ballot</p>
-      </div>
-
-      <div>
-        <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
-          <% if current_user && current_user.level_two_or_three_verified? %>
-            <%= link_to t("budgets.investments.index.sidebar.create"),
-                        new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
-          <% else %>
-            <div class="callout warning">
-              <%= t("budgets.investments.index.sidebar.verified_only",
-                    verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                                    verification_path)).html_safe %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+    <div>
+      <%= render 'budgets/investments/categories' %>
     </div>
-
-    <!--    TODO: show different-->
-    <!--    <div class="small-12 medium-3 column">-->
-    <!--      <aside class="margin-bottom">-->
-    <!--        <div id="sidebar">-->
-    <%#= render '/budgets/investments/sidebar' %>
-    <!--        </div>-->
-    <!--      </aside>-->
-    <!--    </div>-->
-
-  </div>
-
-  <div class="row">
-    <!--      TODO: order by-->
-    <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
     <% @investments.each do |investment| %>
       <div class="budget-investments-list small-12 medium-3 large-3 column">

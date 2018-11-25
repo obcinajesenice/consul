@@ -1,3 +1,41 @@
+.phase-enrichment {
+  background: image-url('custom_phases.png') no-repeat;
+  background-size: 1675px 300px;
+
+  &.accepting {
+    background-position: -20px 0;
+    height: 274px;
+    width: 372px;
+  }
+
+  &.selecting {
+    background-position: -729px -35px;
+    height: 262px;
+    width: 324px;
+  }
+
+  &.balloting {
+    background-position: -729px -35px;
+    height: 262px;
+    width: 324px;
+  }
+
+  &.finished {
+    background-position: -1363px -19px;
+    height: 281px;
+    width: 312px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+  .phase-enrichment {
+    background: image-url('custom_phases@2x.png') no-repeat;
+    background-size: 1675px 300px;
+  }
+}
+
 .welcome-columns {
   display: flex;
   flex-flow: row wrap;
@@ -34,55 +72,42 @@
       }
     }
 
-    .enrichment {
-      background: image-url('custom_phases.png') no-repeat;
-      background-size: 1675px 300px;
+    .phase-enrichment {
       margin: 0 auto;
-    }
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min--moz-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 240dpi) {
-      .enrichment {
-        background: image-url('custom_phases@2x.png') no-repeat;
-        background-size: 1675px 300px;
-      }
     }
 
     &.accepting {
       background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
-
-      .enrichment {
-        background-position: 0;
-        height: 274px;
-        width: 392px;
-      }
     }
 
     &.selecting {
-      background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
+      background-image: linear-gradient(to top, #433a9c 0%, #3a3a7a 100%);
     }
 
     &.balloting {
       background-image: linear-gradient(to top, #4b3ea8 0%, #3d4281 100%);
-
-      .enrichment {
-        background-position: -729px -35px;
-        height: 262px;
-        width: 324px;
-      }
     }
 
     &.finished {
       background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%);
-
-      .enrichment {
-        background-position: -1363px -19px;
-        height: 281px;
-        width: 312px;
-      }
     }
   }
+}
+
+// Investments
+
+.phase-title {
+  color: #32366a;
+}
+
+.phase-description {
+  margin: 60px 0 40px 0;
+  border-bottom: 1.5px solid #32366a;
+}
+
+.budget-investment {
+  border: 3px solid #d7d7d7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 }
 
 @media screen and (max-width: 800px) {
