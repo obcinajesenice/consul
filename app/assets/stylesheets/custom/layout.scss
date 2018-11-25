@@ -34,9 +34,12 @@
   background-color: $brand;
 }
 
+:focus {
+  outline: 0;
+}
+
 html,
 body {
-  background-color: #f7d3c9;
   height: 100%;
   margin: 0;
 }
@@ -84,6 +87,33 @@ a {
   }
 }
 
+select {
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 2px solid #f7d3c9;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 8px;
+  // background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+}
+
+select::-ms-expand {
+  display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+@media screen and (min-width: 0 \0
+) {
+  select {
+    background: none \9
+  ;
+    padding: 5px \9
+  ;
+  }
+}
+
 .row {
   max-width: 100%;
 }
@@ -124,6 +154,10 @@ a {
   background-color: $mandys-pink;
   border-radius: 20px;
   display: inline-block;
+
+  &:hover {
+    background-color: $mandys-pink-hover;
+  }
 
   &.large {
     padding: 0.6875rem 1rem;
@@ -465,6 +499,7 @@ header {
 
 .top-bar {
   background: $white !important;
+  box-shadow: 0 0 43px rgba(0, 0, 0, 0.21);
   color: $black;
   padding: rem-calc(4.5) 20px;
 
