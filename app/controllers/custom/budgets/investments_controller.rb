@@ -33,9 +33,9 @@ module Budgets
 
     def index
       if @budget.finished?
-        @investments = investments.winners.page(params[:page]).per(20).for_render
+        @investments = investments.winners.page(params[:page]).per(10).for_render
       else
-        @investments = investments.page(params[:page]).per(20).for_render
+        @investments = investments.page(params[:page]).per(10).for_render
       end
 
       @investment_ids = @investments.pluck(:id)
@@ -103,7 +103,7 @@ module Budgets
     def investments_orders
       case current_budget.phase
       when 'accepting', 'reviewing'
-        %w{random}
+        %w{created_at title}
       when 'publishing_prices', 'balloting', 'reviewing_ballots'
         %w{random price}
       when 'finished'
@@ -152,10 +152,6 @@ module Budgets
     end
 
     def load_heading
-      # TODO: load default heading or fake it?
-      #
-      # TODO: how many headings?
-
       if params[:heading_id].present?
         @heading = @budget.headings.find(params[:heading_id])
         @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))

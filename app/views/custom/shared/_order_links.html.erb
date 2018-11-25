@@ -1,10 +1,10 @@
-<ul class="float-right ordering">
+<!--TODO: -->
+<ul class="float-right inline-block">
   <% @valid_orders.each do |order| %>
-    <li class="inline-block <%= order == @current_order ? 'is-active' : '' %>">
-      <%= link_to current_path_with_query_params(order: order, page: 1) do %>
-        <%= content_tag(:span) do %>
+    <li class="">
+      <%= link_to current_path_with_query_params(order: order, page: 1), class: order == @current_order ? 'is-active' : '' do %>
+        <%= content_tag(order == @current_order ? :h2 : :span) do %>
           <%= t("#{i18n_namespace}.orders.#{order}") %>
-          <i class="custom-css-icon triangle-down"></i>
         <% end %>
       <% end %>
     </li>

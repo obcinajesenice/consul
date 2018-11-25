@@ -25,10 +25,11 @@
                 <span class="action-button large">
                   <%= t("devise_views.sessions.new.submit") %>
                   <!-- TODO: icon-->
+<!--                  TODO: translations-->
                 </span>
               <% end %>
             </div>
-            <div class="enrichment"></div>
+            <div class="phase-enrichment <%= phase.kind %>"></div>
             <% if phase.url %>
               </a>
             <% end %>
