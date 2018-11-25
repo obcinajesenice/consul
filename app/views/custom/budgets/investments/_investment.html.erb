@@ -1,21 +1,21 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
   <div class="panel <%= ('with-image' if feature?(:allow_images) && investment.image.present?) %>">
 
-    <% if feature?(:allow_images) && investment.image.present? %>
     <div class="row" data-equalizer>
 
-      <div class="small-12 medium-3 large-2 column text-center">
-        <div data-equalizer-watch>
-          <%= image_tag investment.image_url(:thumb),
-                        alt: investment.image.title.unicode_normalize %>
-        </div>
-      </div>
+      <div class="small-12 medium-12 large-12 column">
+        <% if investment.image.present? %>
+          <div data-equalizer-watch>
+            <%= image_tag investment.image_url(:large),
+                          alt: investment.image.title.unicode_normalize %>
+          </div>
+        <% else %>
+          <div data-equalizer-watch>
+<!--            TODO: bigger image-->
+            <%= image_tag "default-investment@2x.png" %>
+          </div>
+        <% end %>
 
-      <div class="small-12 medium-6 large-7 column">
-    <% else %>
-      <div class="row">
-        <div class="small-12 medium-9 column">
-    <% end %>
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
@@ -54,17 +54,18 @@
         </div>
       </div>
 
+<!--      TODO: what is this?-->
       <% unless investment.unfeasible? %>
 
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"
                <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-               <%= render partial: '/budgets/investments/votes', locals: {
-                 investment: investment,
-                 investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
-               } %>
+            <%= render partial: '/budgets/investments/votes', locals: {
+              investment: investment,
+              investment_votes: investment_votes,
+              vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
+            } %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
@@ -73,19 +74,19 @@
             <div class="supports js-participation">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
-                    count: investment.total_votes) %>
+                      count: investment.total_votes) %>
               </span>
             </div>
           </div>
         <% elsif investment.should_show_ballots? %>
           <div id="<%= dom_id(investment) %>_ballot"
-                class="small-12 medium-3 column text-center"
-                <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-                <%= render partial: '/budgets/investments/ballot', locals: {
-                  investment: investment,
-                  investment_ids: investment_ids,
-                  ballot: ballot
-                } %>
+               class="small-12 medium-3 column text-center"
+               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
+            <%= render partial: '/budgets/investments/ballot', locals: {
+              investment: investment,
+              investment_ids: investment_ids,
+              ballot: ballot
+            } %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
