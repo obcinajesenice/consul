@@ -73,7 +73,7 @@ section "Creating Budgets" do
 end
 
 section "Creating Investments" do
-  tags = Faker::Lorem.words(10)
+  tags = ActsAsTaggableOn::Tag.category.limit(10)
   100.times do
     heading = Budget.last.headings.all.sample
 
