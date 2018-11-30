@@ -103,7 +103,7 @@ module Budgets
     def investments_orders
       case current_budget.phase
       when 'accepting', 'reviewing'
-        %w{created_at title}
+        %w{random}
       when 'publishing_prices', 'balloting', 'reviewing_ballots'
         %w{random price}
       when 'finished'
