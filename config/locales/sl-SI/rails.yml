@@ -51,7 +51,7 @@ sl:
     - Petek
     - Sobota
     formats:
-      default: "%Y-%m-%d"
+      default: "%d.%m.%Y"
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:

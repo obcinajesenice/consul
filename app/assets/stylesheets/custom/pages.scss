@@ -110,6 +110,10 @@ only screen and (min-resolution: 240dpi) {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 }
 
+.budget-investment-content {
+  padding: 10px;
+}
+
 @media screen and (max-width: 800px) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
