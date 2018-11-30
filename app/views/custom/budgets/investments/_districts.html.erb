@@ -1,5 +1,5 @@
-<select onchange="if (this.value) location = this.value;"  class="on-view">
-  <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:heading_id)) %>"><%= t("shared.tags_cloud.districts").mb_chars.upcase %></option>
+<select name="" onchange="if (this.value) location = this.value;">
+  <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:heading_id)) %>"><%= t("shared.tags_cloud.districts") %></option>
   <% @budget.headings.order('id ASC').each do |heading| %>
     <%= selected = ' selected' if params[:heading_id] == heading.to_param %>
     <option value="<%= budget_investments_url(@budget, request.query_parameters.merge({heading_id: heading.to_param})) %>" <%= selected %>><%= heading.name %></option>

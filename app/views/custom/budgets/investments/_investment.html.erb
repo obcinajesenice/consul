@@ -20,27 +20,30 @@
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+<!--            TODO: title on hover color: #32366a; -->
 
             <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
-              <% if investment.author.hidden? || investment.author.erased? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= t("budgets.investments.show.author_deleted") %>
-                </span>
-              <% else %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= investment.author.name %>
-                </span>
-                <% if investment.author.official? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= investment.author.official_level %>">
-                    <%= investment.author.official_position %>
-                  </span>
-                <% end %>
-              <% end %>
+              <%# if investment.author.hidden? || investment.author.erased? %>
+<!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+<!--                <span class="author">-->
+                  <%#= t("budgets.investments.show.author_deleted") %>
+<!--                </span>-->
+              <%# else %>
+<!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+<!--                <span class="author">-->
+                  <%#= investment.author.name %>
+<!--                </span>-->
+                <%# if investment.author.official? %>
+<!--                  <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+<!--                  <span class="label round level-<%#= investment.author.official_level %>">-->
+                    <%#= investment.author.official_position %>
+<!--                  </span>-->
+                <%# end %>
+              <%# end %>
+
+<!--              TODO: cut the text-->
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= investment.heading.name %>
@@ -54,7 +57,7 @@
         </div>
       </div>
 
-<!--      TODO: what is this?-->
+<!--      TODO: all the statuses are here below - show money only after available-->
       <% unless investment.unfeasible? %>
 
         <% if investment.should_show_votes? %>
