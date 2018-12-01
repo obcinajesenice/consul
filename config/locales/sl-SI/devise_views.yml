@@ -122,7 +122,7 @@ sl:
           username_label: Uporabniško ime
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
         success:
-          back_to_index: Razumem; vrni se na glavno stran
+          back_to_index: Razumem (vrni se na glavno stran)
           instructions_1_html: Prosimo, <b>preveri svojo e-pošto</b> - poslali smo ti <b>povezavo za potrditev tvojega računa</b>.
           instructions_2_html: Ko potrdiš račun, lahko začneš sodelovati.
           thank_you_html: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.

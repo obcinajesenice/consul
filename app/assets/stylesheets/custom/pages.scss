@@ -16,7 +16,7 @@
     text-align: center;
   }
 
-  a:not(.page-title) {
+  a:not(.page-title, .action-button) {
     text-decoration: underline;
 
     &:hover {
