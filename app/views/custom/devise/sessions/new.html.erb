@@ -1,5 +1,4 @@
-<% provide :title do %><%= t("devise_views.sessions.new.title") %>
-<% end %>
+<% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
 <h2 class=""><%= t("devise_views.sessions.new.title") %></h2>
 
 <%= render 'devise/omniauth_form' %>
@@ -25,8 +24,9 @@
     <% end -%>
 
     <div class="small-12 medium-6 small-centered button-holder">
-      <%= button_tag(type: 'submit', class: "action-button huge") do %>
-        <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
+      <%= button_tag(type: 'submit', class: "action-button large") do %>
+        <%= t("devise_views.sessions.new.submit") %>
+<!--        TODO: icon-->
       <% end %>
     </div>
   </div>

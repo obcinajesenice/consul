@@ -12,7 +12,7 @@
 
 $base-font-size: 17px;
 $base-line: rem-calc(26); // TODO:
-$line-height: rem-calc(24); // TODO:
+$line-height: rem-calc(24);
 $large-font-size: rem-calc(20);
 $small-font-size: rem-calc(14);
 $tiny-font-size: rem-calc(12);
@@ -25,6 +25,8 @@ $white: #FFFFFF;
 $mandys-pink: #f7d3c9;
 $mandys-pink-hover: #f0b9ad;
 $black: #000000;
+$rhino: #32366a;
+$minsk: #3c3583;
 
 $text: #222;
 $text-medium: #515151;
@@ -78,7 +80,7 @@ $color-alert: #a94442;
 $black: #222;
 $white: #fff;
 
-$body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family: 'Barlow', sans-serif !important;
 
 $header-font-family: $body-font-family;
 
@@ -86,7 +88,7 @@ $global-radius: rem-calc(3);
 
 $button-radius: $global-radius;
 
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-serif: 'Barlow', Georgia, 'Times New Roman', Times, serif;
 
 $header-styles: (
   small: (

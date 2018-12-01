@@ -1,3 +1,5 @@
+// TODO: remove half of this shiet
+
 // Table of Contents
 //
 // 01. Global styles
@@ -40,7 +42,7 @@
 
 html,
 body {
-  height: 100%;
+  height: auto;
   margin: 0;
 }
 
@@ -55,10 +57,6 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-weight: 600;
-}
-
-h1 {
   font-weight: 800;
 }
 
@@ -100,7 +98,9 @@ select {
   -moz-appearance: none;
   appearance: none;
   border-radius: 8px;
-  // background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+  // TODO: add icon
+  //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+  line-height: 1rem;
 }
 
 select::-ms-expand {
@@ -160,6 +160,7 @@ select::-ms-expand {
 .action-button {
   background-color: $mandys-pink;
   border-radius: 20px;
+  cursor: pointer;
   display: inline-block;
 
   &:hover {
@@ -935,67 +936,6 @@ footer {
   text-transform: uppercase;
 }
 
-// 05. Auth pages
-// --------------
-
-.auth-page {
-
-  .wrapper {
-    margin: 0 auto (-$line-height) * 14;
-  }
-}
-
-.auth-image {
-  background: $brand image-url('auth_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  @include breakpoint(medium) {
-    min-height: $line-height * 42;
-  }
-
-  h1 {
-    margin-top: $line-height;
-
-    a {
-      color: #fff;
-      display: block;
-      text-align: center;
-
-      @include breakpoint(medium) {
-        display: inline-block;
-        text-align: left;
-      }
-    }
-  }
-}
-
-.auth-form {
-
-  @include breakpoint(medium) {
-    padding-top: $line-height * 4;
-  }
-
-  p,
-  a,
-  .checkbox {
-    font-size: $small-font-size;
-  }
-}
-
-.auth-divider {
-  border-bottom: 1px solid $border;
-  height: rem-calc(14);
-  margin: $line-height 0;
-  text-align: center;
-
-  span {
-    background: #fff;
-    font-weight: bold;
-    padding: 0 $line-height / 2;
-  }
-}
-
 // 06. Forms
 // ---------
 
@@ -1044,7 +984,7 @@ form {
 
   label {
     font-size: $base-font-size;
-    font-weight: bold;
+    font-weight: 600;
     line-height: $line-height;
   }
 
@@ -1066,7 +1006,9 @@ form {
   }
 
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
-    background: #f8f8f8;
+    background: $white;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
     height: $line-height * 2;
     margin-bottom: rem-calc(16);
 
