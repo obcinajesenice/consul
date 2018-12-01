@@ -11,17 +11,16 @@
           </div>
         <% else %>
           <div data-equalizer-watch>
-<!--            TODO: bigger image-->
+<!--            TODO: need bigger and better image-->
             <%= image_tag "default-investment@2x.png" %>
           </div>
         <% end %>
 
         <div class="budget-investment-content">
+<!--          TODO: whole block linkable?-->
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
-<!--            TODO: title on hover color: #32366a; -->
-
             <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
@@ -43,7 +42,7 @@
                 <%# end %>
               <%# end %>
 
-<!--              TODO: cut the text-->
+<!--              TODO: cut the text when too long -->
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= investment.heading.name %>
@@ -57,7 +56,8 @@
         </div>
       </div>
 
-<!--      TODO: all the statuses are here below - show money only after available-->
+<!--      TODO: all the statuses are here below -->
+<!--      TODO: show money only after price is assigned -->
       <% unless investment.unfeasible? %>
 
         <% if investment.should_show_votes? %>
