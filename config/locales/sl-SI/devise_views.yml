@@ -47,7 +47,7 @@ sl:
           responsible_name_label: Polno ime odgovorne osebe
           responsible_name_note: Gre za osebo, ki predstavlja društvo, zavod oz. organizacijo, v čigar imenu so objavljeni predlogi
           submit: Registriraj se
-          title: Registriraj se kot organisazacija ali kolektiv
+          title: Registriraj se kot organizacija ali kolektiv
         success:
           back_to_index: Razumem; nazaj na glavno stran
           instructions_1_html: "<b>Kmalu te bomo kontaktirali,</b> da preverimo, da v resnici predstavljaš to organizacijo oz. kolektiv."

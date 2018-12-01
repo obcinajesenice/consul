@@ -1,3 +1,83 @@
+// Login / Registration
+
+.auth-page {
+  background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
+
+  h1 {
+    color: $white;
+    margin-top: rem-calc(100);
+    text-align: center;
+  }
+
+  h2 {
+    color: $rhino;
+    font-weight: 800;
+    margin-bottom: rem-calc(30);
+    text-align: center;
+  }
+
+  a:not(.page-title) {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .button-oauth-login {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  .smaller-text {
+    font-size: $tiny-font-size;
+    text-decoration: underline;
+  }
+
+  .button-holder {
+    text-align: center;
+  }
+
+  .checkbox {
+    font-size: 14px;
+  }
+}
+
+.auth-form {
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.83);
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  margin-bottom: rem-calc(100);
+  opacity: 0.99;
+
+  .auth-form-content {
+    margin: rem-calc(30);
+  }
+}
+
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: rem-calc(14);
+  margin: $line-height 0;
+  text-align: center;
+
+  &.custom-divider {
+    border-bottom: 1px solid $minsk;
+  }
+
+  span {
+    background: #fff;
+    font-weight: bold;
+    padding: 0 $line-height / 2;
+  }
+}
+
+// Landing page
+
 .phase-enrichment {
   background: image-url('custom_phases.png') no-repeat;
   background-size: 1675px 300px;
