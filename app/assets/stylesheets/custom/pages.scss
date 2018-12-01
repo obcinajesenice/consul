@@ -192,6 +192,20 @@ only screen and (min-resolution: 240dpi) {
 
 .budget-investment-content {
   padding: 10px;
+
+  a {
+    color: $rhino;
+  }
+
+  h3 {
+    a {
+      color: $black;
+
+      &:hover {
+        color: $rhino;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {

@@ -11,7 +11,7 @@
                       new_budget_investment_path(budget_id: @budget.id), class: "action-button large" %>
         <% else %>
           <div class="callout warning">
-            <!--              TODO: change -->
+            <!-- TODO: change this if not verified -->
             <%= t("budgets.investments.index.sidebar.verified_only",
                   verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
                                   verification_path)).html_safe %>
@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<!--TODO: if @heading.present?-->
+<!--if @heading.present?-->
 
 <!--TODO: show active filters, count, show budget per region-->
 
