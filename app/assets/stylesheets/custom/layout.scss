@@ -179,6 +179,15 @@ select::-ms-expand {
     background-color: $mandys-pink-hover;
   }
 
+  &.transparent {
+    background-color: transparent;
+    border: 1px solid $mandys-pink;
+
+    &:hover {
+      background-color: $mandys-pink-hover;
+    }
+  }
+
   &.large {
     padding: 0.6875rem 1rem;
   }
@@ -290,10 +299,6 @@ select::-ms-expand {
   @include breakpoint(medium) {
     float: right !important;
   }
-}
-
-.no-margin-top {
-  margin-top: rem-calc(-24);
 }
 
 .padding {
@@ -445,6 +450,8 @@ select::-ms-expand {
   clear: both;
   color: $text-medium;
   display: inline-block;
+  font-size: $base-font-size;
+  text-transform: uppercase;
 }
 
 .back:not([class^="icon-"]) {
@@ -906,13 +913,17 @@ footer {
 // 04. Tags
 // --------
 
+.tags {
+  display: inline-block;
+}
+
 .tags a,
 .tag-cloud a,
 .categories a,
 .geozone a,
 .sidebar-links a,
 .tags span {
-  background-color: #dedeeb;
+  background-color: $input-gray;
   border-radius: rem-calc(4);
   color: $black;
   display: inline-block;
@@ -2513,64 +2524,8 @@ table {
   }
 
   ul li {
-    padding-top: $line-height / 2;
-
-    &:not(:first-child) {
-      border-top: 1px solid $highlight;
-    }
-  }
-
-  .document-link {
-    background: $highlight-soft;
-    border: 2px solid $highlight;
-    border-radius: rem-calc(5);
-    display: block;
-    margin: $line-height / 2 0;
-    padding: 0 $line-height / 2;
-    position: relative;
-
-    .icon-document {
-      color: #007bb7;
-      display: inline-block;
-      font-size: rem-calc(24);
-      line-height: $line-height;
-      vertical-align: middle;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.document-link a {
-  word-wrap: break-word;
-}
-
-.additional-document-link {
-  background: $highlight-soft;
-  border: 1px solid $highlight;
-  display: block;
-  margin: $line-height / 2 0;
-  padding: $line-height / 2;
-  position: relative;
-
-  a {
-    word-wrap: break-word;
-  }
-
-  .icon-document {
-    color: #007bb7;
     display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    vertical-align: middle;
   }
-}
-
-.document-divider {
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
 }
 
 // 21. Related content
