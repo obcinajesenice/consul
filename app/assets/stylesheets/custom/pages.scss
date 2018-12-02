@@ -208,6 +208,12 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
+// New investment
+
+h1 {
+  color: $rhino;
+}
+
 @media screen and (max-width: 800px) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
