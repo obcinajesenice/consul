@@ -213,6 +213,10 @@ only screen and (min-resolution: 240dpi) {
   h1 {
     color: $rhino;
   }
+
+  .js-tag-list {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
