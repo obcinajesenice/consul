@@ -4,7 +4,7 @@
   <div class="row">
 
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) } %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length %>
     </div>
     <div id="js-suggest"></div>
 
@@ -53,17 +53,13 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
-
+      <%= f.label :tag_list, t("budgets.investments.form.tags_label") + ' (' + t("budgets.investments.form.tags_instructions") + ')' %>
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </div>
 
-      <br>
       <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
                        label: false,
                        placeholder: t("budgets.investments.form.tags_placeholder"),
