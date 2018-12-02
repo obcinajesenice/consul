@@ -89,18 +89,30 @@ a {
 }
 
 select {
-  width: 150px;
-  padding: 5px 35px 5px 5px;
-  font-size: 16px;
-  border: 2px solid #f7d3c9;
-  height: 34px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 8px;
-  // TODO: add icon
-  //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+  font-size: $base-font-size;
+  height: 2rem;
   line-height: 1rem;
+  padding: 5px 35px 5px 5px;
+
+  &.on-form {
+    border: 2px solid $input-gray;
+    height: 3rem;
+    border-radius: 8px;
+    // TODO: add icon
+    //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+  }
+
+  &.on-view {
+    border: 1px solid $mandys-pink;
+    font-weight: 600;
+    width: rem-calc(140);
+    text-transform: uppercase;
+    // TODO: add icon
+    //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+  }
 }
 
 select::-ms-expand {
@@ -1007,7 +1019,7 @@ form {
 
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: $white;
-    border: 2px solid #e1e1e1;
+    border: 2px solid $input-gray;
     border-radius: 8px;
     height: $line-height * 2;
     margin-bottom: rem-calc(16);
