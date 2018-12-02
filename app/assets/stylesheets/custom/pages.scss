@@ -209,8 +209,10 @@ only screen and (min-resolution: 240dpi) {
 
 // New investment
 
-h1 {
-  color: $rhino;
+.budget-investment-new {
+  h1 {
+    color: $rhino;
+  }
 }
 
 @media screen and (max-width: 800px) {
