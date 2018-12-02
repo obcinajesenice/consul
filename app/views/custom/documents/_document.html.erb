@@ -1,0 +1,26 @@
+<li id="<%= dom_id(document)%>">
+  <%= link_to document.title,
+              document.attachment.url, target: "_blank",
+              rel: "nofollow", class: "action-button large transparent" %>
+
+  <% if can?(:destroy, document) %>
+    <br>
+    <%= link_to t("documents.buttons.destroy_document"),
+                  document_path(document, from: request.url), method: :delete,
+                  data: { confirm: t("documents.actions.destroy.confirm") },
+                  class: "delete" %>
+  <% end %>
+</li>
+<li id="<%= dom_id(document)%>">
+  <%= link_to document.title,
+              document.attachment.url, target: "_blank",
+              rel: "nofollow", class: "action-button large transparent" %>
+
+  <% if can?(:destroy, document) %>
+    <br>
+    <%= link_to t("documents.buttons.destroy_document"),
+                document_path(document, from: request.url), method: :delete,
+                data: { confirm: t("documents.actions.destroy.confirm") },
+                class: "delete" %>
+  <% end %>
+</li>
