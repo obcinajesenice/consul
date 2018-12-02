@@ -16,7 +16,7 @@
     text-align: center;
   }
 
-  a:not(.page-title, .action-button) {
+  a:not(.page-title):not(.action-button) {
     text-decoration: underline;
 
     &:hover {
@@ -25,7 +25,7 @@
   }
 
   .button-oauth-login {
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:hover {
       text-decoration: underline !important;
@@ -34,7 +34,6 @@
 
   .smaller-text {
     font-size: $tiny-font-size;
-    text-decoration: underline;
   }
 
   .button-holder {
