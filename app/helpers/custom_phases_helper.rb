@@ -47,17 +47,17 @@ module CustomPhasesHelper
   def custom_phases_links(custom_phases)
     current_phase = current_budget.phase
     if current_phase === 'accepting' || current_phase === 'reviewing'
-      custom_phases[CUSTOM_PHASE_ACCEPTING].url = budget_investments_url(current_budget, :phase => current_phase)
+      custom_phases[CUSTOM_PHASE_ACCEPTING].url = budget_investments_url(current_budget)
     elsif current_phase === 'selecting' || current_phase === 'valuating' || current_phase === 'publishing_prices'
       if custom_phases[CUSTOM_PHASE_SELECTING].enabled
-        custom_phases[CUSTOM_PHASE_SELECTING].url = budget_investments_url(current_budget, :phase => current_phase)
+        custom_phases[CUSTOM_PHASE_SELECTING].url = budget_investments_url(current_budget)
       else
-        custom_phases[CUSTOM_PHASE_ACCEPTING].url = budget_investments_url(current_budget, :phase => current_phase)
+        custom_phases[CUSTOM_PHASE_ACCEPTING].url = budget_investments_url(current_budget)
       end
     elsif current_phase === 'balloting' || current_phase === 'reviewing_ballots'
-      custom_phases[CUSTOM_PHASE_BALLOTING].url = budget_investments_url(current_budget, :phase => current_phase)
+      custom_phases[CUSTOM_PHASE_BALLOTING].url = budget_investments_url(current_budget)
     elsif current_phase === 'finished'
-      custom_phases[CUSTOM_PHASE_FINISHED].url = budget_investments_url(current_budget, :phase => current_phase)
+      custom_phases[CUSTOM_PHASE_FINISHED].url = budget_investments_url(current_budget)
     end
     custom_phases
   end
