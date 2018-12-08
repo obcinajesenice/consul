@@ -17,21 +17,20 @@
   <%= render '/budgets/investments/header' %>
 
   <% if params[:search].present? || params[:advanced_search].present? %>
-<!--    TODO: show results with search param -->
-    <!--    TODO: search header -->
-<!--    <div class="highlight no-margin-top margin-bottom">-->
-<!--      <div class="row">-->
-<!--        <div class="small-12 column">-->
-<!--          <h2><%#= t("shared.search_results") %></h2>-->
-<!--          <p>-->
-            <%#= page_entries_info @investments %>
-<!--            <%#= t("budgets.investments.index.search_results_html",-->
+    <!--    TODO: show results with search param -->
+    <!--    <div class="highlight no-margin-top margin-bottom">-->
+    <!--      <div class="row">-->
+    <!--        <div class="small-12 column">-->
+    <!--          <h2><%#= t("shared.search_results") %></h2>-->
+    <!--          <p>-->
+    <%#= page_entries_info @investments %>
+    <!--            <%#= t("budgets.investments.index.search_results_html",-->
 <!--                  count: @investments.size,-->
                   search_term: params[:search]) %>
 <!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
   <% end %>
 
   <!--  TODO: remove all this?-->
@@ -57,7 +56,7 @@
 
   <!--  </div>-->
 
-  <div class="row">
+  <div class="row budget-investments">
     <h2 class="phase-title">Že oddani predlogi</h2>
 
     <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
@@ -69,8 +68,10 @@
       <% end %>
     </div>
 
-    <% @investments.each do |investment| %>
-      <div class="budget-investments-list small-12 medium-3 large-3 column">
+    <% @investments.each_with_index do |investment, index| %>
+      <% investment_class = 'small-12 large-3 budget-investment-holder' %>
+      <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+      <div class="<%= investment_class %>">
         <%= render partial: '/budgets/investments/investment',
                    locals: {
                      investment: investment,
