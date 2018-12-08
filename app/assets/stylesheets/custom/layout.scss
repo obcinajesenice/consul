@@ -92,6 +92,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-radius: 8px;
   font-size: $base-font-size;
   height: 2rem;
   line-height: 1rem;
@@ -100,7 +101,6 @@ select {
   &.on-form {
     border: 2px solid $input-gray;
     height: 3rem;
-    border-radius: 8px;
     // TODO: add icon
     //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
   }
@@ -130,7 +130,7 @@ select::-ms-expand {
 }
 
 .main-indented-content {
-  margin: 0 rem-calc(50px)
+  margin: 0 rem-calc(80px)
 }
 
 .row {
@@ -530,8 +530,9 @@ select::-ms-expand {
   text-transform: uppercase;
 }
 
-.page-title {
+.site-title {
   font-size: rem-calc(20);
+  font-weight: 600;
 }
 
 // 02. Header
