@@ -1,5 +1,5 @@
 <select onchange="if (this.value) location = this.value;" class="on-view">
-  <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:search)) %>"><%= t("shared.tags_cloud.categories") %></option>
+  <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:search)) %>"><%= t("shared.tags_cloud.categories").upcase %></option>
   <% @categories.each do |category| %>
     <%= selected = ' selected' if params[:search] == category.name %>
     <option value="<%= budget_investments_url(@budget, request.query_parameters.merge({search: category.name})) %>" <%= selected %>><%= category.name %></option>

@@ -4,60 +4,56 @@
     <div class="row" data-equalizer>
 
       <div class="small-12 medium-12 large-12">
-        <% if investment.image.present? %>
-          <div data-equalizer-watch>
+        <div data-equalizer-watch class="image-holder">
+          <% if investment.image.present? %>
             <%= image_tag investment.image_url(:large),
                           alt: investment.image.title.unicode_normalize %>
-          </div>
-        <% else %>
-          <div data-equalizer-watch>
-<!--            TODO: need bigger and better image-->
+          <% else %>
+            <!--            TODO: need bigger and better image-->
             <%= image_tag "default-investment@2x.png" %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+
 
         <div class="budget-investment-content">
-<!--          TODO: whole block linkable?-->
-
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
-            <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+            <%= link_to namespaced_budget_investment_path(investment), class: 'investment-title' do %>
+              <h3 class="truncated-text-block" title="<%= investment.title %>"><%= investment.title %></h3>
+            <% end %>
             <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
               <%# if investment.author.hidden? || investment.author.erased? %>
-<!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-<!--                <span class="author">-->
-                  <%#= t("budgets.investments.show.author_deleted") %>
-<!--                </span>-->
+              <!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+              <!--                <span class="author">-->
+              <%#= t("budgets.investments.show.author_deleted") %>
+              <!--                </span>-->
               <%# else %>
-<!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-<!--                <span class="author">-->
-                  <%#= investment.author.name %>
-<!--                </span>-->
-                <%# if investment.author.official? %>
-<!--                  <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-<!--                  <span class="label round level-<%#= investment.author.official_level %>">-->
-                    <%#= investment.author.official_position %>
-<!--                  </span>-->
-                <%# end %>
+              <!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+              <!--                <span class="author">-->
+              <%#= investment.author.name %>
+              <!--                </span>-->
+              <%# if investment.author.official? %>
+              <!--                  <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
+              <!--                  <span class="label round level-<%#= investment.author.official_level %>">-->
+              <%#= investment.author.official_position %>
+              <!--                  </span>-->
               <%# end %>
-
-<!--              TODO: cut the text when too long -->
+              <%# end %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= investment.heading.name %>
             </p>
-            <div class="investment-project-description">
+            <div class="investment-project-description truncated-text-block">
               <%= investment.description %>
-              <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>
           <% end %>
         </div>
       </div>
 
-<!--      TODO: all the statuses are here below -->
-<!--      TODO: show money only after price is assigned -->
+      <!--      TODO: all the statuses are here below -->
+      <!--      TODO: show money only after price is assigned -->
       <% unless investment.unfeasible? %>
 
         <% if investment.should_show_votes? %>
