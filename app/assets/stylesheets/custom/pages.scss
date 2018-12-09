@@ -201,36 +201,56 @@ only screen and (min-resolution: 240dpi) {
 
 .budget-investments {
   .budget-investment-holder {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%;
-
-    &.last-in-row {
-      margin-right: 0;
-    }
-
     .budget-investment {
-      border: 3px solid #d7d7d7;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+      border: 1px solid #d7d7d7;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
+
+      .panel {
+        margin-bottom: rem-calc(12);
+        min-height: rem-calc(192);
+        padding: 0 rem-calc(15) 0;
+      }
+
+      .image-holder {
+        text-align: center;
+
+        img {
+          height: 205px;
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 .budget-investment-content {
-  padding: 10px;
+  padding: rem-calc(15);
 
   a {
     color: $rhino;
   }
 
-  h3 {
-    a {
-      color: $black;
+  .investment-title {
+    color: $black;
 
-      &:hover {
-        color: $rhino;
-      }
+    h3 {
+      line-height: rem-calc(24);
+      height: rem-calc(76);
     }
+
+    &:hover {
+      color: $rhino;
+    }
+  }
+
+  .investment-project-info {
+    font-size: rem-calc($tiniest-font-size);;
+  }
+
+  .investment-project-description {
+    line-height: rem-calc(24);
+    height: rem-calc(72);
+    margin-bottom: rem-calc(40);
   }
 }
 

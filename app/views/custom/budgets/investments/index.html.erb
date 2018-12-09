@@ -68,19 +68,21 @@
       <% end %>
     </div>
 
-    <% @investments.each_with_index do |investment, index| %>
-      <% investment_class = 'small-12 large-3 budget-investment-holder' %>
-      <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
-      <div class="<%= investment_class %>">
-        <%= render partial: '/budgets/investments/investment',
-                   locals: {
-                     investment: investment,
-                     investment_ids: @investment_ids,
-                     investment_votes: @investment_votes,
-                     ballot: @ballot
-                   } %>
-      </div>
-    <% end %>
+    <div class="row small-up-1 medium-up-1 large-up-4">
+      <% @investments.each_with_index do |investment, index| %>
+        <% investment_class = 'column column-block budget-investment-holder' %>
+        <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+        <div class="<%= investment_class %>">
+          <%= render partial: '/budgets/investments/investment',
+                     locals: {
+                       investment: investment,
+                       investment_ids: @investment_ids,
+                       investment_votes: @investment_votes,
+                       ballot: @ballot
+                     } %>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 
