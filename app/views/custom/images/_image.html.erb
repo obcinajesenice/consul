@@ -1,0 +1,15 @@
+<div id="image" class="small-12 text-center image-preview">
+  <figure>
+    <%= image_tag image.attachment.url(version),
+                  class: image_class(image),
+                  alt: image.title.unicode_normalize,
+                  title: image.title.unicode_normalize %>
+    <% if show_caption %>
+      <figcaption class="text-left">
+        <%= image.title.unicode_normalize %>
+      </figcaption>
+    <% end %>
+  </figure>
+</div>
+
+<!--TODO: background image instead of image - background-size:cover; -->
