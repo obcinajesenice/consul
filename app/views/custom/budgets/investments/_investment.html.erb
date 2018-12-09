@@ -5,15 +5,15 @@
 
       <div class="small-12 medium-12 large-12">
         <div data-equalizer-watch class="image-holder">
-          <% if investment.image.present? %>
-            <%= image_tag investment.image_url(:large),
-                          alt: investment.image.title.unicode_normalize %>
-          <% else %>
-            <!--            TODO: need bigger and better image-->
-            <%= image_tag "default-investment@2x.png" %>
+          <%= link_to namespaced_budget_investment_path(investment), class: 'investment-title' do %>
+            <% if investment.image.present? %>
+              <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
+            <% else %>
+              <!--            TODO: need bigger and better image-->
+              <%= image_tag "default-investment@2x.png" %>
+            <% end %>
           <% end %>
         </div>
-
 
         <div class="budget-investment-content">
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>

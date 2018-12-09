@@ -205,6 +205,37 @@ only screen and (min-resolution: 240dpi) {
       border: 1px solid #d7d7d7;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
 
+      .budget-investment-content {
+        padding: rem-calc(15);
+
+        a {
+          color: $rhino;
+        }
+
+        .investment-title {
+          color: $black;
+
+          h3 {
+            line-height: rem-calc(24);
+            height: rem-calc(76);
+          }
+
+          &:hover {
+            color: $rhino;
+          }
+        }
+
+        .investment-project-info {
+          font-size: rem-calc($tiniest-font-size);;
+        }
+
+        .investment-project-description {
+          line-height: rem-calc(24);
+          height: rem-calc(72);
+          margin-bottom: rem-calc(40);
+        }
+      }
+
       .panel {
         margin-bottom: rem-calc(12);
         min-height: rem-calc(192);
@@ -223,34 +254,46 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
-.budget-investment-content {
-  padding: rem-calc(15);
+// Investment show
 
-  a {
-    color: $rhino;
+.budget-investment-show {
+  p {
+    font-size: $large-font-size;
   }
 
-  .investment-title {
-    color: $black;
+  figcaption {
+    font-size: $small-font-size;
+  }
 
-    h3 {
-      line-height: rem-calc(24);
-      height: rem-calc(76);
+  .back {
+    font-weight: 600;
+    margin-top: rem-calc(50);
+  }
+
+  .tags {
+    margin-left: rem-calc(10);
+  }
+
+  .flag-content {
+    margin-left: rem-calc(10);
+    font-size: $tiniest-font-size;
+
+    a {
+      text-decoration: underline;
     }
-
-    &:hover {
-      color: $rhino;
-    }
   }
 
-  .investment-project-info {
-    font-size: rem-calc($tiniest-font-size);;
-  }
-
-  .investment-project-description {
-    line-height: rem-calc(24);
-    height: rem-calc(72);
+  .image-preview {
     margin-bottom: rem-calc(40);
+
+    img {
+      height: rem-calc(385);
+      width: 100%;
+    }
+  }
+
+  .budget-investment-info {
+    margin-top: rem-calc(20);
   }
 }
 
