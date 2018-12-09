@@ -60,6 +60,10 @@ h6 {
   font-weight: 800;
 }
 
+h1 {
+  line-height: 1em;
+}
+
 h2 {
   font-weight: 600;
 }
@@ -84,7 +88,6 @@ a {
 
   &:focus {
     color: $link-hover;
-    outline: 3px solid #ffbf47;
   }
 }
 
@@ -465,14 +468,10 @@ select::-ms-expand {
 .back,
 .icon-angle-left {
   clear: both;
-  color: $text-medium;
+  color: $black;
   display: inline-block;
   font-size: $base-font-size;
   text-transform: uppercase;
-}
-
-.back:not([class^="icon-"]) {
-  text-decoration: underline;
 }
 
 .tabs-content {

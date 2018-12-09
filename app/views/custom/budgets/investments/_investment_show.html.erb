@@ -18,6 +18,11 @@
       <div class="small-12 medium-7 medium-centered">
         <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
+        <div>
+<!--          Error-->
+        </div>
+        <!--        TODO: error message-->
+
         <h1><%= investment.title %></h1>
         <div class="budget-investment-info">
           <%= render '/shared/author_info', resource: investment %>
@@ -31,13 +36,7 @@
           </span>
         </div>
 
-        <br>
-
         <%= render_image(investment.image, :large, true) if investment.image.present? %>
-
-        <p id="investment_code">
-          <%= t("budgets.investments.show.code_html", code: investment.id) %>
-        </p>
 
         <%= safe_html_with_links investment.description.html_safe %>
 
@@ -80,8 +79,6 @@
           <h2><%= t('budgets.investments.show.price_explanation') %></h2>
           <p><%= investment.price_explanation %></p>
         <% end %>
-
-        <%= render 'relationable/related_content', relationable: @investment %>
 
         <div class="js-moderator-investment-actions margin">
           <%= render "budgets/investments/actions", investment: @investment %>
