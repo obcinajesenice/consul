@@ -77,6 +77,12 @@
 
 // Landing page
 
+.no-budget {
+  padding-top: rem-calc(100);
+  text-align: center;
+  width: 100%;
+}
+
 .phase-enrichment {
   background: image-url('custom_phases.png') no-repeat;
   background-size: 1675px 300px;
@@ -216,8 +222,8 @@ only screen and (min-resolution: 240dpi) {
           color: $black;
 
           h3 {
-            line-height: rem-calc(24);
-            height: rem-calc(76);
+            line-height: rem-calc(23);
+            height: rem-calc(72);
           }
 
           &:hover {
