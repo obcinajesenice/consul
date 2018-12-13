@@ -2,8 +2,8 @@
   <div class="row phase-description">
     <div class="small-6 column">
       <h1><%= t("custom.headings.#{current_budget.phase}") %>!</h1>
-      <h2><%= current_budget.current_phase.summary %></h2>
-      <p class="large-description"><%= current_budget.current_phase.description %></p>
+      <h2><%= strip_tags(current_budget.current_phase.summary.html_safe) %></h2>
+      <p class="large-description"><%= strip_tags(current_budget.current_phase.description.html_safe) %></p>
       <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
         <% if current_user && current_user.level_two_or_three_verified? %>
           <!--            TODO: icon-->
