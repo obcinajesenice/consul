@@ -1,5 +1,3 @@
-// TODO: remove half of this shiet
-
 // Table of Contents
 //
 // 01. Global styles
@@ -95,6 +93,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: image-url('dropdown-triangle.png') #eee no-repeat 150px 8px;
   border-radius: 8px;
   font-size: $base-font-size;
   height: 2rem;
@@ -104,21 +103,25 @@ select {
   &.on-form {
     border: 2px solid $input-gray;
     height: 3rem;
-    // TODO: add icon
-    //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
   }
 
   &.on-view {
     border: 1px solid $mandys-pink;
     font-weight: 600;
     width: rem-calc(180);
-    // TODO: add icon
-    //background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
   }
 }
 
 select::-ms-expand {
   display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+  select {
+    background: image-url('dropdown-triangle@2x.png') #eee no-repeat 150px 8px;
+  }
 }
 
 .main-indented-content {
@@ -181,7 +184,13 @@ select::-ms-expand {
   }
 
   &.large {
-    padding: 0.6875rem 1rem;
+    padding: rem-calc(11) rem-calc(16);
+  }
+
+  &.huge {
+    font-size: rem-calc(24);
+    font-weight: 700;
+    padding: rem-calc(15) rem-calc(20);
   }
 }
 
@@ -193,28 +202,23 @@ select::-ms-expand {
   clear: both;
   margin-bottom: $line-height / 2;
 
-  li {
-    &:hover {
-      span {
-        color: $mandys-pink;
-      }
-    }
-  }
-
   a {
     color: $black;
     display: inline-block;
     font-size: $base-font-size;
+    font-weight: 600;
     position: relative;
     text-align: left;
     text-transform: uppercase;
 
-    //@include breakpoint(medium) {
-    //  margin-right: $line-height;
-    //}
-
     span {
       color: $black;
+    }
+  }
+
+  .is-active {
+    .triangle-down {
+      border-top: 11px solid $mandys-pink;
     }
   }
 }

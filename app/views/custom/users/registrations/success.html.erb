@@ -3,6 +3,7 @@
 <p><%= t("devise_views.users.registrations.success.instructions_1_html") %></p>
 <p><%= t("devise_views.users.registrations.success.instructions_2_html") %></p>
 <p>
-  <%= link_to t("devise_views.users.registrations.success.back_to_index"),
-      root_path, class: "action-button large" %>
+  <%= link_to root_path, class: "action-button huge" do %>
+    <%= t("devise_views.users.registrations.success.back_to_index") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
+  <% end %>
 </p>
