@@ -1,13 +1,12 @@
-<!-- TODO: finish order links, hover on title, adjust text -->
-<ul class="float-right submenu ordering">
+<ul class="float-right ordering">
   <% @valid_orders.each do |order| %>
     <li class="inline-block <%= order == @current_order ? 'is-active' : '' %>">
       <%= link_to current_path_with_query_params(order: order, page: 1) do %>
-        <%= content_tag(order == @current_order ? :h2 : :span) do %>
+        <%= content_tag(:span) do %>
           <%= t("#{i18n_namespace}.orders.#{order}") %>
+          <i class="custom-css-icon triangle-down"></i>
         <% end %>
       <% end %>
-      <span>V</span>
     </li>
   <% end %>
 </ul>

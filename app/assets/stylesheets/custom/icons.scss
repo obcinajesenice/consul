@@ -1,0 +1,111 @@
+.custom-icon {
+  background: image-url('icons.png') no-repeat;
+  background-size: 36px 323px;
+  display: inline-block;
+  vertical-align: middle;
+
+  &.thumb-up {
+    background-position: -21px -4px;
+    height: 12px;
+    width: 13px;
+  }
+
+  &.thumb-down {
+    background-position: -21px -21px;
+    height: 11px;
+    width: 13px;
+  }
+
+  &.exclamation {
+    background-position: -9px -37px;
+    height: 25px;
+    width: 25px;
+  }
+
+  &.attachment {
+    background-position: -17px -66px;
+    height: 17px;
+    width: 17px;
+  }
+
+  &.photo {
+    background-position: -17px -88px;
+    height: 16px;
+    width: 17px;
+  }
+
+  &.triangle-right-pink {
+    background-position: -17px -108px;
+    height: 18px;
+    width: 15px;
+  }
+
+  &.triangle-down-pink {
+    background-position: -17px -129px;
+    height: 15px;
+    width: 17px;
+  }
+
+  &.triangle-up-pink {
+    background-position: -17px -174px;
+    height: 15px;
+    width: 17px;
+  }
+
+  &.triangle-down-blue {
+    background-position: -17px -150px;
+    height: 15px;
+    width: 17px;
+  }
+
+  &.triangle-up-blue {
+    background-position: -17px -195px;
+    height: 15px;
+    width: 17px;
+  }
+
+  &.arrow-large-right {
+    background-position: -3px -215px;
+    height: 28px;
+    width: 31px;
+  }
+
+  &.arrow-small-right {
+    background-position: -17px -250px;
+    height: 15px;
+    width: 17px;
+  }
+
+  &.cross-circle {
+    background-position: -9px -270px;
+    height: 25px;
+    width: 25px;
+  }
+
+  &.check-mark {
+    background-position: -9px -301px;
+    height: 20px;
+    width: 25px;
+  }
+}
+
+.custom-css-icon {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  display: inline-block;
+  height: 0;
+  width: 0;
+
+  &.triangle-down {
+    border-top: 11px solid $black;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+  .custom-icon {
+    background: image-url('icons@2x.png') no-repeat;
+    background-size: 36px 323px;;
+  }
+}
