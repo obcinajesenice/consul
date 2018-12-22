@@ -18,34 +18,17 @@
         <div class="budget-investment-content">
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <%= link_to namespaced_budget_investment_path(investment), class: 'investment-title' do %>
-              <h3 class="truncated-text-block" title="<%= investment.title %>"><%= investment.title %></h3>
+              <h3 title="<%= investment.title %>">
+                <%= strip_tags(investment.title.gsub('><', '> <')).truncate(60, separator: ' ', omission: '...') %>
+              </h3>
             <% end %>
             <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
-
-              <%# if investment.author.hidden? || investment.author.erased? %>
-              <!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-              <!--                <span class="author">-->
-              <%#= t("budgets.investments.show.author_deleted") %>
-              <!--                </span>-->
-              <%# else %>
-              <!--                <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-              <!--                <span class="author">-->
-              <%#= investment.author.name %>
-              <!--                </span>-->
-              <%# if investment.author.official? %>
-              <!--                  <span class="bullet">&nbsp;&bull;&nbsp;</span>-->
-              <!--                  <span class="label round level-<%#= investment.author.official_level %>">-->
-              <%#= investment.author.official_position %>
-              <!--                  </span>-->
-              <%# end %>
-              <%# end %>
-
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= investment.heading.name %>
             </p>
-            <div class="investment-project-description truncated-text-block">
-              <%= investment.description %>
+            <div class="investment-project-description">
+              <%= strip_tags(investment.description.gsub('><', '> <')).truncate(90, separator: ' ', omission: '...') %>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>
           <% end %>
