@@ -21,8 +21,8 @@
 
 <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
 
+<%= render 'layouts/header' %>
 <div class="wrapper <%= yield (:wrapper_class) %>">
-  <%= render 'layouts/header' %>
 
   <!--[if lt IE 9]>
       <% if browser.ie? && cookies['ie_alert_closed'] != 'true' %>
@@ -46,6 +46,7 @@
 
   <%= yield %>
 </div>
+<%= render 'layouts/footer' %>
 </body>
 <!--[if lt IE 9]>
     <%= javascript_include_tag "ie_lt9" %>

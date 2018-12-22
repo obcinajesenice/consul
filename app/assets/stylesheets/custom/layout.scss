@@ -122,7 +122,7 @@ select::-ms-expand {
 }
 
 .main-indented-content {
-  margin: 0 rem-calc(80px)
+  margin: 0 rem-calc(80px);
 }
 
 .row {
@@ -219,34 +219,6 @@ select::-ms-expand {
   }
 }
 
-// Truncated text blocks
-
-.truncated-text-block {
-  overflow: hidden;
-  position: relative;
-  line-height: rem-calc(24);
-  height: rem-calc(72);
-  margin-right: -1em;
-  padding-right: 1em;
-
-  //&:before {
-  //  content: '...';
-  //  position: absolute;
-  //  right: 1em;
-  //  bottom: 0;
-  //}
-  //
-  //&:after {
-  //  content: '';
-  //  position: absolute;
-  //  right: 1em;
-  //  width: 1em;
-  //  height: 1em;
-  //  margin-top: 1em;
-  //  background: white;
-  //}
-}
-
 // ---------
 
 .clear {
@@ -339,9 +311,6 @@ select::-ms-expand {
 }
 
 .wrapper {
-  min-height: 100%;
-  margin: 0 auto (-$line-height) * 12;
-  height: auto !important;
   height: 100%;
 }
 
@@ -709,7 +678,7 @@ header {
   background: $mandys-pink;
   color: $black;
   font-size: $tiniest-font-size;
-  padding: 0 20px;
+  padding: 0 rem-calc(20);
 
   a {
     margin: 0 rem-calc(6);
@@ -875,22 +844,39 @@ header {
 // ----------
 
 footer {
-  color: $text;
+  background-color: $input-gray;
+  color: $black;
+  font-size: $tiny-font-size;
+  height: rem-calc(100);
 
-  .logo a {
-    font-family: 'Lato' !important;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
+  .logo-holder {
+    padding-left: rem-calc(80px);
   }
 
-  p {
-    font-size: $small-font-size;
+  .links-holder {
+    padding-right: rem-calc(20);
+    text-align: right;
+  }
 
-    &.info a {
-      text-decoration: underline;
+  .logo {
+    background: image-url('municipality.png') no-repeat;
+    background-size: 175px 61px;
+    display: block;
+    height: rem-calc(61);
+    margin-top: rem-calc(22);
+    width: 175px;
+  }
+
+  .footer-links {
+    margin-top: rem-calc(40);
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 240dpi) {
+    .logo {
+      background: image-url('municipality@2x.png') no-repeat;
+      background-size: 175px 61px;
     }
   }
 
@@ -898,33 +884,15 @@ footer {
   a:active,
   a:focus {
     color: $text;
-    text-decoration: underline;
 
     &:hover {
-      color: $text-medium;
+      color: $link-hover;
     }
   }
-
-  .footer-sections {
-    padding-left: 0;
-  }
-
-  .title {
-    font-weight: bold;
-    text-decoration: none;
-  }
 }
 
-.footer {
-  background: #f1f1f1;
-  margin-top: $line-height * 2;
-  padding-top: $line-height;
-}
-
-.subfooter {
-  border-top: 1px solid $text-light;
-  font-size: $small-font-size;
-  padding-top: $line-height / 2;
+.home-page footer {
+  background-color: $white;
 }
 
 // 04. Tags
