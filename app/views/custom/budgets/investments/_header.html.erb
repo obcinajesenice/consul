@@ -10,24 +10,22 @@
       <p class="large-description">
         <%= strip_tags(current_budget.current_phase.description.html_safe) %>
       </p>
-      <!--      TODO: icon missing -->
       <% if current_user %>
         <% if current_user&.level_two_or_three_verified? %>
-          <%= link_to t("budgets.investments.index.sidebar.create"),
-                      new_budget_investment_path(budget_id: @budget.id),
-                      class: "action-button large" %>
+          <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large' do %>
+            <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+          <% end %>
         <% else %>
           <div class="callout warning">
-            <%= link_to t("budgets.investments.index.sidebar.create"),
-                        verification_path,
-                        class: "action-button large" %>
-
+            <%= link_to verification_path, class: 'action-button large' do %>
+              <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+            <% end %>
           </div>
         <% end %>
       <% else %>
-        <%= link_to t("budgets.investments.index.sidebar.create"),
-                    new_budget_investment_path(budget_id: @budget.id),
-                    class: "action-button large" %>
+        <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large' do %>
+          <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="small-6 column">
