@@ -191,7 +191,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .phase-description {
-  border-bottom: 1.5px solid #32366a;
+  border-bottom: 1px solid $rhino;
   margin: 0 0 1rem 0;
   padding: 1rem 0;
 
@@ -271,9 +271,8 @@ only screen and (min-resolution: 240dpi) {
     font-size: $small-font-size;
   }
 
-  .back {
-    font-weight: 600;
-    margin-top: rem-calc(50);
+  .map {
+    pointer-events: none;
   }
 
   .tags {
@@ -300,6 +299,17 @@ only screen and (min-resolution: 240dpi) {
 
   .budget-investment-info {
     margin-top: rem-calc(20);
+  }
+
+  .social-box {
+    .column {
+      .column-content {
+        background-color: $alabaster;
+        border-radius: 10px;
+        padding: rem-calc(20) 0;
+        text-align: center;
+      }
+    }
   }
 }
 

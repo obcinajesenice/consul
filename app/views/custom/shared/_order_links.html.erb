@@ -4,7 +4,7 @@
       <%= link_to current_path_with_query_params(order: order, page: 1) do %>
         <%= content_tag(:span) do %>
           <%= t("#{i18n_namespace}.orders.#{order}") %>
-          <i class="custom-css-icon triangle-down"></i>
+          <i class="custom-css-icon <%= order == @current_order ? 'triangle-down' : 'triangle-up' %>"></i>
         <% end %>
       <% end %>
     </li>

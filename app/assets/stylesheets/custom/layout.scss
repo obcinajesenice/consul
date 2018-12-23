@@ -93,7 +93,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: image-url('dropdown-triangle.png') #eee no-repeat 150px 8px;
+  background: image-url('dropdown-triangle.png') #eee no-repeat 96% 8px;
   border-radius: 8px;
   font-size: $base-font-size;
   height: 2rem;
@@ -120,12 +120,17 @@ select::-ms-expand {
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
   select {
-    background: image-url('dropdown-triangle@2x.png') #eee no-repeat 150px 8px;
+    background: image-url('dropdown-triangle@2x.png') #eee no-repeat 96% 8px;
   }
 }
 
 .main-indented-content {
   margin: 0 rem-calc(80px);
+}
+
+.horizontal-line {
+  margin: rem-calc(20) 0;
+  border-bottom: 1px solid $rhino;
 }
 
 .row {
@@ -183,6 +188,10 @@ only screen and (min-resolution: 240dpi) {
     }
   }
 
+  &.small {
+    padding: rem-calc(5) rem-calc(16);
+  }
+
   &.large {
     padding: rem-calc(11) rem-calc(16);
   }
@@ -201,6 +210,14 @@ only screen and (min-resolution: 240dpi) {
 .ordering {
   clear: both;
   margin-bottom: $line-height / 2;
+
+  li {
+    margin-right: rem-calc(20);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
   a {
     color: $black;
@@ -438,13 +455,25 @@ only screen and (min-resolution: 240dpi) {
   top: $line-height / 2;
 }
 
-.back,
-.icon-angle-left {
+.back {
   clear: both;
   color: $black;
   display: inline-block;
   font-size: $base-font-size;
+  font-weight: 600;
+  margin-top: rem-calc(50);
+  margin-bottom: rem-calc(20);
   text-transform: uppercase;
+
+  .arrow {
+    font-size: $large-font-size;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .text {
+    vertical-align: middle;
+  }
 }
 
 .tabs-content {
@@ -452,9 +481,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .tabs {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
+  border: 0;
   margin-bottom: $line-height;
 
   .tabs-title {
@@ -463,22 +490,29 @@ only screen and (min-resolution: 240dpi) {
   }
 
   .tabs-title > a {
-    color: $text-medium;
+    color: $black;
     margin-bottom: rem-calc(-1);
     margin-right: $line-height;
+    padding: rem-calc(6) rem-calc(12);
 
     &[aria-selected='true'],
-    &.is-active {
-      color: $brand;
-      border-bottom: 2px solid $brand;
-      font-weight: bold;
+    &.is-active,
+    &:hover {
+      background-color: $athens-gray;
+      border-radius: 10px;
+      color: $rhino;
     }
   }
 
   h2,
   h3 {
     font-size: $base-font-size;
+    margin: 0;
   }
+}
+
+.tabs-panel {
+  padding: 0;
 }
 
 .button.float-right ~ .button.float-right {
@@ -1989,6 +2023,8 @@ table {
   }
 
   .comment {
+    background-color: $alabaster;
+    font-size: $small-font-size;
     margin: $line-height / 4 0;
     position: relative;
 
@@ -2012,8 +2048,8 @@ table {
   }
 
   .reply {
-    background: #fff;
-    border: 1px solid $border;
+    //background: #fff;
+    //border: 1px solid $border;
     border-left: 0;
     border-right: 0;
     font-size: $small-font-size;
@@ -2086,7 +2122,6 @@ table {
 }
 
 .comment-info {
-  color: $text-medium;
   display: inline-block;
   font-size: $small-font-size;
   line-height: rem-calc(32); // Same as avatar height
@@ -2124,21 +2159,12 @@ table {
 }
 
 .wide-order-selector {
-  float: none;
+  float: right;
   margin-top: 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-top: rem-calc(-24);
-  }
 
   label {
     padding-right: $line-height / 2;
     float: none;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
   }
 }
 
