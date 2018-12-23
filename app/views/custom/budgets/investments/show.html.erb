@@ -1,9 +1,8 @@
-<% provide :title do %><%= @investment.title %><% end %>
+<% provide :title do %><%= @investment.title %>
+<% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_investment_url %>
 <% end %>
-
-<!--TODO: error message-->
 
 <%= render partial: '/budgets/investments/investment_show', locals: {
   investment: @investment,
@@ -21,5 +20,5 @@
                                                             display_comments_count: false } %>
   </div>
 
-  <%= render "budgets/investments/milestones" %>
+  <%= render "milestones/milestones", milestoneable: @investment %>
 </div>

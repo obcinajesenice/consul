@@ -76,6 +76,17 @@
     width: 17px;
   }
 
+  &.arrow-small-left {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background-position: -17px -250px;
+    height: 15px;
+    width: 17px;
+  }
+
   &.cross-circle {
     background-position: -9px -270px;
     height: 25px;
@@ -98,6 +109,10 @@
 
   &.triangle-down {
     border-top: 11px solid $black;
+  }
+
+  &.triangle-up {
+    border-bottom: 11px solid $black;
   }
 }
 
