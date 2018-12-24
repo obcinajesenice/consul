@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="small-12">
+    <% if milestoneable.milestones.blank? %>
+      <div class="callout custom text-center">
+        <%= t("milestones.index.no_milestones") %>
+      </div>
+    <% end %>
+    <section class="timeline">
+      <ul class="milestones">
+        <% milestoneable.milestones.order_by_publication_date.each do |milestone| %>
+          <%= render "milestones/milestone", milestone: milestone %>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</div>

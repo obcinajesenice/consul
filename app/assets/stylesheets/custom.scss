@@ -9,6 +9,11 @@
 //@import 'participation'; // TODO: remove this?
 @import "custom/pages";
 @import 'leaflet';
+@import 'jquery-ui/datepicker';
+@import 'datepicker_overrides';
+@import 'jquery-ui/autocomplete';
+@import 'autocomplete_overrides';
+@import 'jquery-ui/sortable';
 
 //@import 'legislation';
 //@import 'legislation_process';
@@ -16,9 +21,4 @@
 //@import 'c3';
 //@import 'annotator.min';
 //@import 'annotator_overrides';
-//@import 'jquery-ui/datepicker';
-//@import 'datepicker_overrides';
-//@import 'jquery-ui/autocomplete';
-//@import 'autocomplete_overrides';
-//@import 'jquery-ui/sortable';
 
