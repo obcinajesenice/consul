@@ -116,11 +116,23 @@
   }
 }
 
+.comment-reply-icon {
+  background: image-url('comment-reply.png') no-repeat;
+  background-size: 21px 25px;
+  height: 25px;
+  width: 21px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
   .custom-icon {
     background: image-url('icons@2x.png') no-repeat;
-    background-size: 36px 323px;;
+    background-size: 36px 323px;
+  }
+
+  .comment-reply-icon {
+    background: image-url('comment-reply@2x.png') no-repeat;
+    background-size: 21px 25px;
   }
 }

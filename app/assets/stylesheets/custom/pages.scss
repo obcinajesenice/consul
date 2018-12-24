@@ -262,6 +262,15 @@ only screen and (min-resolution: 240dpi) {
 
 // Investment show
 
+.flag-content {
+  margin-left: rem-calc(10);
+  font-size: $tiniest-font-size;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 .budget-investment-show {
   p {
     font-size: $large-font-size;
@@ -277,15 +286,6 @@ only screen and (min-resolution: 240dpi) {
 
   .tags {
     margin-left: rem-calc(10);
-  }
-
-  .flag-content {
-    margin-left: rem-calc(10);
-    font-size: $tiniest-font-size;
-
-    a {
-      text-decoration: underline;
-    }
   }
 
   .image-preview {
@@ -309,6 +309,29 @@ only screen and (min-resolution: 240dpi) {
         padding: rem-calc(20) 0;
         text-align: center;
       }
+    }
+  }
+}
+
+// Comments
+
+.milestones {
+  border-left: 1px solid #CCCCCC;
+  font-size: $small-font-size;
+  list-style: none;
+  margin-left: rem-calc(20);
+  padding-left: rem-calc(30);
+
+  li {
+    &::before {
+      background-color: $rhino;
+      border-radius: rem-calc(20);
+      content: ' ';
+      height: rem-calc(20);;
+      margin-left: rem-calc(-40);
+      margin-top: rem-calc(12);
+      position: absolute;
+      width: rem-calc(20);;
     }
   }
 }

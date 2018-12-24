@@ -201,6 +201,11 @@ only screen and (min-resolution: 240dpi) {
     font-weight: 700;
     padding: rem-calc(15) rem-calc(20);
   }
+
+  &.circled {
+    height: rem-calc(24);
+    width: rem-calc(24);
+  }
 }
 
 .large-description {
@@ -1145,6 +1150,12 @@ form {
     }
   }
 
+  &.custom {
+    background-color: $alabaster;
+    border: 0;
+    color: $black;
+  }
+
   &.warning {
     background-color: $warning-bg;
     border-color: $warning-border;
@@ -2023,10 +2034,36 @@ table {
   }
 
   .comment {
-    background-color: $alabaster;
     font-size: $small-font-size;
-    margin: $line-height / 4 0;
+    margin: rem-calc(12) 0;
     position: relative;
+
+    .avatar-holder {
+      position: absolute;
+    }
+
+    .content-holder {
+      padding-left: rem-calc(40);
+    }
+
+    .comment-reply-icon {
+      margin-top: rem-calc(12);
+      margin-left: rem-calc(12);
+      position: absolute;
+    }
+
+    .in_favor, .against {
+      margin-right: rem-calc(10);
+
+      a {
+        @extend .action-button, .circled;
+        text-align: center;
+
+        .thumb-down {
+          margin-top: rem-calc(3);
+        }
+      }
+    }
 
     p {
       margin-bottom: 0;
@@ -2042,20 +2079,32 @@ table {
 
 .comment-body,
 .notification-body {
+  background-color: $alabaster;
+  padding: rem-calc(10);
 
   img {
     margin-right: $line-height / 2;
   }
 
   .reply {
-    //background: #fff;
-    //border: 1px solid $border;
     border-left: 0;
     border-right: 0;
-    font-size: $small-font-size;
-    margin: $line-height / 4 0;
-    padding: $line-height / 4;
+    font-size: $tiniest-font-size;
+    line-height: $tiniest-font-size * 2;
     position: relative;
+
+    .js-add-comment-link {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .comment-votes {
+      margin-left: rem-calc(5);
+      display: inline-block;
+    }
 
     .relative,
     [class^="icon-arrow"] {
@@ -2081,8 +2130,9 @@ table {
   }
 
   .comment-user {
-    margin-top: $line-height / 4;
-    padding: $line-height / 4 0;
+    color: $mine-shaft;
+    margin-top: 0;
+    padding: 0 0 $line-height / 4 0;
     overflow: hidden;
 
     &.level-1,
@@ -2114,10 +2164,8 @@ table {
 }
 
 .comment-children {
-  border-left: 1px dashed $border;
   display: inline-block;
-  margin-left: rem-calc(16);
-  padding-left: rem-calc(8);
+  padding-left: rem-calc(40);
   width: 100%;
 }
 
@@ -2129,6 +2177,11 @@ table {
   .user-name {
     color: $text;
     font-weight: bold;
+  }
+
+  .published-date {
+    font-size: $tiniest-font-size;
+    margin-left: rem-calc(10);
   }
 }
 
