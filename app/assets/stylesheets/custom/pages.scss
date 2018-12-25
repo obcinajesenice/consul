@@ -75,7 +75,7 @@
   }
 }
 
-// Landing page
+// Main graphics
 
 .no-budget {
   padding-top: rem-calc(100);
@@ -85,30 +85,30 @@
 
 .phase-enrichment {
   background: image-url('custom_phases.png') no-repeat;
-  background-size: 1675px 300px;
+  background-size: 960px 270px;
 
   &.accepting {
-    background-position: -20px 0;
-    height: 274px;
-    width: 372px;
+    background-position: -3px -7px;
+    height: 256px;
+    width: 282px;
   }
 
   &.selecting {
-    background-position: -729px -35px;
-    height: 262px;
-    width: 324px;
+    background-position: -319px -10px;
+    height: 249px;
+    width: 295px;
   }
 
   &.balloting {
-    background-position: -729px -35px;
-    height: 262px;
-    width: 324px;
+    background-position: -319px -10px;
+    height: 249px;
+    width: 295px;
   }
 
   &.finished {
-    background-position: -1363px -19px;
-    height: 281px;
-    width: 312px;
+    background-position: -659px -9px;
+    height: 251px;
+    width: 296px;
   }
 }
 
@@ -117,9 +117,11 @@ only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
   .phase-enrichment {
     background: image-url('custom_phases@2x.png') no-repeat;
-    background-size: 1675px 300px;
+    background-size: 960px 270px;
   }
 }
+
+// Landing page
 
 .welcome-columns {
   display: flex;
@@ -132,7 +134,8 @@ only screen and (min-resolution: 240dpi) {
     flex-grow: 1;
     flex-basis: 0;
     margin: 0;
-    padding-bottom: 300px;
+    padding-bottom: rem-calc(350);
+    position: relative;
 
     a {
       color: $white;
@@ -161,8 +164,16 @@ only screen and (min-resolution: 240dpi) {
       }
     }
 
-    .phase-enrichment {
-      margin: 0 auto;
+    .phase-enrichment-holder {
+      bottom: rem-calc(50);
+      position: absolute;
+      text-align: center;
+      width: 100%;
+
+      .phase-enrichment {
+        margin: 0 auto;
+        position: relative;
+      }
     }
 
     &.accepting {
@@ -200,7 +211,6 @@ only screen and (min-resolution: 240dpi) {
   }
 
   .phase-enrichment {
-    margin-top: -55px;
     position: absolute;
   }
 }
