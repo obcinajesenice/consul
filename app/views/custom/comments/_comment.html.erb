@@ -44,9 +44,7 @@
                 <span class="user-name"><%= link_to comment.user.name, user_path(comment.user) %></span>
                 <% if comment.user.display_official_position_badge? %>
                   &nbsp;&bull;&nbsp;
-                  <span class="label round level-<%= comment.user.official_level %>">
                   <%= comment.user.official_position %>
-                </span>
                 <% end %>
               <% end %>
               <% if comment.user.verified_organization? %>
@@ -67,7 +65,6 @@
           </div>
 
           <div class="comment-user
-                  <%= user_level_class comment %>
                   <%= comment_author_class comment, comment.commentable.author_id %>">
             <%= simple_format text_with_links(comment.body), {}, sanitize: false %>
           </div>
@@ -76,7 +73,7 @@
 
             <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
               <%= link_to(comment_link_text(comment), "",
-                          class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
+                          class: "js-add-comment-link", data: { 'id': dom_id(comment) }) %>
 
               <% if allow_votes %>
                 <div id="<%= dom_id(comment) %>_votes" class="comment-votes">
@@ -91,10 +88,10 @@
               <% end %>
 
               <% if allow_comments %>
-                <%= render 'comments/form', {commentable: comment.commentable,
-                                             parent_id: comment.id,
-                                             toggeable: true,
-                                             valuation: valuation } %>
+                <%= render 'comments/form', { commentable: comment.commentable,
+                                              parent_id: comment.id,
+                                              toggeable: true,
+                                              valuation: valuation } %>
               <% end %>
             <% end %>
           </div>
@@ -102,20 +99,20 @@
       <% end %>
     </li>
     <% unless child_comments_of(comment).empty? %>
-    <li>
-      <span class="comment-reply-icon"></span>
-      <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
-        <% child_comments_of(comment).each do |child| %>
-          <li>
-            <%= render 'comments/comment', { comment: child,
-                                             valuation: valuation,
-                                             allow_votes: allow_votes,
-                                             allow_actions: allow_actions,
-                                             allow_comments: allow_comments } %>
-          </li>
-        <% end %>
-      </ul>
-    </li>
+      <li>
+        <span class="comment-reply-icon"></span>
+        <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
+          <% child_comments_of(comment).each do |child| %>
+            <li>
+              <%= render 'comments/comment', { comment: child,
+                                               valuation: valuation,
+                                               allow_votes: allow_votes,
+                                               allow_actions: allow_actions,
+                                               allow_comments: allow_comments } %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
     <% end %>
   </ul>
 <% end %>

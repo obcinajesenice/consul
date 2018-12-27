@@ -48,6 +48,14 @@ body {
   font-size: $base-font-size;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+  //body {
+  //  font-size: 12px;
+  //}
+}
+
 h1,
 h2,
 h3,
@@ -120,7 +128,7 @@ select::-ms-expand {
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
   select {
-    background: image-url('dropdown-triangle@2x.png') #eee no-repeat 96% 8px;
+    background: image-url('dropdown-triangle@2x.png') #fff no-repeat 96% 8px;
   }
 }
 
@@ -174,6 +182,8 @@ only screen and (min-resolution: 240dpi) {
   border-radius: 20px;
   cursor: pointer;
   display: inline-block;
+  font-size: rem-calc(22);
+  font-weight: 700;
 
   &:hover {
     background-color: $mandys-pink-hover;

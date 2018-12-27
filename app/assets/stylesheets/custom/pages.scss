@@ -151,21 +151,26 @@ only screen and (min-resolution: 240dpi) {
     }
 
     .column-content {
-      padding: rem-calc(90) rem-calc(40);
+      padding: rem-calc(90) rem-calc(50);
 
       h1 {
         letter-spacing: 2px;
+        margin-bottom: rem-calc(30);
+      }
+
+      h2 {
+        margin-bottom: rem-calc(30);
       }
 
       .action-button {
         color: $black;
-        margin-top: 25px;
-        position: absolute;
+        margin-top: rem-calc(20);
       }
     }
 
     .phase-enrichment-holder {
       bottom: rem-calc(50);
+      overflow: hidden;
       position: absolute;
       text-align: center;
       width: 100%;
@@ -194,7 +199,7 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
-// Investments
+// Investments index
 
 .phase-title {
   color: #32366a;
@@ -203,19 +208,44 @@ only screen and (min-resolution: 240dpi) {
 
 .phase-description {
   border-bottom: 1px solid $rhino;
-  margin: 0 0 1rem 0;
-  padding: 1rem 0;
+  padding: rem-calc(20) 0;
+
+  h1 {
+    margin-bottom: rem-calc(30);
+  }
+
+  h2 {
+    line-height: 1.2em;
+  }
 
   .column {
     padding: 0;
-  }
+    position: relative;
 
-  .phase-enrichment {
-    position: absolute;
+    .action-button {
+      margin: rem-calc(10) 0;
+    }
+
+    .phase-enrichment-holder {
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      top: rem-calc(20);
+      width: 100%;
+
+      .phase-enrichment {
+        margin: 0 auto;
+        position: relative;
+      }
+    }
   }
 }
 
 .budget-investments {
+  .phase-title {
+    margin: rem-calc(30) 0 rem-calc(20) 0;
+  }
+
   .budget-investment-holder {
     .budget-investment {
       border: 1px solid #d7d7d7;
@@ -242,18 +272,26 @@ only screen and (min-resolution: 240dpi) {
         }
 
         .investment-project-info {
-          font-size: rem-calc($tiniest-font-size);;
+          font-size: rem-calc($tiniest-font-size);
+          margin-bottom: 0;
         }
 
         .investment-project-description {
           line-height: rem-calc(24);
           height: rem-calc(72);
-          margin-bottom: rem-calc(40);
+          margin-bottom: rem-calc(10);
+        }
+
+        .tags {
+          margin-bottom: 0;
+
+          a {
+            margin-bottom: 0;
+          }
         }
       }
 
       .panel {
-        margin-bottom: rem-calc(12);
         min-height: rem-calc(192);
         padding: 0 rem-calc(15) 0;
       }
