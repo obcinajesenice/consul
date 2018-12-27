@@ -17,7 +17,7 @@
     <div class="row">
       <div class="small-12 medium-7 medium-centered">
         <%= link_to budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back' do %>
-          <span class="arrow">&#8592;</span><span class="text"><%= t("shared.back") %></span>
+          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
         <% end %>
 
         <% if investment.unfeasible? %>
