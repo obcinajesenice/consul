@@ -53,7 +53,8 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") + ' (' + t("budgets.investments.form.tags_instructions") + ')' %>
+      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+      <p class="help-text" id="tag-list-help-text">(<%= t("budgets.investments.form.tags_instructions") %>)</p>
       <div id="category_tags" class="tags">
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
@@ -83,10 +84,9 @@
 
     <% end %>
 
-    <div class="actions small-12 medium-6 large-4 end column">
+    <div class="actions small-12 end column">
       <%= button_tag(type: 'submit', class: "action-button large") do %>
-        <%= t("devise_views.sessions.new.submit") %>
-        <!--        TODO: icon-->
+        <%= t("management.budgets.create_new_investment") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
       <% end %>
     </div>
   </div>

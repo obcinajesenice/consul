@@ -1,16 +1,26 @@
-<!--TODO: back link-->
 <div class="budget-investment-new row">
-  <div class="small-12 medium-8 column">
-    <h1><%= t("management.budget_investments.create") %></h1>
+  <div class="small-12 medium-7 medium-centered">
+    <div class="row">
+      <div class="small-12 medium-7 column form">
+        <%= link_to budget_investments_path(@budget), class: 'back' do %>
+          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
+        <% end %>
 
-    <%= render '/budgets/investments/form', form_url: budget_investments_path(@budget) %>
-  </div>
-  <div class="small-12 medium-4 column">
-    <h2><%= t("proposals.new.recommendations_title") %></h2>
-    <ul class="recommendations">
-      <li><%= t("proposals.new.recommendation_one") %></li>
-      <li><%= t("proposals.new.recommendation_two") %></li>
-      <li><%= t("proposals.new.recommendation_three") %></li>
-    </ul>
+        <h2><%= t("management.budget_investments.create") %></h2>
+
+        <%= render '/budgets/investments/form', form_url: budget_investments_path(@budget) %>
+      </div>
+      <div class="small-12 medium-5 column sidebar">
+        <%= link_to budget_investments_path(@budget), class: 'back' do %>
+          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
+        <% end %>
+        <h3><%= t("proposals.new.recommendations_title") %></h3>
+        <ul class="custom-list recommendations">
+          <li><%= t("proposals.new.recommendation_one") %></li>
+          <li><%= t("proposals.new.recommendation_two") %></li>
+          <li><%= t("proposals.new.recommendation_three") %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

@@ -48,13 +48,10 @@ body {
   font-size: $base-font-size;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 240dpi) {
-  //body {
-  //  font-size: 12px;
-  //}
-}
+// TODO: change for smaller screens
+//body {
+//  font-size: 12px;
+//}
 
 h1,
 h2,
@@ -101,16 +98,16 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: image-url('dropdown-triangle.png') #eee no-repeat 96% 8px;
-  border-radius: 8px;
+  background: image-url('dropdown-triangle.png') #eee no-repeat 96% 50%;
+  border-radius: 4px;
   font-size: $base-font-size;
-  height: 2rem;
+  height: 30px;
   line-height: 1rem;
   padding: 5px 35px 5px 5px;
 
   &.on-form {
     border: 2px solid $input-gray;
-    height: 3rem;
+    height: 40px;
   }
 
   &.on-view {
@@ -124,11 +121,29 @@ select::-ms-expand {
   display: none; /* remove default arrow in IE 10 and 11 */
 }
 
+ul.custom-list {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    background: image-url('list-triangle.png') no-repeat 0 6px;
+    margin-top: rem-calc(20);
+    padding-left: rem-calc(20);
+  }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
   select {
-    background: image-url('dropdown-triangle@2x.png') #fff no-repeat 96% 8px;
+    background: image-url('dropdown-triangle@2x.png') #fff no-repeat 96% 50%;
+  }
+
+  ul.custom-list {
+    li {
+      background: image-url('list-triangle@2x.png') no-repeat 0 6px;
+      background-size: 14px 16px;
+    }
   }
 }
 
@@ -475,14 +490,11 @@ only screen and (min-resolution: 240dpi) {
   display: inline-block;
   font-size: $base-font-size;
   font-weight: 600;
-  margin-top: rem-calc(50);
   margin-bottom: rem-calc(20);
   text-transform: uppercase;
 
-  .arrow {
-    font-size: $large-font-size;
+  .arrow-small-left {
     margin-right: 10px;
-    vertical-align: middle;
   }
 
   .text {
@@ -565,6 +577,12 @@ only screen and (min-resolution: 240dpi) {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.help-text {
+  font-style: normal;
+  line-height: rem-calc(20);
+  margin-top: 0;
 }
 
 .site-title {
@@ -1068,8 +1086,8 @@ form {
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: $white;
     border: 2px solid $input-gray;
-    border-radius: 8px;
-    height: $line-height * 2;
+    border-radius: 4px;
+    height: 40px;
     margin-bottom: rem-calc(16);
 
     &.error {
@@ -2727,16 +2745,14 @@ table {
 // -----------------
 
 .location-map-remove-marker {
-  border-bottom: 1px dotted #cf2a0e;
-  color: $delete;
+  color: $black;
   display: inline-block;
-  margin-top: $line-height / 2;
+  font-size: $tiny-font-size;
+  text-decoration: underline;
 
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px solid #cf2a0e;
-    color: #cf2a0e;
     text-decoration: none;
   }
 }

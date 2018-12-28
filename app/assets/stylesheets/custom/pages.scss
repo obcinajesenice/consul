@@ -1,3 +1,9 @@
+// General
+
+.budget-investment-new, .budget-investment-show {
+  margin-top: rem-calc(50);
+}
+
 // Login / Registration
 
 .auth-page {
@@ -387,8 +393,49 @@ only screen and (min-resolution: 240dpi) {
 // New investment
 
 .budget-investment-new {
-  h1 {
-    color: $rhino;
+  .form {
+    margin-bottom: rem-calc(20);
+
+    h2 {
+      color: $rhino;
+      font-weight: 700;
+    }
+
+    label {
+      display: inline-block;
+    }
+
+    .help-text {
+      display: inline;
+
+      &:before {
+        content: ' ';
+      }
+    }
+
+    .js-image-attachment, .js-document-attachment {
+      visibility: hidden;
+    }
+
+    .images {
+      .button {
+        margin-top: 0;
+      }
+    }
+
+    .documents {
+      margin: rem-calc(20) 0;
+    }
+
+    .actions {
+      margin: rem-calc(20) 0;
+    }
+  }
+
+  .sidebar {
+    .back {
+      visibility: hidden;
+    }
   }
 
   .js-tag-list {
