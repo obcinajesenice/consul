@@ -105,6 +105,12 @@ select {
   line-height: 1rem;
   padding: 5px 35px 5px 5px;
 
+  &:active, &:focus {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
   &.on-form {
     border: 2px solid $input-gray;
     height: 40px;
