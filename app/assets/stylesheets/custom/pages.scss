@@ -442,6 +442,8 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
+// Account page
+
 .account {
   .tabs {
     margin: rem-calc(30) 0;
@@ -458,6 +460,21 @@ only screen and (min-resolution: 240dpi) {
 
   .delete {
     margin-left: rem-calc(10);
+  }
+}
+
+// Help
+
+.help {
+  .tabs {
+    margin: rem-calc(30) 0;
+  }
+
+  .technical-issues {
+    border: 1px solid $rhino;
+    display: inline-block;
+    margin: rem-calc(100) 0 rem-calc(20) rem-calc(10);
+    padding: 20px;
   }
 }
 
