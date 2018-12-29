@@ -48,10 +48,12 @@ body {
   font-size: $base-font-size;
 }
 
-// TODO: change for smaller screens
-//body {
-//  font-size: 12px;
-//}
+@media screen and (max-width: 800px) {
+  // TODO: double check
+  body {
+    font-size: 12px;
+  }
+}
 
 h1,
 h2,
@@ -154,7 +156,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .main-indented-content {
-  margin: 0 rem-calc(80px);
+  margin: rem-calc(20) rem-calc(80);
 }
 
 .horizontal-line {
@@ -524,7 +526,7 @@ only screen and (min-resolution: 240dpi) {
   .tabs-title > a {
     color: $black;
     margin-bottom: rem-calc(-1);
-    margin-right: $line-height;
+    margin-right: rem-calc(10);
     padding: rem-calc(6) rem-calc(12);
 
     &[aria-selected='true'],
