@@ -478,6 +478,18 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
+// Privacy
+
+.privacy {
+  ol {
+    margin: rem-calc(20) rem-calc(15);
+
+    & > li {
+      margin-bottom: rem-calc(20);
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
