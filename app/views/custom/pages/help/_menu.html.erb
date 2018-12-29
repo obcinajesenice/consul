@@ -1,0 +1,60 @@
+<ul class="tabs"
+    id="help_tabs"
+    data-deep-link="true"
+    data-update-history="true"
+    data-deep-link-smudge="true"
+    data-deep-link-smudge-delay="500"
+    data-tabs>
+  <% if feature?(:debates) %>
+    <li class="tabs-title">
+      <%= link_to "#tab-debates" do %>
+        <h3>
+          <%= t("pages.help.menu.debates") %>
+        </h3>
+      <% end %>
+    </li>
+  <% end %>
+  <% if feature?(:proposals) %>
+    <li class="tabs-title">
+      <%= link_to "#tab-proposals" do %>
+        <h3>
+          <%= t("pages.help.menu.proposals") %>
+        </h3>
+      <% end %>
+    </li>
+  <% end %>
+  <% if feature?(:budgets) %>
+    <li class="tabs-title is-active">
+      <%= link_to "#tab-budgets" do %>
+        <h3>
+          <%= t("pages.help.menu.budgets") %>
+        </h3>
+      <% end %>
+    </li>
+  <% end %>
+  <% if feature?(:polls) %>
+    <li class="tabs-title">
+      <%= link_to "#tab-polls" do %>
+        <h3>
+          <%= t("pages.help.menu.polls") %>
+        </h3>
+      <% end %>
+    </li>
+  <% end %>
+  <% if feature?(:legislation) %>
+    <li class="tabs-title">
+      <%= link_to "#tab-processes" do %>
+        <h3>
+          <%= t("pages.help.menu.processes") %>
+        </h3>
+      <% end %>
+    </li>
+  <% end %>
+  <li class="tabs-title">
+    <%= link_to "#tab-other" do %>
+      <h3>
+        <%= t("pages.help.menu.other") %>
+      </h3>
+    <% end %>
+  </li>
+</ul>

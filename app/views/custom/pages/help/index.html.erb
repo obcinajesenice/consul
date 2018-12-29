@@ -1,0 +1,65 @@
+<% provide :title do %><%= t("pages.titles.help", org: setting['org_name']) %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: help_url %>
+<% end %>
+
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<div class="row help main-indented-content">
+
+  <div class="small-12 column">
+    <h1><%= t("pages.help.title", org: setting['org_name']) %></h1>
+
+    <div class="row">
+
+      <div class="small-12 column" data-tabs-content="help_tabs">
+        <%= render "pages/help/menu" %>
+
+        <% if feature?(:debates) %>
+          <div class="tabs-panel" id="tab-debates">
+            <%= render "pages/help/debates" %>
+          </div>
+        <% end %>
+
+        <% if feature?(:proposals) %>
+          <div class="tabs-panel" id="tab-proposals">
+            <%= render "pages/help/proposals" %>
+          </div>
+        <% end %>
+
+        <% if feature?(:budgets) %>
+          <div class="tabs-panel is-active" id="tab-budgets">
+            <%= render "pages/help/budgets" %>
+          </div>
+        <% end %>
+
+        <% if feature?(:polls) %>
+          <div class="tabs-panel" id="tab-polls">
+            <%= render "pages/help/polls" %>
+          </div>
+        <% end %>
+
+        <% if feature?(:legislation) %>
+          <div class="tabs-panel" id="tab-processes">
+            <%= render "pages/help/processes" %>
+          </div>
+        <% end %>
+
+        <div class="tabs-panel" id="tab-other">
+          <%= render "pages/help/other" %>
+        </div>
+      </div>
+
+      <div class="technical-issues">
+        <h3><%= t("pages.help.faq.title") %></h3>
+        <p><%= t("pages.help.faq.description") %></p>
+        <%= link_to (t('pages.help.faq.button') + '&nbsp;<i class="custom-icon arrow-small-right"></i>').html_safe, faq_path, class: "action-button small" %>
+      </div>
+
+    </div>
+
+  </div>
+</div>
