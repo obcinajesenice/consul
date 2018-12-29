@@ -1,0 +1,13 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: faq_url %>
+<% end %>
+
+<div class="row faq main-indented-content">
+  <div class="small-12 column">
+    <h1 class="clear"><%= t("pages.help.faq.page.title") %></h1>
+    <p><%= t("pages.help.faq.page.description") %></p>
+
+    <h2 id="1"><%= t("pages.help.faq.page.faq_1_title") %></h2>
+    <p><%= t("pages.help.faq.page.faq_1_description") %></p>
+  </div>
+</div>
