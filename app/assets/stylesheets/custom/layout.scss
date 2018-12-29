@@ -1215,10 +1215,8 @@ form {
 }
 
 .error {
-  background: $alert-bg;
   color: $color-alert;
   display: inline-block;
-  margin: 0 $line-height / 4;
 
   a {
     color: $color-alert;
