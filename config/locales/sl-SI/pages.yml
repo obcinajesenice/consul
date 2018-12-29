@@ -76,7 +76,20 @@ sl:
           Če si programer/-ka, si lahko kodo ogledaš tukaj: [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Uporabi orodje v svojem lokalnem okolju 
-    privacy: Politiko zasebnosti
+    privacy:
+      title: Privacy Policy
+      subtitle: INFORMATION REGARDING DATA PRIVACY
+      info_items:
+        - text: The navigation through the information available in the Open Government Portal is anonymous.
+        - text: To use the services contained in the Open Government Portal, the user must register and previously provide personal data according to the specific information included in each type of registration.
+        - text: 'The data provided will be incorporated and processed by the City Council in accordance with the description of the following file:'
+        - subitems:
+          - field: 'File name:'
+            description: NAME OF THE FILE
+          - field: 'Purpose of the file:'
+            description: Managing participatory processes to control the qualification of the people participating in them and merely numerical and statistical recount of the results derived from citizen participation processes.
+          - field: 'Institution in charge of the file:'
+            description: INSTITUTION IN CHARGE OF THE FILE
     titles:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
