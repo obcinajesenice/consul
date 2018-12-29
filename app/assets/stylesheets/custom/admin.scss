@@ -464,15 +464,15 @@ $sidebar-active: #f4fcd0;
 // -----------------
 
 .delete {
-  border-bottom: 1px dotted #cf2a0e;
-  color: $delete;
+  color: $black;
   font-size: $small-font-size;
+  font-weight: 500;
+  text-decoration: underline;
 
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px dotted #fff;
-    color: #cf2a0e;
+    text-decoration: none;
   }
 }
 
