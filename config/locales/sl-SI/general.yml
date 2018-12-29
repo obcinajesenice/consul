@@ -32,6 +32,7 @@ sl:
       username_label: Uporabniško ime
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
+      recommendations: Priporočila
   application:
     close: Zapri
     menu: Meni
