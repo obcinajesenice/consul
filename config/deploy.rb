@@ -48,6 +48,7 @@ namespace :deploy do
   # after :publishing, 'deploy:restart'
   after :publishing, 'restart_unicorn'
   after :published, 'delayed_job:restart'
+  after :published, 'refresh_sitemap'
 
   after :finishing, 'deploy:cleanup'
 end
