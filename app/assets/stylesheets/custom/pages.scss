@@ -87,6 +87,11 @@
   padding-top: rem-calc(100);
   text-align: center;
   width: 100%;
+
+  img {
+    height: 500px;
+    width: auto;
+  }
 }
 
 .phase-enrichment {
@@ -140,7 +145,6 @@ only screen and (min-resolution: 240dpi) {
     flex-grow: 1;
     flex-basis: 0;
     margin: 0;
-    padding-bottom: rem-calc(350);
     position: relative;
 
     a {
@@ -157,11 +161,12 @@ only screen and (min-resolution: 240dpi) {
     }
 
     .column-content {
-      padding: rem-calc(90) rem-calc(50);
+      padding: rem-calc(50) rem-calc(50) rem-calc(90) rem-calc(50);
 
       h1 {
         letter-spacing: 2px;
         margin-bottom: rem-calc(30);
+        text-align: center;
       }
 
       h2 {
@@ -175,9 +180,8 @@ only screen and (min-resolution: 240dpi) {
     }
 
     .phase-enrichment-holder {
-      bottom: rem-calc(50);
-      overflow: hidden;
-      position: absolute;
+      margin-top: rem-calc(50);
+      position: relative;
       text-align: center;
       width: 100%;
 

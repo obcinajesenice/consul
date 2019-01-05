@@ -601,11 +601,6 @@ only screen and (min-resolution: 240dpi) {
   margin-top: 0;
 }
 
-.site-title {
-  font-size: rem-calc(20);
-  font-weight: 600;
-}
-
 // 02. Header
 // ----------
 
@@ -629,14 +624,9 @@ header {
 }
 
 .top-bar {
-  background: $white !important;
-  box-shadow: 0 0 43px rgba(0, 0, 0, 0.21);
-  color: $black;
+  background: $mandys-pink !important;
+  color: $rhino;
   padding: rem-calc(4.5) 20px;
-
-  ul {
-    background: none;
-  }
 
   .menu .menu-text {
     padding: 0;
@@ -721,8 +711,19 @@ header {
     }
   }
 
-  .top-bar-title {
+  .site-title-holder {
     line-height: $line-height;
+    margin: 0 auto;
+    padding: rem-calc(10) 0;
+    text-align: center;
+
+    .site-title {
+      font-size: rem-calc(20);
+
+      .site-name {
+        font-weight: 600;
+      }
+    }
 
     a img {
       height: rem-calc(48);
