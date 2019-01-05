@@ -57,7 +57,7 @@
   <!--  </div>-->
 
   <div class="row budget-investments">
-    <h2 class="phase-title">Že oddani predlogi</h2>
+    <h2 class="phase-title"><%= t('guides.budget_investment.title') %></h2>
 
     <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 

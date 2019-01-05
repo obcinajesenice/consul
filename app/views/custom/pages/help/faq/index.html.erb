@@ -3,11 +3,12 @@
 <% end %>
 
 <div class="row faq main-indented-content">
-  <div class="small-12 column">
+  <div class="small-12 medium-9 column">
     <h1 class="clear"><%= t("pages.help.faq.page.title") %></h1>
-    <p><%= t("pages.help.faq.page.description") %></p>
 
-    <h2 id="1"><%= t("pages.help.faq.page.faq_1_title") %></h2>
-    <p><%= t("pages.help.faq.page.faq_1_description") %></p>
+    <% t("pages.help.faq.page.questions").each_with_index do |item, index| %>
+      <h2 id="<%= index + 1 %>"><%= item[:question] %></h2>
+      <p><%= item[:answer] %></p>
+    <% end %>
   </div>
 </div>
