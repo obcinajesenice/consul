@@ -3,6 +3,7 @@ module Budgets
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include CustomPhasesHelper
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -17,6 +18,7 @@ module Budgets
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
+    before_action :load_custom_phases, only: [:index]
 
     skip_authorization_check only: :json_data
 

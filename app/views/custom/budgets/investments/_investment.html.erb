@@ -9,7 +9,7 @@
             <% if investment.image.present? %>
               <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
             <% else %>
-              <!--            TODO: need bigger and better image-->
+              <!-- TODO: need bigger and better image-->
               <%= image_tag "default-investment@2x.png" %>
             <% end %>
           <% end %>
@@ -35,10 +35,7 @@
         </div>
       </div>
 
-      <!--      TODO: all the statuses are here below -->
-      <!--      TODO: show money only after price is assigned -->
       <% unless investment.unfeasible? %>
-
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"

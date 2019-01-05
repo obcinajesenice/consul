@@ -4,6 +4,17 @@
   margin-top: rem-calc(50);
 }
 
+.custom-phases-nav {
+  left: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .tabs {
+    display: inline-block;
+  }
+}
+
 // Login / Registration
 
 .auth-page {
