@@ -110,9 +110,9 @@
   background-size: 960px 270px;
 
   &.accepting {
-    background-position: -3px -7px;
-    height: 256px;
-    width: 282px;
+    background-position: -319px -10px;
+    height: 249px;
+    width: 295px;
   }
 
   &.selecting {
@@ -122,9 +122,9 @@
   }
 
   &.balloting {
-    background-position: -319px -10px;
-    height: 249px;
-    width: 295px;
+    background-position: -3px -7px;
+    height: 256px;
+    width: 282px;
   }
 
   &.finished {
