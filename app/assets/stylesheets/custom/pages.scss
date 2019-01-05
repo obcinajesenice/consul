@@ -227,8 +227,12 @@ only screen and (min-resolution: 240dpi) {
     padding: 0;
     position: relative;
 
+    .large-description {
+      margin-bottom: 0;
+    }
+
     .action-button {
-      margin: rem-calc(10) 0;
+      margin: rem-calc(30) 0;
     }
 
     .phase-enrichment-holder {

@@ -64,6 +64,11 @@ sl:
           description: "Uporabi to stran, da razrešiš najpogostejše dileme uporabnikov tega spletnega mesta."
           faq_1_title: "1. Vprašanje"
           faq_1_description: "Primer vprašanja."
+          questions:
+            - question: '1. Vprašanje'
+              answer: 'Odgovor 1.'
+            - question: '2. Vprašanje'
+              answer: 'Odgovor 2.'
       other:
         title: "Druge relevantne informacije"
         how_to_use: "Uporabi %{org_name} v svojem mestu/občini"

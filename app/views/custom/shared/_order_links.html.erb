@@ -1,12 +1,14 @@
-<ul class="float-right ordering">
-  <% @valid_orders.each do |order| %>
-    <li class="inline-block <%= order == @current_order ? 'is-active' : '' %>">
-      <%= link_to current_path_with_query_params(order: order, page: 1) do %>
-        <%= content_tag(:span) do %>
-          <%= t("#{i18n_namespace}.orders.#{order}") %>
-          <i class="custom-css-icon <%= order == @current_order ? 'triangle-down' : 'triangle-up' %>"></i>
+<% unless @valid_orders.length == 1 and @valid_orders[0] == 'created_at' %>
+  <ul class="float-right ordering">
+    <% @valid_orders.each do |order| %>
+      <li class="inline-block <%= order == @current_order ? 'is-active' : '' %>">
+        <%= link_to current_path_with_query_params(order: order, page: 1) do %>
+          <%= content_tag(:span) do %>
+            <%= t("#{i18n_namespace}.orders.#{order}") %>
+            <i class="custom-css-icon <%= order == @current_order ? 'triangle-down' : 'triangle-up' %>"></i>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
