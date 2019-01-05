@@ -17,18 +17,20 @@
             <% if phase.url %>
               <a class="linkable" href="<%= phase.url %>">
             <% end %>
+            <div class="phase-enrichment-holder">
+              <div class="phase-enrichment <%= phase.kind %>"></div>
+            </div>
             <div class="column-content">
               <h1><%= t("custom.headings.#{phase.kind}") %>!</h1>
               <h2><%= strip_tags(phase.summary) %></h2>
-              <p class="large-description"><%= strip_tags(phase.description) %></p>
+              <% unless phase.url %>
+                <p class="large-description"><%= strip_tags(phase.description) %></p>
+              <% end %>
               <% if phase.url %>
                 <span class="action-button large">
                   <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
                 </span>
               <% end %>
-            </div>
-            <div class="phase-enrichment-holder">
-              <div class="phase-enrichment <%= phase.kind %>"></div>
             </div>
             <% if phase.url %>
               </a>
@@ -39,7 +41,7 @@
     <% else %>
       <section class="welcome-column">
         <div class="no-budget">
-          <%= image_tag "vote.png", style: 'height:500px; width:auto;' %>
+          <%= image_tag "vote.png" %>
         </div>
       </section>
     <% end %>
