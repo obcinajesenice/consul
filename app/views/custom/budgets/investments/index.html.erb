@@ -12,81 +12,86 @@
   <% end %>
 <% end %>
 
-<main id="budget-investments-main" class="main-indented-content">
+<main id="budget-investments-main" class="main-indented-content" data-tabs-content="custom_phases_tabs">
 
-  <%= render '/budgets/investments/header' %>
+  <div class="custom-phases-nav">
+    <ul class="tabs" id="custom_phases_tabs"
+        data-deep-link="true"
+        data-update-history="true"
+        data-deep-link-smudge="true"
+        data-deep-link-smudge-delay="500"
+        data-tabs>
+      <% @custom_phases.each do |_, phase| %>
+        <% if phase.enabled %>
+          <li class="tabs-title <%= 'is-active active-phase' if phase.url %>">
+            <%= link_to "#tab-#{phase.kind}" do %>
+              <h3><%= t("custom.headings.#{phase.kind}") %></h3>
+              <span><%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %></span>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 
-  <% if params[:search].present? || params[:advanced_search].present? %>
-    <!--    TODO: show results with search param -->
-    <!--    <div class="highlight no-margin-top margin-bottom">-->
-    <!--      <div class="row">-->
-    <!--        <div class="small-12 column">-->
-    <!--          <h2><%#= t("shared.search_results") %></h2>-->
-    <!--          <p>-->
-    <%#= page_entries_info @investments %>
-    <!--            <%#= t("budgets.investments.index.search_results_html",-->
-<!--                  count: @investments.size,-->
-                  search_term: params[:search]) %>
-<!--          </p>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
+  <% @custom_phases.each do |_, phase| %>
+    <% if phase.enabled %>
+      <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
+        <% if phase.url %>
+          <%= render '/budgets/investments/header' %>
+
+          <div class="row budget-investments">
+            <h2 class="phase-title"><%= t('guides.budget_investment.title') %></h2>
+
+            <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+
+            <div>
+              <%= render 'budgets/investments/categories' %>
+              <% if @budget.headings.count > 1 %>
+                <%= render 'budgets/investments/districts' %>
+              <% end %>
+            </div>
+
+            <div class="row small-up-1 medium-up-1 large-up-4">
+              <% @investments.each_with_index do |investment, index| %>
+                <% investment_class = 'column column-block budget-investment-holder' %>
+                <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+                <div class="<%= investment_class %>">
+                  <%= render partial: '/budgets/investments/investment',
+                             locals: {
+                               investment: investment,
+                               investment_ids: @investment_ids,
+                               investment_votes: @investment_votes,
+                               ballot: @ballot
+                             } %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <%= paginate @investments %>
+          </div>
+        <% else %>
+          <h1>
+            <%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %>
+          </h1>
+          <h1>
+            TODO: add some custom text here
+          </h1>
+          <h1>
+            <%= t("custom.headings.#{phase.kind}") %>!
+          </h1>
+          <h2>
+            <%= strip_tags(phase.summary.html_safe) %>
+          </h2>
+          <p class="large-description">
+            <%= strip_tags(phase.description.html_safe) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 
-  <!--  TODO: remove all this?-->
-  <!--  <div class="row">-->
-  <!--    <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">-->
-
-  <!--      <!--      TODO: I Don't even know what's this-->
-  <%# if @current_filter == "unfeasible" %>
-  <!--        <div class="small-12 margin-bottom">-->
-  <!--          <h2><%#= t("budgets.investments.index.unfeasible") %>: <%#= @heading.name %></h2>-->
-  <!--          <div class="callout primary margin">-->
-  <%#= t("budgets.investments.index.unfeasible_text") %>
-  <!--          </div>-->
-  <!--        </div>-->
-  <%# elsif @heading.present? %>
-  <!--        <div class="row">-->
-  <!--          <div class="small-12 column">-->
-  <%#= render "view_mode" %>
-  <!--          </div>-->
-  <!--        </div>-->
-  <%# end %>
-  <!--    </div>-->
-
-  <!--  </div>-->
-
-  <div class="row budget-investments">
-    <h2 class="phase-title"><%= t('guides.budget_investment.title') %></h2>
-
-    <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
-
-    <div>
-      <%= render 'budgets/investments/categories' %>
-      <% if @budget.headings.count > 1 %>
-        <%= render 'budgets/investments/districts' %>
-      <% end %>
-    </div>
-
-    <div class="row small-up-1 medium-up-1 large-up-4">
-      <% @investments.each_with_index do |investment, index| %>
-        <% investment_class = 'column column-block budget-investment-holder' %>
-        <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
-        <div class="<%= investment_class %>">
-          <%= render partial: '/budgets/investments/investment',
-                     locals: {
-                       investment: investment,
-                       investment_ids: @investment_ids,
-                       investment_votes: @investment_votes,
-                       ballot: @ballot
-                     } %>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <%= paginate @investments %>
-  </div>
 </main>

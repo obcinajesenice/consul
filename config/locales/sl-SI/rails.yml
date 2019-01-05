@@ -54,6 +54,7 @@ sl:
       default: "%d.%m.%Y"
       long: "%B %d, %Y"
       short: "%b %d"
+      shortish: "%d. %B"
     month_names:
     -
     - Januar
