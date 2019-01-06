@@ -154,10 +154,6 @@ module Budgets
     end
 
     def load_heading
-      # TODO: load default heading or fake it?
-      #
-      # TODO: how many headings?
-
       if params[:heading_id].present?
         @heading = @budget.headings.find(params[:heading_id])
         @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
