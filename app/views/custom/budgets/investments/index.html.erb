@@ -52,7 +52,7 @@
               <% end %>
             </div>
 
-            <div class="row small-up-1 medium-up-1 large-up-4">
+            <div class="row small-up-1 medium-up-1 large-up-3">
               <% @investments.each_with_index do |investment, index| %>
                 <% investment_class = 'column column-block budget-investment-holder' %>
                 <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
@@ -77,9 +77,7 @@
           <h1>
             <%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %>
           </h1>
-          <h1>
-            TODO: add some custom text here
-          </h1>
+<!--          TODO: add some custom text here-->
           <h1>
             <%= t("custom.headings.#{phase.kind}") %>!
           </h1>

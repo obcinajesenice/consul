@@ -31,6 +31,7 @@
               <%= strip_tags(investment.description.gsub('><', '> <')).truncate(90, separator: ' ', omission: '...') %>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>
+<!--            TODO: show price and votes count-->
           <% end %>
         </div>
       </div>
