@@ -67,6 +67,8 @@ section "Creating Settings" do
   Setting.create(key: 'map_zoom', value: 10)
   Setting.create(key: 'related_content_score_threshold', value: -0.3)
 
+  # // TODO: logo_header
+
   Setting['feature.homepage.widgets.feeds.proposals'] = true
   Setting['feature.homepage.widgets.feeds.debates'] = true
   Setting['feature.homepage.widgets.feeds.processes'] = true

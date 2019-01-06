@@ -67,7 +67,7 @@ module CustomPhasesHelper
         custom_phases[CUSTOM_PHASE_ACCEPTING].url = budget_investments_url(current_budget)
       end
     elsif current_phase === 'balloting' || current_phase === 'reviewing_ballots'
-      custom_phases[CUSTOM_PHASE_BALLOTING].url = budget_investments_url(current_budget)
+      custom_phases[CUSTOM_PHASE_BALLOTING].url = budget_investments_url(current_budget, heading_id: current_budget.headings.first.id)
     elsif current_phase === 'finished'
       custom_phases[CUSTOM_PHASE_FINISHED].url = budget_investments_url(current_budget)
     end

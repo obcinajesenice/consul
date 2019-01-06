@@ -1,0 +1,13 @@
+<span class="total-amount float-right">
+  <%= @budget.formatted_heading_price(@heading) %>
+</span>
+
+<div class="progress" role="progressbar" tabindex="0"
+     id="progress"
+     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-meter"
+       style="width: <%= progress_bar_width(@budget.heading_price(@heading),
+                                            @ballot.amount_spent(@heading)) %>">
+  </div>
+  <small title="<%= t("budgets.progress_bar.available") %> <%= @ballot.formatted_amount_available(@heading) %>"><%= t("budgets.progress_bar.assigned") %></small><%= @ballot.formatted_amount_spent(@heading) %>
+</div>
