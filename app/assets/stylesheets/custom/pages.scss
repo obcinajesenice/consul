@@ -12,6 +12,13 @@
 
   .tabs {
     display: inline-block;
+
+    .active-phase {
+      // TODO: make it shiny
+      > a {
+        color: $minsk !important;
+      }
+    }
   }
 }
 
@@ -228,7 +235,6 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .phase-description {
-  border-bottom: 1px solid $rhino;
 
   h1 {
     margin-bottom: rem-calc(30);
@@ -247,7 +253,7 @@ only screen and (min-resolution: 240dpi) {
     }
 
     .action-button {
-      margin: rem-calc(30) 0;
+      margin: rem-calc(30) 0 rem-calc(20) 0;
     }
 
     .phase-enrichment-holder {
@@ -261,6 +267,18 @@ only screen and (min-resolution: 240dpi) {
         margin: 0 auto;
         position: relative;
       }
+    }
+  }
+}
+
+.progress-bar-nav {
+  background-color: $alabaster;
+
+  .progress {
+    background-color: $prelude;
+
+    .progress-meter {
+      background-color: $minsk;
     }
   }
 }

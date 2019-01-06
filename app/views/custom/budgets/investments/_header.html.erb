@@ -10,21 +10,23 @@
       <p class="large-description">
         <%= strip_tags(current_budget.current_phase.description.html_safe) %>
       </p>
-      <% if current_user %>
-        <% if current_user&.level_two_or_three_verified? %>
+      <% if current_budget.phase == 'accepting' %>
+        <% if current_user %>
+          <% if current_user&.level_two_or_three_verified? %>
+            <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large' do %>
+              <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+            <% end %>
+          <% else %>
+            <div class="callout warning">
+              <%= link_to verification_path, class: 'action-button large' do %>
+                <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
           <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large' do %>
             <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
           <% end %>
-        <% else %>
-          <div class="callout warning">
-            <%= link_to verification_path, class: 'action-button large' do %>
-              <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large' do %>
-          <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
         <% end %>
       <% end %>
     </div>
@@ -34,71 +36,66 @@
       </div>
     </div>
   </div>
+
+  <% unless can? :show, @ballot %>
+    <div class="horizontal-line"></div>
+  <% end %>
+
+  <% if @heading %>
+    <section class="no-margin-top margin-bottom">
+      <div class="expanded budget-heading padding">
+
+        <div class="row">
+          <div class="small-12 column">
+            <% if can? :show, @ballot %>
+              <%= link_to t("budgets.investments.header.check_ballot"), budget_ballot_path(@budget), class: "button float-right" %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row progress-votes">
+          <div class="row">
+            <div class="small-12 column">
+              <% if can? :show, @ballot %>
+                <div id="check-ballot" style="display: none;">
+                  <%= link_to t("budgets.investments.header.check_ballot"), budget_ballot_path(@budget) %>
+                </div>
+                <% if @ballot.valid_heading?(@heading) %>
+                  <div class="progress-bar-nav" data-fixed-bar>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                    </h2>
+                    <div id="progress_bar" class="no-margin-top">
+                      <%= render 'budgets/ballot/progress_bar' %>
+                    </div>
+                  </div>
+                <% else %>
+                  <h2>
+                    <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                  </h2>
+                  <div class="small-12 medium-9">
+                    <div class="callout warning margin-top">
+                      <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
+                      <br>
+                      <small>
+                        <%= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
+                      </small>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <h2 class="margin-top">
+                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                </h2>
+                <h3>
+                  <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+                  <%= @budget.formatted_heading_price(@heading) %>
+                </h3>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
 </div>
-
-<!--TODO: show active filters, count, show budget per region-->
-
-<div class="row">
-  <div class="small-12 column">
-    <% if can? :show, @ballot %>
-      <%= link_to t("budgets.investments.header.check_ballot"),
-                  budget_ballot_path(@budget),
-                  class: "button float-right" %>
-    <% end %>
-  </div>
-</div>
-
-<!--<section class="no-margin-top margin-bottom">-->
-<!--  <div class="expanded budget-heading padding">-->
-
-<!--    <div class="row">-->
-<!--      <div class="small-12 column">-->
-<%# if can? :show, @ballot %>
-<!--          <%#= link_to t("budgets.investments.header.check_ballot"), budget_ballot_path(@budget), class: "button float-right" %>-->
-<%# end %>
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="row progress-votes">-->
-<!--      <div class="small-12 column">-->
-<%# if can? :show, @ballot %>
-<!--          <div id="check-ballot" style="display: none;">-->
-<%#= link_to t("budgets.investments.header.check_ballot"), budget_ballot_path(@budget) %>
-<!--          </div>-->
-<%# if @ballot.valid_heading?(@heading) %>
-<!--            <div class="progress-bar-nav" data-fixed-bar>-->
-<!--              <h2>-->
-<%#= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-<!--              </h2>-->
-<!--              <div id="progress_bar" class="no-margin-top">-->
-<%#= render 'budgets/ballot/progress_bar' %>
-<!--                TODO: without heading-->
-<!--              </div>-->
-<!--            </div>-->
-<%# else %>
-<!--            <h2>-->
-<%#= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-<!--            </h2>-->
-<!--            <div class="small-12 medium-9">-->
-<!--              <div class="callout warning margin-top">-->
-<%#= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
-<!--                <br>-->
-<!--                <small>-->
-<%#= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
-<!--                </small>-->
-<!--              </div>-->
-<!--            </div>-->
-<%# end %>
-<%# else %>
-<!--          <h2 class="margin-top">-->
-<%#= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-<!--          </h2>-->
-<!--          <h3>-->
-<!--            <span class="tagline"><%#= t("budgets.investments.header.price") %></span>-->
-<%#= @budget.formatted_heading_price(@heading) %>
-<!--          </h3>-->
-<%# end %>
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
