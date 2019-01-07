@@ -1175,6 +1175,8 @@ form {
 }
 
 .callout {
+  border-radius: 4px;
+  border: 0;
   font-size: $small-font-size;
 
   a:not(.button) {
@@ -1184,15 +1186,13 @@ form {
 
   &.success,
   &.notice {
-    background-color: $success-bg;
-    border-color: $success-border;
-    color: $color-success;
+    background-color: $color-success-new;
+    color: $black;
   }
 
   &.primary {
-    background-color: $info-bg;
-    border-color: $info-border;
-    color: $color-info;
+    background-color: $color-success-new;
+    color: $black;
 
     a {
       color: $link !important;
@@ -1201,21 +1201,52 @@ form {
 
   &.custom {
     background-color: $alabaster;
-    border: 0;
     color: $black;
   }
 
   &.warning {
-    background-color: $warning-bg;
-    border-color: $warning-border;
-    color: $color-warning;
+    background-color: $color-warning-new;
+    color: $black;
   }
 
   &.alert,
   &.error {
-    background-color: $alert-bg;
-    border-color: $alert-border;
-    color: $color-alert;
+    background-color: $color-warning-new;
+    color: $black;
+  }
+
+  // this is just for the flash messages
+  &.flash {
+    &.success,
+    &.notice {
+      background-color: $success-bg;
+      color: $color-success;
+    }
+
+    &.primary {
+      background-color: $info-bg;
+      color: $color-info;
+
+      a {
+        color: $link !important;
+      }
+    }
+
+    &.custom {
+      background-color: $alabaster;
+      color: $black;
+    }
+
+    &.warning {
+      background-color: $warning-bg;
+      color: $color-warning;
+    }
+
+    &.alert,
+    &.error {
+      background-color: $alert-bg;
+      color: $color-alert;
+    }
   }
 
   .close {
