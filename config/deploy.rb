@@ -1,9 +1,9 @@
 # config valid only for current version of Capistrano
 lock '~> 3.10.1'
 
-def deploysecret(key, default_value = 'undefined')
+def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, default_value)
+  @deploy_secrets_yml.fetch(key.to_s, 'undefined')
 end
 
 set :rails_env, fetch(:stage)
@@ -13,9 +13,9 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, deploysecret(:repo_url)
+set :repo_url, 'https://github.com/consul/consul.git'
 
-set :revision, `git rev-parse --short #{deploysecret(:branch, 'master')}`.strip
+set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info
 set :pty, true
@@ -45,8 +45,7 @@ namespace :deploy do
   #before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
   #before :starting, 'install_bundler_gem' # install bundler gem
 
-  # after :publishing, 'deploy:restart'
-  after :publishing, 'restart_unicorn'
+  after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'
   after :published, 'refresh_sitemap'
 
@@ -55,13 +54,7 @@ end
 
 task :install_bundler_gem do
   on roles(:app) do
-    execute "source ~/.rvm/scripts/rvm; rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
-  end
-end
-
-task :restart_unicorn do
-  on roles(:app) do
-    execute "/etc/init.d/unicorn_consul restart;"
+    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
   end
 end
 
