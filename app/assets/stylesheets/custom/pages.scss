@@ -209,6 +209,7 @@ only screen and (min-resolution: 240dpi) {
       }
     }
 
+    /*
     &.accepting {
       background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
     }
@@ -224,6 +225,7 @@ only screen and (min-resolution: 240dpi) {
     &.finished {
       background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%);
     }
+    */
   }
 }
 
@@ -758,4 +760,17 @@ span:hover:before {
 
 .footer{
   position: initial;
+}
+
+.welcome-columns{
+  .welcome-column {
+
+    background-image: linear-gradient(to top, #32366a 0%, #40358f 100%);
+
+    .linkable {
+      background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%)!important;
+      display: inline-block;
+    }
+  }
+
 }
