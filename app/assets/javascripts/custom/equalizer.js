@@ -18,5 +18,8 @@ $(function(){
       bdesc.height(mh);
     }
   }
+  if($(".welcome-column .linkable").length > 0){
+    $(".welcome-column .linkable").height($(".welcome-column").height());
+  }
 
 });
