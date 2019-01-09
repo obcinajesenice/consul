@@ -635,8 +635,11 @@ select{
 .budget-investments .budget-investment-holder .budget-investment .budget-investment-content .investment-title h3{
   height: auto;
 }
+.home-page footer{
+  background: #e1e1e1;
+}
 footer{
-  height: auto;
+  height: max-content;
   .logo-holder{
     padding-left: 0;
   }
