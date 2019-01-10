@@ -25,19 +25,22 @@
 // Login / Registration
 
 .auth-page {
-  background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
+  background-image: linear-gradient(-226deg, #f0b9ad 0%, #272266 100%);
 
   h1 {
-    color: $white;
-    margin-top: rem-calc(100);
+    margin-top: rem-calc(60);
     text-align: center;
   }
 
   h2 {
     color: $rhino;
-    font-weight: 800;
-    margin-bottom: rem-calc(30);
+    font-weight: 400;
+    margin-bottom: rem-calc(35);
     text-align: center;
+
+    font-size: rem-calc(30);
+    line-height: 37px;
+
   }
 
   a:not(.page-title):not(.action-button):not(.site-title) {
@@ -71,7 +74,6 @@
 
 .auth-form {
   background-color: $white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.83);
   border: 1px solid #d7d7d7;
   border-radius: 10px;
   margin-bottom: rem-calc(100);
@@ -93,8 +95,11 @@
   }
 
   span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 17px;
+
     background: #fff;
-    font-weight: bold;
     padding: 0 $line-height / 2;
   }
 }
@@ -792,6 +797,51 @@ span:hover:before {
     .linkable {
       background-image: linear-gradient(-21deg, #594bbd 0%, #484e98 100%) !important;
       display: inline-block;
+    }
+  }
+}
+
+
+form label{
+  color: #000000;
+  font-size: rem-calc(18);
+  font-weight: 400;
+  line-height: rem-calc(26);
+}
+
+.action-button.huge{
+  box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
+  border-radius: 36px;
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
+
+  color: #272266;
+  font-size: rem-calc(30);
+  font-weight: 700;
+  line-height: rem-calc(40);
+
+  margin: 10px;
+}
+
+.auth-page {
+  .site-title-holder {
+    line-height: $line-height;
+    margin: rem-calc(60) 0 auto 0;
+    padding: rem-calc(10) 0;
+    text-align: center;
+    color: $rhino;
+
+    .site-title {
+      font-size: rem-calc(30);
+      font-weight: 600;
+      line-height: 40.5px;
+
+      .site-name {
+        font-weight: 600;
+      }
+      .place-name{
+        font-weight: 300;
+
+      }
     }
   }
 }

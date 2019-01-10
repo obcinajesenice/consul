@@ -10,9 +10,11 @@
   <div class="small-12 column">
     <div class="row">
       <div class="small-12 large-6 small-centered column">
-        <%= link_to root_path, accesskey: "0", class: 'page-title' do %>
-          <h1><%= t("seeds.budgets.budget") %></h1>
-        <% end %>
+        <div class="site-title-holder">
+          <%= link_to root_path, accesskey: "0", class: 'site-title' do %>
+            <span class="site-name"><%= setting['org_name'] %></span>&nbsp;/&nbsp;<span class="place-name"><%= setting['place_name'] %></span>
+          <% end %>
+        </div>
         <div class="auth-form margin">
           <div class="auth-form-content">
             <%= render 'layouts/flash' %>
