@@ -925,14 +925,17 @@ form label {
   padding-top:rem-calc(60)
 }
 .pagination li{
-  font-size: rem-calc(20);
   color: #32366a;
   font-weight: 400;
+  font-size: rem-calc(17);
 }
 .pagination .current{
-  border-radius: 15px;
+  border-radius: 30px;
   background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: rem-calc(20);
+  line-height: rem-calc(26);
+  width: 32px;
   color: #FFFFFF;
 }
 .pagination li.pagination-next,
