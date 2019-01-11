@@ -16,7 +16,7 @@
 
       <%= hidden_field_tag :confirmation_token, @confirmation_token %>
 
-      <div class="small-12 medium-8 small-centered button-holder" style="text-align: center;">
+      <div class="small-12 medium-12 small-centered button-holder pad-t-60">
         <%= button_tag(type: 'submit', class: "action-button huge") do %>
           <%= t("devise_views.confirmations.new.submit") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
         <% end %>
@@ -24,5 +24,8 @@
     </div>
   </div>
 <% end %>
+
+<div class="small-12 column auth-divider custom-divider">
+</div>
 
 <%= render "devise/shared/links" %>
