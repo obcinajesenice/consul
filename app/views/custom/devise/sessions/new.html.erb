@@ -24,20 +24,23 @@
       </div>
     <% end -%>
 
-    <div class="small-12 medium-6 small-centered button-holder">
+    <div class="small-12 medium-8 small-centered button-holder pad-t-60">
       <%= button_tag(type: 'submit', class: "action-button huge") do %>
         <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
       <% end %>
+
+      <div class="signuplinkposition">
+        <div>
+          <%= t("devise_views.shared.links.signup",
+                signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path)).html_safe %>
+        </div>
+      </div>
+
     </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-
 <div class="small-12 column auth-divider custom-divider">
 </div>
 
-<div class="text-center">
-  <%= t("devise_views.shared.links.signup",
-        signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path)).html_safe %>
-</div>
+<%= render "devise/shared/links" %>
