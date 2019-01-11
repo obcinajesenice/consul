@@ -49,13 +49,22 @@
               target: "_blank")).html_safe %>
         </span>
       <% end %>
-      <div class="small-12 medium-6 small-centered button-holder">
+      <div class="small-12 medium-8 small-centered button-holder pad-t-60">
         <%= button_tag(type: 'submit', class: "action-button huge") do %>
           <%= t("devise_views.users.registrations.new.submit") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
         <% end %>
+
+        <div class="signuplinkposition">
+          <div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 <% end %>
+
+<div class="small-12 column auth-divider custom-divider">
+</div>
 
 <%= render "devise/shared/links" %>

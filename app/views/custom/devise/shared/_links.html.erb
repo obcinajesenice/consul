@@ -1,4 +1,9 @@
-<div class="text-center">
+<div class="text-left">
+  <span class="signuporgposition">
+    <%= t("devise_views.users.registrations.new.organization_signup",
+          signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
+  </span>
+
   <%- if controller_name != 'sessions' %>
     <%= link_to t("devise_views.shared.links.login"), new_session_path(resource_name) %><br>
   <% end -%>
@@ -16,4 +21,7 @@
       <%= link_to t("devise_views.shared.links.signin_with_provider", provider: provider.to_s.titleize), omniauth_authorize_path(resource_name, provider), class: 'smaller-text' %><br>
     <% end -%>
   <% end -%>
+
+
+
 </div>
