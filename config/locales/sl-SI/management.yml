@@ -65,7 +65,7 @@ sl:
       create_spending_proposal: Ustvari predlog porabe
       print_spending_proposals: Natisni predloge porabe
       support_spending_proposals: Podpri predloge porabe
-      create_budget_investment: Dodaj svoj predlog!
+      create_budget_investment: Dodaj svoj predlog
       print_budget_investments: Natisni proračunske naložbe
       support_budget_investments: Podpri proračunske naložbe
       users: Uporabniki
@@ -81,9 +81,9 @@ sl:
       proposals_note: Predlogi, ki bodo prejeli več podpore, gredo na glasovanje. Če jih sprejme večina, jih bo občina izvedla.
       proposals_title: 'Predlogi:'
       spending_proposals_info: Sodeluj na http://url.consul
-      spending_proposals_note: Participatorni proračun bo dodeljen proračunskim naložbam z največ podpore.
+      spending_proposals_note: Participativni proračun bo dodeljen proračunskim naložbam z največ podpore.
       budget_investments_info: Sodeluj na http://url.consul
-      budget_investments_note: Participatorni proračun bo dodeljen proračunski naložbi z največ podpore.
+      budget_investments_note: Participativni proračun bo dodeljen proračunski naložbi z največ podpore.
     print_info: Natisni te informacije
     proposals:
       alert:
@@ -92,13 +92,13 @@ sl:
       print:
         print_button: Natisni
     budgets:
-      create_new_investment: Ustvari novo naložbo
+      create_new_investment: Oddaj predlog
       print_investments: Natisni proračunske naložbe
       support_investments: Podpri proračunske naložbe
     budget_investments:
       alert:
         unverified_user: Uporabnik ni verificiran
-      create: Dodaj svoj predlog!
+      create: Dodaj svoj predlog
       filters:
         heading: Koncept
         unfeasible: Neizvedljiva naložba

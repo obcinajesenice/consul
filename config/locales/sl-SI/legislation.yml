@@ -17,7 +17,7 @@ sl:
           four: "%{count} odgovori"
           other: "%{count} odgovorov"
         cancel: Prekliči
-        publish_comment: Objavi komentar
+        publish_comment: Oddaj komentar
       form:
         phase_not_open: Ta faza ni odprta
         login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
@@ -80,7 +80,7 @@ sl:
         section_footer:
           title: Pomoč glede zakonodajnih procesov
           description: Sodeluj v razpravah in procesih pred odobritvijo uredbe ali občinske akcije. O tvojem mnenju bo razmislil tudi občinski/mestni svet.
-          help_text_1: "V participatornih procesih mestni/občinski svet ponuja svojim prebivalcem priložnost, da sodelujejo v pripravi osnutkov in sprememb mestnih/občinskih uredb in podajajo svoja mnenja."
+          help_text_1: "V participativnih procesih mestni/občinski svet ponuja svojim prebivalcem priložnost, da sodelujejo v pripravi osnutkov in sprememb mestnih/občinskih uredb in podajajo svoja mnenja."
           help_text_2: "Posamezniki, registrirani v %{org} lahko s prispevki sodelujejo v javnih posvetih glede novih uredb in smernic. Tvoje komentarje analizira pristojno delovno telo, upoštevani so tudi v končnih verzijah uradnih besedil."
           help_text_3: "Mestni/občinski svet prav tako odpira procese, preko katerih lahko prejme prispevke in mnenja o njihovih načrtih."
       phase_not_open:

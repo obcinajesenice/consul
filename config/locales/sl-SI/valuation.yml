@@ -4,11 +4,11 @@ sl:
       title: Cenitev
     menu:
       title: Cenitev
-      budgets: Participatorni proračun
+      budgets: Participativni proračun
       spending_proposals: Predlogi porabe
     budgets:
       index:
-        title: Participatorni proračun
+        title: Participativni proračun
         filters:
           current: Odprti
           finished: Končani
@@ -85,7 +85,7 @@ sl:
           valuation_open: Odprti
           valuating: V cenitvi
           valuation_finished: Cenitev končana
-        title: Naložbeni projekti za participatorni proračun
+        title: Naložbeni projekti za participativni proračun
         edit: Uredi
       show:
         back: Nazaj

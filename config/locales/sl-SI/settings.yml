@@ -28,7 +28,7 @@ sl:
     org_name: "Organizacija"
     place_name: "Mesto"
     feature:
-      budgets: Participatorni proračun
+      budgets: Participativni proračun
       twitter_login: Prijava v Twitter
       facebook_login: Prijava v Facebook
       google_login: Prijava v Google

@@ -3,8 +3,8 @@ sl:
     confirmations:
       new:
         email_label: E-naslov
-        submit: Ponovno pošlji navodila
-        title: Ponovno pošlji potrditvena navodila
+        submit: Pošlji
+        title: Ponovno pošlji navodila za potrditev registracije
       show:
         instructions_html: Potrjujevanje računa z e-naslovom %{email}
         new_password_confirmation_label: Ponovno vpiši dostopno geslo
@@ -33,7 +33,7 @@ sl:
         unlock_link: Odkleni moj račun
     menu:
       login_items:
-        login: Vpiši se
+        login: Prijava
         logout: Izpiši se
         signup: Registriraj se
     organizations:
@@ -45,9 +45,9 @@ sl:
           password_label: Geslo
           phone_number_label: Telefonska številka
           responsible_name_label: Polno ime odgovorne osebe
-          responsible_name_note: Gre za osebo, ki predstavlja društvo, zavod oz. organizacijo, v čigar imenu so objavljeni predlogi
+          responsible_name_note: Gre za osebo, ki predstavlja društvo, zavod oz. organizacijo.
           submit: Registriraj se
-          title: Registriraj se kot organizacija ali kolektiv
+          title: Registriraj se kot organizacija
         success:
           back_to_index: Razumem; nazaj na glavno stran
           instructions_1_html: "<b>Kmalu te bomo kontaktirali,</b> da preverimo, da v resnici predstavljaš to organizacijo oz. kolektiv."
@@ -71,14 +71,14 @@ sl:
         password_label: Geslo
         remember_me: Zapomni si me
         submit: Vstopi
-        title: Vpiši se
+        title: Prijava
     shared:
       links:
         login: Vstopi
-        new_confirmation: Nisi prejel navodil, kako aktivirati svoj račun?
+        new_confirmation: Nisi prejel/-a navodil, kako aktivirati svoj račun?
         new_password: Pozabljeno geslo?
         new_unlock: Nisi prejel navodil, kako odkleniti svoj račun?
-        signin_with_provider: Vpiši se z/s %{provider}
+        signin_with_provider: Prijavi se z/s %{provider}
         signup: Nimaš računa? %{signup_link}
         signup_link: Registriraj se
     unlocks:
@@ -98,8 +98,8 @@ sl:
           current_password_label: Trenutno geslo
           edit: Uredi
           email_label: E-naslov
-          leave_blank: Če ne želiš spreminjati, pusti prazno
-          need_current: Za potrditev sprememb potrebujemo tvoje trenutno geslo
+          leave_blank: Če ne želiš spremeniti gesla, pusti to polje prazno.
+          need_current: Za potrditev sprememb potrebujemo tvoje trenutno geslo.
           password_confirmation_label: Potrdi novo geslo
           password_label: Novo geslo
           update_submit: Posodobi
@@ -107,18 +107,18 @@ sl:
         new:
           cancel: Prekliči prijavo
           email_label: E-naslov
-          organization_signup: Ali predstavljaš organizacijo ali kolektiv? %{signup_link}
+          organization_signup: Ali predstavljaš organizacijo? %{signup_link}
           organization_signup_link: Registriraj se tukaj
           password_confirmation_label: Potrdi geslo
           password_label: Geslo
           redeemable_code: Potrditvena koda, prejeta preko e-pošte (neobvezno)
           submit: Registriraj se
           terms: Z registracijo sprejemaš %{terms}
-          terms_link: Pogoji uporabe
+          terms_link: pogoje uporabe
           terms_title: Z registracijo sprejemaš pogoje uporabe
           title: Registriraj se
           username_is_available: Uporabniško ime na voljo
-          username_is_not_available: Uporabniško ime že zasedeno
+          username_is_not_available: Uporabnik s tem elektronskim naslovom že obstaja
           username_label: Uporabniško ime
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
         success:

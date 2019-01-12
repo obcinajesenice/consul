@@ -113,13 +113,13 @@ sl:
         phase: "Faza"
         currency_symbol: "Valuta"
       budget/investment:
-        heading_id: "Glava"
+        heading_id: "Območje"
         title: "Naslov"
         description: "Opis"
         external_url: "Povezava do dodatne dokumentacije"
         administrator_id: "Administrator"
         location: "Lokacija (neobvezno)"
-        organization_name: "Če vlagate predlog v imenu kolektiva / organizacije ali v imenu več ljudi, napišite njihovo ime"
+        organization_name: "Če vlagaš predlog v imenu organizacije ali skupine ljudi, jo/jih navedi"
         image: "Opisna slika predloga"
         image_title: "Naslov slike"
       budget/investment/milestone:
@@ -275,7 +275,7 @@ sl:
         map_location:
           attributes:
             map:
-              invalid: Lokacija na zemljevidu ne more biti prazna. Označite jo ali določite, da geolokalizacija ni potrebna
+              invalid: Na zemljevidu morate določiti lokacijo ali označiti, da geolokalizacija ni potrebna
         poll/voter:
           attributes:
             document_number:

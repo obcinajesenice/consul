@@ -10,7 +10,7 @@ sl:
       menu:
         debates: "Razprave"
         proposals: "Predlogi"
-        budgets: "Participatorni proračuni"
+        budgets: "Participativni proračuni"
         polls: "Glasovanja"
         other: "Druge relevantne informacije"
         processes: "Procesi"
@@ -30,9 +30,9 @@ sl:
         image_alt: "Gumb za podporo predloga"
         figcaption_html: 'Gumb "Podpri" predlog.<br>Ko doseže potrebno število podpornikov, gre v glasovanje.'
       budgets:
-        title: "Participatorni proračun"
+        title: "Participativni proračun"
         description: "Sekcija %{link} pomaga ljudem sprejemati direktne odločitve o tem, za kaj se porabi del občinskega proračuna."
-        link: "Participatorni proračuni"
+        link: "Participativni proračuni"
         feature: "V tem procesu ljudje vsako leto predlagajo, podpirajo in glasujejo o projektih. Predlogi z največ glasovi so financirani z občinskim proračunom."
         phase_1_html: "Med januarjem in marcem ljudje, registrirani v %{org} lahko <strong>predstavljajo predloge</strong>."
         phase_2_html: "V marcu predlagatelji lahko nabirajo podporo za <strong>pred-selekcijo</strong>."
