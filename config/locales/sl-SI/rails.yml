@@ -51,7 +51,7 @@ sl:
     - Petek
     - Sobota
     formats:
-      default: "%d.%m.%Y"
+      default: "%d. %m. %Y"
       long: "%B %d, %Y"
       short: "%b %d"
       shortish: "%d. %B"
@@ -158,8 +158,8 @@ sl:
   errors:
     format: "%{attribute} %{message}"
     messages:
-      accepted: mora biti sprejet
-      blank: ne sme biti prazen
+      accepted: Za nadaljevanje moraš sprejeti politiko zasebnosti in pogoje uporabe
+      blank: To polje ne sme biti prazno
       present: mora biti prazen
       confirmation: ne ustreza %{attribute}
       empty: ne more biti prazen
@@ -185,11 +185,11 @@ sl:
         four: je predolg (največ 4 znaki)
         other: je predolg (največ %{count} znakov)
       too_short:
-        one: je prekratek (vsaj 1 znak)
-        two: je prekratek (vsaj 2 znaka)
-        three: je prekratek (vsaj 3 znaki)
-        four: je prekratek (vsaj 4 znaki)
-        other: je prekratek (vsaj %{count} znakov)
+        one: je prekratek (mora vsebovati vsaj 1 znak)
+        two: je prekratek (mora vsebovati vsaj 2 znaka)
+        three: je prekratek (mora vsebovati vsaj 3 znake)
+        four: je prekratek (mora vsebovati vsaj 4 znake)
+        other: je prekratek (dolgo mora biti vsaj %{count} znakov)
       wrong_length:
         one: je napačne dolžine (moral bi biti 1 znak)
         two: je napačne dolžine (moral bi biti 2 znaka)

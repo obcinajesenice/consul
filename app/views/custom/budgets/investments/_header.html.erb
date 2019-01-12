@@ -2,7 +2,7 @@
   <div class="row phase-description">
     <div class="small-6 column">
       <h1>
-        <%= t("custom.headings.#{current_budget.phase}") %>!
+        <%= t("custom.headings.#{current_budget.phase}") %>
       </h1>
       <h2>
         <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
@@ -89,7 +89,7 @@
                 </h2>
                 <h3>
                   <span class="tagline"><%= t("budgets.investments.header.price") %></span>
-                  <%= @budget.formatted_heading_price(@heading) %>
+                  <%= @budget.formatted_heading_price(@heading) %>.
                 </h3>
               <% end %>
             </div>

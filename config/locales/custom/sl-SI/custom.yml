@@ -4,6 +4,8 @@ sl-SI:
       accepting: Predlagaj
       selecting: Izbor
       balloting: Glasuj
-      finished: Izvedi
-    buttons:
-      submit: "Dodaj svoj predlog!"
+      finished: Spremljaj izvedbo
+    titles:
+      added_proposals: Oddani predlogi
+      register_with: Za registracijo uporabi
+      sign_in_with: Za vpis uporabi

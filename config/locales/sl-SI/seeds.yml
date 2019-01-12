@@ -22,16 +22,19 @@ sl:
       economy: Ekonomija
       employment: Zaposlitev
       equity: Pravičnost
-      sustainability: Trajnost
-      participation: Participacija
       mobility: Mobilnost
       media: Mediji
       health: Zdravje
       transparency: Transparentnost
       security_emergencies: Varnost in izredne razmere
       environment: Okolje
+      free_time: Prosti čas
+      sustainable_development: Trajnostni razvoj
+      young: Mladi
+      political_participation: Politična participacija
+      nature: Narava
     budgets:
-      budget: Participatorni proračun
+      budget: Participativni proračun
       currency: €
       groups:
         all_city: Celo mesto

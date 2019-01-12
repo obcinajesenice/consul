@@ -2,23 +2,23 @@ sl:
   account:
     show:
       change_credentials_link: Spremeni moje podatke
-      email_on_comment_label: Ko nekdo komentira moje predloge ali o njih debatira, me obvestite po e-pošti
-      email_on_comment_reply_label: Ko nekdo odgovori na moj komentar, me obvestite po e-pošti
-      erase_account_link: Izbriši moj račun
+      email_on_comment_label: Ko nekdo komentira moje predloge ali o njih debatira, me obvestite po e-pošti.
+      email_on_comment_reply_label: Ko nekdo odgovori na moj komentar, me obvestite po e-pošti.
+      erase_account_link: Izbriši račun
       finish_verification: Zaključi verifikacijo
       notifications: Obvestila
       organization_name_label: Ime organizacije
       organization_responsible_name_placeholder: Predstavnik/-ca organizacije/kolektiva
       personal: Osebni podatki
       phone_number_label: Telefonska številka
-      public_activity_label: Moj seznam aktivnosti naj bo javen
-      public_interests_label: Oznake elementov, ki jim sledim, naj bodo javne
+      public_activity_label: Moj seznam aktivnosti naj bo javen.
+      public_interests_label: Oznake elementov, ki jim sledim, naj bodo javne.
       public_interests_my_title_list: Oznake elementov, ki jim slediš
       public_interests_user_title_list: Oznake elementov, ki jim sledi ta uporabnik
       save_changes_submit: Shrani spremembe
-      subscription_to_website_newsletter_label: Prijavi se na obvestila v zvezi s tem spletnim mestom
-      email_on_direct_message_label: Prejmi e-pošto, ko dobiš direktna sporočila
-      email_digest_label: Prejmi povzetek obvestil v zvezi s predlogi
+      subscription_to_website_newsletter_label: Prijavi se na obvestila v zvezi s tem spletnim mestom.
+      email_on_direct_message_label: Prejmi e-pošto, ko dobiš direktna sporočila.
+      email_digest_label: Prejmi povzetek obvestil v zvezi s predlogi.
       official_position_badge_label: Pokaži značko z uradnim položajem
       title: Moj račun
       user_permission_debates: Sodeluješ v debatah
@@ -66,14 +66,14 @@ sl:
       leave_comment: Pusti svoj komentar
     orders:
       most_voted: Največ glasov
-      newest: Novejši naprej
+      newest: Najnovejši
       oldest: Starejši naprej
       most_commented: Največ komentarjev
     select_order: Uredi po
     show:
       return_to_commentable: 'Pojdi nazaj na '
   comments_helper:
-    comment_button: Objavi komentar
+    comment_button: Oddaj komentar
     comment_link: Komentiraj
     comments_title: Komentarji
     reply_button: Objavi odgovor
@@ -144,7 +144,7 @@ sl:
         help_text_2: 'Da odpreš debato, se moraš registrirati na  %{org}. Uporabniki lahko tudi komentirajo odprte razprave in jih ocenjujejo s pomočjo gumbov "Strinjam se" ali "Ne strinjam se".'
         help_text_3: "Zapomni si, da razprava ne začne nobenega specifičnega procesa. Če želiš ustvariti %{proposal} za mesto ali proračunsko naložbo %{budget}, ko je proračun v odprti fazi, pojdi na ustrezno mesto na tej spletni strani."
         proposals_link: predlog
-        budget_link: participatorni proračun
+        budget_link: participativni proračun
     new:
       form:
         submit_button: Začni razpravo
@@ -182,13 +182,13 @@ sl:
   form:
     accept_terms: Strinjam se s %{policy} in s %{conditions}
     accept_terms_title: Strinjam se s politko zasebnosti in pogoji uporabe
-    conditions: Pogoji uporabe
+    conditions: pogoji uporabe
     debate: Razprava
     direct_message: Zasebno sporočilo
     error: Napaka
     errors: Napake
-    not_saved_html: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
-    policy: Politiko zasebnosti
+    not_saved_html: "Nekaj je šlo narobe.<br>Prosimo, preveri označena polja."
+    policy: politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
     spending_proposal: Predlog porabe
@@ -254,7 +254,7 @@ sl:
       open_gov: Odprta vlada
       proposals: Predlogi
       poll_questions: Glasovanje
-      budgets: Participatorni proračun
+      budgets: Participativni proračun
       spending_proposals: Predlogi porabe
       notification_item:
         new_notifications:
@@ -312,23 +312,23 @@ sl:
     start_proposal: Ustvari predlog
   omniauth:
     facebook:
-      sign_in: Vpiši se s Facebookom
-      sign_up: Vpiši se s Facebookom
+      sign_in: Prijavi se s Facebookom
+      sign_up: Prijavi se s Facebookom
       name: Facebook
     finish_signup:
       title: "Dodatne podrobnosti"
       username_warning: "Zaradi spremembe načina interakcije z družbenimi omrežji, je mogoče, da je tvoje uporabniško ime zdaj označeno kot 'že v uporabi'. Če se ti to zgodi, prosimo izberi novo uporabniško ime."
     google_oauth2:
-      sign_in: Vpiši se z Googlom
-      sign_up: Vpiši se z Googlom
+      sign_in: Prijavi se z Googlom
+      sign_up: Prijavi se z Googlom
       name: Google
     twitter:
-      sign_in: Vpiši se s Twitterjem
-      sign_up: Vpiši se s Twitterjem
+      sign_in: Prijavi se s Twitterjem
+      sign_up: Prijavi se s Twitterjem
       name: Twitter
-    info_sign_in: "Vpiši se z"
+    info_sign_in: "Prijavi se z"
     info_sign_up: "Registriraj se z"
-    or_fill: "Ali izpolni ta obrazec"
+    or_fill: "ali izpolni ta obrazec"
   proposals:
     create:
       form:
@@ -369,7 +369,7 @@ sl:
       tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
       tags_label: Oznake
       tags_placeholder: "Vpiši oznake, ki jih želiš uporabiti, loči jih z vejico (',')"
-      map_location: "Lokacija na zemljevidu"
+      map_location: "Označi lokacijo na zemljevidu"
       map_location_instructions: "Na zemljevidu najdi lokacijo in postavi označevalec."
       map_remove_marker: "Odstrani označevalec"
       map_skip_checkbox: "Ta predlog nima konkretne lokacije ali je ne poznam."
@@ -426,10 +426,13 @@ sl:
       form:
         submit_button: Ustvari predlog
       more_info: Kako delujejo državljanski predlogi?
-      recommendation_one: Za naslov predloga ali daljše stavke ne uporabljaj velikih tiskanih črk. Na internetu to razumemo kot kričanje - in nihče ne mara, da ljudje kričijo nanj.
-      recommendation_three: Uživaj v tem prostoru in v glasovih, ki ga napolnjujejo. Ta prostor je tudi tvoj.
-      recommendation_two: Kateri koli predlog ali komentar, ki bo predlagal nezakonito delovanje, bo izbrisan, skupaj s tistimi, ki bodo želeli sabotirati prostor debate kot tak. Vse drugo je dovoljeno.
-      recommendations_title: Priporočila za ustvarjanje predloga
+      recommendation_one: Obrazec lahko vsebuje samo en predlog.
+      recommendation_two: Predlog se mora nanašati na območje občine.
+      recommendation_three: Izvedba predloga mora biti v pristojnosti občine.
+      recommendation_four: Predlog mora biti skladen z zakonodajo, urbanističnimi akti in/ali z že sprejetim načrtom investicij.
+      recommendation_five: Predlog mora biti izvedljiv v predvidenem proračunskem obdobju.
+      recommendation_six: Vrednost projekta mora biti med [vstavi številko] in [vstavi številko] €.
+      recommendations_title: Navodila
       start_new: Ustvari nov predlog
     notice:
       retired: Predlog upokojen
@@ -605,10 +608,9 @@ sl:
       search: 'Filtriraj'
       title: 'Napredno iskanje'
       to: 'Za'
-    delete: Izbriši
     author_info:
       author_deleted: Uporabnik izbrisan
-    back: Pojdi nazaj
+    back: Nazaj
     check: Izberi
     check_all: Vse
     check_none: Nič
@@ -662,7 +664,7 @@ sl:
     unflag: Odznači
     unfollow_entity: "Prenehaj slediti %{entity}"
     outline:
-      budget: Participatorni proračun
+      budget: Participativni proračun
       searcher: Iskalnik
     go_to_page: "Pojdi na stran "
     share: Išči
@@ -694,9 +696,9 @@ sl:
         new: Ustvari
       title: Naslov predloga porabe
     index:
-      title: Participatorni proračun
+      title: Participativni proračun
       unfeasible: Neizvedljivi naložbeni projekti
-      by_geozone: "Investicijski projekti z obsegom: %{geozone}"
+      by_geozone: "Projekti, ki obsegajo: %{geozone}"
       search_form:
         button: Išči
         placeholder: Investicijski projekti...
@@ -710,7 +712,7 @@ sl:
         unfeasible: Neizvedljiv
       start_spending_proposal: Ustvari naložbeni projekt
     new:
-      more_info: Kako deluje participatorni proračun?
+      more_info: Kako deluje participativni proračun?
       recommendation_one: Obvezno je, da se predlog nanaša na to, kar je možno pokriti s proračunom.
       recommendation_three: Poksusi zapisati čim več podrobnosti v opisu svoj predlog porabe, da lahko ekipa, ki preverja predloge, čim bolje razume tvojega.
       recommendation_two: Vsak predlog ali komentar, ki predlaga nezakonito delovanje, bo izbrisan.

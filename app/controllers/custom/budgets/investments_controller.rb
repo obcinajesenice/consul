@@ -24,7 +24,7 @@ module Budgets
 
     feature_flag :budgets
 
-    has_orders %w{most_voted newest oldest}, only: :show
+    has_orders %w{most_voted newest}, only: :show
     has_orders ->(c) { c.investments_orders} , only: :index
     has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
 

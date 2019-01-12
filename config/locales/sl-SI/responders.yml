@@ -13,7 +13,7 @@ sl:
         proposal: "Predlog uspešno ustvarjen."
         proposal_notification: "Tvoje sporočilo je bilo uspešno poslano."
         spending_proposal: "Predlog porabe uspešno ustvarjen. Do njega lahko dostopaš preko %{activity}"
-        budget_investment: "Proračunska naložba uspešno ustvarjena."
+        budget_investment: "Predlog uspešno oddan."
         signature_sheet: "Podpisni list uspešno ustvarjen."
         topic: "Tema uspešno ustvarjena."
         valuator_group: "Skupina cenilcev uspešno ustvarjena."

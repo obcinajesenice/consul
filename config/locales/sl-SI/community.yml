@@ -17,7 +17,7 @@ sl:
         first_theme_not_logged_in: Nobena tema ni na voljo, sodeluj in ustvari prvo.
         first_theme: Ustvari prvo temo skupnosti
         sub_first_theme: "Za ustvarjanje teme, moraš biti %{sign_in} ali %{sign_up}."
-        sign_in: "Vpiši se"
+        sign_in: "Prijava"
         sign_up: "Registriraj se"
       tab:
         participants: Sodelujoči

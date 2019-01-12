@@ -65,7 +65,7 @@ sl:
         no_activity: Ni aktivnosti moderatorjev.
     budgets:
       index:
-        title: Participatorni proračuni
+        title: Participativni proračuni
         new_link: Ustvari nov proračun
         filter: Filter
         filters:
@@ -80,11 +80,11 @@ sl:
         edit_groups: Uredi headings groups
         edit_budget: Uredi proračun
       create:
-        notice: Nov participatorni proračun uspešno ustvarjen!
+        notice: Nov participativni proračun uspešno ustvarjen!
       update:
-        notice: Participatorni proračun uspešno urejen
+        notice: Participativni proračun uspešno urejen
       edit:
-        title: Uredi participatorni proračun
+        title: Uredi participativni proračun
         delete: Izbriši proračun
         phase: Faza
         dates: Datumi
@@ -97,7 +97,7 @@ sl:
         success_notice: Proračun uspešno izbrisan
         unable_notice: Ne moreš uničiti proračuna, ki ima povezane naložbe
       new:
-        title: Nov participatorni proračun
+        title: Nov participativni proračun
       show:
         groups:
           one: 1 Skupina naslovov proračunov
@@ -474,7 +474,7 @@ sl:
       banner: Upravljanje pasic
       poll_questions: Vprašanja za glasovanje
       proposals_topics: Teme predlogov
-      budgets: Participatorni proračuni
+      budgets: Participativni proračuni
       geozones: Upravljanje geocone
       hidden_comments: Skriti komentarji
       hidden_debates: Skrite razprave
@@ -976,7 +976,7 @@ sl:
           valuating: Se vrednoti
           valuation_finished: Vrednotenje končano
           all: Vsi
-        title: Naložbeni projekti za participatorni proračun
+        title: Naložbeni projekti za participativni proračun
         assigned_admin: Dodeljen administrator
         no_admin_assigned: Ni dodeljenega administratorja
         no_valuators_assigned: Ni dodeljenih cenilcev
@@ -1099,7 +1099,7 @@ sl:
           visits: Obiski
           votes: Skupaj glasov
         spending_proposals_title: Predlogi porabe
-        budgets_title: Participatorni proračun
+        budgets_title: Participativni proračun
         visits_title: Obiski
         direct_messages: Direktna sporočila
         proposal_notifications: Obvestila predlogov
@@ -1226,9 +1226,9 @@ sl:
     homepage:
       title: Domača stran
       description: Aktivni moduli se na domači strani prikazujejo v istem vrstnem redu kot tukaj.
-      header_title: Glava
-      no_header: Ni glave.
-      create_header: Ustvari glavo
+      header_title: Območje
+      no_header: Ni območja.
+      create_header: Ustvari območje
       cards_title: Karte
       create_card: Ustvari karto
       no_cards: Ni kart.
@@ -1242,12 +1242,12 @@ sl:
         debates: Razprave
         processes: Procesi
       new:
-        header_title: Nova glava
-        submit_header: Ustvari glavo
+        header_title: Novo območje
+        submit_header: Ustvari območje
         card_title: Nova karta
         submit_card: Ustvari karto
       edit:
-        header_title: Uredi glavo
-        submit_header: Shrani glavo
+        header_title: Uredi območje
+        submit_header: Shrani območje
         card_title: Uredi karto
         submit_card: Shrani karto

@@ -9,7 +9,7 @@ sl:
       delete_button: Odstrani dokument
       cancel_button: Prekliči
       note: "Naložiš lahko največ %{max_documents_allowed} dokumentov naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."
-      add_new_document: Dodaj nov dokument
+      add_new_document: Dodaj dokument
     actions:
       destroy:
         notice: Dokument uspešno izbrisan.

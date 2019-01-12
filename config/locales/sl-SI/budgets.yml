@@ -40,43 +40,43 @@ sl:
       reviewing_ballots: Pregled glasovanj
       finished: Končan proračun
     index:
-      title: Participatorni proračuni
+      title: Participativni proračuni
       empty_budgets: Ni proračunov.
       section_header:
-        icon_alt: Participatorni proračuni ikona
-        title: Participatorni proračuni
-        help: Pomoč s participatornimi proračuni
+        icon_alt: Participativni proračuni ikona
+        title: Participativni proračuni
+        help: Pomoč s participativnimi proračuni
         all_phases: Poglej vse faze
       all_phases: Faze proračunskih naložb
       map: Predlogi za proračunske naložbe po geografski lokaciji
       investment_proyects: Seznam vseh investicijskih projektov
       unfeasible_investment_proyects: Seznam vseh neizvedljivih projektov
       not_selected_investment_proyects: Seznam vseh investicijskih projektov za glasovanje
-      finished_budgets: Končani participatorni proračuni
+      finished_budgets: Končani participativni proračuni
       see_results: Poglej rezultate
       section_footer:
-        title: Pomoč s participatornimi proračuni
-        description: S participatornimi proračuni se državljani odločijo, kateri projekti, ki jih predstavljajo sosedi, so namenjeni delu občinskega proračuna.
-        help_text_1: "Participatorni proračuni so procesi, v katerih se državljani direktno odločijo, za kaj se porabi del občinskega proračuna. Vsaka registrirana oseba nad 16 let lahko predlaga naložbeni projekt, ki je predizbran v fazi podpore državljanov."
+        title: Pomoč s participativnimi proračuni
+        description: S participativnimi proračuni se državljani odločijo, kateri projekti, ki jih predstavljajo sosedi, so namenjeni delu občinskega proračuna.
+        help_text_1: "Participativni proračuni so procesi, v katerih se državljani direktno odločijo, za kaj se porabi del občinskega proračuna. Vsaka registrirana oseba nad 16 let lahko predlaga naložbeni projekt, ki je predizbran v fazi podpore državljanov."
         help_text_2: "Projekti, ki dobijo največ glasov, se ocenjujejo in se uvrstijo v končno glasovanje, v katerem se odloča o ukrepih, ki jih bo sprejel občinski svet po odobritvi občinskih proračunov za prihodnje leto."
         help_text_3: "Predstavitev projektov participatornega proračuna poteka od januarja in traja mesec in pol. Če želiš sodelovati in vložiti predloge za svojo občino ali mesto, se moraš prijaviti na %{org} in verificirati svoj račun."
         help_text_4: "Če želiš dobiti čim več podpore in glasov, izberi deskriptiven in razumljiv naslov svojega projekta. Nato je na voljo prostor za natančen opis predloga. Navedi vse podatke in pojasnila ter dodaj dokumente in slike, da bodo drugi uporabniki lažje razumeli, kaj predlagaš."
     investments:
       form:
         tag_category_label: "Kategorije"
-        tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš svojo lastno."
+        tags_instructions: "Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
         tags_label: Oznake
         tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti in jih loči z vejico (',')"
-        map_location: "Lokacija na zemljevidu"
-        map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi."
+        map_location: "Označi lokacijo na zemljevidu"
+        map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi"
         map_remove_marker: "Odstrani označeno lokacijo"
         location: "Dodatne informacije o lokaciji"
-        map_skip_checkbox: "Ta naložba nima konkretne lokacije ali pa je ne poznam."
+        map_skip_checkbox: "Ta predlog nima lokacije ali pa je ne poznam"
       index:
-        title: Participatorni proračun
+        title: Participativni proračun
         unfeasible: Neizvedljivi naložbeni projekti
         unfeasible_text: "Investicije morajo izpolnjevati nekatere kriterije (legalnost, konkretnost, da so v pristojnosti občine/mesta, ne presegajo meje proračuna), da se jih označi kot izvedljive in lahko dosežejo fazo končnega glasovanja. Vse investicije, ki ne izpolnjuejo teh kriterijev, so označene kot neizvedljive in objavljene na spodnjem seznamu, skupaj s poročili o neizvedljivosti."
-        by_heading: "Investicijski projekti z obsegom: %{heading}"
+        by_heading: "Projekti, ki obsegajo: %{heading}"
         search_form:
           button: Išči
           placeholder: Išči investicijske projekte ...
@@ -97,7 +97,7 @@ sl:
           zero: Nisi glasoval za noben naložbeni projekt v tej skupini.
           verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
           verify_account: "Verificiraj svoj račun"
-          create: "Dodaj svoj predlog!"
+          create: "Dodaj svoj predlog"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
           sign_in: "vpisati"
           sign_up: "prijaviti"
@@ -146,7 +146,7 @@ sl:
         different_heading_assigned_html: "Imaš aktivna glasovanja v drugem naslovu: %{heading_link}"
         change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
         check_ballot_link: "preveri moja glasovanja"
-        price: "Ta naslov ima proračun v višini"
+        price: "Višina sredstev namenjenih temu območju je"
     progress_bar:
       assigned: "Dodelil si: "
       available: "Razpoložljivi proračun: "

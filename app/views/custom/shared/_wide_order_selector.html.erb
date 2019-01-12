@@ -1,7 +1,7 @@
 <% if @valid_orders.present? && @valid_orders.count > 1 %>
   <div class="wide-order-selector small-12 medium-8">
     <div class="small-12 float-left">
-      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") %>
+      <%= render('shared/order_links', i18n_namespace: i18n_namespace) %>
     </div>
   </div>
 <% end %>
