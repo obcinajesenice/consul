@@ -25,8 +25,8 @@ section "Creating Settings" do
   Setting.create(key: 'instagram_handle', value: 'CONSUL')
   Setting.create(key: 'blog_url', value: '/blog')
   Setting.create(key: 'url', value: 'http://localhost:3000')
-  Setting.create(key: 'org_name', value: 'Participatorni proračun')
-  Setting.create(key: 'place_name', value: 'Hrpelje / Kozina')
+  Setting.create(key: 'org_name', value: 'Participativni proračun')
+  Setting.create(key: 'place_name', value: 'Testno Mesto')
 
   Setting.create(key: 'feature.debates', value: "false")
   Setting.create(key: 'feature.proposals', value: "true")
