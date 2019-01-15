@@ -13,7 +13,7 @@
     <% if current_budget.present? %>
       <% @custom_phases.each do |_, phase| %>
         <% if phase.enabled %>
-          <section class="welcome-column <%= phase.kind %>">
+          <section class="welcome-column <%= phase.kind %> <% if phase.url %> hoverlinkable <% end %> ">
             <% if phase.url %>
               <a class="linkable" href="<%= phase.url %>">
             <% end %>
