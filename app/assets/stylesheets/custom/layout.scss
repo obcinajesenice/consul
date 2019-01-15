@@ -37,7 +37,9 @@
 :focus {
   outline: 0;
 }
-
+html{
+  height: 100%;
+}
 html,
 body {
   margin: 0;
@@ -63,7 +65,7 @@ h4,
 h5,
 h6 {
   clear: both;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 h1 {
@@ -227,7 +229,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .action-button {
-  background-color: $mandys-pink;
+  //background-color: $mandys-pink;
   border-radius: 20px;
   cursor: pointer;
   display: inline-block;
@@ -235,15 +237,15 @@ only screen and (min-resolution: 240dpi) {
   font-weight: 700;
 
   &:hover {
-    background-color: $mandys-pink-hover;
+    //background-color: $mandys-pink-hover;
   }
 
   &.transparent {
-    background-color: transparent;
+    //background-color: transparent;
     border: 1px solid $mandys-pink;
 
     &:hover {
-      background-color: $mandys-pink-hover;
+      //background-color: $mandys-pink-hover;
     }
   }
 
@@ -404,6 +406,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .footer {
+  bottom: 0;
   left: 0;
   position: absolute;
   right: 0;

@@ -1,8 +1,10 @@
 <div class="text-left">
-  <!--<span class="signuporgposition">
+  <%- if controller_name == 'registrations' %>
+  <span class="signuporgposition">
     <%= t("devise_views.users.registrations.new.organization_signup",
           signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
-  </span>-->
+  </span>
+  <% end -%>
 
   <!--<%- if controller_name != 'sessions' %>
     <%= link_to t("shared.back"), new_session_path(resource_name) %><br>

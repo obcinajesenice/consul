@@ -1,7 +1,7 @@
 sl:
   account:
     show:
-      change_credentials_link: Spremeni moje podatke
+      change_credentials_link: Spremeni geslo
       email_on_comment_label: Ko nekdo komentira moje predloge ali o njih debatira, me obvestite po e-pošti.
       email_on_comment_reply_label: Ko nekdo odgovori na moj komentar, me obvestite po e-pošti.
       erase_account_link: Izbriši račun
@@ -369,7 +369,7 @@ sl:
       tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
       tags_label: Oznake
       tags_placeholder: "Vpiši oznake, ki jih želiš uporabiti, loči jih z vejico (',')"
-      map_location: "Označi lokacijo na zemljevidu"
+      map_location: "Označi lokacijo na zemljevidu."
       map_location_instructions: "Na zemljevidu najdi lokacijo in postavi označevalec."
       map_remove_marker: "Odstrani označevalec"
       map_skip_checkbox: "Ta predlog nima konkretne lokacije ali je ne poznam."

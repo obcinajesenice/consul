@@ -605,14 +605,14 @@ select {
     color: #32366a;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
     padding: 10px;
   }
   .tabs span {
     color: #32366a;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 17px;
     padding-top: 16px;
     display: block;
@@ -625,7 +625,7 @@ select {
   }
   .tabs .active-phase a h3 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 17px;
     text-transform: uppercase;
 
@@ -751,11 +751,11 @@ footer {
 [type="checkbox"]:checked + span:after {
   content: '\2714\0020';
   position: absolute;
-  top: 0.8em;
-  left: .4em;
-  font-size: 1em;
-  line-height: 0.1;
-  color: #272266;
+  top: 0;
+  left: 7px;
+  font-size: 20px;
+  line-height: 29px;
+  color: #3c3583;
   transition: all .2s;
   font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
 }
@@ -790,16 +790,12 @@ footer {
 /* accessibility */
 [type="checkbox"]:checked:focus + span:before,
 [type="checkbox"]:not(:checked):focus + span:before {
-  border: 2px dotted blue;
+
 }
 
 /* hover style just for information */
 span:hover:before {
-  border: 2px solid #272266 !important;
-}
-
-.footer {
-  position: initial;
+  border: 2px solid #3c3583 !important;
 }
 
 .welcome-columns {
@@ -942,19 +938,48 @@ form label {
   font-weight: 400;
   font-size: rem-calc(17);
 }
-.pagination .current{
+.pagination .current,
+.pagination a:hover,
+.pagination button:hover{
   border-radius: 30px;
   background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
-  font-weight: 600;
+  font-weight: 700;
   font-size: rem-calc(20);
   line-height: rem-calc(26);
-  width: 32px;
+  min-width: 32px;
   color: #FFFFFF;
 }
+.pagination li.pagination-first,
 .pagination li.pagination-next,
+.pagination li.pagination-last,
 .pagination li.pagination-previous {
   color: #32366a;
-  font-size: 17px;
+  font-size: rem-calc(17);
   font-weight: 400;
-  line-height: 15px;
+  line-height: rem-calc(26);
+  &:hover{
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+    font-weight: 700;
+    font-size: rem-calc(17);
+    line-height: rem-calc(26);
+    color: #FFFFFF;
+  }
+}
+
+
+.action-button {
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    transition: all .4s ease-in-out;
+  }
+
+  &.transparent {
+    transition: all .4s ease-in-out;
+
+    &:hover {
+      transition: all .4s ease-in-out;
+    }
+  }
 }

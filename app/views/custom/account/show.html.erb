@@ -13,21 +13,21 @@
             <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "action-button small transparent change-credentials" %>
           </div>
 
-          <ul class="tabs"
+          <ul class="tabs hide"
               id="account_tabs"
               data-deep-link="true"
               data-update-history="true"
               data-deep-link-smudge="true"
               data-deep-link-smudge-delay="500"
               data-tabs>
-            <li class="tabs-title is-active">
+            <li class="tabs-title ">
               <%= link_to "#tab-personal" do %>
                 <h3>
                   <%= t("account.show.personal") %>
                 </h3>
               <% end %>
             </li>
-            <li class="tabs-title">
+            <li class="tabs-title is-active">
               <%= link_to "#tab-notifications" do %>
                 <h3>
                   <%= t("account.show.notifications") %>
@@ -45,7 +45,7 @@
             <% end %>
           </ul>
 
-          <div class="tabs-panel is-active" id="tab-personal">
+          <div class="tabs-panel is-active pad-t-60" id="tab-personal">
             <div class="small-12 medium-5 large-5">
               <% if @account.organization? %>
                 <%= f.fields_for :organization do |fo| %>
