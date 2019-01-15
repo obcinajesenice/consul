@@ -956,10 +956,13 @@ form label {
       border-radius: 30px;
       background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
       min-width: 32px;
-
+      color: #FFFFFF;
+      font-weight: 400;
+      font-size: rem-calc(20);
+      line-height: rem-calc(26);
       a {
         color: #FFFFFF;
-        font-weight: 700;
+        font-weight: 400;
         font-size: rem-calc(20);
         line-height: rem-calc(26);
       }
