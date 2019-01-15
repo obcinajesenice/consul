@@ -45,7 +45,7 @@
             <% end %>
           </ul>
 
-          <div class="tabs-panel is-active pad-t-60" id="tab-personal">
+          <div class="tabs-panel pad-t-60" id="tab-personal">
             <div class="small-12 medium-5 large-5">
               <% if @account.organization? %>
                 <%= f.fields_for :organization do |fo| %>
@@ -78,7 +78,7 @@
             </div>
           </div>
 
-          <div class="tabs-panel" id="tab-notifications">
+          <div class="tabs-panel is-active" id="tab-notifications">
             <div class="small-12 medium-10">
               <% if @account.email.present? %>
                 <div>
