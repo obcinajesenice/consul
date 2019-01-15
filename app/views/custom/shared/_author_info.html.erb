@@ -6,7 +6,7 @@
 <!--  TODO: change-->
 <% else %>
   <span class="author">
-      <%= link_to resource.author.name, user_path(resource.author) %>
+    <%= resource.author.name %>
   </span>
 
   <% if resource.respond_to?(:association_name) && resource.association_name.present? %>

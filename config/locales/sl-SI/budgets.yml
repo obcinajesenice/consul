@@ -135,6 +135,7 @@ sl:
         support_title: Podpri ta projekt
         confirm_group:
           one: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
+          two: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
           other: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
         supports:
           one: 1 podpora

@@ -190,6 +190,7 @@ sl:
         three: je prekratek (mora vsebovati vsaj 3 znake)
         four: je prekratek (mora vsebovati vsaj 4 znake)
         other: je prekratek (dolgo mora biti vsaj %{count} znakov)
+        few: premalo
       wrong_length:
         one: je napačne dolžine (moral bi biti 1 znak)
         two: je napačne dolžine (moral bi biti 2 znaka)

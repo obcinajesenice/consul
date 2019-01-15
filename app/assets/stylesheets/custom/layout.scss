@@ -157,7 +157,32 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .main-indented-content {
-  margin: rem-calc(20) rem-calc(150);
+  margin: rem-calc(20) auto;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .main-indented-content {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-indented-content {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-indented-content {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-indented-content {
+    max-width: 1140px;
+  }
 }
 
 .horizontal-line {

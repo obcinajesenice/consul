@@ -12,84 +12,87 @@
   <% end %>
 <% end %>
 
-<main id="budget-investments-main" class="main-indented-content" data-tabs-content="custom_phases_tabs">
+<main id="budget-investments-main" data-tabs-content="custom_phases_tabs">
 
   <div class="custom-phases-nav">
-    <ul class="tabs" id="custom_phases_tabs"
-        data-deep-link="true"
-        data-update-history="true"
-        data-deep-link-smudge="true"
-        data-deep-link-smudge-delay="500"
-        data-tabs>
-      <% @custom_phases.each do |_, phase| %>
-        <% if phase.enabled %>
-          <li class="tabs-title <%= 'is-active active-phase' if phase.url %>">
-            <%= link_to "#tab-#{phase.kind}" do %>
-              <h3><i></i><%= t("custom.headings.#{phase.kind}") %></h3>
-              <span><%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %></span>
-            <% end %>
-          </li>
+    <div class="main-indented-content">
+      <ul class="tabs" id="custom_phases_tabs"
+          data-deep-link="true"
+          data-update-history="true"
+          data-deep-link-smudge="true"
+          data-deep-link-smudge-delay="500"
+          data-tabs>
+        <% @custom_phases.each do |_, phase| %>
+          <% if phase.enabled %>
+            <li class="tabs-title <%= 'is-active active-phase' if phase.url %>">
+              <%= link_to "#tab-#{phase.kind}" do %>
+                <h3><i></i><%= t("custom.headings.#{phase.kind}") %></h3>
+                <span><%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %></span>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 
-  <% @custom_phases.each do |_, phase| %>
-    <% if phase.enabled %>
-      <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
-        <% if phase.url %>
-          <%= render '/budgets/investments/header' %>
+  <div class="main-indented-content">
+    <% @custom_phases.each do |_, phase| %>
+      <% if phase.enabled %>
+        <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
+          <% if phase.url %>
+            <%= render '/budgets/investments/header' %>
 
-          <div class="row budget-investments">
-            <h2 class="phase-title"><%= t('custom.titles.added_proposals') %></h2>
+            <div class="row budget-investments">
+              <h2 class="phase-title"><%= t('custom.titles.added_proposals') %></h2>
 
-            <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+              <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-            <div>
-              <%= render 'budgets/investments/categories' %>
-              <% if @budget.headings.count > 1 %>
-                <%= render 'budgets/investments/districts' %>
-              <% end %>
+              <div>
+                <%= render 'budgets/investments/categories' %>
+                <% if @budget.headings.count > 1 %>
+                  <%= render 'budgets/investments/districts' %>
+                <% end %>
+              </div>
+
+              <div class="row small-up-1 medium-up-1 large-up-3">
+                <% @investments.each_with_index do |investment, index| %>
+                  <% investment_class = 'column column-block budget-investment-holder' %>
+                  <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+                  <div class="<%= investment_class %>">
+                    <%= render partial: '/budgets/investments/investment',
+                               locals: {
+                                 investment: investment,
+                                 investment_ids: @investment_ids,
+                                 investment_votes: @investment_votes,
+                                 ballot: @ballot
+                               } %>
+                  </div>
+                <% end %>
+              </div>
+
             </div>
 
-            <div class="row small-up-1 medium-up-1 large-up-3">
-              <% @investments.each_with_index do |investment, index| %>
-                <% investment_class = 'column column-block budget-investment-holder' %>
-                <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
-                <div class="<%= investment_class %>">
-                  <%= render partial: '/budgets/investments/investment',
-                             locals: {
-                               investment: investment,
-                               investment_ids: @investment_ids,
-                               investment_votes: @investment_votes,
-                               ballot: @ballot
-                             } %>
-                </div>
-              <% end %>
+            <div class="row">
+              <%= paginate @investments %>
             </div>
-
-          </div>
-
-          <div class="row">
-            <%= paginate @investments %>
-          </div>
-        <% else %>
-          <h1>
-            <%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %>
-          </h1>
-<!--          TODO: add some custom text here-->
-          <h1>
-            <%= t("custom.headings.#{phase.kind}") %>!
-          </h1>
-          <h2>
-            <%= strip_tags(phase.summary) %>
-          </h2>
-          <p class="large-description">
-            <%= strip_tags(phase.description) %>
-          </p>
-        <% end %>
-      </div>
+          <% else %>
+            <h1>
+              <%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %>
+            </h1>
+            <!--          TODO: add some custom text here-->
+            <h1>
+              <%= t("custom.headings.#{phase.kind}") %>!
+            </h1>
+            <h2>
+              <%= strip_tags(phase.summary) %>
+            </h2>
+            <p class="large-description">
+              <%= strip_tags(phase.description) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
 </main>

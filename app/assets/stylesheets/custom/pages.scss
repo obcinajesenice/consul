@@ -550,9 +550,11 @@ only screen and (min-resolution: 240dpi) {
   border-radius: 36px;
   box-shadow: 0 0 16px rgba(50, 54, 106, 0.25);
   //min-width: 323px;
-  font-size: 20px;
+  font-size: rem-calc(30);
   font-weight: 700;
-  line-height: 27px;
+  line-height: rem-calc(40);
+  padding: rem-calc(11) rem-calc(16);
+
   .custom-icon.arrow-small-right {
     color: #272266;
     margin-left: 10px;
@@ -568,7 +570,7 @@ only screen and (min-resolution: 240dpi) {
     font-size: 60px;
     font-weight: 700;
     letter-spacing: 2.4px;
-    line-height: 37px;
+    line-height: 66px;
     margin-bottom: 47px;
   }
   .welcome-column .column-content h2 {
@@ -592,11 +594,18 @@ select {
 
 .custom-phases-nav {
 
+  box-shadow: 0 4px 43px -10px rgba(0, 0, 0, 0.21);
+  .main-indented-content{
+    margin: 0 auto;
+  }
+  .tabs{
+    margin: 0.5rem;
+  }
   .tabs h2, .tabs h3 {
     color: #32366a;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     padding: 10px;
   }
@@ -616,7 +625,7 @@ select {
   }
   .tabs .active-phase a h3 {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 17px;
     text-transform: uppercase;
 
@@ -718,6 +727,7 @@ footer {
   position: relative;
   padding-left: 1.95em;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 /* checkbox aspect */
@@ -727,8 +737,8 @@ footer {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1.25em;
-  height: 1.25em;
+  width: 29px;
+  height: 29px;
   border: 2px solid #ccc;
   background: #fff;
   border-radius: 4px;
@@ -740,8 +750,8 @@ footer {
 [type="checkbox"]:checked + span:after {
   content: '\2714\0020';
   position: absolute;
-  top: 0.6em;
-  left: .2em;
+  top: 0.8em;
+  left: .4em;
   font-size: 1em;
   line-height: 0.1;
   color: #272266;
@@ -818,7 +828,7 @@ form label {
   font-size: rem-calc(30);
   font-weight: 700;
   line-height: rem-calc(40);
-  padding: rem-calc(25);
+  padding: rem-calc(11) rem-calc(16);
   margin: 10px;
 }
 
@@ -849,15 +859,17 @@ form label {
 .custom-icon.arrow-small-right {
   background-image: image-url('arrowright.png');
   background-position: right;
-  background-size: contain;
-  width: 45px;
+  background-size: initial;
+  width: 33px;
+  height: 29px;
 }
 
 .custom-icon.arrow-large-right {
   background-image: image-url('arrowright.png');
   background-position: right;
-  background-size: contain;
-  width: 45px;
+  background-size: initial;
+  width: 33px;
+  height: 29px;
 }
 
 .button.button-support.small.expanded {
@@ -868,7 +880,7 @@ form label {
   font-size: 30px;
   font-weight: 700;
   line-height: 40.5px;
-  padding: 10px 30px 20px 30px;
+  padding: 0px 30px 10px 30px;
   border: none;
   width: auto;
   display: inline-block;
