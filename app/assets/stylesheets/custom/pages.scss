@@ -34,7 +34,7 @@
 
   h2 {
     color: $rhino;
-    font-weight: 400;
+    font-weight: 800;
     margin-bottom: rem-calc(35);
     text-align: center;
 
@@ -568,7 +568,7 @@ only screen and (min-resolution: 240dpi) {
   }
   .welcome-column .column-content h1 {
     font-size: 60px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2.4px;
     line-height: 66px;
     margin-bottom: 47px;
@@ -639,7 +639,7 @@ select {
   .tabs .is-active a h3 {
     color: #ffffff;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 17px;
     text-transform: uppercase;
 
@@ -650,8 +650,8 @@ select {
     background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
 
     i {
-      background: image-url('check.png') left no-repeat;
-      width: 30px;
+      //background: image-url('check.png') left no-repeat;
+      //width: 30px;
     }
   }
   .tabs .tabs-title > a[aria-selected='true'], .tabs .tabs-title > a.is-active, .tabs .tabs-title > a:hover {
@@ -725,7 +725,8 @@ footer {
 [type="checkbox"]:not(:checked) + span,
 [type="checkbox"]:checked + span {
   position: relative;
-  padding-left: 1.95em;
+  padding-top: 3px;
+  padding-left: 2.55em;
   cursor: pointer;
   margin-bottom: 15px;
 }
@@ -815,7 +816,7 @@ span:hover:before {
 form label {
   color: #000000;
   font-size: rem-calc(18);
-  font-weight: 400;
+  font-weight: 600;
   line-height: rem-calc(26);
 }
 
@@ -838,7 +839,7 @@ form label {
     margin: rem-calc(60) 0 auto 0;
     padding: rem-calc(10) 0;
     text-align: center;
-    color: $rhino;
+    color: #16164c;
 
     .site-title {
       font-size: rem-calc(30);
@@ -846,10 +847,10 @@ form label {
       line-height: 40.5px;
 
       .site-name {
-        font-weight: 600;
+        font-weight: 800;
       }
       .place-name {
-        font-weight: 300;
+        font-weight: 400;
 
       }
     }
@@ -872,7 +873,7 @@ form label {
   height: 29px;
 }
 
-.button.button-support.small.expanded {
+.budget-investment-show .button.button-support.small.expanded {
   box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
   border-radius: 36px;
   background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
