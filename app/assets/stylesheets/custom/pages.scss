@@ -942,7 +942,7 @@ form label {
   font-size: rem-calc(17);
 }
 .pagination .current,
-.pagination a:hover,
+.pagination li:hover,
 .pagination button:hover{
   border-radius: 30px;
   background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
@@ -963,7 +963,7 @@ form label {
   &:hover{
     border-radius: 30px;
     background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
-    font-weight: 700;
+    font-weight: 400;
     font-size: rem-calc(17);
     line-height: rem-calc(26);
     color: #FFFFFF;
