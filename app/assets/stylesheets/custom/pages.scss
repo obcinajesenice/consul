@@ -946,27 +946,34 @@ form label {
 .pagination button:hover{
   border-radius: 30px;
   background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
-  font-weight: 700;
-  font-size: rem-calc(20);
-  line-height: rem-calc(26);
   min-width: 32px;
-  color: #FFFFFF;
+
+  a{
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: rem-calc(20);
+    line-height: rem-calc(26);
+  }
 }
 .pagination li.pagination-first,
 .pagination li.pagination-next,
 .pagination li.pagination-last,
 .pagination li.pagination-previous {
-  color: #32366a;
-  font-size: rem-calc(17);
-  font-weight: 400;
-  line-height: rem-calc(26);
-  &:hover{
-    border-radius: 30px;
-    background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+  a{
+    color: #32366a;
     font-weight: 400;
     font-size: rem-calc(17);
     line-height: rem-calc(26);
-    color: #FFFFFF;
+  }
+  &:hover{
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+    a{
+      color: #FFFFFF;
+      font-weight: 400;
+      font-size: rem-calc(17);
+      line-height: rem-calc(26);
+    }
   }
 }
 
