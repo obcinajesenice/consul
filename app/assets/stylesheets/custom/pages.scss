@@ -179,8 +179,7 @@ only screen and (min-resolution: 240dpi) {
     }
 
     .linkable:hover .action-button {
-      background-color: $mandys-pink-hover;
-      color: $black;
+
     }
 
     .column-content {
@@ -197,7 +196,6 @@ only screen and (min-resolution: 240dpi) {
       }
 
       .action-button {
-        color: $black;
         margin-top: rem-calc(20);
       }
     }
@@ -905,6 +903,7 @@ form label {
 .comments {
   background: #fafafa;
   padding: 2rem;
+  border-radius: 10px;
 }
 
 .comment-body {
@@ -950,7 +949,7 @@ form label {
     font-weight: 400;
     font-size: rem-calc(17);
 
-    .current,
+    &.current,
     &:hover,
     button:hover {
       border-radius: 30px;
@@ -995,11 +994,16 @@ form label {
   border: 1px solid transparent;
 }
 
-/*
-.action-button {
+
+.action-button,
+.budget-investment-show .button.button-support.small.expanded,
+footer .loginlinks a{
+  border: 1px solid transparent;
   transition: all .4s ease-in-out;
   background-size: 300% 100%;
 
+  //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%)!important;
   &:hover {
     background-position: 100% 0;
     transition: all .4s ease-in-out;
@@ -1015,4 +1019,10 @@ form label {
     }
   }
 }
-*/
+
+.bggray{
+  border-radius: 10px;
+  background-color: #fafafa;
+  padding: 2rem;
+  font-size: rem-calc(20);
+}

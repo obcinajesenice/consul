@@ -11,14 +11,21 @@
   ballot: @ballot
 } %>
 
-<div class="small-12 medium-7 medium-centered" data-tabs-content="investments_tabs">
-  <%= render "budgets/investments/filter_subnav" %>
 
-  <div class="tabs-panel is-active" id="tab-comments">
-    <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
-                                                            comment_flags: @comment_flags,
-                                                            display_comments_count: false } %>
+<section>
+  <div class="row">
+    <div class="small-12 medium-7 medium-centered">
+      <div class="small-12 medium-9 medium-centered" data-tabs-content="investments_tabs">
+        <%= render "budgets/investments/filter_subnav" %>
+
+        <div class="tabs-panel is-active" id="tab-comments">
+          <%= render partial: '/comments/comment_tree', locals: {comment_tree: @comment_tree,
+                                                                 comment_flags: @comment_flags,
+                                                                 display_comments_count: false} %>
+        </div>
+
+        <%= render "milestones/milestones", milestoneable: @investment %>
+      </div>
+    </div>
   </div>
-
-  <%= render "milestones/milestones", milestoneable: @investment %>
-</div>
+</section>

@@ -54,7 +54,9 @@
 
         <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
+        <div class="small-12 medium-9 medium-centered bggray">
         <%= safe_html_with_links investment.description.html_safe %>
+        </div>
 
         <% if feature?(:map) && map_location_available?(@investment.map_location) %>
           <div class="margin">
