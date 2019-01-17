@@ -720,8 +720,8 @@ footer {
   left: -9999px;
 }
 
-[type="checkbox"]:not(:checked) + span.checkbox,
-[type="checkbox"]:checked + span.checkbox {
+[type="checkbox"]:not(:checked) ~ span.checkbox,
+[type="checkbox"]:checked ~ span.checkbox {
   position: relative;
   padding-top: 3px;
   padding-left: 2.55em;
@@ -730,8 +730,8 @@ footer {
 }
 
 /* checkbox aspect */
-[type="checkbox"]:not(:checked) + span.checkbox:before,
-[type="checkbox"]:checked + span.checkbox:before {
+[type="checkbox"]:not(:checked) ~ span.checkbox:before,
+[type="checkbox"]:checked ~ span.checkbox:before {
   content: '';
   position: absolute;
   left: 0;
@@ -745,8 +745,8 @@ footer {
 }
 
 /* checked mark aspect */
-[type="checkbox"]:not(:checked) + span.checkbox:after,
-[type="checkbox"]:checked + span.checkbox:after {
+[type="checkbox"]:not(:checked) ~ span.checkbox:after,
+[type="checkbox"]:checked ~ span.checkbox:after {
   content: '\2714\0020';
   position: absolute;
   top: 0;
@@ -759,35 +759,35 @@ footer {
 }
 
 /* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + span.checkbox:after {
+[type="checkbox"]:not(:checked) ~ span.checkbox:after {
   opacity: 0;
   transform: scale(0);
 }
 
-[type="checkbox"]:checked + span.checkbox:after {
+[type="checkbox"]:checked ~ span.checkbox:after {
   opacity: 1;
   transform: scale(1);
 }
 
 /* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + span.checkbox:before,
-[type="checkbox"]:disabled:checked + span.checkbox:before {
+[type="checkbox"]:disabled:not(:checked) ~ span.checkbox:before,
+[type="checkbox"]:disabled:checked ~ span.checkbox:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 
-[type="checkbox"]:disabled:checked + span.checkbox:after {
+[type="checkbox"]:disabled:checked ~ span.checkbox:after {
   color: #999;
 }
 
-[type="checkbox"]:disabled + span.checkbox {
+[type="checkbox"]:disabled ~ span.checkbox {
   color: #aaa;
 }
 
 /* accessibility */
-[type="checkbox"]:checked:focus + span.checkbox:before,
-[type="checkbox"]:not(:checked):focus + span.checkbox:before {
+[type="checkbox"]:checked:focus ~ span.checkbox:before,
+[type="checkbox"]:not(:checked):focus ~ span.checkbox:before {
 
 }
 
