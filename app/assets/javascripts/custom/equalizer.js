@@ -25,4 +25,10 @@ $(document).on('page:change', function () {
   $(".wrapper").css({
   //  "padding-bottom":$(".footer").height()
   });
+
+  $(".frellink a").click(function () {
+var e = $(this).attr("href");
+window.document.location = e;
+return false;
+  });
 });
