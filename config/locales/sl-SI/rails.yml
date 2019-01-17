@@ -57,18 +57,18 @@ sl:
       shortish: "%d. %B"
     month_names:
     -
-    - Januar
-    - Februar
-    - Marec
-    - April
-    - Maj
-    - Junij
-    - Julij
-    - Avgust
-    - September
-    - Oktober
-    - November
-    - December
+    - januar
+    - februar
+    - marec
+    - april
+    - maj
+    - junij
+    - julij
+    - avgust
+    - september
+    - oktober
+    - november
+    - december
     order:
     - :leto
     - :mesec
