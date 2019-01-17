@@ -597,7 +597,7 @@ select {
     margin: 0 auto;
   }
   .tabs {
-    margin: 0.5rem;
+    margin: 0.5rem 0 0 0;
   }
   .tabs h2, .tabs h3 {
     color: #32366a;
@@ -605,14 +605,14 @@ select {
     line-height: 20px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 7px 10px;
   }
   .tabs span {
     color: #32366a;
     font-size: 16px;
     font-weight: 500;
     line-height: 17px;
-    padding-top: 16px;
+    padding-top: 5px;
     display: block;
   }
   .tabs a h3 i {
@@ -628,9 +628,9 @@ select {
     text-transform: uppercase;
 
     display: inline-block;
-    padding: 10px 15px 10px 10px;
+    padding: 7px 15px 7px 10px;
     i {
-      background: image-url('checkbluen.png') left no-repeat;
+      background: image-url('check.svg') left no-repeat;
       width: 30px;
     }
   }
@@ -642,7 +642,7 @@ select {
     text-transform: uppercase;
 
     display: inline-block;
-    padding: 10px 15px 10px 10px;
+    padding: 7px 15px;
 
     border-radius: 20px;
     background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
@@ -720,8 +720,8 @@ footer {
   left: -9999px;
 }
 
-[type="checkbox"]:not(:checked) + span,
-[type="checkbox"]:checked + span {
+[type="checkbox"]:not(:checked) + span.checkbox,
+[type="checkbox"]:checked + span.checkbox {
   position: relative;
   padding-top: 3px;
   padding-left: 2.55em;
@@ -730,8 +730,8 @@ footer {
 }
 
 /* checkbox aspect */
-[type="checkbox"]:not(:checked) + span:before,
-[type="checkbox"]:checked + span:before {
+[type="checkbox"]:not(:checked) + span.checkbox:before,
+[type="checkbox"]:checked + span.checkbox:before {
   content: '';
   position: absolute;
   left: 0;
@@ -745,8 +745,8 @@ footer {
 }
 
 /* checked mark aspect */
-[type="checkbox"]:not(:checked) + span:after,
-[type="checkbox"]:checked + span:after {
+[type="checkbox"]:not(:checked) + span.checkbox:after,
+[type="checkbox"]:checked + span.checkbox:after {
   content: '\2714\0020';
   position: absolute;
   top: 0;
@@ -759,35 +759,35 @@ footer {
 }
 
 /* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + span:after {
+[type="checkbox"]:not(:checked) + span.checkbox:after {
   opacity: 0;
   transform: scale(0);
 }
 
-[type="checkbox"]:checked + span:after {
+[type="checkbox"]:checked + span.checkbox:after {
   opacity: 1;
   transform: scale(1);
 }
 
 /* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + span:before,
-[type="checkbox"]:disabled:checked + span:before {
+[type="checkbox"]:disabled:not(:checked) + span.checkbox:before,
+[type="checkbox"]:disabled:checked + span.checkbox:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 
-[type="checkbox"]:disabled:checked + span:after {
+[type="checkbox"]:disabled:checked + span.checkbox:after {
   color: #999;
 }
 
-[type="checkbox"]:disabled + span {
+[type="checkbox"]:disabled + span.checkbox {
   color: #aaa;
 }
 
 /* accessibility */
-[type="checkbox"]:checked:focus + span:before,
-[type="checkbox"]:not(:checked):focus + span:before {
+[type="checkbox"]:checked:focus + span.checkbox:before,
+[type="checkbox"]:not(:checked):focus + span.checkbox:before {
 
 }
 
@@ -806,7 +806,15 @@ span:hover:before {
     &.hoverlinkable {
       box-shadow: 0 0 31px 3px rgba(0, 0, 0, 0.21);
       z-index: 1;
+      border-right: none;
     }
+    border-right: 1px solid #000000;
+  }
+  .welcome-column:first-of-type{
+    border: none;
+  }
+  .welcome-column:last-of-type{
+    border: none;
   }
 }
 
@@ -855,17 +863,17 @@ form label {
 }
 
 .custom-icon.arrow-small-right {
-  background-image: image-url('arrowright.png');
+  background-image: image-url('arrow.svg');
   background-position: right;
-  background-size: initial;
+  background-size: 33px 33px;
   width: 33px;
   height: 29px;
 }
 
 .custom-icon.arrow-large-right {
-  background-image: image-url('arrowright.png');
+  background-image: image-url('arrow.svg');
   background-position: right;
-  background-size: initial;
+  background-size: 33px 33px;
   width: 33px;
   height: 29px;
 }
@@ -990,19 +998,15 @@ form label {
   }
 }
 
-.action-button {
-  border: 1px solid transparent;
-}
-
-
 .action-button,
 .budget-investment-show .button.button-support.small.expanded,
 footer .loginlinks a{
-  border: 1px solid transparent;
+  border: none!important;
   transition: all .4s ease-in-out;
+  background-size: 300% 100%;
 
   //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%)!important;
+  background-image: linear-gradient(to right, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%)!important;
   &:hover {
     background-position: 100% 0;
     transition: all .4s ease-in-out;

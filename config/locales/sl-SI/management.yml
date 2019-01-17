@@ -65,7 +65,7 @@ sl:
       create_spending_proposal: Ustvari predlog porabe
       print_spending_proposals: Natisni predloge porabe
       support_spending_proposals: Podpri predloge porabe
-      create_budget_investment: Dodaj svoj predlog
+      create_budget_investment: Dodaj nov predlog
       print_budget_investments: Natisni proračunske naložbe
       support_budget_investments: Podpri proračunske naložbe
       users: Uporabniki
@@ -98,7 +98,7 @@ sl:
     budget_investments:
       alert:
         unverified_user: Uporabnik ni verificiran
-      create: Dodaj svoj predlog
+      create: Dodaj nov predlog
       filters:
         heading: Koncept
         unfeasible: Neizvedljiva naložba

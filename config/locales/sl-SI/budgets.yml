@@ -68,7 +68,7 @@ sl:
         tags_label: Oznake
         tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti in jih loči z vejico (',')"
         map_location: "Označi lokacijo na zemljevidu"
-        map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi"
+        map_location_instructions: ""
         map_remove_marker: "Odstrani označeno lokacijo"
         location: "Dodatne informacije o lokaciji"
         map_skip_checkbox: "Ta predlog nima lokacije ali pa je ne poznam"
@@ -97,7 +97,7 @@ sl:
           zero: Nisi glasoval za noben naložbeni projekt v tej skupini.
           verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
           verify_account: "Verificiraj svoj račun"
-          create: "Dodaj svoj predlog"
+          create: "Dodaj nov predlog"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
           sign_in: "vpisati"
           sign_up: "prijaviti"
