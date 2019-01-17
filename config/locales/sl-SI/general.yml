@@ -180,7 +180,7 @@ sl:
       user_not_found: Uporabnika ni mogoče najti
       invalid_date_range: "Neveljavno časovno obdobje"
   form:
-    accept_terms: Strinjam se s %{policy} in s %{conditions}
+    accept_terms: Strinjam se s %{policy} in s %{conditions}.
     accept_terms_title: Strinjam se s politiko zasebnosti in pogoji uporabe.
     conditions: pogoji uporabe
     debate: Razprava
