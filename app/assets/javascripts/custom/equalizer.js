@@ -23,12 +23,21 @@ $(document).on('page:change', function () {
   }
 
   $(".wrapper").css({
-  //  "padding-bottom":$(".footer").height()
+    //  "padding-bottom":$(".footer").height()
   });
 
   $(".frellink a").click(function () {
-var e = $(this).attr("href");
-window.document.location = e;
-return false;
+    var e = $(this).attr("href");
+    window.document.location = e;
+    return false;
   });
+  if ($(".landings").length > 0) {
+    $(".qs").each(function () {
+      var himg = $(this).find("img").height();
+      var it = $(this).find(".js-padt");
+      it.css({
+        "padding-top": ((himg - it.height()) / 2)
+      })
+    });
+  }
 });

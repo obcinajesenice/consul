@@ -828,7 +828,7 @@ form label {
 .action-button.huge {
   box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
   border-radius: 36px;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%);
 
   color: #272266;
   font-size: rem-calc(30);
@@ -904,7 +904,7 @@ form label {
 .action-button, .comments .comment .in_favor a, .comments .comment .against a {
   box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
   border-radius: 18px;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%);
   color: #272266;
 }
 
@@ -1006,7 +1006,7 @@ footer .loginlinks a{
   background-size: 300% 100%;
 
   //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(to right, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%)!important;
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%)!important;
   &:hover {
     background-position: 100% 0;
     transition: all .4s ease-in-out;
@@ -1028,4 +1028,18 @@ footer .loginlinks a{
   background-color: #fafafa;
   padding: 2rem;
   font-size: rem-calc(20);
+}
+
+.landings{
+  h2{
+    color: #40358f;
+    font-size: 60px;
+    font-weight: 700;
+  }
+  p{
+    color: #000000;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+  }
 }

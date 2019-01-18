@@ -36,11 +36,13 @@
     </div>
   </div>
 
-  <div class="main-indented-content">
-    <% @custom_phases.each do |_, phase| %>
-      <% if phase.enabled %>
-        <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
-          <% if phase.url %>
+
+  <% @custom_phases.each do |_, phase| %>
+    <% if phase.enabled %>
+
+      <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
+        <% if phase.url %>
+          <div class="main-indented-content">
             <%= render '/budgets/investments/header' %>
 
             <div class="row budget-investments">
@@ -76,23 +78,84 @@
             <div class="row">
               <%= paginate @investments %>
             </div>
-          <% else %>
-            <h1>
-              <%= l phase.starts_at.to_date, format: :shortish %>&nbsp;&dash;&nbsp;<%= l phase.ends_at.to_date, format: :shortish %>
-            </h1>
-            <!--          TODO: add some custom text here-->
-            <h1>
-              <%= t("custom.headings.#{phase.kind}") %>!
-            </h1>
-            <h2>
-              <%= strip_tags(phase.summary) %>
-            </h2>
-            <p class="large-description">
-              <%= strip_tags(phase.description) %>
-            </p>
-          <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% else %>
+
+          <%= raw(phase.description) %>
+
+
+          <div class="landings">
+            <div class="row bggray">
+              <div class="main-indented-content">
+                <div class="small-12 medium-9 medium-centered text-center">
+                  <h2>Glasuj!</h2>
+                  <p>
+                    Med 25. 3. in 25. 4. neposredno soodločaj o porabi 5 % proračunskih sredstev občine Hrpelje-Kozina.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="main-indented-content qs">
+                <div class="column small-12 medium-6">
+                  <div class="medium-8 medium-centered js-padt">
+                    <h2>Kaj?</h2>
+                    <p>
+                      Med vsemi oddanimi predlogi izberi tiste, za katere si najbolj želiš, da bi bili uresničeni.
+                    </p>
+                  </div>
+                </div>
+                <div class="column small-12 medium-6">
+                  <div class="medium-centered">
+                    <img src="/assets/custom/phases/kaj.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row bggray">
+              <div class="main-indented-content qs">
+                <div class="column small-12 medium-6">
+                  <div class=" medium-centered">
+                    <img src="/assets/custom/phases/kdo.png">
+                  </div>
+                </div>
+                <div class="column small-12 medium-6">
+                  <div class="medium-8 medium-centered js-padt">
+                    <h2>Kdo?</h2>
+                    <p>
+                      Glasuje lahko vsakdo s stalnim
+                      prebivališčem v občini Hrpelje-Kozina, star vsaj 16 let.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="main-indented-content qs">
+                <div class="column small-12 medium-6">
+                  <div class="medium-8 medium-centered js-padt">
+                    <h2>Kako?</h2>
+                    <p>
+                      Poleg spletnega je možno tudi glasovanje na papirju, in sicer med 1. 4. in 25. 4. v prostorih
+                      občine na Ulica xy 1, Hrpelje-Kozina.
+                    </p>
+                  </div>
+                </div>
+                <div class="column small-12 medium-6">
+                  <div class="medium-centered">
+                    <img src="/assets/custom/phases/kako.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
     <% end %>
+  <% end %>
   </div>
 </main>
