@@ -539,9 +539,8 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
-.action-button.large {
-  //width: 100%;
-
+.action-button.large,
+.action-button.huge {
   text-align: center;
   color: #272266 !important;
   background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
@@ -550,15 +549,18 @@ only screen and (min-resolution: 240dpi) {
 
   font-size: rem-calc(30);
   font-weight: 700;
-  line-height: rem-calc(40);
-  padding: rem-calc(11) rem-calc(16);
+  line-height: rem-calc(30);
+  padding: rem-calc(20) rem-calc(25);
 
-  .custom-icon.arrow-small-right {
+  .custom-icon.arrow-small-right,
+  .custom-icon.arrow-large-right {
     color: #272266;
     margin-left: 10px;
   }
 }
-.action-button.large.w485{
+
+
+.action-button.large.w485 {
   min-width: 485px;
 }
 
@@ -658,7 +660,7 @@ select {
   .tabs .is-active a span {
     font-weight: 500;
   }
-    .tabs .tabs-title > a[aria-selected='true'], .tabs .tabs-title > a.is-active, .tabs .tabs-title > a:hover {
+  .tabs .tabs-title > a[aria-selected='true'], .tabs .tabs-title > a.is-active, .tabs .tabs-title > a:hover {
     background: none;
   }
   .tabs {
@@ -816,10 +818,10 @@ span:hover:before {
     }
     border-right: 1px solid #000000;
   }
-  .welcome-column:first-of-type{
+  .welcome-column:first-of-type {
     border: none;
   }
-  .welcome-column:last-of-type{
+  .welcome-column:last-of-type {
     border: none;
   }
 }
@@ -829,19 +831,6 @@ form label {
   font-size: rem-calc(18);
   font-weight: 600;
   line-height: rem-calc(26);
-}
-
-.action-button.huge {
-  box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
-  border-radius: 36px;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%);
-
-  color: #272266;
-  font-size: rem-calc(30);
-  font-weight: 700;
-  line-height: rem-calc(40);
-  padding: rem-calc(11) rem-calc(16);
-  margin: 10px;
 }
 
 .auth-page {
@@ -868,18 +857,11 @@ form label {
   }
 }
 
-.custom-icon.arrow-small-right {
-  background-image: image-url('arrow.svg');
-  background-position: right;
-  background-size: 33px 33px;
-  width: 33px;
-  height: 29px;
-}
-
+.custom-icon.arrow-small-right,
 .custom-icon.arrow-large-right {
   background-image: image-url('arrow.svg');
-  background-position: right;
-  background-size: 33px 33px;
+  background-position: center;
+  background-size: 45px 42px;
   width: 33px;
   height: 29px;
 }
@@ -1008,13 +990,13 @@ form label {
 
 .action-button,
 .budget-investment-show .button.button-support.small.expanded,
-footer .loginlinks a{
-  border: none!important;
+footer .loginlinks a {
+  border: none !important;
   transition: all .4s ease-in-out;
   background-size: 300% 100%;
 
   //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%)!important;
+  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%) !important;
   &:hover {
     background-position: 100% 0;
     transition: all .4s ease-in-out;
@@ -1031,20 +1013,20 @@ footer .loginlinks a{
   }
 }
 
-.bggray{
+.bggray {
   border-radius: 10px;
   background-color: #fafafa;
   padding: 2rem;
   font-size: rem-calc(20);
 }
 
-.landings{
-  h2{
+.landings {
+  h2 {
     color: #40358f;
     font-size: 60px;
     font-weight: 700;
   }
-  p{
+  p {
     color: #000000;
     font-weight: 500;
     font-size: 30px;
