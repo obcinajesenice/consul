@@ -26,11 +26,6 @@ $(document).on('page:change', function () {
     //  "padding-bottom":$(".footer").height()
   });
 
-  $(".frellink a").click(function () {
-    var e = $(this).attr("href");
-    window.document.location = e;
-    return false;
-  });
   if ($(".landings").length > 0) {
     $(".qs").each(function () {
       var himg = $(this).find("img").height();

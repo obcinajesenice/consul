@@ -80,7 +80,9 @@ sl:
         new_unlock: Nisi prejel navodil, kako odkleniti svoj račun?
         signin_with_provider: Prijavi se z/s %{provider}
         signup: Nimaš računa? %{signup_link}
+        signin: Že imaš račun? %{signup_link}
         signup_link: Registriraj se
+        signin_link: Prijavi se
     unlocks:
       new:
         email_label: E-naslov

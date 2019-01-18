@@ -57,6 +57,8 @@
 
         <div class="signuplinkposition">
           <div>
+            <%= t("devise_views.shared.links.signin",
+                  signup_link: link_to(t("devise_views.shared.links.signin_link"), new_session_path(resource_name))).html_safe %>
           </div>
         </div>
 
