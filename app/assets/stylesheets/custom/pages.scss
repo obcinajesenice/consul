@@ -955,7 +955,9 @@ form label {
   li {
     color: #32366a;
     font-weight: 400;
-    font-size: rem-calc(17);
+    font-size: rem-calc(20);
+    line-height: rem-calc(26);
+    min-width: 32px;
 
     &.current,
     &:hover,
