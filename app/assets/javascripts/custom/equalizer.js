@@ -26,6 +26,7 @@ $(document).on('page:change', function () {
     //  "padding-bottom":$(".footer").height()
   });
 
+  /*
   if ($(".landings").length > 0) {
     $(".qs").each(function () {
       var himg = $(this).find("img").height();
@@ -35,4 +36,5 @@ $(document).on('page:change', function () {
       })
     });
   }
+  */
 });

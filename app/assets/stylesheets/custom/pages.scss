@@ -543,7 +543,6 @@ only screen and (min-resolution: 240dpi) {
 .action-button.huge {
   text-align: center;
   color: #272266 !important;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
   border-radius: 36px;
   box-shadow: 0 0 16px rgba(50, 54, 106, 0.25);
 
@@ -557,6 +556,13 @@ only screen and (min-resolution: 240dpi) {
     color: #272266;
     margin-left: 10px;
   }
+}
+.action-button.small{
+  background: $mandys-pink;
+  background-image: none!important;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 
@@ -892,7 +898,6 @@ form label {
 .action-button, .comments .comment .in_favor a, .comments .comment .against a {
   box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
   border-radius: 18px;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%);
   color: #272266;
 }
 
@@ -992,22 +997,35 @@ form label {
 .budget-investment-show .button.button-support.small.expanded,
 footer .loginlinks a {
   border: none !important;
-  transition: all .4s ease-in-out;
   background-size: 300% 100%;
 
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+
   //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f2d6d0 51%, #fcede9 100%) !important;
+  background-image: linear-gradient(to right, #f0b9ad, #f2d6d0, #fcede9, #f0b9ad) !important;
   &:hover {
     background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
   }
 
   &.transparent {
     background-size: 300% 100%;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
 
     &:hover {
       background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
     }
   }
