@@ -158,8 +158,8 @@ sl:
   errors:
     format: "%{attribute} %{message}"
     messages:
-      accepted: Za nadaljevanje moraš sprejeti politiko zasebnosti in pogoje uporabe
-      blank: To polje ne sme biti prazno
+      accepted: Za nadaljevanje moraš sprejeti politiko zasebnosti in pogoje uporabe.
+      blank: To polje ne sme biti prazno.
       present: mora biti prazen
       confirmation: ne ustreza %{attribute}
       empty: ne more biti prazen

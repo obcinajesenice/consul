@@ -366,7 +366,7 @@ sl:
       proposal_video_url: Povezava na video
       proposal_video_url_note: Lahko dodaš povezavo na YouTube ali Vimeo
       tag_category_label: "Kategorije"
-      tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
+      tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo."
       tags_label: Oznake
       tags_placeholder: "Vpiši oznake, ki jih želiš uporabiti, loči jih z vejico (',')"
       map_location: "Označi lokacijo na zemljevidu."
@@ -431,7 +431,7 @@ sl:
       recommendation_three: Izvedba predloga mora biti v pristojnosti občine.
       recommendation_four: Predlog mora biti skladen z zakonodajo, urbanističnimi akti in/ali z že sprejetim načrtom investicij.
       recommendation_five: Predlog mora biti izvedljiv v predvidenem proračunskem obdobju.
-      recommendation_six: Vrednost projekta mora biti med [vstavi številko] in [vstavi številko] €.
+      recommendation_six: Predvidena vrednost projekta ne sme biti višja od 15 000 €.
       recommendations_title: Navodila
       start_new: Ustvari nov predlog
     notice:
@@ -698,7 +698,7 @@ sl:
     index:
       title: Participativni proračun
       unfeasible: Neizvedljivi naložbeni projekti
-      by_geozone: "Projekti, ki obsegajo: %{geozone}"
+      by_geozone: "Projekti, ki obsegajo: %{geozone}."
       search_form:
         button: Išči
         placeholder: Investicijski projekti...

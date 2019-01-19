@@ -1139,10 +1139,6 @@ form {
       box-shadow: none;
       -webkit-box-shadow: none;
     }
-
-    &.error {
-      margin-bottom: rem-calc(1);
-    }
   }
 
   [type="checkbox"] + label,
@@ -1289,7 +1285,6 @@ form {
 
 .error {
   color: $color-alert;
-  display: inline-block;
 
   a {
     color: $color-alert;

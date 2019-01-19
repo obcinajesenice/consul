@@ -114,12 +114,12 @@ sl:
         currency_symbol: "Valuta"
       budget/investment:
         heading_id: "Območje"
-        title: "Naslov"
+        title: "Naslov predloga"
         description: "Opis"
         external_url: "Povezava do dodatne dokumentacije"
         administrator_id: "Administrator"
         location: "Lokacija (neobvezno)"
-        organization_name: "Če vlagaš predlog v imenu organizacije ali skupine ljudi, jo/jih navedi"
+        organization_name: "Če vlagaš predlog v imenu organizacije ali skupine ljudi, jo/jih navedi."
         image: "Opisna slika predloga"
         image_title: "Naslov slike"
       budget/investment/milestone:
@@ -253,6 +253,14 @@ sl:
       models:
         user:
           attributes:
+            username:
+              taken: "Uporabnik s tem elektronskim naslovom že obstaja."
+            password:
+              too_short: "Geslo je prekratko (dolgo mora biti vsaj %{count} znakov)."
+            password_confirmation:
+              confirmation: "Ponovljeno geslo ni enako predhodno vnešenemu geslu."
+            current_password:
+              blank: "Trenutno geslo ne sme biti prazno."
             email:
               password_already_set: "Ta uporabnik že ima geslo"
         debate:
@@ -295,6 +303,8 @@ sl:
               less_than_or_equal_to: "oznake morajo biti manjše ali enake %{count}"
         budget/investment:
           attributes:
+            title:
+              too_short: "To polje ne sme biti prazno in mora vsebovati vsaj %{count} znake."
             tag_list:
               less_than_or_equal_to: "oznake morajo biti manjše ali enake %{count}"
         proposal_notification:
