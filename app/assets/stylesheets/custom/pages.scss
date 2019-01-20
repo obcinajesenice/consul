@@ -566,10 +566,10 @@ only screen and (min-resolution: 240dpi) {
   font-weight: 500;
 }
 
-
 .action-button.large.w485 {
   min-width: 100%;
 }
+
 @media (min-width: 576px) {
   .action-button.large.w485 {
     min-width: 485px;
@@ -680,8 +680,17 @@ select {
     border-left: 2px solid #f0b9ad;
     li {
       border-right: 2px solid #f0b9ad;
-      width: 24.8%;
     }
+  }
+}
+
+.custom-phases-nav .tabs li {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .custom-phases-nav .tabs li {
+    width: 24.8%;
   }
 }
 
@@ -695,7 +704,7 @@ select {
     transition: all 0.3s linear 0s;
     .image-holder {
       background-color: rgba(39, 34, 102, 1);
-      img{
+      img {
         opacity: 0.69;
       }
     }
@@ -1072,6 +1081,7 @@ footer .loginlinks a {
 .qs {
   display: block;
 }
+
 @media (min-width: 576px) {
   .qs {
     display: flex;
