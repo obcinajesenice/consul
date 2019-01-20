@@ -23,7 +23,7 @@ $(document).on('page:change', function () {
     }
   }
   if ($(".welcome-column .linkable").length > 0) {
-    $(".welcome-column .linkable").height($(".welcome-column").height());
+    $(".welcome-column .linkable").height($("body").height());
   }
 
   $("body").css({
