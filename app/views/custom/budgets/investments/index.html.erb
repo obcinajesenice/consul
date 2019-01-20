@@ -80,6 +80,11 @@
             </div>
           </div>
         <% else %>
+          <%
+            phaza = (phase.kind).to_s
+          %>
+
+          <% if phaza == "balloting" %>
 
             <div class="landings">
               <div class="row bggray">
@@ -151,19 +156,18 @@
               </div>
             </div>
 
-          <% if phase.kind == "balloting" %>
-PRINT ME !!!!
           <% end %>
 
 
-          <% if phase.kind == "finished" %>
+          <% if phaza == "finished" %>
             <div class="landings">
               <div class="row bggray">
                 <div class="main-indented-content">
                   <div class="small-12 medium-9 medium-centered text-center">
                     <h2>Spremljaj izvedbo!</h2>
                     <p>
-                      Glasovanje o projektih participativnega proračuna občine [ime občine] je zaključeno, izbrani predlogi pa prehajajo v fazo implementacije.
+                      Glasovanje o projektih participativnega proračuna občine [ime občine] je zaključeno, izbrani
+                      predlogi pa prehajajo v fazo implementacije.
                     </p>
                   </div>
                 </div>
@@ -175,7 +179,8 @@ PRINT ME !!!!
                     <div class="medium-8 medium-centered js-padt">
                       <h2>Kaj pa zdaj?</h2>
                       <p>
-                        Za izvajanje izglasovanih projektov je odgovorna občina. Implementacija mora biti dokončana v trenutnem proračunskem obdobju.
+                        Za izvajanje izglasovanih projektov je odgovorna občina. Implementacija mora biti dokončana v
+                        trenutnem proračunskem obdobju.
                       </p>
                     </div>
                   </div>
@@ -200,7 +205,8 @@ PRINT ME !!!!
                         participacija
                         zaključena?</h2>
                       <p>
-                        Ne. Zdaj lahko bdiš nad izvajanjem projektov, spremljaš posodabljanje njihovih časovnic in se veseliš napredka.
+                        Ne. Zdaj lahko bdiš nad izvajanjem projektov, spremljaš posodabljanje njihovih časovnic in se
+                        veseliš napredka.
                       </p>
                     </div>
                   </div>
@@ -213,7 +219,8 @@ PRINT ME !!!!
                     <div class="medium-8 medium-centered js-padt">
                       <h2>In potem?</h2>
                       <p>
-                        Izvedeni projekti bodo dokumentirani z vizualnimi materiali ter opremljeni z opisom in slikami. Medtem pa že lahko razmišljaš o svojem predlogu za naslednje proračunsko leto ...
+                        Izvedeni projekti bodo dokumentirani z vizualnimi materiali ter opremljeni z opisom in slikami.
+                        Medtem pa že lahko razmišljaš o svojem predlogu za naslednje proračunsko leto ...
                       </p>
                     </div>
                   </div>
