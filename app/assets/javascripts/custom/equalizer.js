@@ -27,7 +27,7 @@ $(document).on('page:change', function () {
   });
 
   if ($(".budget-investments .budget-investment-holder").length > 0) {
-    setEh($(".budget-investments .budget-investment-holder .budget-investment-content"));
+    setEh($(".budget-investments .budget-investment-holder .budget-investment"));
   }
 
   if ($(".welcome-column .linkable").length > 0) {
