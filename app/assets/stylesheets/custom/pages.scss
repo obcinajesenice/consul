@@ -557,14 +557,14 @@ only screen and (min-resolution: 240dpi) {
     margin-left: 10px;
   }
 }
-.action-button.small{
+
+.action-button.small {
   background: $mandys-pink;
-  background-image: none!important;
+  background-image: none !important;
   color: #000000;
   font-size: 20px;
   font-weight: 500;
 }
-
 
 .action-button.large.w485 {
   min-width: 485px;
@@ -681,6 +681,20 @@ select {
 
 .budget-investments .budget-investment-holder .budget-investment .budget-investment-content .investment-title h3 {
   height: auto;
+}
+
+.budget-investments .budget-investment {
+  &:hover {
+    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear 0s;
+    .image-holder {
+      background-color: rgba(39, 34, 102, 1);
+      img{
+        opacity: 0.69;
+      }
+    }
+  }
+
 }
 
 .home-page footer {
@@ -1052,7 +1066,7 @@ footer .loginlinks a {
   }
 }
 
-.qs{
+.qs {
   display: flex;
   align-items: center;
   justify-content: center;
