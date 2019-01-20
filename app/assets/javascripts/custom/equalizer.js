@@ -1,3 +1,16 @@
+function setEh(what) {
+  var mh = 0;
+  var bdesc = what;
+  bdesc.each(function () {
+    if ($(this).height() > mh) {
+      mh = $(this).height();
+    }
+  });
+  if (mh > 0) {
+    bdesc.height(mh);
+  }
+  return mh;
+}
 $(document).on('page:change', function () {
   var custom_phases_tabs = $("#custom_phases_tabs li");
   if (custom_phases_tabs.length > 0) {
@@ -9,42 +22,28 @@ $(document).on('page:change', function () {
       }
     }
   }
-
-  if ($(".budget-investments .budget-investment-holder").length > 0) {
-    var mh = 0;
-    var bdesc = $(".budget-investments .budget-investment-holder .budget-investment-content");
-    bdesc.each(function () {
-      if ($(this).height() > mh) {
-        mh = $(this).height();
-      }
-    });
-    if (mh > 0) {
-      bdesc.height(mh);
-    }
-  }
-  if ($(".welcome-column .linkable").length > 0) {
-    if ($(window).width() > 575) {
-      $(".welcome-column .linkable").height($("body").height());
-
-      var mh = 0;
-      var bdesc = $(".welcome-columns .column-content .abtom4");
-      bdesc.each(function () {
-        if ($(this).height() > mh) {
-          mh = $(this).height();
-        }
-      });
-      if (mh > 0) {
-        bdesc.height(mh);
-        $(".action-button.large").css({
-          "margin-top": (mh / 2) - $(".action-button.large").height()
-        })
-      }
-    }
-  }
-
   $("body").css({
     "padding-bottom": $(".footer").height()
   });
+
+  if ($(".budget-investments .budget-investment-holder").length > 0) {
+    setEh($(".budget-investments .budget-investment-holder .budget-investment-content"));
+  }
+
+  if ($(".welcome-column .linkable").length > 0) {
+    if ($(window).width() > 575) {
+      if($($(window).height()) > $("body").height()) {
+        $(".welcome-column .linkable").height($("body").height());
+      }
+      setEh($(".welcome-columns .column-content h2"));
+      var mh = setEh($(".welcome-columns .column-content .abtom4"));
+      $(".action-button.large").css({
+        "margin-top": (mh / 2) - $(".action-button.large").height()
+      })
+    }
+  }
+
+
 
   /*
   if ($(".landings").length > 0) {
