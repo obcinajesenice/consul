@@ -24,6 +24,22 @@ $(document).on('page:change', function () {
   }
   if ($(".welcome-column .linkable").length > 0) {
     $(".welcome-column .linkable").height($("body").height());
+
+    var mh = 0;
+    var bdesc = $(".welcome-columns .column-content .abtom4");
+    bdesc.each(function () {
+      if ($(this).height() > mh) {
+        mh = $(this).height();
+      }
+    });
+    if (mh > 0) {
+      bdesc.height(mh);
+      $(".action-button.large").css({
+        "margin-top": (mh/2)-$(".action-button.large").height()
+      })
+    }
+
+
   }
 
   $("body").css({
