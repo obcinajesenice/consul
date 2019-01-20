@@ -1,9 +1,13 @@
 $(document).on('page:change', function () {
-  var c = $("#custom_phases_tabs li");
-  if (c.length == 3) {
-    $(".custom-phases-nav .tabs li").css({
-      width: "32.8%"
-    })
+  var custom_phases_tabs = $("#custom_phases_tabs li");
+  if (custom_phases_tabs.length > 0) {
+    if ($(window).width() > 575) {
+      if (custom_phases_tabs.length == 3) {
+        $(".custom-phases-nav .tabs li").css({
+          width: "32.8%"
+        })
+      }
+    }
   }
 
   if ($(".budget-investments .budget-investment-holder").length > 0) {
