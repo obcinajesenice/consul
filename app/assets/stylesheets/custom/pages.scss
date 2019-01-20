@@ -25,8 +25,10 @@
 // Login / Registration
 
 .auth-page {
-  background-image: linear-gradient(-226deg, #f0b9ad 0%, #272266 100%);
+  .wrapper{
+    background-image: linear-gradient(-226deg, #f0b9ad 0%, #272266 100%);
 
+  }
   h1 {
     margin-top: rem-calc(60);
     text-align: center;
@@ -744,7 +746,7 @@ footer {
     margin-top: 0.375rem;
   }
   .main-indented-content {
-    padding: rem-calc(20) 0;
+
   }
 }
 

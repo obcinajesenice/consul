@@ -38,7 +38,7 @@
   outline: 0;
 }
 html{
-  //height: 100%;
+  height: 100%;
 }
 html,
 body {
@@ -399,7 +399,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .wrapper {
-  height: 100%;
+  //height: 100%;
 }
 
 .push {
@@ -409,7 +409,7 @@ only screen and (min-resolution: 240dpi) {
 .footer {
   bottom: 0;
   left: 0;
-  position: relative;
+  position: absolute;
   right: 0;
   width: 100%;
 }
