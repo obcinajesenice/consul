@@ -26,8 +26,8 @@ $(document).on('page:change', function () {
     $(".welcome-column .linkable").height($(".welcome-column").height());
   }
 
-  $(".wrapper").css({
-    //  "padding-bottom":$(".footer").height()
+  $("body").css({
+    "padding-bottom":$(".footer").height()
   });
 
   /*
