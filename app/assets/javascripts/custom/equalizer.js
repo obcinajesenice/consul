@@ -1,3 +1,21 @@
+var shortenShareLink = function () {
+  if($("#shortner").length < 1){
+    return false;
+  }
+  var tl = document.location.href;
+  $.ajax({
+    type: "GET",
+    url: "https://pp.djnd.si/shortener/generate",
+    data: {
+      url: (encodeURIComponent(tl))
+    }
+  }).done(function (data) {
+    $("#shortner").val(data);
+  }).fail(function (d) {
+    console.log(d);
+  })
+};
+
 function setEh(what) {
   var mh = 0;
   var bdesc = what;
@@ -56,4 +74,5 @@ $(document).on('page:change', function () {
     });
   }
   */
+  shortenShareLink();
 });

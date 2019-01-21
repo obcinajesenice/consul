@@ -25,7 +25,7 @@
 // Login / Registration
 
 .auth-page {
-  .wrapper{
+  .wrapper {
     background-image: linear-gradient(-226deg, #f0b9ad 0%, #272266 100%);
 
   }
@@ -1096,4 +1096,107 @@ footer .loginlinks a {
   text-align: center;
   max-height: 351px;
   overflow: hidden;
+}
+
+.map-location {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.comments .action-button.small {
+  color: #272266;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.budget-investment-show .social-box {
+  h4 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 37px;
+  }
+}
+
+.budget-investment-show .social-box .column-content {
+  background: #FFFFFF !important;
+
+  h3 {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 37px;
+  }
+
+  h3,
+  .social-share-full,
+  .copylink,
+  #shortner {
+    display: inline-block;
+    margin: 0 20px 0 0;
+  }
+  .social-share-full {
+    margin: 0 60px 0 0;
+    a {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .copylink {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 37px;
+    cursor: pointer;
+  }
+  #shortner {
+    width: 187px;
+    border-radius: 4px;
+    border: 2px solid #f7d3c9;
+    background-color: #ffffff;
+
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+  }
+  .social-share-button .ssb-twitter,
+  .social-share-button .ssb-facebook,
+  .social-share-button .ssb-google_plus,
+  .social-share-button .ssb-telegram {
+    background: no-repeat;
+    background-image: linear-gradient(to right, #f0b9ad, #f2d6d0, #fcede9) !important;
+    color: #32366a;
+
+    background-size: 300% 100%;
+
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    border-radius: 76px;
+    width: 76px !important;
+    height: 76px !important;
+
+    &:hover {
+      background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+  }
+  .social-share-button {
+    .ssb-twitter::before,
+    .ssb-facebook::before,
+    .ssb-google_plus::before,
+    .ssb-telegram::before {
+      font-size: 2.5rem;
+      left: 40%;
+      top: 14px;
+    }
+  }
 }
