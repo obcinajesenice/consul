@@ -148,6 +148,7 @@ sl:
         login: "E-naslov ali uporabniško ime"
         email: "E-naslov"
         username: "Uporabniško ime"
+        document_number: "EMŠO"
         password_confirmation: "Potrditev gesla"
         password: "Geslo"
         current_password: "Trenutno geslo"
