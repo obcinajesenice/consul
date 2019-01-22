@@ -4,7 +4,7 @@
     <div class="row" data-equalizer>
 
       <div class="small-12 medium-12 large-12">
-        <div data-equalizer-watch class="image-holder">
+        <div class="image-holder">
           <%= link_to namespaced_budget_investment_path(investment), class: 'investment-title' do %>
             <% if investment.image.present? %>
               <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>

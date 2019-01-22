@@ -243,8 +243,10 @@ only screen and (min-resolution: 240dpi) {
 
 .phase-description {
 
+  margin-top: 3.25rem;
   h1 {
     margin-bottom: rem-calc(30);
+    line-height: rem-calc(70);
   }
 
   h2 {
@@ -933,6 +935,11 @@ form label {
   background: #fafafa;
   padding: 2rem;
   border-radius: 10px;
+  margin: rem-calc(20) 0 rem-calc(40) 0;
+}
+
+.comment-form {
+  padding: rem-calc(20) 0;
 }
 
 .comment-body {
@@ -1069,14 +1076,16 @@ footer .loginlinks a {
 .landings {
   h2 {
     color: #40358f;
-    font-size: 60px;
+    font-size: rem-calc(60);
     font-weight: 700;
+    line-height: rem-calc(70);
+    margin-bottom: rem-calc(30);
   }
   p {
     color: #000000;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: rem-calc(30);
+    line-height: rem-calc(36);
   }
 }
 
@@ -1199,4 +1208,35 @@ footer .loginlinks a {
       top: 14px;
     }
   }
+  .social-share-button .ssb-twitter::before {
+    background-image: image-url('twitter.svg');
+    left: 30px;
+    top: 18px;
+    content: ' ';
+    background-size: 38px 38px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+  }
+  .social-share-button .ssb-facebook::before {
+    background-image: image-url('facebook.svg');
+    left: 30px;
+    top: 18px;
+    content: ' ';
+    background-size: 38px 38px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+  }
+  .social-share-button .ssb-google_plus::before {
+    background-image: image-url('envelope.svg');
+    left: 30px;
+    top: 18px;
+    content: ' ';
+    background-size: 38px 38px;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+  }
+
 }
