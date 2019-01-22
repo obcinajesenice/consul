@@ -1228,7 +1228,7 @@ footer .loginlinks a {
     height: 40px;
     background-repeat: no-repeat;
   }
-  .social-share-button .ssb-google_plus::before {
+  .social-share-button .ssb-mail::before {
     background-image: image-url('envelope.svg');
     left: 30px;
     top: 18px;
@@ -1239,4 +1239,9 @@ footer .loginlinks a {
     background-repeat: no-repeat;
   }
 
+}
+.home-page{
+  .wrapper{
+    background: #32366a;
+  }
 }
