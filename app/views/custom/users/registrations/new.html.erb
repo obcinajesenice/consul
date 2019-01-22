@@ -1,4 +1,5 @@
-<% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
+<% provide :title do %><%= t("devise_views.users.registrations.new.title") %>
+<% end %>
 
 <h2><%= t("custom.titles.register_with") %></h2>
 
@@ -7,10 +8,8 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render 'shared/errors', resource: resource %>
 
-<!--<p>
-    <%= t("devise_views.users.registrations.new.organization_signup",
+  <%= t("devise_views.users.registrations.new.organization_signup",
         signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
-  </p>-->
 
   <div class="row">
     <div class="small-12 column">
@@ -20,15 +19,18 @@
 
       <%= f.label :username %>
       <p class="help-text" id="username-help-text"><%= t("devise_views.users.registrations.new.username_note") %></p>
-      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
-                                   placeholder: t("devise_views.users.registrations.new.username_label"),
-                                   label: false,
-                                   aria: {describedby: "username-help-text"} %>
+      <%= f.text_field :username, autofocus: true, maxlength: User.username_max_length,
+                       placeholder: t("devise_views.users.registrations.new.username_label"),
+                       label: false,
+                       aria: { describedby: "username-help-text" } %>
 
       <%= f.invisible_captcha :family_name %>
 
-      <%= f.email_field :email,     placeholder: t("devise_views.users.registrations.new.email_label") %>
+      <%= f.hidden_field :document_type, value: "1" %>
 
+      <%= f.text_field :document_number, placeholder: t("devise_views.users.registrations.new.document_number") %>
+
+      <%= f.email_field :email, placeholder: t("devise_views.users.registrations.new.email_label") %>
 
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.users.registrations.new.password_label") %>
@@ -45,9 +47,9 @@
         <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
         <span class="checkbox">
           <%= t("devise_views.users.registrations.new.terms",
-              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
-              title: t('shared.target_blank_html'),
-              target: "_blank")).html_safe %>
+                terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+                               title: t('shared.target_blank_html'),
+                               target: "_blank")).html_safe %>
         </span>
       <% end %>
       <div class="small-12 medium-10 small-centered button-holder pad-t-60">

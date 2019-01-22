@@ -263,6 +263,8 @@ sl:
               blank: "Trenutno geslo ne sme biti prazno."
             email:
               password_already_set: "Ta uporabnik že ima geslo"
+            document_number:
+              invalid: "Vnešena EMŠO številka ni pravilna."
         debate:
           attributes:
             tag_list:
