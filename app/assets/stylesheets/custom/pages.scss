@@ -1295,6 +1295,7 @@ footer .loginlinks a {
     line-height: rem-calc(35);
     font-weight: 400;
     text-align: center;
+    padding-top: 15px;
   }
   .nbr5 {
     color: #f0b9ad;
@@ -1558,6 +1559,9 @@ footer .loginlinks a {
 }
 
 .help {
+  .pad-2rem{
+    padding: 0 2rem;
+  }
   h2 {
     color: #40358f;
     font-size: rem-calc(60);
