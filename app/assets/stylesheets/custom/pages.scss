@@ -681,9 +681,12 @@ select {
   }
   .tabs {
     width: 100%;
-    border-left: 2px solid #f0b9ad;
+    border-left: none;
     li {
-      border-right: 2px solid #f0b9ad;
+      border-right: none;
+      border-bottom: 1px solid #f0b9ad;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
     }
   }
 }
@@ -693,8 +696,16 @@ select {
 }
 
 @media (min-width: 576px) {
-  .custom-phases-nav .tabs li {
-    width: 24.8%;
+  .custom-phases-nav .tabs {
+    width: 100%;
+    border-left: 2px solid #f0b9ad;
+    li {
+      width: 24.8%;
+      border-right: 2px solid #f0b9ad;
+      border-bottom: none;
+      padding-bottom: initial;
+      margin-bottom: initial;
+    }
   }
 }
 
@@ -740,17 +751,40 @@ footer {
       background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
     }
   }
+  .links-holder{
+    text-align: center;
+  }
   .footer-links {
     padding: 20px 0;
     margin: 0;
+    text-align: center;
   }
   .logo {
-    margin-top: 0.375rem;
+    margin: 0.375rem auto 0 auto;
   }
-  .main-indented-content {
-
+  .mobile-text-center{
+    text-align: center;
   }
 }
+@media (min-width: 576px) {
+footer {
+  .mobile-text-center{
+    text-align: initial;
+  }
+  .links-holder{
+    text-align: right;
+  }
+  .footer-links{
+    text-align: right;
+  }
+.logo{
+  margin-top: 0.375rem;
+  margin-left: initial;
+  margin-right: initial;
+}
+}
+}
+
 
 .bgblue {
   background-color: #32366a;
