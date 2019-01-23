@@ -1222,13 +1222,11 @@ footer .loginlinks a {
     line-height: 40px;
     text-align: center;
   }
-  .social-share-button .ssb-twitter,
-  .social-share-button .ssb-facebook,
-  .social-share-button .ssb-google_plus,
-  .social-share-button .ssb-telegram {
+  .social-share-button .ssb-icon {
     background: no-repeat;
     background-image: linear-gradient(to right, #f0b9ad, #f2d6d0, #fcede9) !important;
     color: #32366a;
+    position: relative;
 
     background-size: 300% 100%;
 
@@ -1250,13 +1248,12 @@ footer .loginlinks a {
     }
   }
   .social-share-button {
-    .ssb-twitter::before,
-    .ssb-facebook::before,
-    .ssb-google_plus::before,
-    .ssb-telegram::before {
+    .ssb-icon::before {
       font-size: 2.5rem;
       left: 40%;
       top: 14px;
+      margin-left: rem-calc(-11);
+      position: absolute;
     }
   }
   .social-share-button .ssb-twitter::before {
@@ -1279,7 +1276,7 @@ footer .loginlinks a {
     height: 40px;
     background-repeat: no-repeat;
   }
-  .social-share-button .ssb-mail::before {
+  .social-share-button .ssb-email::before {
     background-image: image-url('envelope.svg');
     left: 30px;
     top: 18px;
