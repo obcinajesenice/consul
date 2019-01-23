@@ -17,7 +17,7 @@ sl:
         confirm_link: Potrdi moj račun
         text: 'Svoj e-naslov lahko potrdiš na spodnji povezavi:'
         title: Hvala za registracijo!
-        welcome: Dobrodošli
+        welcome: Dobrodošel/-a
       reset_password_instructions:
         change_link: Spremeni moje geslo
         hello: Živjo

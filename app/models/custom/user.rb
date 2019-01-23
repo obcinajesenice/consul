@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   private
 
   def valid_emso_number?
-    /[0,1,2,3]\d[0,1]\d{4}50[0,5]\d{3}/.match(document_number)
+    /[0,1,2,3]\d[0,1]\d[0,9]\d\d\d{6}/.match(document_number)
   end
 
 end
