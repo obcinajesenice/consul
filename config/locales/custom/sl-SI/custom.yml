@@ -7,5 +7,5 @@ sl-SI:
       finished: Spremljaj
     titles:
       added_proposals: Oddani predlogi
-      register_with: Za registracijo uporabi
-      sign_in_with: Za vpis uporabi
+      register_with: Za registracijo izpolni ta obrazec
+      sign_in_with: Za vpis izpolni ta obrazec

@@ -43,7 +43,7 @@ sl:
       signed_up: "Dobrodošel! Uspešno smo te avtentificirali."
       signed_up_but_inactive: "Tvoja registracija je bila uspešna, ampak nismo te mogli vpisati, ker tvoj račun še ni aktiviran."
       signed_up_but_locked: "Tvoja registracija je bila uspešna, ampak nismo te mogli vpisati, ker je tvoj račun zaklenjen."
-      signed_up_but_unconfirmed: "Poslali smo ti e-pošto s povezavo za preverjanje. Prosimo, klikni na to povezavo, da aktiviraš svoj račun."
+      signed_up_but_unconfirmed: "Poslali smo ti e-pošto. Prosimo, klikni na povezavo v sporočilu, da aktiviraš svoj račun."
       update_needs_confirmation: "Tvoj račun je bil uspešno posodobljen, a preveriti moramo še tvoj novi e-naslov. Prosimo, preveri svojo e-pošto in klikni na povezavo, da zaključiš potrditveni proces."
       updated: "Tvoj račun je bil uspešno posodobljen."
     sessions:
