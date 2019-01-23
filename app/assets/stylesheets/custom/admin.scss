@@ -24,6 +24,11 @@ $sidebar-active: #f4fcd0;
 .admin {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
+  [type="checkbox"]:not(:checked),[type="checkbox"]:checked {
+    position: relative;
+    left: 0;
+  }
+
   h2 {
     font-weight: 100;
     margin-bottom: $line-height;
