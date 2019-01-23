@@ -16,7 +16,7 @@ sl:
       confirmation_instructions:
         confirm_link: Potrdi moj račun
         text: 'Svoj e-naslov lahko potrdiš na spodnji povezavi:'
-        title: Dobrodošli na Open Government Portal
+        title: Hvala za registracijo!
         welcome: Dobrodošli
       reset_password_instructions:
         change_link: Spremeni moje geslo
