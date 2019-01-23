@@ -2,6 +2,7 @@
 
 .budget-investment-new, .budget-investment-show {
   margin-top: rem-calc(50);
+  padding: 0 0.625rem;
 }
 
 .custom-phases-nav {
@@ -343,7 +344,7 @@ only screen and (min-resolution: 240dpi) {
 
       .panel {
         min-height: rem-calc(192);
-        padding: 0 rem-calc(15) 0;
+        padding: 0 rem-calc(10) 0;
       }
 
       .image-holder {
@@ -352,6 +353,18 @@ only screen and (min-resolution: 240dpi) {
         img {
           height: auto;
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .budget-investments {
+    .budget-investment-holder {
+      .budget-investment {
+        .panel {
+          padding: 0 rem-calc(15) 0;
         }
       }
     }
@@ -971,7 +984,7 @@ form label {
   margin: rem-calc(20) 0 rem-calc(40) 0;
   .callout.primary,
   .callout.alert,
-  .callout.error{
+  .callout.error {
     margin: 1rem 0;
   }
 }
@@ -1284,11 +1297,11 @@ footer .loginlinks a {
 }
 
 .conditions {
-  .pad-2rem{
+  .pad-2rem {
     padding: 0 2rem;
   }
 
-  .bggray{
+  .bggray {
     padding-top: rem-calc(10);
     padding-bottom: rem-calc(10);
   }
@@ -1349,7 +1362,7 @@ footer .loginlinks a {
 @media (min-width: 640px) {
   .conditions {
 
-    .bggray{
+    .bggray {
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
@@ -1373,7 +1386,7 @@ footer .loginlinks a {
 @media (min-width: 990px) {
   .conditions {
 
-    .bggray{
+    .bggray {
       padding-top: 2rem;
       padding-bottom: 2rem;
     }
@@ -1563,7 +1576,7 @@ footer .loginlinks a {
 }
 
 .help {
-  .pad-2rem{
+  .pad-2rem {
     padding: 0 2rem;
   }
   h2 {
