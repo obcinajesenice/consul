@@ -23,15 +23,6 @@
       <ul class="no-bullet inline-block footer-links">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;&nbsp;|&nbsp;</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|&nbsp;</li>
-        <% if setting['blog_url'] %>
-          <li class="inline-block">
-            <%= link_to t("layouts.header.external_link_blog"),
-                        setting['blog_url'],
-                        target: "_blank",
-                        rel: "nofollow",
-                        title: t("shared.go_to_page") + t("layouts.header.external_link_blog") + t('shared.target_blank_html') %>&nbsp;|&nbsp;
-          </li>
-        <% end %>
         <li class="inline-block">
           <%= layout_menu_link_to t("layouts.header.help"),
                                   help_path,
