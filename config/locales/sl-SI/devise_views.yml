@@ -123,6 +123,7 @@ sl:
           username_is_not_available: Uporabnik s tem elektronskim naslovom že obstaja.
           username_label: Uporabniško ime
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
+          document_number: EMŠO
         success:
           back_to_index: Razumem (vrni se na glavno stran)
           instructions_1_html: Prosimo, <b>preveri svojo e-pošto</b> - poslali smo ti <b>povezavo za potrditev tvojega računa</b>.

@@ -148,6 +148,7 @@ sl:
         login: "E-naslov ali uporabniško ime"
         email: "E-naslov"
         username: "Uporabniško ime"
+        document_number: "EMŠO"
         password_confirmation: "Potrditev gesla"
         password: "Geslo"
         current_password: "Trenutno geslo"
@@ -263,6 +264,8 @@ sl:
               blank: "Trenutno geslo ne sme biti prazno."
             email:
               password_already_set: "Ta uporabnik že ima geslo"
+            document_number:
+              invalid: "Vnešena EMŠO številka ni pravilna."
         debate:
           attributes:
             tag_list:
