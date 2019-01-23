@@ -970,6 +970,11 @@ form label {
   padding: 2rem;
   border-radius: 10px;
   margin: rem-calc(20) 0 rem-calc(40) 0;
+  .callout.primary,
+  .callout.alert,
+  .callout.error{
+    margin: 1rem 0;
+  }
 }
 
 .comment-form {
