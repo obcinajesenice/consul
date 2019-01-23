@@ -177,7 +177,7 @@ sl:
       not_an_integer: mora biti celo število
       odd: mora biti liho
       required: mora obstajati
-      taken: je že zasedeno
+      taken: Že uporabljena.
       too_long:
         one: je predolg (največ 1 znak)
         two: je predolg (največ 2 znaka)
