@@ -31,7 +31,7 @@ module CustomPhasesHelper
       CUSTOM_PHASE_BALLOTING => true,
       CUSTOM_PHASE_FINISHED => true,
     }.each do |phase, enabled|
-      custom_phases[phase] = CustomPhase.new(phase, nil, nil, nil, nil, nil, enabled)
+      custom_phases[phase] = CustomPhase.new(phase, '', '', nil, nil, nil, enabled)
     end
     custom_phases
   end
