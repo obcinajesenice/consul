@@ -48,7 +48,7 @@
       <%= f.text_field :organization_name %>
     </div>
 
-    <div class="small-12 medium-8 column">
+    <div class="small-12 medium-8 column hide"> <!-- "TODO if number of headings = 0" -->
       <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, }, class: 'on-form' %>
     </div>
 
