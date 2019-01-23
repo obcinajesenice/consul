@@ -98,8 +98,8 @@ sl:
     titles:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
-      help: "Kaj je %{org}? - državljanska participacija"
-      privacy: Zasebnostna politika
+      help: "Pomoč"
+      privacy: O participativnem proračunu
     verify:
       code: Koda, ki si jo prejel/-a po e-pošti
       email: E-naslov

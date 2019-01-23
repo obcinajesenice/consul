@@ -180,8 +180,8 @@ sl:
       user_not_found: Uporabnika ni mogoče najti
       invalid_date_range: "Neveljavno časovno obdobje"
   form:
-    accept_terms: Strinjam se s %{policy} in s %{conditions}.
-    accept_terms_title: Strinjam se s politiko zasebnosti in pogoji uporabe.
+    accept_terms: Strinjam se s %{conditions}.
+    accept_terms_title: Strinjam se s pogoji uporabe.
     conditions: pogoji uporabe
     debate: Razprava
     direct_message: Zasebno sporočilo
@@ -226,7 +226,7 @@ sl:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
       participation_title: Sodelovanje
-      privacy: Politiko zasebnosti
+      privacy: O participativnem proračunu
       transparency_text: Ugotovi karkoli o mestu.
       transparency_title: Transparentnost
       transparency_url: https://transparency.consul
