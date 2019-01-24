@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     return true
   end
   
-  def valid_emso_number
+  def valid_emso_number?
     if /[0,1,2,3]\d[0,1]\d[0,9]\d\d\d{6}/.match(document_number)
       if document_number[12].to_i == 11 - (
         (
