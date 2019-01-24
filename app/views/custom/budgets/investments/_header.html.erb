@@ -38,7 +38,7 @@
   </div>
 
   <% unless can? :show, @ballot %>
-    <div class="horizontal-line"></div>
+    <div class="horizontal-line <%= 'hide' if @investments.count == 0 %>"></div>
   <% end %>
 
   <% if @heading %>

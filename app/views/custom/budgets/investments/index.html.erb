@@ -45,35 +45,39 @@
           <div class="main-indented-content">
             <%= render '/budgets/investments/header' %>
 
-            <div class="row budget-investments">
-              <h2 class="phase-title"><%= t('custom.titles.added_proposals') %></h2>
+            <% if @investments.count > 0 %>
 
-              <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+              <div class="row budget-investments">
+                <h2 class="phase-title"><%= t('custom.titles.added_proposals') %></h2>
 
-              <div>
-                <%= render 'budgets/investments/categories' %>
-                <% if @budget.headings.count > 1 %>
-                  <%= render 'budgets/investments/districts' %>
-                <% end %>
+                <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+
+                <div>
+                  <%= render 'budgets/investments/categories' %>
+                  <% if @budget.headings.count > 1 %>
+                    <%= render 'budgets/investments/districts' %>
+                  <% end %>
+                </div>
+
+                <div class="row small-up-1 medium-up-1 large-up-3">
+                  <% @investments.each_with_index do |investment, index| %>
+                    <% investment_class = 'column column-block budget-investment-holder' %>
+                    <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+                    <div class="<%= investment_class %>">
+                      <%= render partial: '/budgets/investments/investment',
+                                 locals: {
+                                   investment: investment,
+                                   investment_ids: @investment_ids,
+                                   investment_votes: @investment_votes,
+                                   ballot: @ballot
+                                 } %>
+                    </div>
+                  <% end %>
+                </div>
+
               </div>
 
-              <div class="row small-up-1 medium-up-1 large-up-3">
-                <% @investments.each_with_index do |investment, index| %>
-                  <% investment_class = 'column column-block budget-investment-holder' %>
-                  <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
-                  <div class="<%= investment_class %>">
-                    <%= render partial: '/budgets/investments/investment',
-                               locals: {
-                                 investment: investment,
-                                 investment_ids: @investment_ids,
-                                 investment_votes: @investment_votes,
-                                 ballot: @ballot
-                               } %>
-                  </div>
-                <% end %>
-              </div>
-
-            </div>
+            <% end %>
 
             <div class="row">
               <%= paginate @investments %>
@@ -93,7 +97,8 @@
                     <div class="small-12 medium-9 medium-centered text-center">
                       <h2>Glasuj!</h2>
                       <p>
-                        Med 27. 2. in 6. 3. boš lahko neposredno soodločal/-a o porabi 60&nbsp;000&nbsp;€ proračunskih sredstev
+                        Med 27. 2. in 6. 3. boš lahko neposredno soodločal/-a o porabi 60&nbsp;000&nbsp;€ proračunskih
+                        sredstev
                         občine Hrpelje-Kozina.
                       </p>
                     </div>
@@ -148,7 +153,8 @@
                       <div class="medium-8 medium-centered js-padt">
                         <h2>Kako?</h2>
                         <p>
-                          Poleg spletnega bo glasovanje možno tudi na papirju, in sicer med 27. 2. in 6. 3. v prostorih občine na Reški cesti 14 v Kozini.
+                          Poleg spletnega bo glasovanje možno tudi na papirju, in sicer med 27. 2. in 6. 3. v prostorih
+                          občine na Reški cesti 14 v Kozini.
                         </p>
                       </div>
                     </div>
@@ -213,7 +219,8 @@
                       <div class="medium-8 medium-centered js-padt">
                         <h2>In moja vloga?</h2>
                         <p>
-                          V tej fazi boš lahko bdel/-a nad izvajanjem projektov, spremljal/-a posodabljanje njihovih časovnic in se veselil/-a napredka.
+                          V tej fazi boš lahko bdel/-a nad izvajanjem projektov, spremljal/-a posodabljanje njihovih
+                          časovnic in se veselil/-a napredka.
                         </p>
                       </div>
                     </div>
