@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   private
 
   def date_from_emso(emso)
-    if emso[4] == 0
+    if emso[4] == '0'
       return Date.parse('2' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
     else
       return Date.parse('1' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
