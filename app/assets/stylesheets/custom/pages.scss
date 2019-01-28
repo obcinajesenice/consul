@@ -405,6 +405,7 @@ only screen and (min-resolution: 240dpi) {
     img {
       height: rem-calc(385);
       width: 100%;
+      object-fit: contain;
     }
   }
 
