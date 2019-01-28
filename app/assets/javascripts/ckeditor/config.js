@@ -95,7 +95,7 @@ CKEDITOR.editorConfig = function( config )
     { name: 'links', items: [ 'Link', 'Unlink' ] },
     { name: 'styles', items: [ 'Format' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike' ] },
-    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] }, // add paste functions
+    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] }, // add paste functions
   ];
 
   config.toolbar_admin = config.toolbar_mini.concat([
