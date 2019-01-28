@@ -431,7 +431,8 @@ sl:
       recommendation_three: Izvedba predloga mora biti v pristojnosti občine.
       recommendation_four: Predlog mora biti skladen z zakonodajo, urbanističnimi akti in/ali z že sprejetim načrtom investicij.
       recommendation_five: Predlog mora biti izvedljiv v predvidenem proračunskem obdobju.
-      recommendation_six: Predvidena vrednost projekta ne sme biti višja od 15 000 €.
+      recommendation_six: Predlogi projektov, ki so že vključeni v obstoječ načrt investicij, ne bodo sprejeti na glasovanje.
+      recommendation_seven: Predvidena vrednost projekta ne sme biti višja od 15 000 €.
       recommendations_title: Navodila
       start_new: Ustvari nov predlog
     notice:
