@@ -157,13 +157,10 @@ var shortenShareLink = function () {
   }
   var tl = document.location.href;
   $.ajax({
-    type: "GET",
-    url: "https://pp.djnd.si/shortener/generate",
-    data: {
-      url: (encodeURIComponent(tl))
-    }
+    type: 'GET',
+    url: 'https://pp.djnd.si/shortener/generate?url=' + encodeURIComponent(tl),
   }).done(function (data) {
-    $("#shortner").val(data);
+    $('#shortner').val(data);
   }).fail(function (d) {
     console.log(d);
   })
