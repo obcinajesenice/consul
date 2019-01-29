@@ -93,7 +93,7 @@ sl:
         delete_form:
           erase_reason_label: Razlog
           info: Tega dejanja se ne da razveljaviti. Si prepričan/-a, da res to hočeš?
-          info_reason: Če želiš, nam povej, zakaj odhajaš. (neobvezno)
+          info_reason: Če želiš, nam povej, zakaj odhajaš.
           submit: Izbriši moj račun
           title: Izbriši račun
         edit:
