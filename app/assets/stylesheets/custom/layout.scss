@@ -1189,6 +1189,7 @@ form {
   position: absolute;
   right: 24px;
   top: 24px;
+  z-index: 99;
 
   .notice {
     height: $line-height * 4;
