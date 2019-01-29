@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   validate :emso_number
 
   def emso_number
-    errors.add(:document_number, I18n.t('activerecord.errors.models.user.attributes.document_number.invalid')) unless valid_emso_number?
+    unless organization
+      errors.add(:document_number, I18n.t('activerecord.errors.models.user.attributes.document_number.invalid')) unless valid_emso_number?
+    end
   end
 
   private
