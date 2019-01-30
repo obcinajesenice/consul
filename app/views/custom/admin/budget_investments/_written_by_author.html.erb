@@ -20,7 +20,9 @@
     <div class="small-12 medium-4 column">
       <p>
         <strong><%= t("admin.budget_investments.show.by") %></strong>:
-        <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
+        <% if @investment.author %>
+          <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
+        <% end %>
       </p>
     </div>
 
