@@ -29,6 +29,22 @@ def valid_emso_number(document_number)
   false
 end
 
+def is_old_enough(birthday)
+  date_limit = Date.parse('2005-02-26')
+  if date_limit < birthday
+    return false
+  end
+  true
+end
+
+def date_from_emso(emso)
+  if emso[4] == '0'
+    return Date.parse('2' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
+  else
+    return Date.parse('1' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
+  end
+end
+
 include DocumentParser
 class LocalCensus
 
@@ -111,14 +127,6 @@ class LocalCensus
 
     def dni?(document_type)
       document_type.to_s == "1"
-    end
-
-    def date_from_emso(emso)
-      if emso[4] == '0'
-        return Date.parse('2' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
-      else
-        return Date.parse('1' + emso[4] + emso[5] + emso[6] + '-' + emso[2] + emso[3] + '-' + emso[0] + emso[1])
-      end
     end
 
 end
