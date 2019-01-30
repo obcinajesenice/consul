@@ -86,7 +86,7 @@
       <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
       <ul>
         <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-            <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+            <li style="list-style: none;"><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
         <% end %>
       </ul>
     </div>
