@@ -19,14 +19,9 @@
       <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
-    IMAGES
-    <!-- 
-    <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render 'images/nested_image', imageable: @investment, f: f %>
-      </div>
-    <% end %>
-    -->
+    <div class="images small-12 column">
+      <%= render 'images/nested_image', imageable: @investment, f: f %>
+    </div>
 
     <% if feature?(:allow_attached_documents) %>
       <div class="documents small-12 column">
