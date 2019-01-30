@@ -1,30 +1,21 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
 
-  puts 'BEGINNING'
-
   load_resource :budget
   load_resource :investment, through: :budget, class: 'Budget::Investment'
-
-  puts 'LOADED RESOURCE'
 
   before_action :only_verified_users, except: :print
   before_action :load_heading, only: [:index, :show, :print]
 
-  puts 'AFTER ACTION'
-
   def index
-    puts 'INDEXING'
     @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
     load_investment_votes(@investments)
   end
 
   def new
-    puts 'NEW'
     load_categories
   end
 
   def create
-    puts 'CREATING'
     @investment.terms_of_service = "1"
     @investment.author = managed_user
 
@@ -38,7 +29,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
-    puts 'SHOW'
     load_investment_votes(@investment)
   end
 
@@ -64,7 +54,8 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def investment_params
       params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id,
-                                                :tag_list, :organization_name, :location, :skip_map, map_location_attributes: [:latitude, :longitude, :zoom])
+                                                :tag_list, :organization_name, :location, :skip_map,
+                                                map_location_attributes: [:latitude, :longitude, :zoom])
     end
 
     def only_verified_users
