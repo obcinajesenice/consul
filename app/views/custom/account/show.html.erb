@@ -1,177 +1,177 @@
 <div class="row account">
   <div class="main-indented-content">
-  <div class="small-12 column">
-    <h1 class="inline-block"><%= t("account.show.title") %></h1>
+    <div class="small-12 column">
+      <h1 class="inline-block"><%= t("account.show.title") %></h1>
 
-    <%= form_for @account, as: :account, url: account_path do |f| %>
-      <%= render "shared/errors", resource: @account %>
+      <%= form_for @account, as: :account, url: account_path do |f| %>
+        <%= render "shared/errors", resource: @account %>
 
-      <div class="row">
-        <div class="small-12 column" data-tabs-content="account_tabs">
+        <div class="row">
+          <div class="small-12 column" data-tabs-content="account_tabs">
 
-          <div>
-            <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "action-button small transparent change-credentials" %>
-          </div>
+            <div>
+              <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "action-button small transparent change-credentials" %>
+            </div>
 
-          <ul class="tabs hide"
-              id="account_tabs"
-              data-deep-link="true"
-              data-update-history="true"
-              data-deep-link-smudge="true"
-              data-deep-link-smudge-delay="500"
-              data-tabs>
-            <li class="tabs-title ">
-              <%= link_to "#tab-personal" do %>
-                <h3>
-                  <%= t("account.show.personal") %>
-                </h3>
-              <% end %>
-            </li>
-            <li class="tabs-title is-active">
-              <%= link_to "#tab-notifications" do %>
-                <h3>
-                  <%= t("account.show.notifications") %>
-                </h3>
-              <% end %>
-            </li>
-            <% if feature?("user.recommendations") %>
-              <li class="tabs-title">
-                <%= link_to "#tab-recommendations" do %>
+            <ul class="tabs hide"
+                id="account_tabs"
+                data-deep-link="true"
+                data-update-history="true"
+                data-deep-link-smudge="true"
+                data-deep-link-smudge-delay="500"
+                data-tabs>
+              <li class="tabs-title ">
+                <%= link_to "#tab-personal" do %>
                   <h3>
-                    <%= t("account.show.recommendations") %>
+                    <%= t("account.show.personal") %>
                   </h3>
                 <% end %>
               </li>
-            <% end %>
-          </ul>
-
-          <div class="tabs-panel pad-t-60" id="tab-personal">
-            <div class="small-12 medium-5 large-5">
-              <% if @account.organization? %>
-                <%= f.fields_for :organization do |fo| %>
-                  <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
-                  <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+              <li class="tabs-title is-active">
+                <%= link_to "#tab-notifications" do %>
+                  <h3>
+                    <%= t("account.show.notifications") %>
+                  </h3>
                 <% end %>
-                <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
-
-              <% else %>
-                <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+              </li>
+              <% if feature?("user.recommendations") %>
+                <li class="tabs-title">
+                  <%= link_to "#tab-recommendations" do %>
+                    <h3>
+                      <%= t("account.show.recommendations") %>
+                    </h3>
+                  <% end %>
+                </li>
               <% end %>
-            </div>
+            </ul>
 
-            <div>
-              <%= f.label :public_activity do %>
-                <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false %>
-                <span class="checkbox">
+            <div class="tabs-panel pad-t-60" id="tab-personal">
+              <div class="small-12 medium-5 large-5">
+                <% if @account.organization? %>
+                  <%= f.fields_for :organization do |fo| %>
+                    <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
+                    <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+                  <% end %>
+                  <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+
+                <% else %>
+                  <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+                <% end %>
+              </div>
+
+              <div>
+                <%= f.label :public_activity do %>
+                  <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false %>
+                  <span class="checkbox">
                 <%= t("account.show.public_activity_label") %>
               </span>
-              <% end %>
-            </div>
+                <% end %>
+              </div>
 
-            <div>
-              <%= f.label :public_interests do %>
-                <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
-                <span class="checkbox">
+              <div>
+                <%= f.label :public_interests do %>
+                  <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
+                  <span class="checkbox">
                 <%= t("account.show.public_interests_label") %>
               </span>
-              <% end %>
+                <% end %>
+              </div>
             </div>
-          </div>
 
-          <div class="tabs-panel is-active pad-t-60" id="tab-notifications">
-            <div class="small-12 medium-10">
-              <% if @account.email.present? %>
-                <div>
-                  <%= f.label :email_on_comment do %>
-                    <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
-                    <span class="checkbox">
+            <div class="tabs-panel is-active pad-t-60" id="tab-notifications">
+              <div class="small-12 medium-10">
+                <% if @account.email.present? %>
+                  <div>
+                    <%= f.label :email_on_comment do %>
+                      <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
+                      <span class="checkbox">
                   <%= t("account.show.email_on_comment_label") %>
                 </span>
-                  <% end %>
-                </div>
+                    <% end %>
+                  </div>
 
-                <div>
-                  <%= f.label :email_on_comment_reply do %>
-                    <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false %>
-                    <span class="checkbox">
+                  <div>
+                    <%= f.label :email_on_comment_reply do %>
+                      <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false %>
+                      <span class="checkbox">
                   <%= t("account.show.email_on_comment_reply_label") %>
                 </span>
-                  <% end %>
-                </div>
+                    <% end %>
+                  </div>
 
-                <div>
-                  <%= f.label :email_newsletter_subscribed do %>
-                    <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
-                    <span class="checkbox">
-                  <%= t("account.show.subscription_to_website_newsletter_label") %>
-                </span>
-                  <% end %>
-                </div>
+                  <div>
+                    <%= f.label :newsletter do %>
+                      <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
+                      <span class="checkbox">
+                        <%= t("account.show.subscription_to_website_newsletter_label") %>
+                      </span>
+                    <% end %>
+                  </div>
 
-                <div>
-                  <%= f.label :email_digest do %>
-                    <%= f.check_box :email_digest, title: t('account.show.email_digest_label'), label: false %>
-                    <span class="checkbox">
-                  <%= t("account.show.email_digest_label") %>
-                </span>
-                  <% end %>
-                </div>
-              <% end %>
+                  <div>
+                    <%= f.label :email_digest do %>
+                      <%= f.check_box :email_digest, title: t('account.show.email_digest_label'), label: false %>
+                      <span class="checkbox">
+                        <%= t("account.show.email_digest_label") %>
+                      </span>
+                    <% end %>
+                  </div>
+                <% end %>
 
-              <% if @account.official_level == 1 %>
-                <div>
-                  <%= f.label :official_position_badge do %>
-                    <%= f.check_box :official_position_badge,
-                                    title: t('account.show.official_position_badge_label'),
-                                    label: false %>
-                    <span class="checkbox">
+                <% if @account.official_level == 1 %>
+                  <div>
+                    <%= f.label :official_position_badge do %>
+                      <%= f.check_box :official_position_badge,
+                                      title: t('account.show.official_position_badge_label'),
+                                      label: false %>
+                      <span class="checkbox">
                   <%= t("account.show.official_position_badge_label") %>
                 </span>
-                  <% end %>
-                </div>
-              <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
-          </div>
 
-          <div class="tabs-panel" id="tab-recommendations">
-            <% if feature?("user.recommendations") %>
-              <% if feature?("user.recommendations_on_debates") %>
-                <div>
-                  <%= f.label :recommended_debates do %>
-                    <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
-                    <span class="checkbox">
+            <div class="tabs-panel" id="tab-recommendations">
+              <% if feature?("user.recommendations") %>
+                <% if feature?("user.recommendations_on_debates") %>
+                  <div>
+                    <%= f.label :recommended_debates do %>
+                      <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
+                      <span class="checkbox">
                     <%= t("account.show.show_debates_recommendations") %>
                   </span>
-                  <% end %>
-                </div>
-              <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
 
-              <% if feature?("user.recommendations_on_proposals") %>
-                <div>
-                  <%= f.label :recommended_proposals do %>
-                    <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
-                    <span class="checkbox">
+                <% if feature?("user.recommendations_on_proposals") %>
+                  <div>
+                    <%= f.label :recommended_proposals do %>
+                      <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
+                      <span class="checkbox">
                     <%= t("account.show.show_proposals_recommendations") %>
                   </span>
-                  <% end %>
-                </div>
+                    <% end %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+
+            <div class="action-buttons">
+              <%= button_tag(type: 'submit', class: "action-button large w485") do %>
+                <%= t("account.show.save_changes_submit") %>
+              <% end %>
+
+              <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
+
+            </div>
+
           </div>
-
-          <div class="action-buttons">
-            <%= button_tag(type: 'submit', class: "action-button large w485") do %>
-              <%= t("account.show.save_changes_submit") %>
-            <% end %>
-
-            <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
-
-          </div>
-
         </div>
-      </div>
-    <% end %>
+      <% end %>
 
-  </div>
+    </div>
   </div>
 </div>
