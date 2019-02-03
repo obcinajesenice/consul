@@ -18,20 +18,14 @@
       <div class="small-12 medium-7 medium-centered">
 
         <% if current_budget.phase == 'reviewing' %>
-          <div class="row">
-            <div class="callout warning">
-              <%= t("custom.messages.finished_accepting") %>
-            </div>
+          <div class="callout warning">
+            <%= t("custom.messages.finished_accepting") %>
           </div>
         <% elsif current_budget.phase == 'reviewing_ballots' %>
-          <div class="row">
-            <div class="callout warning">
-              <%= t("custom.messages.finished_voting") %>
-            </div>
+          <div class="callout warning">
+            <%= t("custom.messages.finished_voting") %>
           </div>
-        <% end %>
-
-        <% if investment.unfeasible? %>
+        <% elsif investment.unfeasible? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
