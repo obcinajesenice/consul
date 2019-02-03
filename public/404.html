@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Error 404 | Not found</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     html {
@@ -18,32 +18,59 @@
 
     .container {
       display: flex;
-      margin: 20px auto;
+      margin: 20px;
       max-width: 100%;
     }
-    .row{
+
+    .row {
       align-items: center;
       justify-content: center;
-      display: flex;
+      display: block;
     }
+
     .flex-container {
       display: flex;
       height: 100%;
     }
-    .flex-item{
-      float: none;
+
+    .flex-item {
+      float: left;
       width: 100%;
+    }
+
+    .sm-center {
+      text-align: center;
+      margin: 20px 0;
     }
 
     @media (min-width: 576px) {
       .container {
         display: flex;
-        margin: 100px auto;
-        max-width: 1024px;
+        margin: 20px auto;
+        max-width: 600px;
       }
-      .flex-item{
+
+      .row {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+
+      .flex-item {
         float: left;
         width: 50%;
+      }
+
+      .sm-center {
+        text-align: left;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .container {
+        display: flex;
+        margin: 100px auto;
+        max-width: 1024px;
       }
     }
 
@@ -95,7 +122,7 @@
 
         <a href="/" class="back">Domov</a>
       </div>
-      <div class="flex-item">
+      <div class="flex-item sm-center">
         <img src="/assets/custom/404.png"/>
       </div>
     </div>
