@@ -23,6 +23,12 @@
               <%= t("custom.messages.finished_accepting") %>
             </div>
           </div>
+        <% elsif current_budget.phase == 'reviewing_ballots' %>
+          <div class="row">
+            <div class="callout warning">
+              <%= t("custom.messages.finished_voting") %>
+            </div>
+          </div>
         <% end %>
 
         <% if investment.unfeasible? %>
@@ -60,7 +66,7 @@
         <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
         <div class="small-12 medium-9 medium-centered bggray">
-        <%= safe_html_with_links investment.description.html_safe %>
+          <%= safe_html_with_links investment.description.html_safe %>
         </div>
 
         <% if feature?(:map) && map_location_available?(@investment.map_location) %>
