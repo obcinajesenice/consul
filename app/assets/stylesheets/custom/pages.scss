@@ -27,7 +27,7 @@
 
 .auth-page {
   .wrapper {
-    background-image: linear-gradient(-226deg, #f0b9ad 0%, #272266 100%);
+    background-image: linear-gradient(-226deg, $mandys-pink 0%, #272266 100%);
     padding-bottom: 500px;
   }
   h1 {
@@ -680,7 +680,7 @@ select {
     padding: 7px 15px;
 
     border-radius: 20px;
-    background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+    background-image: linear-gradient(to right, $mandys-pink 0%, #272266 100%);
 
     i {
       //background: image-url('check.png') left no-repeat;
@@ -698,7 +698,7 @@ select {
     border-left: none;
     li {
       border-right: none;
-      border-bottom: 1px solid #f0b9ad;
+      border-bottom: 1px solid $mandys-pink;
       padding-bottom: 10px;
       margin-bottom: 5px;
     }
@@ -712,10 +712,10 @@ select {
 @media (min-width: 576px) {
   .custom-phases-nav .tabs {
     width: 100%;
-    border-left: 2px solid #f0b9ad;
+    border-left: 2px solid $mandys-pink;
     li {
       width: 24.8%;
-      border-right: 2px solid #f0b9ad;
+      border-right: 2px solid $mandys-pink;
       border-bottom: none;
       padding-bottom: initial;
       margin-bottom: initial;
@@ -747,6 +747,7 @@ select {
 
 footer {
   height: max-content;
+  border-top: 3px solid #e1e1e1;
   .logo-holder {
     padding-left: 0;
   }
@@ -762,7 +763,7 @@ footer {
 
       box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
       border-radius: 20px;
-      background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
+      background-image: linear-gradient(80deg, $mandys-pink 0%, $mandys-pink 51%, #f2d6d0 100%);
     }
   }
   .links-holder {
@@ -953,7 +954,7 @@ form label {
 .budget-investment-show .button.button-support.small.expanded {
   box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
   border-radius: 36px;
-  background-image: linear-gradient(80deg, #f0b9ad 0%, #f0b9ad 51%, #f2d6d0 100%);
+  background-image: linear-gradient(80deg, $mandys-pink 0%, $mandys-pink 51%, #f2d6d0 100%);
   color: #272266;
   font-size: 30px;
   font-weight: 700;
@@ -991,12 +992,26 @@ form label {
   }
 }
 
+.comment-info {
+  .user-name {
+    font-size: 12px;
+  }
+  .published-date {
+    font-size: 10px;
+  }
+}
+
 .comment-form {
   padding: rem-calc(20) 0;
 }
 
 .comment-body {
   background: #ffffff;
+  .comment-user {
+    p {
+      font-size: 18px;
+    }
+  }
 }
 
 .auth-divider.custom-divider {
@@ -1015,12 +1030,26 @@ form label {
   }
 }
 
+.registeraddlinks {
+  .smaller-text {
+    display: block;
+    float: left;
+    padding-top: 5px;
+  }
+}
+
 .signuporgposition {
   display: block;
   text-align: right;
   font-size: 12px;
-  float: right;
+  float: left;
   padding-top: 5px;
+}
+
+@media (min-width: 576px) {
+  .signuporgposition {
+    float: right;
+  }
 }
 
 .pad-t-60 {
@@ -1044,7 +1073,7 @@ form label {
     &:hover,
     button:hover {
       border-radius: 30px;
-      background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+      background-image: linear-gradient(to right, $mandys-pink 0%, #272266 100%);
       min-width: 32px;
       color: #FFFFFF;
       font-weight: 400;
@@ -1070,7 +1099,7 @@ form label {
     }
     &:hover {
       border-radius: 30px;
-      background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+      background-image: linear-gradient(to right, $mandys-pink 0%, #272266 100%);
       a {
         color: #FFFFFF;
         font-weight: 400;
@@ -1093,7 +1122,7 @@ footer .loginlinks a {
   transition: all .4s ease-in-out;
 
   //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(to right, #f0b9ad, #f2d6d0, #fcede9, #f0b9ad) !important;
+  background-image: linear-gradient(to right, $mandys-pink, #f2d6d0, #fcede9, $mandys-pink) !important;
   &:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;
@@ -1226,7 +1255,7 @@ footer .loginlinks a {
   }
   .social-share-button .ssb-icon {
     background: no-repeat;
-    background-image: linear-gradient(to right, #f0b9ad, #f2d6d0, #fcede9) !important;
+    background-image: linear-gradient(to right, $mandys-pink, #f2d6d0, #fcede9) !important;
     color: #32366a;
     position: relative;
 
@@ -1314,7 +1343,7 @@ footer .loginlinks a {
     padding-top: 15px;
   }
   .nbr5 {
-    color: #f0b9ad;
+    color: $mandys-pink;
     font-size: rem-calc(30);
     font-weight: 900;
     line-height: rem-calc(40);
@@ -1340,7 +1369,7 @@ footer .loginlinks a {
       font-weight: 600;
       line-height: rem-calc(20);
       border-radius: 30px;
-      background-image: linear-gradient(to right, #f0b9ad 0%, #272266 100%);
+      background-image: linear-gradient(to right, $mandys-pink 0%, #272266 100%);
       display: inline-block;
       padding: rem-calc(5) rem-calc(15);
       letter-spacing: initial;
@@ -1369,7 +1398,7 @@ footer .loginlinks a {
       padding: rem-calc(20) 0;
     }
     .nbr5 {
-      color: #f0b9ad;
+      color: $mandys-pink;
       font-size: rem-calc(120);
       font-weight: 900;
       line-height: rem-calc(100);
@@ -1393,7 +1422,7 @@ footer .loginlinks a {
       padding: rem-calc(45) 0;
     }
     .nbr5 {
-      color: #f0b9ad;
+      color: $mandys-pink;
       font-size: rem-calc(280);
       font-weight: 900;
       line-height: rem-calc(170);
@@ -1586,7 +1615,7 @@ footer .loginlinks a {
     margin-bottom: rem-calc(30);
   }
   .technical-issues {
-    border: 3px solid #f0b9ad;
+    border: 3px solid $mandys-pink;
     text-align: center;
 
     margin: 2.25rem rem-calc(40) 1.25rem 0.625rem;
@@ -1688,8 +1717,23 @@ footer .loginlinks a {
   z-index: 1000;
 }
 
-
 /* ADDED BY MUKI */
 input.error {
-  margin-bottom:  0 !important;
+  margin-bottom: 0 !important;
+}
+
+#documents {
+  .documents {
+    .action-button.large.transparent {
+      background: transparent !important;
+      box-shadow: none;
+      border: 2px solid #f7d3c9 !important;
+      color: #000000 !important;
+      font-weight: 500;
+      line-height: 24px;
+      font-size: 20px;
+      padding: 16px 28px;
+      border-radius: 60px;
+    }
+  }
 }
