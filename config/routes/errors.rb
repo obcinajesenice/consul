@@ -1,1 +1,1 @@
-match "*path" => redirect("/404"), via: :get
+get '*unmatched_route', to: 'errors#not_found'
