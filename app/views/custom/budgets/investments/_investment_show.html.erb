@@ -16,11 +16,16 @@
 
     <div class="row">
       <div class="small-12 medium-7 medium-centered">
-        <!--<%= link_to budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back' do %>
-          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
-        <% end %>-->
 
-        <% if investment.unfeasible? %>
+        <% if current_budget.phase == 'reviewing' %>
+          <div class="callout warning">
+            <%= t("custom.messages.finished_accepting") %>
+          </div>
+        <% elsif current_budget.phase == 'reviewing_ballots' %>
+          <div class="callout warning">
+            <%= t("custom.messages.finished_voting") %>
+          </div>
+        <% elsif investment.unfeasible? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
@@ -55,7 +60,7 @@
         <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
         <div class="small-12 medium-9 medium-centered bggray">
-        <%= safe_html_with_links investment.description.html_safe %>
+          <%= safe_html_with_links investment.description.html_safe %>
         </div>
 
         <% if feature?(:map) && map_location_available?(@investment.map_location) %>

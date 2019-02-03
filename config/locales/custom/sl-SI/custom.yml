@@ -9,3 +9,6 @@ sl-SI:
       added_proposals: Oddani predlogi
       register_with: Za registracijo izpolni ta obrazec
       sign_in_with: Za vpis izpolni ta obrazec
+    messages:
+      finished_accepting: Projektov ni več mogoče oddajati. Zdaj so v fazi pregleda.
+      finished_voting: Glasovanje je zaprto. Izglasovani projekti so trenutno v pregledu.

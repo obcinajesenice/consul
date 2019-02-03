@@ -11,5 +11,13 @@ class Budget
         .delete(:title)
     end
 
+    def should_show_ballots?
+      (budget.balloting? && selected?) || (budget.reviewing_ballots?)
+    end
+
+    def should_show_vote_count?
+      budget.finished?
+    end
+
   end
 end
