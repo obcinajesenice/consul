@@ -2,40 +2,102 @@
 <html lang="en">
 <head>
   <title>Error 500 | Internal server error</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  body {
-    background: #065687 url('/errors_bg.jpg');
-    color: #2E2F30;
-    font-family: arial, sans-serif;
-    margin: 0;
-    text-align: center;
-  }
+    html {
+      background-image: linear-gradient(-29deg, #40358f 0%, #32366a 100%);
+      min-height: 100%;
+    }
 
-  h1 {
-    color: white;
-    font-size: 160px;
-    line-height: 160px;
-    margin: 0;
-  }
+    body {
+      color: #ffffff;
+      font-family: arial, sans-serif;
+      margin: 0;
+    }
 
-  h2 {
-    color: white;
-  }
+    .container {
+      display: flex;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+    .row{
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    .flex-container {
+      display: flex;
+      height: 100%;
+    }
+    .flex-item{
+      float: none;
+      width: 100%;
+    }
 
-  div.error {
-    margin-top: -144px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
+    @media (min-width: 576px) {
+      .container {
+        display: flex;
+        margin: 100px auto;
+        max-width: 1024px;
+      }
+      .flex-item{
+        float: left;
+        width: 50%;
+      }
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 60px;
+      line-height: 70px;
+      margin: 0 0 50px 0;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+      color: #ffffff;
+      margin: 0 0 50px 0;
+      padding: 0;
+    }
+
+    .back {
+      border-radius: 30px;
+      background-color: #f7d3c9;
+      color: #000000;
+      width: 290px;
+      display: block;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+
   </style>
 </head>
 
 <body>
-  <div class="error">
-    <h1>500</h1>
-    <h2>Internal server error.</h2>
+<div class="flex-container">
+  <div class="container">
+    <div class="row">
+      <div class="flex-item">
+        <h1>Participativni proračun</h1>
+        <h2>Napaka 500</h2>
+
+        <a href="/" class="back">Domov</a>
+      </div>
+      <div class="flex-item">
+        <img src="/assets/custom/404.png"/>
+      </div>
+    </div>
   </div>
+</div>
 </body>
 </html>

@@ -1046,7 +1046,7 @@ form label {
   padding-top: 5px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 500px) {
   .signuporgposition {
     float: right;
   }
@@ -1723,7 +1723,7 @@ input.error {
 }
 
 #documents {
-  .documents {
+  &.documents {
     .action-button.large.transparent {
       background: transparent !important;
       box-shadow: none;
