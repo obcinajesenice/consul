@@ -45,12 +45,14 @@
           <div class="main-indented-content">
             <%= render '/budgets/investments/header' %>
 
-            <% if @investments.count > 0 %>
+            <% if @investments.count > 0 || @heading.present? %>
 
               <div class="row budget-investments">
                 <h2 class="phase-title"><%= t('custom.titles.added_proposals') %></h2>
 
-                <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+                <% if @investments.count > 0 %>
+                  <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+                <% end %>
 
                 <div>
                   <%= render 'budgets/investments/categories' %>
