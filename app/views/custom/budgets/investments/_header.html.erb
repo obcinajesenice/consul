@@ -1,4 +1,11 @@
 <div class="expanded">
+  <% if current_budget.phase == 'reviewing' %>
+    <div class="row">
+      <div class="callout warning">
+        <%= t("custom.messages.finished_accepting") %>
+      </div>
+    </div>
+  <% end %>
   <div class="row phase-description qs">
     <div class="medium-6 column">
       <h1>

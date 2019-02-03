@@ -16,9 +16,14 @@
 
     <div class="row">
       <div class="small-12 medium-7 medium-centered">
-        <!--<%= link_to budget_investments_path(investment.budget, heading_id: investment.heading), class: 'back' do %>
-          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
-        <% end %>-->
+
+        <% if current_budget.phase == 'reviewing' %>
+          <div class="row">
+            <div class="callout warning">
+              <%= t("custom.messages.finished_accepting") %>
+            </div>
+          </div>
+        <% end %>
 
         <% if investment.unfeasible? %>
           <div class="callout warning">
