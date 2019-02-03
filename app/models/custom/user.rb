@@ -3,7 +3,7 @@ require_dependency Rails.root.join('app', 'models', 'user').to_s
 
 class User < ActiveRecord::Base
 
-  validate :emso_number
+  validate :emso_number, on: :create
 
   def emso_number
     unless organization
