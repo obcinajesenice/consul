@@ -1722,18 +1722,17 @@ input.error {
   margin-bottom: 0 !important;
 }
 
-#documents {
-  &.documents {
-    .action-button.large.transparent {
-      background: transparent !important;
-      box-shadow: none;
-      border: 2px solid #f7d3c9 !important;
-      color: #000000 !important;
-      font-weight: 500;
-      line-height: 24px;
-      font-size: 20px;
-      padding: 16px 28px;
-      border-radius: 60px;
-    }
+#documents.documents {
+  .action-button.large.transparent {
+    background: transparent !important;
+    box-shadow: none;
+    border: 2px solid #f7d3c9 !important;
+    color: #000000 !important;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 20px;
+    padding: 16px 28px;
+    border-radius: 60px;
   }
 }
+
