@@ -45,14 +45,6 @@
     <section class="no-margin-top margin-bottom">
       <div class="expanded budget-heading padding">
 
-        <div class="row">
-          <div class="small-12 column">
-            <% if can? :show, @ballot %>
-              <%= link_to t("budgets.investments.header.check_ballot"), budget_ballot_path(@budget), class: "button float-right" %>
-            <% end %>
-          </div>
-        </div>
-
         <div class="row progress-votes">
           <div class="row">
             <div class="small-12 column">
