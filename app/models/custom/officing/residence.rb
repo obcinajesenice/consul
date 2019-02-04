@@ -10,8 +10,6 @@ class Officing::Residence
       .find { |v| v.is_a? ActiveRecord::Validations::PresenceValidator }
       .attributes
       .delete(:year_of_birth)
-
-    puts "aaaaadsadsadas"
   end
 
   def allowed_age
