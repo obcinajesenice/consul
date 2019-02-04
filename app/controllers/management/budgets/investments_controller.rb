@@ -54,8 +54,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def investment_params
       params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id,
-                                                :tag_list, :organization_name, :location, :skip_map,
-                                                map_location_attributes: [:latitude, :longitude, :zoom])
+                                                :tag_list, :organization_name, :location, :skip_map)
     end
 
     def only_verified_users

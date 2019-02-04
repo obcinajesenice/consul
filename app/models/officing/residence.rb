@@ -4,14 +4,14 @@ class Officing::Residence
 
   attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
 
-  # before_validation :retrieve_census_data
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
-  # validates :year_of_birth, presence: true
+  validates :year_of_birth, presence: true
 
-  # validate :allowed_age
-  # validate :residence_in_madrid
+  validate :allowed_age
+  validate :residence_in_madrid
 
   def initialize(attrs = {})
     super
