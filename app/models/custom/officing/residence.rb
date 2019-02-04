@@ -5,7 +5,6 @@ class Officing::Residence
   # remove existing validators
   self.class_eval do
     _validators[:year_of_birth]
-      .find { |v| v.is_a? ActiveRecord::Validations::PresenceValidator }
       .attributes
       .delete(:year_of_birth)
   end
