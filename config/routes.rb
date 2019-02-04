@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   draw :user
   draw :valuation
   draw :verification
-  draw :errors
 
   root 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
@@ -51,4 +50,6 @@ Rails.application.routes.draw do
   # Static pages
   get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
+
+  draw :errors
 end
