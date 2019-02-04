@@ -4,11 +4,7 @@ class Officing::Residence
 
   # remove existing validators
   self.class_eval do
-    puts _validators[:year_of_birth]
-    # _validators[:year_of_birth]
-    #   .find { |v| v.is_a? ActiveRecord::Validations::PresenceValidator }
-    #   .attributes
-    #   .delete(:year_of_birth)
+    _validators.delete(:year_of_birth)
   end
 
   def retrieve_census_data
