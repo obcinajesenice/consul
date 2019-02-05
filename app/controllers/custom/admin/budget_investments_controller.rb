@@ -1,3 +1,5 @@
+require_dependency Rails.root.join('app', 'controllers', 'admin', 'budget_investments_controller').to_s
+
 class Admin::BudgetInvestmentsController < Admin::BaseController
 
   private
