@@ -228,8 +228,6 @@ $(document).on('page:change', function () {
 
     })
   }
-
-
   /*
   if ($(".landings").length > 0) {
     $(".qs").each(function () {
@@ -242,4 +240,27 @@ $(document).on('page:change', function () {
   }
   */
   shortenShareLink();
+
+
+  $("body").on("click", ".delete.small.expanded", function() {
+    $(this).addClass( "onclic", 250, validateOnclickEffect);
+  });
+  $("body").on("click", ".addinfavor", function() {
+    $(this).addClass( "onclic", 250, validateOnclickEffect);
+  });
+
+  function validateOnclickEffect() {
+
+    setTimeout(function() {
+      $(this).removeClass( "onclic" );
+      $(this).addClass( "validate", 450, callbackOnclickEffect );
+    }, 2250 );
+  }
+  function callbackOnclickEffect() {
+    setTimeout(function() {
+      $(this).removeClass( "validate" );
+    }, 1250 );
+  }
+
+
 });

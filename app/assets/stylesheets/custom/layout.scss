@@ -1231,8 +1231,9 @@ form {
   }
 
   &.warning {
-    background-color: $color-warning-new;
     color: $black;
+    background: image-url('warning.png') rem-calc(10) no-repeat $color-warning-new;
+    padding-left: rem-calc(45);
   }
 
   &.alert,
