@@ -55,41 +55,51 @@
   <% unless can? :show, @ballot %>
     <div class="horizontal-line <%= 'hide' if @investments.count == 0 %>"></div>
   <% end %>
+</div>
+</div>
+<% if @heading %>
+  <div class="bgfaf">
+    <div class="main-indented-content">
+      <div class="expanded">
+        <section class="no-margin-top margin-bottom">
+          <div class="expanded budget-heading padding">
 
-  <% if @heading %>
-    <section class="no-margin-top margin-bottom">
-      <div class="expanded budget-heading padding">
-
-        <div class="row progress-votes">
-          <div class="row">
-            <div class="small-12 column">
-              <% if @ballot.valid_heading?(@heading) %>
-                <div class="progress-bar-nav" data-fixed-bar>
-                  <h2>
-                    <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-                  </h2>
-                  <div id="progress_bar" class="no-margin-top">
-                    <%= render 'budgets/ballot/progress_bar' %>
-                  </div>
+            <div class="row progress-votes">
+              <div class="row">
+                <div class="small-12 column">
+                  <% if @ballot.valid_heading?(@heading) %>
+                    <div class="progress-bar-nav" data-fixed-bar>
+                      <h2>
+                        <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                      </h2>
+                      <div id="progress_bar" class="no-margin-top clearfix">
+                        <%= render 'budgets/ballot/progress_bar' %>
+                      </div>
+                    </div>
+                  <% else %>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                    </h2>
+                    <div class="small-12 medium-9">
+                      <div class="callout warning margin-top">
+                        <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
+                        <br>
+                        <small>
+                          <%= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
+                        </small>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
-              <% else %>
-                <h2>
-                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-                </h2>
-                <div class="small-12 medium-9">
-                  <div class="callout warning margin-top">
-                    <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
-                    <br>
-                    <small>
-                      <%= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
-                    </small>
-                  </div>
-                </div>
-              <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="main-indented-content">
+  <div class="expanded">

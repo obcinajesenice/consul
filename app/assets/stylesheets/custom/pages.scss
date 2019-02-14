@@ -1174,6 +1174,9 @@ footer .loginlinks a{
   padding: 2rem;
   font-size: rem-calc(20);
 }
+.bgfaf{
+  background: #fafafa;
+}
 
 .landings {
   h2 {
@@ -1931,4 +1934,43 @@ input.error {
     background-size: 100%;
   }
 
+}
+
+#progress_bar{
+  height: 2.4rem;
+  h2{
+    font-size: rem-calc(30);
+    font-weight: 800;
+  }
+  .total-amount{
+    position: relative;
+    top: -35px;
+    font-size: rem-calc(20);
+  }
+  .progress{
+    margin-bottom: 0;
+    .progress-meter{
+      background: transparent;
+    }
+    .progress-bar-meter{
+      -webkit-animation: progressBar 2s ease-in-out;
+      -webkit-animation-fill-mode:both;
+      -moz-animation: progressBar 2s ease-in-out;
+      -moz-animation-fill-mode:both;
+
+      background: #3c3583;
+      display: block;
+      height: 100%;
+    }
+
+    @keyframes progressBar {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    small{
+      font-size: rem-calc(18);
+      font-weight: 600;
+    }
+  }
 }
