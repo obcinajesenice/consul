@@ -1174,6 +1174,12 @@ footer .loginlinks a{
   padding: 2rem;
   font-size: rem-calc(20);
 }
+.is-sticky{
+  .bgfaf{
+    width: 100%;
+    z-index: 1000;
+  }
+}
 .bgfaf{
   background: #fafafa;
 }
