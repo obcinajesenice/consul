@@ -79,6 +79,22 @@
 
               </div>
 
+            <% else %>
+              <div class="row budget-investments">
+                <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
+
+                  <div class="medium-centered">
+                    <%= image_tag(image_path_for('phases/empty_investments.png')) %>
+                  </div>
+                  <p>
+                    Tukaj ni še nobenega predloga.<br>
+                    <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
+                      Spiši prvega!
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+
             <% end %>
 
             <div class="row">
@@ -89,6 +105,87 @@
           <%
             phaza = (phase.kind).to_s
           %>
+
+          <% if phaza == "accepting" %>
+
+            <div class="landings">
+              <div class=" bggray">
+                <div class="main-indented-content">
+                  <div class="row">
+                    <div class="small-12 medium-9 medium-centered text-center">
+                      <h2>Predlagaj!</h2>
+                      <p>
+                        Svoj predlog lahko oddaš med [vstavi datum začetka faze zbiranja predlogov] in [vstavi datum konca faze zbiranja predlogov].
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="">
+                <div class="main-indented-content ">
+                  <div class="row qs">
+                    <div class="small-12 medium-6 column ">
+                      <div class="medium-8 medium-centered js-padt">
+                        <h2>Kakšen je proračun?</h2>
+                        <p>
+                          Participativnemu proračunu je namenjeno [vstavi številko] % proračunskih sredstev občine za leto [vstavi letnico]. Vrednost posameznega predloga je omejena na 15 000 €.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="small-12 medium-6 column">
+                      <div class="medium-centered">
+                        <%= image_tag(image_path_for('phases/proracun.png')) %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" bggray">
+                <div class="main-indented-content ">
+                  <div class="row qs">
+                    <div class="small-12 medium-6 column hide-for-small-only">
+                      <div class=" medium-centered">
+                        <%= image_tag(image_path_for('phases/predlog.png')) %>
+                      </div>
+                    </div>
+                    <div class="small-12 medium-6 column ">
+                      <div class="medium-8 medium-centered js-padt">
+                        <h2>Kakšen naj bo predlog?</h2>
+                        <p>
+                          Biti mora izvedljiv v prihajajočem proračunskem obdobju, mora biti skladen z zakonodajo ter v pristojnosti občine. Vse predloge bo glede na te kriterije ocenila posebna komisija, ki jo bo imenovala županja.
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="">
+                <div class="main-indented-content ">
+                  <div class="row qs">
+                    <div class="small-12 medium-6 column ">
+                      <div class="medium-8 medium-centered js-padt">
+                        <h2>In če vse štima?</h2>
+                        <p>
+                          Če tvoj predlog ustreza kriterijem, se bodo o njegovi izvedbi neposredno odločili občanke in občani v naslednji fazi participativnega proračuna.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="small-12 medium-6 column ">
+                      <div class="medium-centered">
+                        <%= image_tag(image_path_for('phases/ilustracije-sprite-notranje-glasuj.png')) %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+
 
           <% if phaza == "balloting" %>
 

@@ -6,9 +6,11 @@ sl:
         amount_spent: Porabljen znesek
         remaining: "Za investirati imaš še <span>%{amount}</span>."
         no_balloted_group_yet: "Nisi še glasoval v tej skupini, glasuj zdaj!"
-        remove: Odstrani glas
+        remove: Podprto!
         voted_html:
           one: "Glasoval/-a si o <span>eni</span> naložbi."
+          two: "Glasoval/-a si o <span>dveh</span> naložbah."
+          few: "Glasoval/-a si o <span>%{count}</span> naložbah."
           other: "Glasoval/-a si o <span>%{count}</span> naložbah."
         voted_info_html: "Svoj glas lahko do konca te faze kadarkoli spremeniš.<br> Ni ti treba porabiti vsega denarja, ki je na voljo."
         zero: Nisi glasoval za noben naložbeni projekt.
@@ -88,6 +90,8 @@ sl:
           my_ballot: Moja glasovanja
           voted_html:
             one: "<strong>Glasoval/-a si za en predlog s stroški %{amount_spent}</strong>"
+            two: "<strong>Glasoval/-a si za dva predloga s stroški %{amount_spent}</strong>"
+            few: "<strong>Glasoval/-a si za %{count} predloga s stroški %{amount_spent}</strong>"
             other: "<strong>Glasoval/-a si za %{count} predlogov s stroški %{amount_spent}</strong>"
           voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
           voted_info_link: spremeniš svoj glas

@@ -15,6 +15,7 @@ sl:
           three: Najdem <strong>3 %{entry_name}</strong> vnose
           four: Najdem <strong>4 %{entry_name}</strong> vnose
           other: Najdem <strong>%{count} %{entry_name}</strong> vnosov
+          few:  Najdem <strong>%{count} %{entry_name}</strong> vnosov
           zero: "%{entry_name} ni mogoče najti"
   views:
     pagination:
