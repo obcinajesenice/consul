@@ -1943,7 +1943,7 @@ input.error {
 }
 
 #progress_bar{
-  height: 2.4rem;
+  height: 3.3rem;
   h2{
     font-size: rem-calc(30);
     font-weight: 800;
@@ -1963,6 +1963,8 @@ input.error {
 
   .progress{
     margin-bottom: 0;
+    font-size: rem-calc(18);
+    font-weight: 600;
     .progress-meter{
       background: transparent;
     }
@@ -1983,6 +1985,8 @@ input.error {
     }
 
     small{
+      display: inline-block;
+      margin-top: 15px;
       font-size: rem-calc(18);
       font-weight: 600;
     }
