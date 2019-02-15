@@ -1948,11 +1948,19 @@ input.error {
     font-size: rem-calc(30);
     font-weight: 800;
   }
+
   .total-amount{
     position: relative;
-    top: -35px;
+    top: 15px;
     font-size: rem-calc(20);
   }
+  @media screen and (min-width: 450px) {
+    .total-amount{
+      top: -35px;
+      font-size: rem-calc(20);
+    }
+  }
+
   .progress{
     margin-bottom: 0;
     .progress-meter{
