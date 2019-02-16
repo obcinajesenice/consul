@@ -25,13 +25,6 @@
                        label: false %>
     </div>
 
-    <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render 'images/admin_image', imageable: @investment, f: f %>
-        <%#= render 'images/nested_image', imageable: @investment, f: f %>
-      </div>
-    <% end %>
-
     <div class="small-12 column">
       <div class="small-12 medium-6">
         <%= f.text_field :external_url %>
