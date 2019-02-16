@@ -1,9 +1,15 @@
 sl-SI:
   custom:
     headings:
+      drafting: Osnutek (skrito javnosti)
+      informing: Informiranje
       accepting: Predlagaj
+      reviewing: Pregled projektov
       selecting: Izbor
+      valuating: Vrednotenje projektov
+      publishing_prices: Objavljanje cen projektov
       balloting: Glasuj
+      reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
     titles:
       added_proposals: Oddani predlogi
