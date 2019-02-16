@@ -169,7 +169,7 @@
 
         <div class="row social-box" data-equalizer>
           <div class="small-12 column medium-centered text-center">
-            <h4>Povej naprej</h4>
+            <h4><%= t("budgets.investments.show.share_title") %></h4>
             <div data-equalizer-watch class="column-content qs">
               <%= render 'shared/social_share',
                          share_title: t("budgets.investments.show.share"),
@@ -183,12 +183,10 @@
                                    title: investment.title,
                                    handle: setting['twitter_handle']) %>
 
-              <span class="copylink">Skopiraj povezavo!</span>
+              <span class="copylink"><%= t("budgets.investments.show.copy") %></span>
               <input type="text" id="shortner">
             </div>
           </div>
-
-
         </div>
 
         <div class="horizontal-line"></div>

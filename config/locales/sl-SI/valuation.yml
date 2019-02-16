@@ -67,7 +67,7 @@ sl:
         feasibility: Izvedljivost
         feasible: Izvedljv
         unfeasible: Neizvedljiv
-        undefined_feasible: V teku
+        undefined_feasible: Neodločeno
         feasible_explanation_html: Razlaga izvedljivosti
         valuation_finished: Cenitev končana
         valuation_finished_alert: "Ali si prepričan/-a, da želiš to poročilo označiti kot končano? Ko to storiš, ga ne moreš več spreminjati."
@@ -119,7 +119,7 @@ sl:
         feasibility: Izvedljivost
         feasible: Izvedljiv
         not_feasible: Neizvedljiv
-        undefined_feasible: V teku
+        undefined_feasible: Neodločeno
         feasible_explanation_html: Razlaga izvedljivosti
         valuation_finished: Cenitev končana
         time_scope_html: Časovni obseg

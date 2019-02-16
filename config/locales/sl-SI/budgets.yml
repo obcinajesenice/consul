@@ -119,7 +119,9 @@ sl:
         code_html: 'Koda naložbenega projekta: <strong>%{code}</strong>'
         location_html: 'Lokacija: <strong>%{location}</strong>'
         organization_name_html: 'Predlagan v imenu: <strong>%{name}</strong>'
+        share_title: Povej naprej
         share: Deli
+        copy: Skopiraj povezavo!
         title: Investicijski projekt
         supports: Podpore
         votes: Glasovi
@@ -142,9 +144,12 @@ sl:
           two: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
           other: "Podpiraš lahko le investicije v %{count} območju. Če nadaljuješ, ne moreš več spremeniti svoje občine. Si prepričan?"
         supports:
-          one: 1 podpora
-          other: "%{count} podpor"
-          zero: brez podpore
+          one: 1 glas
+          two: 2 glasova
+          three: 3 glasovi
+          four: 4 glasovi
+          other: "%{count} glasov"
+          zero: 0 glasov
         give_support: Glasuj za predlog!
       header:
         check_ballot: Preveri moja glasovanja
