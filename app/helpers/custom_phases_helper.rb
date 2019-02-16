@@ -4,8 +4,9 @@ module CustomPhasesHelper
   CUSTOM_PHASE_SELECTING = :selecting
   CUSTOM_PHASE_BALLOTING = :balloting
   CUSTOM_PHASE_FINISHED = :finished
+  ATTRIBUTES_TO_UPDATE = [:summary, :presentation_summary_1, :presentation_summary_2, :presentation_summary_3, :description, :starts_at, :ends_at]
 
-  CustomPhase = Struct.new(:kind, :summary, :description, :starts_at, :ends_at, :url, :enabled) do
+  CustomPhase = Struct.new(:kind, :summary, :presentation_summary_1, :presentation_summary_2, :presentation_summary_3, :description, :starts_at, :ends_at, :url, :enabled) do
 
   end
 
@@ -31,28 +32,18 @@ module CustomPhasesHelper
       CUSTOM_PHASE_BALLOTING => true,
       CUSTOM_PHASE_FINISHED => true,
     }.each do |phase, enabled|
-      custom_phases[phase] = CustomPhase.new(phase, '', '', nil, nil, nil, enabled)
+      custom_phases[phase] = CustomPhase.new(phase, '', '', '', '', '', nil, nil, nil, enabled)
     end
     custom_phases
   end
 
   def custom_phases_descriptions(custom_phases)
-    custom_phases[CUSTOM_PHASE_ACCEPTING].summary = current_budget.phases.accepting.summary
-    custom_phases[CUSTOM_PHASE_ACCEPTING].description = current_budget.phases.accepting.description
-    custom_phases[CUSTOM_PHASE_ACCEPTING].starts_at = current_budget.phases.accepting.starts_at
-    custom_phases[CUSTOM_PHASE_ACCEPTING].ends_at = current_budget.phases.accepting.ends_at
-    custom_phases[CUSTOM_PHASE_SELECTING].summary = current_budget.phases.selecting.summary
-    custom_phases[CUSTOM_PHASE_SELECTING].description = current_budget.phases.selecting.description
-    custom_phases[CUSTOM_PHASE_SELECTING].starts_at = current_budget.phases.selecting.starts_at
-    custom_phases[CUSTOM_PHASE_SELECTING].ends_at = current_budget.phases.selecting.ends_at
-    custom_phases[CUSTOM_PHASE_BALLOTING].summary = current_budget.phases.balloting.summary
-    custom_phases[CUSTOM_PHASE_BALLOTING].description = current_budget.phases.balloting.description
-    custom_phases[CUSTOM_PHASE_BALLOTING].starts_at = current_budget.phases.balloting.starts_at
-    custom_phases[CUSTOM_PHASE_BALLOTING].ends_at = current_budget.phases.balloting.ends_at
-    custom_phases[CUSTOM_PHASE_FINISHED].summary = current_budget.phases.finished.summary
-    custom_phases[CUSTOM_PHASE_FINISHED].description = current_budget.phases.finished.description
-    custom_phases[CUSTOM_PHASE_FINISHED].starts_at = current_budget.phases.finished.starts_at
-    custom_phases[CUSTOM_PHASE_FINISHED].ends_at = current_budget.phases.finished.ends_at
+    ATTRIBUTES_TO_UPDATE.each do |attribute|
+      custom_phases[CUSTOM_PHASE_ACCEPTING][attribute] = current_budget.phases.accepting[attribute]
+      custom_phases[CUSTOM_PHASE_SELECTING][attribute] = current_budget.phases.selecting[attribute]
+      custom_phases[CUSTOM_PHASE_BALLOTING][attribute] = current_budget.phases.balloting[attribute]
+      custom_phases[CUSTOM_PHASE_FINISHED][attribute] = current_budget.phases.finished[attribute]
+    end
     custom_phases
   end
 

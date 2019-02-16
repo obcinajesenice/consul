@@ -36,10 +36,8 @@
     </div>
   </div>
 
-
   <% @custom_phases.each do |_, phase| %>
     <% if phase.enabled %>
-
       <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
         <% if phase.url %>
           <div class="main-indented-content">
@@ -87,9 +85,9 @@
                     <%= image_tag(image_path_for('phases/empty_investments.png')) %>
                   </div>
                   <p>
-                    Tukaj ni še nobenega predloga.<br>
+                    <%= t("custom.messages.no_investments") %><br>
                     <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
-                      Spiši prvega!
+                      <%= t("custom.messages.add_first_investment") %>
                     <% end %>
                   </p>
                 </div>
@@ -102,21 +100,16 @@
             </div>
           </div>
         <% else %>
-          <%
-            phaza = (phase.kind).to_s
-          %>
 
-          <% if phaza == "accepting" %>
+          <% if phase.kind == CustomPhasesHelper::CUSTOM_PHASE_ACCEPTING %>
 
             <div class="landings">
               <div class=" bggray">
                 <div class="main-indented-content">
                   <div class="row">
                     <div class="small-12 medium-9 medium-centered text-center">
-                      <h2>Predlagaj!</h2>
-                      <p>
-                        Svoj predlog lahko oddaš med [vstavi datum začetka faze zbiranja predlogov] in [vstavi datum konca faze zbiranja predlogov].
-                      </p>
+                      <h2><%= t("custom.headings.#{phase.kind}") %>!</h2>
+                      <p><%= raw(phase.summary) %></p>
                     </div>
                   </div>
                 </div>
@@ -127,10 +120,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kakšen je proračun?</h2>
-                        <p>
-                          Participativnemu proračunu je namenjeno [vstavi številko] % proračunskih sredstev občine za leto [vstavi letnico]. Vrednost posameznega predloga je omejena na 15 000 €.
-                        </p>
+                        <h2><%= t("custom.presentation.accepting.title_1") %></h2>
+                        <p><%= raw(phase.presentation_summary_1) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column">
@@ -152,11 +143,8 @@
                     </div>
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kakšen naj bo predlog?</h2>
-                        <p>
-                          Biti mora izvedljiv v prihajajočem proračunskem obdobju, mora biti skladen z zakonodajo ter v pristojnosti občine. Vse predloge bo glede na te kriterije ocenila posebna komisija, ki jo bo imenovala županja.
-                        </p>
-
+                        <h2><%= t("custom.presentation.accepting.title_2") %></h2>
+                        <p><%= raw(phase.presentation_summary_2) %></p>
                       </div>
                     </div>
                   </div>
@@ -168,10 +156,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>In če vse štima?</h2>
-                        <p>
-                          Če tvoj predlog ustreza kriterijem, se bodo o njegovi izvedbi neposredno odločili občanke in občani v naslednji fazi participativnega proračuna.
-                        </p>
+                        <h2><%= t("custom.presentation.accepting.title_3") %></h2>
+                        <p><%= raw(phase.presentation_summary_3) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column ">
@@ -186,20 +172,15 @@
 
           <% end %>
 
-
-          <% if phaza == "balloting" %>
+          <% if phase.kind == CustomPhasesHelper::CUSTOM_PHASE_BALLOTING %>
 
             <div class="landings">
               <div class=" bggray">
                 <div class="main-indented-content">
                   <div class="row">
                     <div class="small-12 medium-9 medium-centered text-center">
-                      <h2>Glasuj!</h2>
-                      <p>
-                        Med 27. 2. in 6. 3. boš lahko neposredno soodločal/-a o porabi 60&nbsp;000&nbsp;€ proračunskih
-                        sredstev
-                        občine Hrpelje-Kozina.
-                      </p>
+                      <h2><%= t("custom.headings.#{phase.kind}") %>!</h2>
+                      <p><%= raw(phase.summary) %></p>
                     </div>
                   </div>
                 </div>
@@ -210,10 +191,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kaj?</h2>
-                        <p>
-                          Med vsemi oddanimi predlogi izbereš tiste, za katere si najbolj želiš, da bi bili uresničeni.
-                        </p>
+                        <h2><%= t("custom.presentation.balloting.title_1") %></h2>
+                        <p><%= raw(phase.presentation_summary_1) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column">
@@ -235,10 +214,8 @@
                     </div>
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kdo?</h2>
-                        <p>
-                          Glasoval bo lahko vsakdo s stalnim prebivališčem v občini Hrpelje-Kozina, star vsaj 14 let.
-                        </p>
+                        <h2><%= t("custom.presentation.balloting.title_2") %></h2>
+                        <p><%= raw(phase.presentation_summary_2) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column show-for-small-only">
@@ -255,11 +232,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kako?</h2>
-                        <p>
-                          Poleg spletnega bo glasovanje možno tudi na papirju, in sicer med 27. 2. in 6. 3. v prostorih
-                          občine na Reški cesti 14 v Kozini.
-                        </p>
+                        <h2><%= t("custom.presentation.balloting.title_3") %></h2>
+                        <p><%= raw(phase.presentation_summary_3) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column ">
@@ -274,17 +248,14 @@
 
           <% end %>
 
-
-          <% if phaza == "finished" %>
+          <% if phase.kind == CustomPhasesHelper::CUSTOM_PHASE_FINISHED %>
             <div class="landings">
               <div class=" bggray">
                 <div class="main-indented-content">
                   <div class="row">
                     <div class="small-12 medium-9 medium-centered text-center">
-                      <h2>Spremljaj izvedbo!</h2>
-                      <p>
-                        Ko bo glasovanje o projektih zaključeno, bodo izbrani predlogi prešli v fazo implementacije.
-                      </p>
+                      <h2><%= t("custom.headings.#{phase.kind}") %>!</h2>
+                      <p><%= raw(phase.summary) %></p>
                     </div>
                   </div>
                 </div>
@@ -295,11 +266,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>Kaj potem?</h2>
-                        <p>
-                          Za izvajanje izglasovanih projektov je odgovorna občina. Implementacija mora biti dokončana v
-                          trenutnem proračunskem obdobju.
-                        </p>
+                        <h2><%= t("custom.presentation.finished.title_1") %></h2>
+                        <p><%= raw(phase.presentation_summary_1) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column ">
@@ -321,11 +289,8 @@
                     </div>
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>In moja vloga?</h2>
-                        <p>
-                          V tej fazi boš lahko bdel/-a nad izvajanjem projektov, spremljal/-a posodabljanje njihovih
-                          časovnic in se veselil/-a napredka.
-                        </p>
+                        <h2><%= t("custom.presentation.finished.title_2") %></h2>
+                        <p><%= raw(phase.presentation_summary_2) %></p>
                       </div>
                     </div>
                     <div class="small-12 show-for-small-only">
@@ -342,12 +307,8 @@
                   <div class="row qs">
                     <div class="small-12 medium-6 column ">
                       <div class="medium-8 medium-centered js-padt">
-                        <h2>In nato?</h2>
-                        <p>
-                          Izvedeni projekti bodo dokumentirani z vizualnimi materiali ter opremljeni z opisom in
-                          slikami.
-                          Medtem pa že lahko razmišljaš o svojem predlogu za naslednje proračunsko leto ...
-                        </p>
+                        <h2><%= t("custom.presentation.finished.title_3") %></h2>
+                        <p><%= raw(phase.presentation_summary_3) %></p>
                       </div>
                     </div>
                     <div class="small-12 medium-6 column">
@@ -360,7 +321,6 @@
               </div>
             </div>
           <% end %>
-
 
         <% end %>
       </div>

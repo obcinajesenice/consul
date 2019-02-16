@@ -136,6 +136,12 @@ sl:
         enabled: Faza omogočena
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
+        presentation_summary_1: Prezentacijski povzetek 1
+        presentation_summary_1_help_text: Povzetek za prvi odsek
+        presentation_summary_2: Prezentacijski povzetek 2
+        presentation_summary_2_help_text: Povzetek za drugi odsek
+        presentation_summary_3: Prezentacijski povzetek 3
+        presentation_summary_3_help_text: Povzetek za tretji odsek
     budget_investments:
       index:
         heading_filter_all: Vsi naslovi

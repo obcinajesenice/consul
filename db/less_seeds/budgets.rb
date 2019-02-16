@@ -63,11 +63,14 @@ section "Creating Budgets" do
     budget.phases.all.each do |phase|
       enabled = true
       summary = "#{phase.kind.capitalize} summary should not be that long."
+      presentation_summary_1 = "#{phase.kind.capitalize} presentation summary 1 should not be that long."
+      presentation_summary_2 = "#{phase.kind.capitalize} presentation summary 2 should not be that long."
+      presentation_summary_3 = "#{phase.kind.capitalize} presentation summary 3 should not be that long."
       description = "#{phase.kind.capitalize} description should be a bit longer and should probably mention some more details about each phase and sometimes you can go too much into details and completely forget about the limits."
       if PHASES_TO_DISABLE.include?(phase.kind)
         enabled = false
       end
-      phase.update(enabled: enabled, summary: summary, description: description)
+      phase.update(enabled: enabled, summary: summary, presentation_summary_1: presentation_summary_1, presentation_summary_2: presentation_summary_2, presentation_summary_3: presentation_summary_3, description: description)
     end
   end
 end
