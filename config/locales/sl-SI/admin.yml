@@ -505,6 +505,8 @@ sl:
       stats: Statistika
       signature_sheets: Podpisni listi
       site_customization:
+        buttons:
+          save: Shrani
         homepage: Domača stran
         pages: Strani po meri
         images: Slike po meri
