@@ -30,6 +30,9 @@ class User < ActiveRecord::Base
   end
 
   def valid_emso_number?
+    if (Rails.env.development? || Rails.env.test?) && email == 'admin@consul.dev'
+      return true
+    end
     if /[0123]\d[01]\d[09]\d\d\d{6}/.match(document_number)
       if document_number[12].to_i == 11 - (
       (
