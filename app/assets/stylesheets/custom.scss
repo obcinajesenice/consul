@@ -2,11 +2,10 @@
 @import 'custom/fonts';
 @import 'custom/foundation_and_overrides';
 @import 'mixins';
-@import 'custom/admin'; // TODO: fix admin
+@import 'custom/admin';
 @import 'custom/layout';
 @import 'icons';
 @import 'custom/icons';
-//@import 'participation'; // TODO: remove this?
 @import "custom/pages";
 @import 'leaflet';
 @import 'jquery-ui/datepicker';
@@ -14,11 +13,3 @@
 @import 'jquery-ui/autocomplete';
 @import 'autocomplete_overrides';
 @import 'jquery-ui/sortable';
-
-//@import 'legislation';
-//@import 'legislation_process';
-//@import 'community';
-//@import 'c3';
-//@import 'annotator.min';
-//@import 'annotator_overrides';
-
