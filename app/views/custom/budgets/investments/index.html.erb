@@ -40,8 +40,8 @@
     <% if phase.enabled %>
       <div class="tabs-panel <%= 'is-active' if phase.url %>" id="tab-<%= phase.kind %>">
         <% if phase.url %>
+          <%= render '/budgets/investments/header' %>
           <div class="main-indented-content">
-            <%= render '/budgets/investments/header' %>
 
             <% if @investments.count > 0 || @heading.present? %>
 
