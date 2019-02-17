@@ -1,4 +1,4 @@
-sl-SI:
+sl:
   flash:
     actions:
       create:
@@ -29,6 +29,7 @@ sl-SI:
         budget_investment: "Naložbeni projekt uspešno posodobljen."
         topic: "Tema uspešno posodobljena."
         valuator_group: "Cenilska skupina uspešno posodobljena"
+        translation: "Posodobljeni prevodi."
       destroy:
         spending_proposal: "Predlog porabe uspešno izbrisan."
         budget_investment: "Naložbeni projekt uspešno izbrisan."
