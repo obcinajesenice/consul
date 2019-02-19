@@ -9,7 +9,6 @@
             <% if investment.image.present? %>
               <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
             <% else %>
-              <!-- TODO: need bigger and better image-->
               <%= image_tag "default-investment@2x.png" %>
             <% end %>
           <% end %>

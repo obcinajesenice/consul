@@ -33,3 +33,37 @@ sl:
         title_1: Kaj potem?
         title_2: In moja vloga?
         title_3: In nato?
+    about:
+      intro: "Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ prispevali k izboljšanju kakovosti bivanja v skupnosti."
+      main_title: Kako deluje?
+      heading_1: Zbiranje predlogov
+      description_1: "Občanke in občani oddajo predloge projektov do 21. 2. 2019. Posamezen predlog projekta mora biti v skladu z navodili, njegova vrednost pa ne sme biti višja od 15 000 €. Predlog lahko oddate preko obrazca v prostorih občine Hrpelje-Kozina ali preko spleta."
+      date_1: 24. 1. - 21. 2. 2019
+      heading_2: Pregled predlogov
+      description_2: "Vse oddane predloge pregleda komisija, ki vsak oddan predlog finančno ovrednoti in preveri, če je izvedljiv, skladen z zakonodajo, znotraj geografskega območja in časovnice izvajanja participativnega proračuna ter v skladu z pravili glede vrednosti predlogov. Komisija lahko podobne predloge združi."
+      date_2: 21. 2. - 26. 2. 2019
+      heading_3: Glasovanje
+      description_3: "Glasovanje bo izvedeno preko spleta ali v prostorih občine Hrpelje-Kozina v času uradnih ur. Sodeluje lahko vsak prebivalec ali prebivalka s stalnim ali začasnim bivališčem v Občini Hrpelje - Kozina, ki je dopolnil/-a 14 let. Glasuje se tako, da občan/-ka razdeli predvidenih 60&nbsp;000&nbsp;€ sredstev za participativni proračun med projekte, za katere si želi, da bi bili izvedeni."
+      date_3: 27. 2. - 6. 3. 2019
+      heading_4: Razglasitev rezultatov
+      description_4: "Po končanem glasovanju bo občina preverila rezultate in razglasila projekte, ki so bili izbrani. Izbrani projekti bodo predlagani v potrditev Mestnemu svetu občine Hrpelje -Kozina za proračunski leti 2019 in 2020."
+      date_4: 7. 3. - 21. 3. 2019
+      heading_5: Spremljanje izvedbe
+      description_5: "V tej fazi cikla participativnega proračuna bomo skrbeli za ažurno obveščanje o napredovanju projektov ter sprotno posodabljanje njihovih časovnic. Postopek implementacije projektov bomo dokumentirali tudi z vizualnimi materiali, zaključene projekte pa opremili z opisom in slikami."
+    help:
+      main_title: "Pogosta vprašanja"
+      heading_1: "Potrebujem telefonsko številko in dostop do interneta, da lahko sodelujem?"
+      description_1: "Za kreiranje uporabniškega računa na spletnem orodju ne potrebuješ telefonske številke, potrebuješ pa e-naslov in internetno povezavo, lahko pa vse funkcionalnosti opraviš tudi na občini."
+      heading_2: "Kako ustvarim in potrdim svoj račun?"
+      description_2: "Račun ustvariš tako, da v nogi spletnega mesta klikneš na gumb Registracija, klik na kateri koli gumb za akcijo pa te prav tako pripelje do istega spletnega obrazca. Za kreiranje uporabniškega računa moraš vpisati uporabniško ime, e-naslov, EMŠO in geslo. Po kreiranju računa ga moraš potrditi še s klikom na povezavo v e-pošti, ki ti jo bomo poslali na tvoj e-naslov."
+      heading_3: "Kako lahko ustvarim nov predlog?"
+      description_3: "Predlog ustvariš v okviru spletnega orodja, lahko pa ga oddaš tudi na fizičnem obrazcu v času uradnih ur v prostorih občine na Reški cesti 14 v Kozini."
+      heading_4: "Pozabil/-a sem svoje geslo. Kaj lahko storim?"
+      description_4: "Klikni na gumb Prijava, potem pa izberi povezavo Pozabljeno geslo. Na svoj elektronski naslov boš prejel/-a navodila, kako ustvariti novo geslo."
+      heading_5: "Kako lahko spremenim svoj e-naslov, uporabniško ime in / ali geslo?"
+      description_5: "V nogi spletnega mesta klikni na gumb Moj račun, kjer lahko spremeniš vse svoje podatke."
+      help_title: "Potrebuješ pomoč?"
+      technical_issues: "Imaš tehnične težave?"
+      technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
+      other_questions: "Imaš kakršno koli drugo vprašanje?"
+      other_contact: 'Kontaktiraj vodjo projekta na občini na (05) 620 53 64 ali na <a href="mailto:andrej.bolcic@hrpelje-kozina.si">andrej.bolcic@hrpelje-kozina.si</a>.'

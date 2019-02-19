@@ -13,7 +13,7 @@
   <div class="bggray">
     <div class="main-indented-content ">
       <div class="text-center">
-        <h2>Pogosta vprašanja</h2>
+        <h2><%= t("custom.help.main_title") %></h2>
       </div>
       <div class="akkordion row">
         <div class="small-12 medium-10 column medium-centered pad-tb-45">
@@ -21,15 +21,12 @@
           <div class="row">
             <div class="medium-12 brderundr">
               <div class="title">
-                Potrebujem telefonsko številko in dostop do interneta, da lahko
-                sodelujem?
+                <%= t("custom.help.heading_1") %>
                 <i class="custom-icon arrow-small-right">
                 </i>
               </div>
               <p>
-                Za kreiranje uporabniškega računa na spletnem orodju ne potrebuješ telefonske številke, potrebuješ pa
-                e-naslov
-                in internetno povezavo, lahko pa vse funkcionalnosti opraviš tudi na občini.
+                <%= t("custom.help.description_1") %>
               </p>
             </div>
           </div>
@@ -37,15 +34,12 @@
           <div class="row">
             <div class="medium-12 brderundr">
               <div class="title">
-                Kako ustvarim in potrdim svoj račun?
+                <%= t("custom.help.heading_2") %>
                 <i class="custom-icon arrow-small-right">
                 </i>
               </div>
               <p>
-                Račun ustvariš tako, da v nogi spletnega mesta klikneš na gumb Registracija, klik na kateri koli gumb za
-                akcijo pa te prav tako pripelje do istega spletnega obrazca. Za kreiranje uporabniškega računa moraš
-                vpisati uporabniško ime, e-naslov, EMŠO in geslo. Po kreiranju računa ga moraš potrditi še s klikom na
-                povezavo v e-pošti, ki ti jo bomo poslali na tvoj e-naslov.
+                <%= t("custom.help.description_2") %>
               </p>
             </div>
           </div>
@@ -53,13 +47,12 @@
           <div class="row">
             <div class="medium-12 brderundr">
               <div class="title">
-                Kako lahko ustvarim nov predlog?
+                <%= t("custom.help.heading_3") %>
                 <i class="custom-icon arrow-small-right">
                 </i>
               </div>
               <p>
-                Predlog ustvariš v okviru spletnega orodja, lahko pa ga oddaš tudi na fizičnem obrazcu v času uradnih ur
-                v prostorih občine na Reški cesti 14 v Kozini.
+                <%= t("custom.help.description_3") %>
               </p>
             </div>
           </div>
@@ -67,13 +60,12 @@
           <div class="row">
             <div class="medium-12 brderundr">
               <div class="title">
-                Pozabil/-a sem svoje geslo. Kaj lahko storim?
+                <%= t("custom.help.heading_4") %>
                 <i class="custom-icon arrow-small-right">
                 </i>
               </div>
               <p>
-                Klikni na gumb Prijava, potem pa izberi povezavo Pozabljeno geslo. Na svoj elektronski naslov boš
-                prejel/-a navodila, kako ustvariti novo geslo.
+                <%= t("custom.help.description_4") %>
               </p>
             </div>
           </div>
@@ -81,13 +73,12 @@
           <div class="row">
             <div class="medium-12 brderundr">
               <div class="title">
-                Kako lahko spremenim svoj e-naslov, uporabniško ime in / ali
-                geslo?
+                <%= t("custom.help.heading_5") %>
                 <i class="custom-icon arrow-small-right">
                 </i>
               </div>
               <p>
-                V nogi spletnega mesta klikni na gumb Moj račun, kjer lahko spremeniš vse svoje podatke.
+                <%= t("custom.help.description_5") %>
               </p>
             </div>
           </div>
@@ -101,7 +92,7 @@
   <div class="pad-2rem">
     <div class="main-indented-content pad-tb-45">
       <div class="text-center">
-        <h2>Potrebuješ pomoč?</h2>
+        <h2><%= t("custom.help.help_title") %></h2>
       </div>
       <div class="row">
         <div class="small-12 medium-10 column medium-centered pad-tb-45">
@@ -110,8 +101,8 @@
             <div class="medium-6 column">
               <div class="technical-issues">
                 <div class="inner">
-                  <h3>Imaš tehnične težave?</h3>
-                  <p>Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.</p>
+                  <h3><%= t("custom.help.technical_issues") %></h3>
+                  <p><%= raw(t("custom.help.technical_contact")) %></p>
                 </div>
               </div>
             </div>
@@ -119,10 +110,8 @@
             <div class="medium-6 column">
               <div class="technical-issues">
                 <div class="inner">
-                  <h3>Imaš kakršno koli
-                    drugo vprašanje?</h3>
-                  <p>Kontaktiraj vodjo projekta na občini na (05) 620 53 64 ali na
-                    <a href="mailto:andrej.bolcic@hrpelje-kozina.si">andrej.bolcic@hrpelje-kozina.si</a>.</p>
+                  <h3><%= t("custom.help.other_questions") %></h3>
+                  <p><%= raw(t("custom.help.other_contact")) %></p>
                 </div>
               </div>
             </div>

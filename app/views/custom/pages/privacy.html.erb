@@ -1,4 +1,5 @@
-<% provide :title do %><%= t("pages.titles.privacy") %><% end %>
+<% provide :title do %><%= t("pages.titles.privacy") %>
+<% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: page_url("privacy") %>
 <% end %>
@@ -21,9 +22,7 @@
 
         <div class="small-12 medium-10 column medium-centered pad-tb-45 text-center">
           <p class="intro">
-            Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi
-            soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ
-            prispevali k izboljšanju kakovosti bivanja v skupnosti.
+            <%= t("custom.about.intro") %>
           </p>
         </div>
       </div>
@@ -33,7 +32,7 @@
   <div class="pad-2rem">
     <div class="main-indented-content ">
       <div class="text-center">
-        <h2>Kako deluje?</h2>
+        <h2><%= t("custom.about.main_title") %></h2>
       </div>
       <div class="row">
         <div class="small-12 medium-10 column medium-centered pad-tb-45">
@@ -46,16 +45,13 @@
 
             <div class="medium-9 column js-padt">
               <h3>
-                ZBIRANJE PREDLOGOV
+                <%= t("custom.about.heading_1").upcase %>
                 <span class="datum">
-                  24. 1. - 21. 2. 2019
+                  <%= t("custom.about.date_1") %>
               </span>
               </h3>
               <p>
-                Občanke in občani oddajo predloge projektov do 21. 2. 2019. Posamezen predlog projekta mora biti v
-                skladu
-                z navodili, njegova vrednost pa ne sme biti višja od 15 000 €. Predlog lahko oddate preko obrazca v
-                prostorih občine Hrpelje-Kozina ali preko spleta.
+                <%= t("custom.about.description_1") %>
               </p>
             </div>
           </div>
@@ -78,15 +74,13 @@
             </div>
             <div class="medium-9 column js-padt">
               <h3>
-                PREGLED PREDLOGOV
+                <%= t("custom.about.heading_2").upcase %>
                 <span class="datum">
-21. 2. - 26. 2. 2019
-              </span>
+                  <%= t("custom.about.date_2") %>
+                </span>
               </h3>
               <p>
-                Vse oddane predloge pregleda komisija, ki vsak oddan predlog finančno ovrednoti in preveri, če je
-                izvedljiv, skladen z zakonodajo, znotraj geografskega območja in časovnice izvajanja participativnega
-                proračuna ter v skladu z pravili glede vrednosti predlogov. Komisija lahko podobne predloge združi.
+                <%= t("custom.about.description_2") %>
               </p>
             </div>
           </div>
@@ -108,16 +102,13 @@
 
             <div class="medium-9 column js-padt">
               <h3>
-                GLASOVANJE
+                <%= t("custom.about.heading_3").upcase %>
                 <span class="datum">
-                  27. 2. - 6. 3. 2019
-              </span>
+                  <%= t("custom.about.date_3") %>
+                </span>
               </h3>
               <p>
-                Glasovanje bo izvedeno preko spleta ali v prostorih občine Hrpelje-Kozina v času uradnih ur.
-                Sodeluje lahko vsak prebivalec ali prebivalka s stalnim ali začasnim bivališčem v Občini Hrpelje - Kozina,
-                ki je dopolnil/-a 14 let. Glasuje se tako, da občan/-ka razdeli predvidenih 60&nbsp;000&nbsp;€ sredstev za participativni
-                proračun med projekte, za katere si želi, da bi bili izvedeni.
+                <%= t("custom.about.description_3") %>
               </p>
             </div>
           </div>
@@ -140,17 +131,12 @@
             </div>
             <div class="medium-9 column js-padt">
               <h3>
-                RAZGLASITEV REZULTATOV
+                <%= t("custom.about.heading_4").upcase %>
                 <span class="datum">
-7. 3. - 21. 3. 2019
-              </span>
+                  <%= t("custom.about.date_4") %>
+                </span>
               </h3>
-              <p>
-                Po končanem glasovanju bo občina preverila rezultate in razglasila projekte, ki so bili izbrani.
-                Izbrani projekti bodo predlagani v potrditev Mestnemu svetu občine Hrpelje -Kozina za proračunski leti
-                2019 in 2020.
-
-              </p>
+              <p><%= t("custom.about.description_4") %></p>
             </div>
           </div>
         </div>
@@ -172,12 +158,10 @@
 
             <div class="medium-9 column js-padt">
               <h3>
-                SPREMLJANJE IZVEDBE
+                <%= t("custom.about.heading_5").upcase %>
               </h3>
               <p>
-                V tej fazi cikla participativnega proračuna bomo skrbeli za ažurno obveščanje o napredovanju projektov
-                ter sprotno posodabljanje njihovih časovnic. Postopek implementacije projektov bomo dokumentirali tudi
-                z vizualnimi materiali, zaključene projekte pa opremili z opisom in slikami.
+                <%= t("custom.about.description_5") %>
               </p>
             </div>
           </div>
@@ -186,6 +170,5 @@
       </div>
     </div>
   </div>
-
 
 </div>
