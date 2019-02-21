@@ -10,11 +10,7 @@ module Budgets
     has_orders ->(c) { c.investments_orders }, only: :index
 
     def index
-      if @budget.finished?
-        @investments = investments.winners.page(params[:page]).per(21).for_render
-      else
-        @investments = investments.page(params[:page]).per(21).for_render
-      end
+      @investments = investments.page(params[:page]).per(21).for_render
 
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
