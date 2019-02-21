@@ -78,22 +78,28 @@
               </div>
 
             <% else %>
-              <% if phase.kind == CustomPhasesHelper::CUSTOM_PHASE_ACCEPTING %>
-                <div class="row budget-investments">
-                  <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
-
-                    <div class="medium-centered">
-                      <%= image_tag(image_path_for('phases/empty_investments.png')) %>
-                    </div>
-                    <p>
-                      <%= t("custom.messages.no_investments") %><br>
-                      <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
-                        <%= t("custom.messages.add_first_investment") %>
-                      <% end %>
-                    </p>
-                  </div>
+              
+              <div class="row budget-investments">
+                <div>
+                  <%= render 'budgets/investments/categories' %>
+                  <% if @budget.headings.count > 1 %>
+                    <%= render 'budgets/investments/districts' %>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
+
+                  <div class="medium-centered">
+                    <%= image_tag(image_path_for('phases/empty_investments.png')) %>
+                  </div>
+                  <p>
+                    <%= t("custom.messages.no_investments") %><br>
+                    <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
+                      <%= t("custom.messages.add_first_investment") %>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+
             <% end %>
 
             <div class="row">
