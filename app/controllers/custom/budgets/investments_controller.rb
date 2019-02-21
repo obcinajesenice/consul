@@ -11,7 +11,6 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(21).for_render
-
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
