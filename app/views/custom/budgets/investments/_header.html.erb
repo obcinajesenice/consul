@@ -70,17 +70,29 @@
               <div class="small-12 column">
                 <% if @ballot.valid_heading?(@heading) %>
                   <div class="progress-bar-nav" data-fixed-bar>
-                    <h2>
-                      <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-                    </h2>
+                    <% if @budget.headings.count > 1 %>
+                      <h2>
+                        <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                      </h2>
+                    <% elsif @budget.headings.count == 1 %>
+                      <h2>
+                        <%= t("budgets.investments.index.by_heading_single") %>
+                      </h2>
+                    <% end %>
                     <div id="progress_bar" class="no-margin-top clearfix">
                       <%= render 'budgets/ballot/progress_bar' %>
                     </div>
                   </div>
                 <% else %>
-                  <h2>
-                    <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
-                  </h2>
+                  <% if @budget.headings.count > 1 %>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                    </h2>
+                  <% elsif @budget.headings.count == 1 %>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading_single") %>
+                    </h2>
+                  <% end %>
                   <div class="small-12 medium-9">
                     <div class="callout warning margin-top">
                       <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>

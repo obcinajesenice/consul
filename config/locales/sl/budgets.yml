@@ -78,7 +78,8 @@ sl:
         title: Participativni proračun
         unfeasible: Neizvedljivi naložbeni projekti
         unfeasible_text: "Investicije morajo izpolnjevati nekatere kriterije (legalnost, konkretnost, da so v pristojnosti občine/mesta, ne presegajo meje proračuna), da se jih označi kot izvedljive in lahko dosežejo fazo končnega glasovanja. Vse investicije, ki ne izpolnjuejo teh kriterijev, so označene kot neizvedljive in objavljene na spodnjem seznamu, skupaj s poročili o neizvedljivosti."
-        by_heading: "Projekti, ki obsegajo: %{heading}."
+        by_heading: "Tvoj proračun: %{heading}."
+        by_heading_single: "Tvoj proračun"
         search_form:
           button: Išči
           placeholder: Išči investicijske projekte ...
