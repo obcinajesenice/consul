@@ -17,7 +17,7 @@ sl:
         confirm: Si prepričan/-a, da želiš izbrisati dokument? Tega ni mogoče razveljaviti!
     buttons:
       download_document: Prenesi dokument
-      destroy_document: Uniči dokument
+      destroy_document: Odstrani dokument
     errors:
       messages:
         in_between: mora biti med %{min} in %{max}

@@ -148,6 +148,15 @@
     height: 260px;
     width: 296px;
   }
+  &.reviewing {
+    background: image-url('phases/kajpazdaj.png') center no-repeat;
+    background-size: 100%;
+    @include breakpoint(medium up) {
+      background-size: 127%;
+    }
+    height: 260px;
+    width: 296px;
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -360,6 +369,11 @@ only screen and (min-resolution: 240dpi) {
         img {
           height: auto;
           width: 100%;
+        }
+      }
+      .callout{
+        &.warning{
+          z-index: auto;
         }
       }
     }
@@ -740,6 +754,9 @@ select {
       border-bottom: 1px solid $mandys-pink;
       padding-bottom: 10px;
       margin-bottom: 5px;
+      &:last-of-type{
+        border-bottom: none;
+      }
     }
   }
 }
