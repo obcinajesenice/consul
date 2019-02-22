@@ -2140,3 +2140,16 @@ input.error {
     }
   }
 }
+
+.show-mobile{
+  @include breakpoint(medium up) {
+    display: none;
+  }
+}
+.show-pc{
+  display: none;
+  @include breakpoint(medium up) {
+    display: block;
+  }
+}
+

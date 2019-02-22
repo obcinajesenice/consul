@@ -87,11 +87,16 @@
                   <% end %>
                 </div>
                 <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
-
+                  <p class="show-mobile">
+                    <%= t("custom.messages.no_investments") %><br>
+                    <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
+                      <%= t("custom.messages.add_first_investment") %>
+                    <% end %>
+                  </p>
                   <div class="medium-centered">
                     <%= image_tag(image_path_for('phases/empty_investments.png')) %>
                   </div>
-                  <p>
+                  <p class="show-pc">
                     <%= t("custom.messages.no_investments") %><br>
                     <%= link_to new_budget_investment_path(budget_id: @budget.id), class: '' do %>
                       <%= t("custom.messages.add_first_investment") %>
