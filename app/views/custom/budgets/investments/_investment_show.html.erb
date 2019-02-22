@@ -108,6 +108,7 @@
           <h2><%= t("budgets.investments.show.author") %></h2>
           <div class="show-actions-menu">
             <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
+            <br />
             <%= link_to image_path(investment.image, from: request.url),
                         method: :delete,
                         data: { confirm: t("images.actions.destroy.confirm") },
