@@ -107,10 +107,11 @@
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.author") %></h2>
           <div class="show-actions-menu">
+            <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
             <%= link_to image_path(investment.image, from: request.url),
                         method: :delete,
-                        class: 'button hollow alert expanded' do %>
-              <span class="icon-image"></span>
+                        data: { confirm: t("images.actions.destroy.confirm") },
+                        class: 'delete' do %>
               <%= t("images.remove_image") %>
             <% end %>
           </div>
