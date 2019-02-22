@@ -42,11 +42,15 @@
       text-align: center;
       margin: 20px 0;
     }
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
 
     @media (min-width: 576px) {
       .container {
         display: flex;
-        margin: 20px auto;
+        margin: 20px auto 0 auto;
         max-width: 600px;
       }
 
@@ -60,17 +64,22 @@
         float: left;
         width: 50%;
       }
-
-      .sm-center {
-        text-align: left;
+      img {
+        max-width: 100%;
+        width: 90%;
       }
+
     }
 
     @media (min-width: 980px) {
       .container {
         display: flex;
-        margin: 100px auto;
+        margin: 100px auto 0 auto;
         max-width: 1024px;
+      }
+      img {
+        max-width: 100%;
+        width: 65%;
       }
     }
 
@@ -102,10 +111,7 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      width: 100%;
-    }
+
 
   </style>
 </head>
