@@ -47,7 +47,7 @@ sl:
         heading: Naslov
         dossier: Dosje
         edit_dossier: Uredi dosje
-        price: Cena
+        price: Vrednost projekta
         price_first_year: Cena tekom prvega leta
         currency: "€"
         feasibility: Izvedljivost

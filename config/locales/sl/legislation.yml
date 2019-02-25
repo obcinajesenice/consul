@@ -121,7 +121,7 @@ sl:
         title: Sodelovalni zakonodajni proces
       participation:
         phase_not_open: Ta faza ni odprta
-        organizations: Organizacijam ni dovoljeno sodelovati v razpravi
+        organizations: Organizacijam ni dovoljeno sodelovati v razpravi.
         signin: vpisati
         signup: registrirati
         unauthenticated: Za sodelovanje se moraš %{signin} ali %{signup}.

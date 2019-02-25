@@ -839,7 +839,7 @@ sl:
     budget_investments:
       not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
       not_verified: Samo verificirani uporabniki lahko glasujejo o investicijskih projektih; %{verify_account}.
-      organization: Organizacijam ni dovoljeno glasovati
+      organization: Organizacijam ni dovoljeno glasovati.
       unfeasible: Neizvedljivih investicijskih projektov ni mogoče podpreti
       not_voting_allowed: Faza glasovanja je zaključena
       different_heading_assigned:

@@ -129,7 +129,7 @@ sl:
         publication_date: "Datum objave"
       budget/heading:
         name: "Heading name"
-        price: "Cena"
+        price: "Vrednost projekta"
         population: "Populacija"
       comment:
         body: "Komentar"
