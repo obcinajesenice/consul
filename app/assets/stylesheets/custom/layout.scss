@@ -37,9 +37,11 @@
 :focus {
   outline: 0;
 }
-html{
+
+html {
   height: 100%;
 }
+
 html,
 body {
   margin: 0;
@@ -974,12 +976,20 @@ footer {
   }
 
   .logo {
-    background: image-url('municipality.png') no-repeat;
-    background-size: 175px 61px;
     display: block;
     height: rem-calc(61);
     margin-top: rem-calc(22);
     width: 175px;
+
+    &.default {
+      background: image-url('municipalities/default.png') no-repeat;
+      background-size: 175px 61px;
+    }
+
+    &.hrpelje-kozina {
+      background: image-url('municipalities/hrpelje_kozina.png') no-repeat;
+      background-size: 175px 61px;
+    }
   }
 
   .footer-links {
@@ -990,8 +1000,15 @@ footer {
   only screen and (min--moz-device-pixel-ratio: 1.5),
   only screen and (min-resolution: 240dpi) {
     .logo {
-      background: image-url('municipality@2x.png') no-repeat;
-      background-size: 175px 61px;
+      &.default {
+        background: image-url('municipalities/default@2x.png') no-repeat;
+        background-size: 175px 61px;
+      }
+
+      &.hrpelje-kozina {
+        background: image-url('municipalities/hrpelje_kozina@2x.png') no-repeat;
+        background-size: 175px 61px;
+      }
     }
   }
 

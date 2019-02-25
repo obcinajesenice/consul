@@ -1,4 +1,3 @@
 sl:
   custom:
-    headings:
-      drafting: Nothing matters
+    empty: DO NOT ADD TRANSLATIONS HERE! ADD IT TO custom/sl/custom.yml
