@@ -369,6 +369,8 @@ only screen and (min-resolution: 240dpi) {
         img {
           height: auto;
           width: 100%;
+          max-height: 180px;
+          object-fit: cover;
         }
       }
       .callout{
