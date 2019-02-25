@@ -1906,11 +1906,15 @@ input.error {
     background-size: 100%;
   }
 
-  transition: all .4s ease-in-out;
+  transition-property: width, height, background-position, color, border-radius, border-color, box-shadow;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 
   &:hover {
     background-position: 100% 0;
-    transition: all .4s ease-in-out;
+    transition-property: width, height, background-position, color, border-radius, border-color box-shadow;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
   }
 
 
@@ -1971,17 +1975,20 @@ input.error {
   display: inline-block;
   text-decoration: none;
 
-  transition: all .4s ease-in-out;
+  transition-property: width, height, background-position, color, border-radius, border-color, box-shadow;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 
   &:hover {
     background-position: 100% 0;
-    transition: all .4s ease-in-out;
+    transition-property: width, height, background-position, color, border-radius, border-color box-shadow;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
   }
 
   //transition: all 0.25s ease;
   &:active {
     //letter-spacing: 2px;
-    letter-spacing: 2px;
   }
 
   &:after {
