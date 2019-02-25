@@ -10,6 +10,7 @@ module Budgets
     has_orders ->(c) { c.investments_orders }, only: :index
 
     def index
+      @investments_count = investments.count
       @investments = investments.page(params[:page]).per(21).for_render
       @denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible')
       # @denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render

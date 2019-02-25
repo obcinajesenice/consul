@@ -46,7 +46,7 @@
             <% if @investments.count > 0 || @heading.present? %>
 
               <div class="row budget-investments">
-                <h2 class="phase-title"><%= t('custom.titles.added_proposals') %> (<%= @investments.count %>)</h2>
+                <h2 class="phase-title"><%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)</h2>
 
                 <% if @investments.count > 0 %>
                   <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
@@ -79,8 +79,7 @@
 
               <% if phase.kind != CustomPhasesHelper::CUSTOM_PHASE_ACCEPTING && phase.kind != CustomPhasesHelper::CUSTOM_PHASE_SELECTING && @denied_investments.count > 0 %>
                 <div class="row budget-investments">
-                  <h2 class="phase-title"><%= t('custom.titles.denied_proposals') %> (<%= @denied_investments.count %>
-                    )</h2>
+                  <h2 class="phase-title"><%= t('custom.titles.denied_proposals') %> (<%= @denied_investments.count %>)</h2>
 
                   <% if @denied_investments.count > 0 %>
                     <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
