@@ -976,6 +976,8 @@ footer {
   }
 
   .logo {
+    background: image-url('municipalities/default.png') no-repeat;
+    background-size: 175px 61px;
     display: block;
     height: rem-calc(61);
     margin-top: rem-calc(22);
@@ -1000,6 +1002,9 @@ footer {
   only screen and (min--moz-device-pixel-ratio: 1.5),
   only screen and (min-resolution: 240dpi) {
     .logo {
+      background: image-url('municipalities/default@2x.png') no-repeat;
+      background-size: 175px 61px;
+
       &.default {
         background: image-url('municipalities/default@2x.png') no-repeat;
         background-size: 175px 61px;
