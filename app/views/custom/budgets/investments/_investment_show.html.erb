@@ -143,8 +143,12 @@
               </span>
             </div>
           <% elsif investment.should_show_ballots? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.votes") %></h2>
+            <!-- <div class="sidebar-divider"></div> -->
+            <h2>
+              <!--
+                <%= t("budgets.investments.show.votes") %>
+              -->
+            </h2>
             <div class="text-center">
               <div id="<%= dom_id(investment) %>_ballot">
                 <%= render partial: 'ballot', locals: {
