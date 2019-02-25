@@ -77,42 +77,42 @@
 
               </div>
 
-              <% if @denied_investments.count > 0 %>
+              <% if phase.kind != CustomPhasesHelper::CUSTOM_PHASE_ACCEPTING && phase.kind != CustomPhasesHelper::CUSTOM_PHASE_SELECTING && @denied_investments.count > 0 %>
                 <div class="row budget-investments">
-                  <h2 class="phase-title"><%= t('custom.titles.denied_proposals') %> (<%= @denied_investments.count %>)</h2>
+                  <h2 class="phase-title"><%= t('custom.titles.denied_proposals') %> (<%= @denied_investments.count %>
+                    )</h2>
 
-                  <!-- <% if @denied_investments.count > 0 %>
+                  <% if @denied_investments.count > 0 %>
                     <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
-                  <% end %> -->
+                  <% end %>
 
-                  <!-- <div>
-                    <%= render 'budgets/investments/categories' %>
-                    <% if @budget.headings.count > 1 %>
-                      <%= render 'budgets/investments/districts' %>
-                    <% end %>
-                  </div> -->
+                  <%= render 'budgets/investments/categories' %>
+                  <% if @budget.headings.count > 1 %>
+                    <%= render 'budgets/investments/districts' %>
+                  <% end %>
+                </div>
 
-                  <div class="row small-up-1 medium-up-1 large-up-3">
-                    <% @denied_investments.each_with_index do |investment, index| %>
-                      <% investment_class = 'column column-block budget-investment-holder' %>
-                      <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
-                      <div class="<%= investment_class %>">
-                        <%= render partial: '/budgets/investments/investment',
-                                  locals: {
-                                    investment: investment,
-                                    investment_ids: @investment_ids,
-                                    investment_votes: @investment_votes,
-                                    ballot: @ballot
-                                  } %>
-                      </div>
-                    <% end %>
-                  </div>
+                <div class="row small-up-1 medium-up-1 large-up-3">
+                  <% @denied_investments.each_with_index do |investment, index| %>
+                    <% investment_class = 'column column-block budget-investment-holder' %>
+                    <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+                    <div class="<%= investment_class %>">
+                      <%= render partial: '/budgets/investments/investment',
+                                 locals: {
+                                   investment: investment,
+                                   investment_ids: @investment_ids,
+                                   investment_votes: @investment_votes,
+                                   ballot: @ballot
+                                 } %>
+                    </div>
+                  <% end %>
+                </div>
 
                 </div>
               <% end %>
 
             <% else %>
-              
+
               <div class="row budget-investments">
                 <div>
                   <%= render 'budgets/investments/categories' %>
@@ -144,7 +144,7 @@
             <div class="row">
               <%= paginate @investments %>
             </div>
-          </div>
+            </div>
         <% else %>
 
           <% if phase.kind == CustomPhasesHelper::CUSTOM_PHASE_ACCEPTING %>
@@ -369,7 +369,7 @@
           <% end %>
 
         <% end %>
-      </div>
+        </div>
     <% end %>
   <% end %>
   </div>
