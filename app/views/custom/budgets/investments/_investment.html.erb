@@ -35,7 +35,8 @@
                    class="supports inline-block"
                    <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
                 <span class="total-supports no-button">
-                  <%= investment.formatted_price %>
+                  <%= investment.price %> €
+                  <!-- <%= investment.formatted_price %> -->
                 </span>
               </div>
             <% end %>

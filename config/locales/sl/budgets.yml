@@ -6,7 +6,7 @@ sl:
         amount_spent: Porabljen znesek
         remaining: "Za investirati imaš še <span>%{amount}</span>."
         no_balloted_group_yet: "Nisi še glasoval v tej skupini, glasuj zdaj!"
-        remove: Podprto!
+        remove: Glas oddan!
         voted_html:
           one: "Glasoval/-a si o <span>eni</span> naložbi."
           two: "Glasoval/-a si o <span>dveh</span> naložbah."
@@ -113,6 +113,7 @@ sl:
           random: naključno
           confidence_score: najbolje ocenjeni
           price: po ceni
+          created_at: po datumu
       show:
         author_deleted: Uporabnik izbrisan
         price_explanation: Razlaga cene
@@ -138,7 +139,7 @@ sl:
         project_not_selected_html: 'Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja.'
       wrong_price_format: Samo cela števila
       investment:
-        add: Glasuj za za ta predlog
+        add: Glasuj za ta predlog
         already_added: Ta naložbeni projekt si že dodal
         already_supported: Ta naložbeni projekt si že podprl. Deli ga z drugimi!
         support_title: Podpri ta projekt
@@ -161,7 +162,7 @@ sl:
         check_ballot_link: "preveri moja glasovanja"
         price: "Višina sredstev namenjenih temu območju je"
     progress_bar:
-      assigned: "Dodelil si: "
+      assigned: "Dodeljenih: "
       available: "Razpoložljivi proračun: "
     show:
       group: Skupina
