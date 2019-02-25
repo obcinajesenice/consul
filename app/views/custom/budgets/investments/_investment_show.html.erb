@@ -30,13 +30,13 @@
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
         <% elsif investment.winner? %>
-          <div class="callout success">
+          <!-- <div class="callout success">
             <strong><%= t("budgets.investments.show.project_winner") %></strong>
-          </div>
+          </div> -->
         <% elsif investment.selected? %>
-          <div class="callout success">
+          <!-- <div class="callout success">
             <%= t("budgets.investments.show.project_selected_html") %>
-          </div>
+          </div> -->
         <% elsif @budget.balloting_or_later? %>
           <div class="callout warning">
             <%= t("budgets.investments.show.project_not_selected_html") %>
@@ -166,16 +166,6 @@
               </div>
             </div>
           <% end %>
-        <% end %>
-
-        <% if investment.should_show_price? %>
-          <div class="sidebar-divider"></div>
-          <h2><%= t("budgets.investments.show.price") %></h2>
-          <div class="supports text-center">
-            <p class="investment-project-amount">
-              <%= investment.formatted_price %>
-            </p>
-          </div>
         <% end %>
 
         <div class="horizontal-line"></div>
