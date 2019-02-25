@@ -30,7 +30,6 @@ class User < ActiveRecord::Base
   end
 
   def valid_emso_number?
-    puts document_number
     if Rails.env.development? || Rails.env.test?
       return true
     end
