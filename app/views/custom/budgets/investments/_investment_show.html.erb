@@ -111,7 +111,7 @@
           </div>
         <% end %>
 
-        <% if can_destroy_image?(investment) %>
+        <!-- <% if can_destroy_image?(investment) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.author") %></h2>
           <div class="show-actions-menu">
@@ -124,7 +124,7 @@
               <%= t("images.remove_image") %>
             <% end %>
           </div>
-        <% end %>
+        <% end %> -->
 
         <% if investment.should_show_aside? %>
           <% if investment.should_show_votes? %>
