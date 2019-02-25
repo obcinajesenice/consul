@@ -4,4 +4,4 @@
 
 Citizen Participation and Open Government Application
 
-[![Build Status](https://travis-ci.org/danesjenovdan/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
+[![Build Status](https://travis-ci.com/danesjenovdan/consul.svg?branch=consuless)](https://travis-ci.com/danesjenovdan/consul)
