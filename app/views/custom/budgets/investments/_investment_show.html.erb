@@ -98,9 +98,16 @@
           <p><%= investment.unfeasibility_explanation %></p>
         <% end %>
 
-        <% if investment.should_show_price_explanation? %>
-          <p><strong><%= t('budgets.investments.show.price_explanation') %></strong></p>
-          <p><%= investment.price_explanation %></p>
+        <% if investment.should_show_price? %>
+          <h2><%= t("budgets.investments.show.price") %></h2>
+          <div class="supports text-center">
+            <p class="investment-project-amount">
+              <%= investment.formatted_price %>
+            </p>
+            <% if investment.should_show_price_explanation? %>
+              <p class="investment-price-explanation"><%= investment.price_explanation %></p>
+            <% end %>
+          </div>
         <% end %>
 
         <% if can_destroy_image?(investment) %>
