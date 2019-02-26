@@ -68,3 +68,5 @@ sl:
       technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
       other_questions: "Imaš kakršno koli drugo vprašanje?"
       other_contact: 'Kontaktiraj vodjo projekta na občini na (05) 620 53 64 ali na <a href="mailto:andrej.bolcic@hrpelje-kozina.si">andrej.bolcic@hrpelje-kozina.si</a>.'
+    classes:
+      footer_logo: default
