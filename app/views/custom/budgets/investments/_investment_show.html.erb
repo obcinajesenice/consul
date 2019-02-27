@@ -30,13 +30,15 @@
           <div class="callout warning">
             <%= t("budgets.investments.show.project_unfeasible_html") %>
           </div>
-          <div class="row">
-            <div class="small-12 medium-9 medium-centered bggray">
-              <p>
-                <%= investment.unfeasibility_explanation %>
-              </p>
+          <% if investment.should_show_unfeasibility_explanation? %>
+            <div class="row">
+              <div class="small-12 medium-9 medium-centered bggray">
+                <p>
+                  <%= investment.unfeasibility_explanation %>
+                </p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% elsif investment.winner? %>
           <!-- <div class="callout success">
             <strong><%= t("budgets.investments.show.project_winner") %></strong>
@@ -99,11 +101,6 @@
           <div class="document-link">
             <%= text_with_links investment.external_url %>
           </div>
-        <% end %>
-
-        <% if investment.should_show_unfeasibility_explanation? %>
-          <p><strong><%= t('budgets.investments.show.unfeasibility_explanation') %></strong></p>
-          <p><%= investment.unfeasibility_explanation %></p>
         <% end %>
 
         <% if investment.should_show_price? %>
