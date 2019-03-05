@@ -40,8 +40,9 @@
                 </span>
               </div>
             <% end %>
-
-            <%= render "shared/tags", taggable: investment, limit: 5 %>
+            <div style="display: block; width: 100%; margin-top: 10px;"> <!-- TODO move this to CSS files -->
+              <%= render "shared/tags", taggable: investment, limit: 5 %>
+            </div>
 
             <% if investment.should_show_vote_count? %>
               <div class="clearfix btop">
