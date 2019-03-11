@@ -234,6 +234,7 @@ ActiveRecord::Schema.define(version: 20190216123757) do
     t.datetime "confirmed_hide_at"
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
+    t.string   "status"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree

@@ -2166,6 +2166,24 @@ input.error {
       background-color: #f5b5f4;
     }
   }
+
+  &.investment-waiting {
+    i {
+      background-color: #3c3683;
+    }
+  }
+
+  &.investment-done {
+    i {
+      background-color: #5dcf4b;
+    }
+  }
+
+  &.investment-doing {
+    i {
+      background-color: #f5b5f4;
+    }
+  }
 }
 
 .show-mobile{

@@ -1,0 +1,13 @@
+<h2 class="inline-block"><%= t("custom.statuses.title") %></h2>
+
+<%= form_for(@investment, url: admin_budget_budget_investment_path(@budget, @investment), html: {id: "valuation_budget_investment_edit_form"}) do |f| %>
+  <%= render 'shared/errors', resource: @investment %>
+  <%= f.select :status, options_for_select([
+    ['Izberi status', nil],
+    [t('custom.statuses.waiting'), 'waiting'],
+    [t('custom.statuses.doing'), 'doing'],
+    [t('custom.statuses.done'), 'done']
+  ]) %>
+
+  <%= f.submit "Shrani status", class: "button success" %>
+<% end %>

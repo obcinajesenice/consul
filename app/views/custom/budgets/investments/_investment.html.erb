@@ -40,10 +40,16 @@
                 </span>
               </div>
             <% end %>
-            <div style="display: block; width: 100%; margin-top: 10px;"> <!-- TODO move this to CSS files -->
-              <%= render "shared/tags", taggable: investment, limit: 5 %>
-            </div>
 
+            <% if investment.budget.phase == 'finished' && investment.status && investment.winner %>
+              <div class="clearfix btop">
+                <div class="finvestment investment-<%=investment.status %> ">
+                  <i></i><% if investment.status != '' %><%= t("custom.statuses.#{investment.status}") %><% end %>
+                </div>
+              </div>
+            <% end %>
+
+            <!-- REMOVED TEMPORARILY TODO finalize
             <% if investment.should_show_vote_count? %>
               <div class="clearfix btop">
                 <div class="finvestment investment-<%=investment.feasibility %> ">
@@ -62,6 +68,7 @@
                 </div>
               </div>
             <% end %>
+            -->
           <% end %>
         </div>
       </div>

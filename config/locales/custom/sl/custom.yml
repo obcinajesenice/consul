@@ -71,3 +71,9 @@ sl:
       other_contact: 'Kontaktiraj vodjo projekta na občini na (05) 620 53 64 ali na <a href="mailto:andrej.bolcic@hrpelje-kozina.si">andrej.bolcic@hrpelje-kozina.si</a>.'
     classes:
       footer_logo: default
+    statuses:
+      title: 'Izberi status predloga'
+      waiting: 'Čaka na izvedbo'
+      doing: 'Se izvaja'
+      done: 'Izveden'
+      nil: 'Ni statusa'

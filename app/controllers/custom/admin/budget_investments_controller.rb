@@ -6,7 +6,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   def budget_investment_params
     params.require(:budget_investment)
-      .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
+      .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list, :status,
               :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
               valuator_ids: [], valuator_group_ids: [],
               documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
