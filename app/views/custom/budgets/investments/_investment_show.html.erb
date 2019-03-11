@@ -105,7 +105,7 @@
 
         <% if investment.should_show_price? %>
           <h2><%= t("budgets.investments.show.price") %></h2>
-          <div class="supports text-center">
+          <div class="no-overflow supports text-center">
             <p class="investment-project-amount">
               <%= investment.price %> €
               <!-- <%= investment.formatted_price %> -->
