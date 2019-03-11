@@ -46,7 +46,13 @@
             <% if @investments.count > 0 || @heading.present? %>
 
               <div class="row budget-investments">
-                <h2 class="phase-title"><%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)</h2>
+                <h2 class="phase-title">
+                  <% if phase.kind == :finished %>
+                    <%= t('custom.titles.finished_proposals') %> (<%= @investments_count %>)
+                  <% else %>
+                    <%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)
+                  <% end %>
+                </h2>
 
                 <% if @investments.count > 0 %>
                   <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>

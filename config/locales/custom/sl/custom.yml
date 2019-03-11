@@ -13,6 +13,7 @@ sl:
       finished: Spremljaj
     titles:
       added_proposals: Oddani predlogi
+      finished_proposals: Izglasovani predlogi
       denied_proposals: Neizbrani predlogi
       register_with: Za registracijo izpolni ta obrazec
       sign_in_with: Za vpis izpolni ta obrazec
