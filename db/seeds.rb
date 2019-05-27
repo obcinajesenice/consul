@@ -66,25 +66,25 @@ Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Processes
-Setting["process.debates"] = true
-Setting["process.proposals"] = true
-Setting["process.polls"] = true
-Setting["process.budgets"] = true
+Setting["process.debates"] = false
+Setting["process.proposals"] = false
+Setting["process.polls"] = false
+Setting["process.budgets"] = false
 Setting["process.legislation"] = true
 
 # Feature flags
 Setting["feature.featured_proposals"] = nil
 Setting["feature.spending_proposals"] = nil
-Setting["feature.twitter_login"] = true
-Setting["feature.facebook_login"] = true
-Setting["feature.google_login"] = true
-Setting["feature.public_stats"] = true
-Setting["feature.signature_sheets"] = true
-Setting["feature.user.recommendations"] = true
-Setting["feature.user.recommendations_on_debates"] = true
-Setting["feature.user.recommendations_on_proposals"] = true
+Setting["feature.twitter_login"] = false
+Setting["feature.facebook_login"] = false
+Setting["feature.google_login"] = false
+Setting["feature.public_stats"] = false
+Setting["feature.signature_sheets"] = false
+Setting["feature.user.recommendations"] = false
+Setting["feature.user.recommendations_on_debates"] = false
+Setting["feature.user.recommendations_on_proposals"] = false
 Setting["feature.user.skip_verification"] = "true"
-Setting["feature.community"] = true
+Setting["feature.community"] = false
 Setting["feature.map"] = nil
 Setting["feature.allow_images"] = true
 Setting["feature.allow_attached_documents"] = true
