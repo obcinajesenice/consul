@@ -1,6 +1,6 @@
 <div class="legislation-hero jumbo" style="<%= css_for_process_header %>">
   <div class="row">
-    <div class="small-12 medium-9 column">
+    <div class="small-12 medium-12 column">
 
       <% if banner_color? %>
         <%= link_to t("shared.back"), legislation_processes_path,
@@ -35,6 +35,7 @@
       <% end %>
     </div>
 
+    <!--
     <aside class="small-12 medium-3 column">
       <%= render partial: "shared/social_share", locals: {
         share_title: t("proposals.show.share"),
@@ -73,5 +74,6 @@
         </p>
       <% end %>
     </aside>
+    -->
   </div>
 </div>
