@@ -3,3 +3,7 @@ class ActionDispatch::Routing::Mapper
     instance_eval(File.read(Rails.root.join("config/routes/#{route_file}.rb")))
   end
 end
+
+RouteTranslator.config do |config|
+  config.force_locale = false
+end

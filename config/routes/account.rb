@@ -1,3 +1,5 @@
-resource :account, controller: "account", only: [:show, :update, :delete] do
-  get :erase, on: :collection
+localized do
+  resource :account, controller: "account", only: [:show, :update, :delete] do
+    get :erase, on: :collection
+  end
 end

@@ -1,4 +1,16 @@
 sl:
+  routes:
+    budgets: pp
+    investments: predlogi
+    account: racun
+    help: pomoc
+    sign_in: vpis
+    organizations: organizacije
+    users: uporabniki
+    sign_up: registracija
+    confirmation: potrditev
+    new: se-enkrat
+    password: geslo
   custom:
     headings:
       drafting: Osnutek (skrito javnosti)

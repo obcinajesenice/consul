@@ -56,6 +56,8 @@ gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
 gem 'recipient_interceptor', '~> 0.2.0'
 
+gem 'route_translator'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
   gem 'rails-assets-markdown-it', '~> 8.2.1'
