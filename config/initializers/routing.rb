@@ -5,5 +5,6 @@ class ActionDispatch::Routing::Mapper
 end
 
 RouteTranslator.config do |config|
-  config.force_locale = false
+  config.force_locale = true
+  generate_unlocalized_routes = true
 end

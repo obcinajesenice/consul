@@ -1,0 +1,13 @@
+en:
+  routes:
+    budgets: budgets
+    investments: investments
+    account: account
+    help: help
+    sign_in: sign_in
+    organizations: organizations
+    users: users
+    sign_up: sign_up
+    confirmation: confirmation
+    new: new
+    password: password

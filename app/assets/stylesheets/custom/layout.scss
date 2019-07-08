@@ -1095,10 +1095,10 @@ footer {
   }
 
   select {
-    background-image: image-url('language_select.png');
-    background-origin: border-box;
-    background-position: right;
-    background-size: 24px 24px;
+    // background-image: image-url('language_select.png');
+    // background-origin: border-box;
+    // background-position: right;
+    // background-size: 24px 24px;
 
     option {
       background: #fff;
@@ -1109,9 +1109,9 @@ footer {
   }
 
   .locale-switcher {
-    background-color: transparent;
+    background-color: #fff;
     border: 0;
-    color: #fff;
+    color: #0a0a0a;
     font-size: $small-font-size;
     margin-bottom: 0;
     outline: none;
