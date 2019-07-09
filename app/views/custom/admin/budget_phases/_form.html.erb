@@ -1,4 +1,6 @@
-<%= form_for [:admin, @phase.budget, @phase] do |f| %>
+<%= render "admin/shared/globalize_locales", resource: @phase %>
+
+<%= translatable_form_for [:admin, @phase.budget, @phase] do |f| %>
 
   <div class="small-12 medium-6 column">
     <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>
@@ -17,70 +19,74 @@
                       label: false %>
   </div>
 
-  <div class="small-12 column">
-    <%= f.label :description, t("admin.budget_phases.edit.description") %>
+  <%= f.translatable_fields do |translations_form| %>
 
-    <span class="help-text" id="phase-description-help-text">
-      <%= t("admin.budget_phases.edit.description_help_text") %>
-    </span>
+    <div class="small-12 column">
+      <%= translations_form.label :description, t("admin.budget_phases.edit.description") %>
 
-    <%= f.cktext_area :description,
-                      maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
+      <span class="help-text" id="phase-description-help-text">
+        <%= t("admin.budget_phases.edit.description_help_text") %>
+      </span>
 
-  <div class="small-12 column margin-top">
-    <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
+      <%= translations_form.cktext_area :description,
+                        maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                        ckeditor: { language: I18n.locale },
+                        label: false %>
+    </div>
 
-    <span class="help-text" id="phase-summary-help-text">
-      <%= t("admin.budget_phases.edit.summary_help_text") %>
-    </span>
+    <div class="small-12 column margin-top">
+      <%= translations_form.label :summary, t("admin.budget_phases.edit.summary") %>
 
-    <%= f.cktext_area :summary,
-                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
+      <span class="help-text" id="phase-summary-help-text">
+        <%= t("admin.budget_phases.edit.summary_help_text") %>
+      </span>
 
-  <div class="small-12 column margin-top">
-    <%= f.label :presentation_summary_1, t("admin.budget_phases.edit.presentation_summary_1") %>
+      <%= translations_form.cktext_area :summary,
+                        maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                        ckeditor: { language: I18n.locale },
+                        label: false %>
+    </div>
 
-    <span class="help-text" id="phase-summary-help-text">
-      <%= t("admin.budget_phases.edit.presentation_summary_1_help_text") %>
-    </span>
+    <div class="small-12 column margin-top">
+      <%= translations_form.label :presentation_summary_1, t("admin.budget_phases.edit.presentation_summary_1") %>
 
-    <%= f.cktext_area :presentation_summary_1,
-                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
+      <span class="help-text" id="phase-summary-help-text">
+        <%= t("admin.budget_phases.edit.presentation_summary_1_help_text") %>
+      </span>
 
-  <div class="small-12 column margin-top">
-    <%= f.label :presentation_summary_2, t("admin.budget_phases.edit.presentation_summary_2") %>
+      <%= translations_form.cktext_area :presentation_summary_1,
+                        maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                        ckeditor: { language: I18n.locale },
+                        label: false %>
+    </div>
 
-    <span class="help-text" id="phase-summary-help-text">
-      <%= t("admin.budget_phases.edit.presentation_summary_2_help_text") %>
-    </span>
+    <div class="small-12 column margin-top">
+      <%= translations_form.label :presentation_summary_2, t("admin.budget_phases.edit.presentation_summary_2") %>
 
-    <%= f.cktext_area :presentation_summary_2,
-                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
+      <span class="help-text" id="phase-summary-help-text">
+        <%= t("admin.budget_phases.edit.presentation_summary_2_help_text") %>
+      </span>
 
-  <div class="small-12 column margin-top">
-    <%= f.label :presentation_summary_3, t("admin.budget_phases.edit.presentation_summary_3") %>
+      <%= translations_form.cktext_area :presentation_summary_2,
+                        maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                        ckeditor: { language: I18n.locale },
+                        label: false %>
+    </div>
 
-    <span class="help-text" id="phase-summary-help-text">
-      <%= t("admin.budget_phases.edit.presentation_summary_3_help_text") %>
-    </span>
+    <div class="small-12 column margin-top">
+      <%= translations_form.label :presentation_summary_3, t("admin.budget_phases.edit.presentation_summary_3") %>
 
-    <%= f.cktext_area :presentation_summary_3,
-                      maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
-  </div>
+      <span class="help-text" id="phase-summary-help-text">
+        <%= t("admin.budget_phases.edit.presentation_summary_3_help_text") %>
+      </span>
+
+      <%= translations_form.cktext_area :presentation_summary_3,
+                        maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                        ckeditor: { language: I18n.locale },
+                        label: false %>
+    </div>
+  
+  <% end %>
 
   <div class="small-12 column margin-top">
     <%= f.check_box :enabled, label: t("admin.budget_phases.edit.enabled") %>
