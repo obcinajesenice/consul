@@ -1,3 +1,5 @@
+# coding: utf-8
+
 if Rails.env.development?
   require 'database_cleaner'
   DatabaseCleaner.clean_with :truncation
@@ -23,12 +25,12 @@ def random_locales
 end
 
 require_relative 'less_seeds/settings'
-require_relative 'dev_seeds/geozones'
+#require_relative 'dev_seeds/geozones'
 require_relative 'less_seeds/users'
-require_relative 'dev_seeds/tags_categories'
+#require_relative 'dev_seeds/tags_categories'
 # require_relative 'dev_seeds/debates'
 # require_relative 'dev_seeds/proposals'
-require_relative 'less_seeds/budgets'
+#require_relative 'less_seeds/budgets'
 # require_relative 'dev_seeds/spending_proposals'
 # require_relative 'dev_seeds/comments'
 # require_relative 'dev_seeds/votes'
@@ -40,10 +42,10 @@ require_relative 'less_seeds/budgets'
 # require_relative 'less_seeds/legislation_processes'
 # require_relative 'dev_seeds/newsletters'
 # require_relative 'dev_seeds/notifications'
-require_relative 'dev_seeds/widgets'
-require_relative 'dev_seeds/admin_notifications'
+#require_relative 'dev_seeds/widgets'
+#require_relative 'dev_seeds/admin_notifications'
 # require_relative 'dev_seeds/legislation_proposals'
 # require_relative 'less_seeds/content_blocks'
-require_relative 'dev_seeds/milestones'
+#require_relative 'dev_seeds/milestones'
 
 log "All less seeds created successfuly 👍"

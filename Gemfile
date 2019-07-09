@@ -57,6 +57,7 @@ gem 'globalize-accessors', '~> 0.2.1'
 gem 'recipient_interceptor', '~> 0.2.0'
 
 gem 'route_translator'
+gem 'faker', '~> 1.8.7'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
