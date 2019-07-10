@@ -1089,6 +1089,22 @@ footer {
 // 06. Forms
 // ---------
 
+.language-picker {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  .language-picker  {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 8px;
+  }
+}
+
 .locale-form {
   display: inline-block;
   position: relative;

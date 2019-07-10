@@ -1,7 +1,6 @@
 <header>
   <div class="row">
     <div class="top-bar">
-
       <div class="site-title-holder">
         <%= link_to root_path, accesskey: "0", class: 'site-title' do %>
           <span class="site-name"><%= t("layouts.header.budgets") %></span>&nbsp;/&nbsp;<span class="place-name"><%= setting['place_name'] %></span>
@@ -11,7 +10,6 @@
       <div class="language-picker">
         <%= render "shared/locale_switcher" %>
       </div>
-
     </div>
   </div>
 </header>
