@@ -12,6 +12,8 @@ sl:
     new: se-enkrat
     password: geslo
   custom:
+    meta:
+      place_name: Mestna Občina Koper
     headings:
       drafting: Osnutek (skrito javnosti)
       informing: Informiranje
