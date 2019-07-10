@@ -26,7 +26,7 @@ section "Creating Settings" do
   Setting.create(key: 'blog_url', value: '')
   Setting.create(key: 'url', value: '')
   Setting.create(key: 'org_name', value: 'Participativni proračun')
-  Setting.create(key: 'place_name', value: 'Ime Mesta')
+  Setting.create(key: 'place_name', value: I18n.t('custom.meta.place_name'))
 
   Setting.create(key: 'feature.debates', value: "false")
   Setting.create(key: 'feature.proposals', value: "true")
@@ -72,4 +72,18 @@ section "Creating Settings" do
   Setting['feature.homepage.widgets.feeds.proposals'] = false
   Setting['feature.homepage.widgets.feeds.debates'] = false
   Setting['feature.homepage.widgets.feeds.processes'] = false
+  Setting['feature.twitter_login'] = false
+  Setting['feature.facebook_login'] = false
+  Setting['feature.google_login'] = false
+  Setting['feature.debates'] = false
+  Setting['feature.proposals'] = false
+  Setting['feature.polls'] = false
+  Setting['feature.spending_proposals'] = false
+  Setting['feature.spending_proposal_features.voting_allowed'] = false
+  Setting['feature.signature_sheets'] = false
+  Setting['feature.legislation'] = false
+  Setting['feature.user.recommendations'] = false
+  Setting['feature.user.recommendations_on_debates'] = false
+  Setting['feature.user.recommendations_on_proposals'] = false
+  Setting['feature.community'] = false
 end
