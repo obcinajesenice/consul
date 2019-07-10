@@ -96,3 +96,22 @@
     </div>
   </div>
 <% end %>
+
+<!-- CKEDITOR content override -->
+<script>
+  function injectGuidingQuestions() {
+    CKEDITOR
+        .instances['budget_investment_description']
+          .setData('<%= t("custom.meta.guiding_questions").html_safe %>');
+  }
+
+  $(document).ready(function() {
+    if (CKEDITOR.status === 'loaded') {
+      injectGuidingQuestions();
+    } else {
+      CKEDITOR.on('loaded', function(e) {
+        injectGuidingQuestions();
+      });
+    }
+  });
+</script>

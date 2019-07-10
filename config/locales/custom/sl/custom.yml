@@ -14,6 +14,7 @@ sl:
   custom:
     meta:
       place_name: Mestna Občina Koper
+      guiding_questions: '<p><em>Katero temo, težavo oz. izziv naslavlja predlog?</em></p><p>&nbsp;</p><p><em>Kaj je treba storiti?</em></p><p>&nbsp;</p><p><em>Kje naj se predlagani projekt izvaja?</em></p><p>&nbsp;</p><p><em>Kak&scaron;na je pričakovana cena izvedbe projekta?</em></p><p>&nbsp;</p><p><em>Kaj bo po izvedbi projekta v na&scaron;i občini drugače?</em></p><p>&nbsp;</p>'
     headings:
       drafting: Osnutek (skrito javnosti)
       informing: Informiranje
