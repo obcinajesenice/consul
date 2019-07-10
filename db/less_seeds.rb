@@ -1,5 +1,3 @@
-# coding: utf-8
-
 if Rails.env.development?
   require 'database_cleaner'
   DatabaseCleaner.clean_with :truncation
@@ -27,6 +25,7 @@ end
 require_relative 'less_seeds/settings'
 #require_relative 'dev_seeds/geozones'
 require_relative 'less_seeds/users'
+require_relative 'less_seeds/tags'
 #require_relative 'dev_seeds/tags_categories'
 # require_relative 'dev_seeds/debates'
 # require_relative 'dev_seeds/proposals'
