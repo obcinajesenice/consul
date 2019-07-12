@@ -1,3 +1,5 @@
+# coding: utf-8
+
 section "Creating Users" do
   def create_user(email, username = Faker::Name.name)
     password = '12345678'
@@ -66,23 +68,23 @@ section "Creating Users" do
                confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                verified_at: Time.current, document_number: unique_document_number)
 
-  moderator = create_user('mod@consul.dev', 'moderator')
-  moderator.create_moderator
-  moderator.update(residence_verified_at: Time.current,
-                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
-                   verified_at: Time.current, document_number: unique_document_number)
+  # moderator = create_user('consul+mod@danesjenovdan.si', 'moderator')
+  # moderator.create_moderator
+  # moderator.update(residence_verified_at: Time.current,
+  #                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  #                  verified_at: Time.current, document_number: unique_document_number)
 
-  manager = create_user('manager@consul.dev', 'manager')
+  manager = create_user('consul+manager@danesjenovdan.si', 'manager')
   manager.create_manager
   manager.update(residence_verified_at: Time.current,
                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                  verified_at: Time.current, document_number: unique_document_number)
 
-  valuator = create_user('valuator@consul.dev', 'valuator')
-  valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current,
-                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
-                  verified_at: Time.current, document_number: unique_document_number)
+  # valuator = create_user('valuator@consul.dev', 'valuator')
+  # valuator.create_valuator
+  # valuator.update(residence_verified_at: Time.current,
+  #                 confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  #                 verified_at: Time.current, document_number: unique_document_number)
 
   # poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
   # poll_officer.create_poll_officer
