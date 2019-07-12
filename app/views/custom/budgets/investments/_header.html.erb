@@ -21,10 +21,14 @@
           <%= t("custom.headings.#{current_budget.phase}") %>
         </h1>
         <h2>
-          <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% if current_budget.current_phase.summary %>
+            <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% end %>
         </h2>
         <p class="large-description">
-          <%= strip_tags(current_budget.current_phase.description.html_safe) %>
+          <% if current_budget.current_phase.summary %>
+            <%= strip_tags(current_budget.current_phase.description.html_safe) %>
+          <% end %>
         </p>
         <% if current_budget.phase == 'accepting' %>
           <% if current_user %>
@@ -59,7 +63,7 @@
   </div>
 </div>
 
-<% if @heading %>
+<% if @heading && current_budget.phase == 'balloting' %>
   <div class="bgfaf" id="bgfaf">
     <div class="main-indented-content">
       <section class="no-margin-top margin-bottom">
