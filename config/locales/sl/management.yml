@@ -59,7 +59,7 @@ sl:
       introduce_email: 'Vnesi e-naslov, uporabljen v računu:'
       send_email: Pošlji potrditven e-mail
     menu:
-      create_proposal: Ustvari predlog
+      create_proposal: Ustvari zakonodajni predlog
       print_proposals: Natisni predloge
       support_proposals: Podpri predloge
       create_spending_proposal: Ustvari predlog porabe
@@ -88,11 +88,11 @@ sl:
     proposals:
       alert:
         unverified_user: Uporabnik ni verificiran
-      create_proposal: Ustvari predlog
+      create_proposal: Ustvari zakonodajni predlog
       print:
         print_button: Natisni
     budgets:
-      create_new_investment: Oddaj predlog
+      create_new_investment: Nova proračunska naložba
       print_investments: Natisni proračunske naložbe
       support_investments: Podpri proračunske naložbe
     budget_investments:
