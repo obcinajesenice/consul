@@ -11,6 +11,7 @@ class Admin::StatsController < Admin::BaseController
     @debate_votes   = Vote.where(votable_type: "Debate").count
     @proposal_votes = Vote.where(votable_type: "Proposal").count
     @comment_votes  = Vote.where(votable_type: "Comment").count
+
     @votes = Vote.count
 
     @user_level_two   = User.active.level_two_verified.count
@@ -24,8 +25,6 @@ class Admin::StatsController < Admin::BaseController
                                                        .count(:voter_id)
 
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
-
-    @spending_proposals = SpendingProposal.count
     budgets_ids = Budget.where.not(phase: "finished").pluck(:id)
     @budgets = budgets_ids.size
     @investments = Budget::Investment.where(budget_id: budgets_ids).count
@@ -52,7 +51,6 @@ class Admin::StatsController < Admin::BaseController
     @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
   end
 
-
   def budgets
     @budgets = Budget.all
   end
@@ -76,6 +74,9 @@ class Admin::StatsController < Admin::BaseController
 
   def budget_balloting
     @budget = Budget.find(params[:budget_id])
+
+    authorize! :read_admin_stats, @budget, message: t("admin.stats.budgets.no_data_before_balloting_phase")
+
     @user_count = @budget.ballots.select {|ballot| ballot.lines.any? }.count
 
     @vote_count = @budget.lines.count

@@ -8,6 +8,9 @@ describe Proposal do
     it_behaves_like "has_public_author"
     it_behaves_like "notifiable"
     it_behaves_like "map validations"
+    it_behaves_like "globalizable", :proposal
+    it_behaves_like "sanitizable"
+    it_behaves_like "acts as paranoid", :proposal
   end
 
   it "is valid" do
@@ -42,12 +45,6 @@ describe Proposal do
   end
 
   describe "#description" do
-    it "is sanitized" do
-      proposal.description = "<script>alert('danger');</script>"
-      proposal.valid?
-      expect(proposal.description).to eq("alert('danger');")
-    end
-
     it "is not valid when very long" do
       proposal.description = "a" * 6001
       expect(proposal).not_to be_valid
@@ -113,12 +110,6 @@ describe Proposal do
   end
 
   describe "tag_list" do
-    it "sanitizes the tag list" do
-      proposal.tag_list = "user_id=1"
-      proposal.valid?
-      expect(proposal.tag_list).to eq(["user_id1"])
-    end
-
     it "is not valid with a tag list of more than 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
       expect(proposal).not_to be_valid
@@ -141,6 +132,46 @@ describe Proposal do
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
 
     Setting["proposal_code_prefix"] = "MAD"
+  end
+
+  describe "#retired_explanation" do
+    it "is valid when retired timestamp is present and retired explanation is defined" do
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retired_reason = "duplicated"
+      expect(proposal).to be_valid
+    end
+
+    it "is not valid when retired_at is present and retired explanation is empty" do
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = nil
+      proposal.retired_reason = "duplicated"
+      expect(proposal).not_to be_valid
+    end
+  end
+
+  describe "#retired_reason" do
+    it "is valid when retired timestamp is present and retired reason is defined" do
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retired_reason = "duplicated"
+      expect(proposal).to be_valid
+    end
+
+    it "is not valid when retired timestamp is present but defined retired reason
+        is not included in retired reasons" do
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retired_reason = "duplicate"
+      expect(proposal).not_to be_valid
+    end
+
+    it "is not valid when retired_at is present and retired reason is empty" do
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = "Duplicated of ..."
+      proposal.retired_reason = nil
+      expect(proposal).not_to be_valid
+    end
   end
 
   describe "#editable?" do
@@ -456,21 +487,46 @@ describe Proposal do
 
     context "attributes" do
 
+      let(:attributes) { { title: "save the world",
+                           summary: "basically",
+                           description: "in order to save the world one must think about...",
+                           title_es: "para salvar el mundo uno debe pensar en...",
+                           summary_es: "basicamente",
+                           description_es: "uno debe pensar" } }
+
       it "searches by title" do
-        proposal = create(:proposal, title: "save the world")
+        proposal = create(:proposal, attributes)
         results = described_class.search("save the world")
         expect(results).to eq([proposal])
       end
 
+      it "searches by title across all languages translations" do
+        proposal = create(:proposal, attributes)
+        results = described_class.search("salvar el mundo")
+        expect(results).to eq([proposal])
+      end
+
       it "searches by summary" do
-        proposal = create(:proposal, summary: "basically...")
+        proposal = create(:proposal, attributes)
         results = described_class.search("basically")
         expect(results).to eq([proposal])
       end
 
+      it "searches by summary across all languages translations" do
+        proposal = create(:proposal, attributes)
+        results = described_class.search("basicamente")
+        expect(results).to eq([proposal])
+      end
+
       it "searches by description" do
-        proposal = create(:proposal, description: "in order to save the world one must think about...")
+        proposal = create(:proposal, attributes)
         results = described_class.search("one must think")
+        expect(results).to eq([proposal])
+      end
+
+      it "searches by description across all languages translations" do
+        proposal = create(:proposal, attributes)
+        results = described_class.search("uno debe pensar")
         expect(results).to eq([proposal])
       end
 
@@ -820,7 +876,7 @@ describe Proposal do
 
   describe "retired" do
     let!(:proposal1) { create(:proposal) }
-    let!(:proposal2) { create(:proposal, retired_at: Time.current) }
+    let!(:proposal2) { create(:proposal, :retired) }
 
     it "retired? is true" do
       expect(proposal1.retired?).to eq false
@@ -863,6 +919,30 @@ describe Proposal do
 
       expect(not_archived.size).to eq(1)
       expect(not_archived.first).to eq(new_proposal)
+    end
+  end
+
+  describe "selected" do
+    let!(:not_selected_proposal) { create(:proposal) }
+    let!(:selected_proposal)   { create(:proposal, :selected) }
+
+    it "selected? is true" do
+      expect(not_selected_proposal.selected?).to be false
+      expect(selected_proposal.selected?).to be true
+    end
+
+    it "scope selected" do
+      selected = Proposal.selected
+
+      expect(selected.size).to be 1
+      expect(selected.first).to eq selected_proposal
+    end
+
+    it "scope not_selected" do
+      not_selected = Proposal.not_selected
+
+      expect(not_selected.size).to be 1
+      expect(not_selected.first).to eq not_selected_proposal
     end
   end
 
@@ -1058,6 +1138,34 @@ describe Proposal do
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
+  end
+
+  describe "milestone_tags" do
+
+    context "without milestone_tags" do
+
+      let(:proposal) {create(:proposal)}
+
+      it "do not have milestone_tags" do
+        expect(proposal.milestone_tag_list).to eq([])
+        expect(proposal.milestone_tags).to eq([])
+      end
+
+      it "add a new milestone_tag" do
+        proposal.milestone_tag_list = "tag1,tag2"
+
+        expect(proposal.milestone_tag_list).to eq(["tag1", "tag2"])
+      end
+    end
+
+    context "with milestone_tags" do
+
+      let(:proposal) {create(:proposal, :with_milestone_tags)}
+
+      it "has milestone_tags" do
+        expect(proposal.milestone_tag_list.count).to eq(1)
+      end
+    end
   end
 
 end

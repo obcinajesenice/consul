@@ -21,13 +21,18 @@ module Consul
     config.i18n.default_locale = :en
     available_locales = [
       "ar",
+      "bs",
+      "cs",
+      "da",
       "de",
+      "el",
       "en",
       "es",
       "fa",
       "fr",
       "gl",
       "he",
+      "hr",
       "id",
       "it",
       "nl",
@@ -38,6 +43,7 @@ module Consul
       "sq",
       "so",
       "sv",
+      "tr",
       "val",
       "zh-CN",
       "zh-TW"]
@@ -48,10 +54,14 @@ module Consul
       "it"    => "es",
       "pt-BR" => "es"
     }
-    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**[^custom]*", "*.{rb,yml}")]
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "custom", "**", "*.{rb,yml}")]
 
-    config.after_initialize { Globalize.set_fallbacks_to_all_available_locales }
+    config.after_initialize do
+      Globalize.set_fallbacks_to_all_available_locales
+      GraphQLApi::Loader.setup
+    end
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")

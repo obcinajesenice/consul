@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin budget phases" do
+describe "Admin budget phases" do
   let(:budget) { create(:budget) }
 
   context "Edit" do
@@ -10,7 +10,7 @@ feature "Admin budget phases" do
       login_as(admin.user)
     end
 
-    it_behaves_like "translatable",
+    it_behaves_like "edit_translatable",
                   "budget_phase",
                   "edit_admin_budget_budget_phase_path",
                   [],

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "CKEditor" do
+describe "CKEditor" do
 
   scenario "is present before & after turbolinks update page", :js do
     author = create(:user)
@@ -8,12 +8,12 @@ feature "CKEditor" do
 
     visit new_debate_path
 
-    expect(page).to have_css "#cke_debate_description"
+    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
 
     click_link "Debates"
     click_link "Start a debate"
 
-    expect(page).to have_css "#cke_debate_description"
+    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
   end
 
 end

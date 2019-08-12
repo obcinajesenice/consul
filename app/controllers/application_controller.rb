@@ -1,6 +1,7 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  include GlobalizeFallbacks
   include HasFilters
   include HasOrders
   include AccessDeniedHandler
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
-  before_action :set_fallbacks_to_all_available_locales
+  before_action :set_current_user
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -73,10 +74,6 @@ class ApplicationController < ActionController::Base
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
-    def set_spending_proposal_votes(spending_proposals)
-      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
-    end
-
     def set_comment_flags(comments)
       @comment_flags = current_user ? current_user.comment_flags(comments) : {}
     end
@@ -124,7 +121,7 @@ class ApplicationController < ActionController::Base
       Budget.current
     end
 
-    def set_fallbacks_to_all_available_locales
-      Globalize.set_fallbacks_to_all_available_locales
+    def set_current_user
+      User.current_user = current_user
     end
 end

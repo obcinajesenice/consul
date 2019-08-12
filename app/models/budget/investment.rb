@@ -1,7 +1,9 @@
 class Budget
+  require "csv"
   class Investment < ApplicationRecord
-    SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
+    SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
+    include ActiveModel::Dirty
     include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
@@ -13,9 +15,6 @@ class Budget
     include Imageable
     include Mappable
     include Documentable
-    documentable max_documents_allowed: 3,
-                 max_file_size: 3.megabytes,
-                 accepted_content_types: [ "application/pdf" ]
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -26,6 +25,12 @@ class Budget
     include Flaggable
     include Milestoneable
     include Randomizable
+
+    extend DownloadSettings::BudgetInvestmentCsv
+
+    translates :title, touch: true
+    translates :description, touch: true
+    include Globalizable
 
     belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
     belongs_to :heading
@@ -42,15 +47,18 @@ class Budget
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
 
-    validates :title, presence: true
+    has_many :tracker_assignments, dependent: :destroy
+    has_many :trackers, through: :tracker_assignments
+
+    delegate :name, :email, to: :author, prefix: true
+
+    validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
+    validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
+
     validates :author, presence: true
-    validates :description, presence: true
     validates :heading_id, presence: true
     validates :unfeasibility_explanation, presence: { if: :unfeasibility_explanation_required? }
     validates :price, presence: { if: :price_required? }
-
-    validates :title, length: { in: 4..Budget::Investment.title_max_length }
-    validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
@@ -58,7 +66,6 @@ class Budget
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
 
     scope :sort_by_id, -> { order("id DESC") }
-    scope :sort_by_title, -> { order("title ASC") }
     scope :sort_by_supports, -> { order("cached_votes_up DESC") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
@@ -91,6 +98,8 @@ class Budget
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_tracker,        ->(tracker_id) { where("budget_tracker_assignments.tracker_id = ?",
+                                                     tracker_id).joins(:tracker_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
 
     scope :for_render, -> { includes(:heading) }
@@ -99,6 +108,7 @@ class Budget
     after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    after_update :change_log
 
     def comments_count
       comments.count
@@ -108,12 +118,16 @@ class Budget
       budget_investment_path(budget, self)
     end
 
+    def self.sort_by_title
+      with_translation.sort_by(&:title)
+    end
+
     def self.filter_params(params)
       params.permit(%i[heading_id group_id administrator_id tag_name valuator_id])
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      budget  = Budget.find_by_slug_or_id params[:budget_id]
       results = Investment.by_budget(budget)
 
       results = results.where("cached_votes_up + physical_votes >= ?",
@@ -122,6 +136,7 @@ class Budget
                               params[:max_total_supports])                 if params[:max_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
+      results = results.by_tag(params[:milestone_tag_name])                if params[:milestone_tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
       results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
       results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
@@ -152,10 +167,12 @@ class Budget
     def self.order_filter(params)
       sorting_key = params[:sort_by]&.downcase&.to_sym
       allowed_sort_option = SORTING_OPTIONS[sorting_key]
+      direction = params[:direction] == "desc" ? "desc" : "asc"
 
       if allowed_sort_option.present?
-        direction = params[:direction] == "desc" ? "desc" : "asc"
         order("#{allowed_sort_option} #{direction}")
+      elsif sorting_key == :title
+        direction == "asc" ? sort_by_title : sort_by_title.reverse
       else
         order(cached_votes_up: :desc).order(id: :desc)
       end
@@ -174,20 +191,17 @@ class Budget
     end
 
     def self.search_by_title_or_id(title_or_id, results)
-      if title_or_id =~ /^[0-9]+$/
-        results.where(id: title_or_id)
-      else
-        results.where("title ILIKE ?", "%#{title_or_id}%")
-      end
+      return results.where(id: title_or_id) if title_or_id =~ /^[0-9]+$/
+
+      results.with_translations(Globalize.fallbacks(I18n.locale)).
+        where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
     end
 
     def searchable_values
-      { title              => "A",
-        author.username    => "B",
-        heading.try(:name) => "B",
-        tag_list.join(" ") => "B",
-        description        => "C"
-      }
+      { author.username    => "B",
+        heading.name       => "B",
+        tag_list.join(" ") => "B"
+      }.merge(searchable_globalized_values)
     end
 
     def self.search(terms)
@@ -377,6 +391,12 @@ class Budget
       milestones.published.with_status.order_by_publication_date.last&.status_id
     end
 
+    def admin_and_valuator_users_associated
+      valuator_users = (valuator_groups.map(&:valuators) + valuators).flatten
+      all_users = valuator_users << administrator
+      all_users.compact.uniq
+    end
+
     private
 
       def set_denormalized_ids
@@ -384,5 +404,23 @@ class Budget
         self.budget_id ||= heading.try(:group).try(:budget_id)
       end
 
+      def change_log
+        self.changed.each do |field|
+          unless field == "updated_at"
+            log = Budget::Investment::ChangeLog.new
+            log.field = field
+            log.author_id = User.current_user.id unless User.current_user.nil?
+            log.investment_id = self.id
+            log.new_value = self.send field
+            log.old_value = self.send "#{field}_was"
+            !log.save
+          end
+        end
+      end
+
+      def searchable_translations_definitions
+        { title       => "A",
+          description => "D" }
+      end
   end
 end

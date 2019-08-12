@@ -51,6 +51,14 @@ en:
         one: 1 response
         other: "%{count} responses"
         zero: No responses
+      responses_show:
+        one: "1 response (show)"
+        other: "%{count} responses (show)"
+        zero: No responses
+      responses_collapse:
+        one: "1 response (collapse)"
+        other: "%{count} responses (collapse)"
+        zero: No responses
       user_deleted: User deleted
       votes:
         one: 1 vote
@@ -93,7 +101,6 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics
@@ -179,7 +186,6 @@ en:
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
-    spending_proposal: Spending proposal
     budget/investment: Investment
     budget/group: Budget Group
     budget/heading: Budget Heading
@@ -191,9 +197,10 @@ en:
     document: Document
     topic: Topic
     image: Image
+    local_census_record: Local Census Record
+    local_census_records/import: Local Census Records Import
   geozones:
     none: All city
-    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
@@ -248,13 +255,13 @@ en:
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
       notification_item:
         new_notifications:
           one: You have a new notification
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
+      tracking: "Tracking"
     admin:
       watch_form_message: "You have unsaved changes. Do you confirm to leave the page?"
   notifications:
@@ -327,7 +334,6 @@ en:
       warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
       retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
-      retired_explanation_label: Explanation
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
       submit_button: Retire proposal
     retire_options:
@@ -376,6 +382,10 @@ en:
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
+      selected_proposals: Selected proposals
+      selected_proposals_link: View selected proposals
+      archived_proposals: Archived proposals
+      proposals_lists: Proposals lists
       retired_links:
         all: All
         duplicated: Duplicated
@@ -437,9 +447,11 @@ en:
         other: "%{count} votes"
         zero: No votes
       supports_necessary: "%{number} supports needed"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
       successful: "This proposal has reached the required supports."
+      selected: "Selected proposal"
     show:
       author_deleted: User deleted
       code: "Proposal code:"
@@ -475,6 +487,7 @@ en:
       mailing: E-mail
       poster: Poster
       recommended_actions: Recommended actions
+      messages: Message to users
     form:
       request: Request
     create_request:
@@ -536,10 +549,14 @@ en:
       debates: Debates
       comments: Comments
       latest_comments: Latest messages
+    messages:
+      send_notification: Send message to proposal supporters
+      previous_notifications: See previous notifications
     polls:
       index:
         title: Polls
         create: Create poll
+        succesfull: Answer added succesfully
         count:
           one: You have created %{count} poll.
           other: You have created %{count} polls.
@@ -558,7 +575,12 @@ en:
         edit_poll: Edit survey
         show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them
+        delete: Delete survey
+        alert_notice: This action will remove the survey and all its associated questions.
+        success_notice: Survey deleted successfully
+        unable_notice: You cannot destroy a survey that has responses
       form:
+        name: Survey title
         add_question: Add question
       question_fields:
         remove_question: Remove question
@@ -627,6 +649,17 @@ en:
         title: Help about voting
         description: Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions
       no_polls: "There are no open votings."
+      max_votes_reached: "You have already made the maximum number of votes. Thank you very much for participating"
+      descriptions:
+        unique: It's only possible to answer one time to the question.
+        multiple: Allows to choose multiple answers. It's possible to set the maximum number of answers.
+        prioritized: Allows to choose more than one answer and they will be prioritized. It's possible to set the maximum number of answers chosen and the answer count type.
+        positive_open: Allows to vote positively a maximum number of times to questions. It's possible to set the maximum number of answers and add other answers.
+        positive_negative_open:  Allows to vote positively and negatively a maximum number of times to questions. It's possible to set the maximum number of answers and add other answers.
+        answer_couples_open: Allows to vote a maximum number of times to couples of possible answers. It's possible to set the maximum number of couples and add other answers.
+        answer_couples_closed: Allows to vote a maximum number of times to couples of possible answers. It's possible to set the maximum number of couples and it's not possible to add other answers.
+        answer_set_open: Allows to vote a maximum number of answers to a group of them. It's possible to set the maximum number of answers, the size of the group and add other answers.
+        answer_set_closed: Allows to vote a maximum number of answers to a group of them. It's possible to set the maximum number of answers and the size of the group.
     show:
       already_voted_in_booth: "You have already participated in a physical booth. You can not participate again."
       already_voted_in_web: "You have already participated in this poll. If you vote again it will be overwritten."
@@ -668,7 +701,18 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
-      voted_token: "You can write down this vote identifier, to check your vote on the final results:"
+      add_answer: "Add answer"
+    description:
+      multiple: "You can select a maximum of %{maximum} answers."
+      positive_negative_open: "You can vote positive or negative a maximum of %{maximum} answers. And you can add your own answers."
+      answer_couples_open: "Choose an option from the following pair. You can choose a maximum of %{maximum} answers."
+      answer_couples_closed: "Choose an option from the following pair. You can choose a maximum of %{maximum} answers."
+      answer_set_open: "You can choose a maximum of %{maximum} answers."
+      answer_set_closed: "You can choose a maximum of %{maximum} answers."
+      prioritized: "You can select a maximum of %{maximum} answers. This question will use the %{system} system for count."
+      positive_open: "You can select a maximum of %{maximum} answers and add your own answers."
+      unique: ""
+    read_more_about: "Read more about:"
   proposal_notifications:
     new:
       title: "Send message"
@@ -705,6 +749,7 @@ en:
       to: "To"
     author_info:
       author_deleted: User deleted
+      email_deleted: Email deleted
     back: Go back
     check: Select
     check_all: All
@@ -759,7 +804,6 @@ en:
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"
     outline:
-      budget: Participatory budget
       searcher: Searcher
     go_to_page: "Go to page of "
     share: Share
@@ -775,6 +819,22 @@ en:
         title: Recommendations
         see_more: See more recommendations
         hide: Hide recommendations
+    download:
+      title: "Downloads"
+      link:
+        proposal: "Download proposals"
+        debate: "Download debates"
+        legislation_process: "Download legislation processes"
+        budget: "Download budgets"
+        investments: "Download projects"
+    translations:
+      select_language_prompt: Choose language
+      remove_language: Remove language
+      add_language: Add language
+      languages_in_use_html:
+        zero: "<span class='js-languages-count'>0</span> languages in use"
+        one: "<span class='js-languages-count'>1</span> language in use"
+        other: "<span class='js-languages-count'>%{count}</span> languages in use"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -782,54 +842,6 @@ en:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "If you propose in name of an assocation or collective add the name here"
-      association_name: "Association name"
-      description: Description
-      external_url: Link to additional documentation
-      geozone: Scope of operation
-      submit_buttons:
-        create: Create
-        new: Create
-      title: Spending proposal title
-    index:
-      title: Participatory budgeting
-      unfeasible: Unfeasible investment projects
-      by_geozone: "Investment projects with scope: %{geozone}"
-      search_form:
-        button: Search
-        placeholder: Investment projects...
-        title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
-      sidebar:
-        geozones: Scope of operation
-        feasibility: Feasibility
-        unfeasible: Unfeasible
-      start_spending_proposal: Create an investment project
-    new:
-      more_info: How do participatory budgeting works?
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
-      recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
-      recommendations_title: How to create a spending proposal
-      start_new: Create spending proposal
-    show:
-      author_deleted: User deleted
-      code: "Proposal code:"
-      share: Share
-    wrong_price_format: Only integer numbers
-    spending_proposal:
-      spending_proposal: Investment project
-      already_supported: You have already supported this. Share it!
-      support: Support
-      support_title: Support this project
-      supports:
-        one: 1 support
-        other: "%{count} supports"
-        zero: No supports
   stats:
     index:
       visits: Visits
@@ -912,12 +924,6 @@ en:
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
-    spending_proposals:
-      not_logged_in: You must %{signin} or %{signup} to continue.
-      not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organizations are not permitted to vote
-      unfeasible: Unfeasible investment projects can not be supported
-      not_voting_allowed: Voting phase is closed
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
@@ -1012,11 +1018,34 @@ en:
       url_placeholder: Link address
   communities:
     show:
-      send_notification: Send message to the community
-      author: Author
       surveys: Surveys
       complete_survey: Complete the survey
     subnav:
       surveys: Surveys
     poll:
       take_part: Take part from %{from} to %{to}
+  question:
+    max_votes: Maximum number of votes
+    max_group_answers: Maximum number of answers in the set
+    votation_type: Votation type
+  enum_type:
+    title: Votation type
+    unique: Unique answer, closed
+    multiple: Multiple answers, closed
+    prioritized: Multiple prioritized answer, closed
+    positive_open: Votable positive, open
+    positive_negative_open: Votable positive and negative, open
+    answer_couples_open: Couples of answers, open
+    answer_couples_closed: Couples of answers, closed
+    answer_set_open: Set of answers, open
+    answer_set_closed: Set of answers, closed
+  prioritization_type:
+    title: Prioritization type
+    borda: Borda votation
+    dowdall: Dowdall votation
+  remote_translations:
+    text: The content of this page is not available in your language
+    all_remote_translations_enqueued_text: In a short period of time refreshing the page you will be able to see all the content in your language.
+    create:
+      enqueue_remote_translation: Translations have been correctly requested.
+    button: Translate page

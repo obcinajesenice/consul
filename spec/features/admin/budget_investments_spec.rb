@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin budget investments" do
+describe "Admin budget investments" do
 
   let(:budget) { create(:budget) }
   let(:administrator) do
@@ -11,14 +11,20 @@ feature "Admin budget investments" do
                   :budget_investment,
                   "admin_budget_budget_investment_path"
 
-  background do
+  it_behaves_like "edit_translatable",
+                  :budget_investment,
+                  "edit_admin_budget_budget_investment_path",
+                  %w[title],
+                  { "description" => :ckeditor }
+
+  before do
     @admin = create(:administrator)
     login_as(@admin.user)
   end
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting["process.budgets"] = nil
     end
 
@@ -28,6 +34,34 @@ feature "Admin budget investments" do
 
     scenario "Disabled with a feature flag" do
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
+  end
+
+  context "Load" do
+
+    let(:group)      { create(:budget_group, budget: budget) }
+    let(:heading)    { create(:budget_heading, group: group) }
+    let!(:investment) { create(:budget_investment, heading: heading) }
+
+    before { budget.update(slug: "budget_slug") }
+
+    scenario "finds investments using budget slug" do
+      visit admin_budget_budget_investments_path("budget_slug")
+
+      expect(page).to have_link investment.title
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit admin_budget_budget_investments_path("wrong_budget", investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit admin_budget_budget_investments_path(0, investment)
+      end.to raise_error ActiveRecord::RecordNotFound
     end
 
   end
@@ -67,25 +101,26 @@ feature "Admin budget investments" do
       miriam = create(:user, username: "Miriam")
       valuator1 = create(:valuator, user: olga, description: "Valuator Olga")
       valuator2 = create(:valuator, user: miriam, description: "Valuator Miriam")
+      valuator_group = create(:valuator_group, name: "Health")
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
       budget_investment1.valuators << valuator1
       budget_investment2.valuators << valuator1
       budget_investment2.valuators << valuator2
+      budget_investment2.valuator_groups << valuator_group
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment1.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
-        expect(page).to have_content("No valuation groups assigned")
       end
 
       within("#budget_investment_#{budget_investment2.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
         expect(page).to have_content("Valuator Miriam")
-        expect(page).to have_content("No valuation groups assigned")
+        expect(page).to have_content("Health")
       end
 
       budget_investment3.update(administrator_id: admin.id)
@@ -149,8 +184,9 @@ feature "Admin budget investments" do
 
     scenario "Filtering by admin", :js do
       user = create(:user, username: "Admin 1")
+      user2 = create(:user, username: "Admin 2")
       administrator = create(:administrator, user: user)
-
+      create(:administrator, user: user2, description: "Alias")
       create(:budget_investment, title: "Realocate visitors", budget: budget,
                                                               administrator: administrator)
       create(:budget_investment, title: "Destroy the city", budget: budget)
@@ -165,6 +201,13 @@ feature "Admin budget investments" do
       expect(page).to have_content("There is 1 investment")
       expect(page).not_to have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
+
+      select "Alias", from: "administrator_id"
+      click_button "Filter"
+
+      expect(page).to have_content("There are no investment projects")
+      expect(page).not_to have_link("Destroy the city")
+      expect(page).not_to have_link("Realocate visitors")
 
       select "All administrators", from: "administrator_id"
       click_button "Filter"
@@ -788,39 +831,49 @@ feature "Admin budget investments" do
       create(:budget_investment, title: "Some other investment", budget: budget)
     end
 
-    background do
-      create(:budget_investment, title: "Some investment", budget: budget)
+    before do
+      I18n.with_locale(:es) do
+        Globalize.with_locale(:es) do
+          create(:budget_investment, title: "Proyecto de inversión", budget: budget)
+        end
+      end
     end
 
     scenario "Search investments by title" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Some investment"
+      fill_in "title_or_id", with: "Proyecto de inversión"
       click_button "Filter"
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).not_to have_content("Some other investment")
+
+      fill_in "title_or_id", with: "Some other investment"
+      click_button "Filter"
+
+      expect(page).not_to have_content("Proyecto de inversión")
+      expect(page).to have_content("Some other investment")
     end
 
     scenario "Search investments by ID" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
       fill_in "title_or_id", with: first_investment.id
       click_button "Filter"
 
       expect(page).to have_content("Some other investment")
-      expect(page).not_to have_content("Some investment")
+      expect(page).not_to have_content("Proyecto de inversión")
     end
   end
 
   context "Sorting" do
-    background do
+    before do
       create(:budget_investment, title: "B First Investment", budget: budget, cached_votes_up: 50)
       create(:budget_investment, title: "A Second Investment", budget: budget, cached_votes_up: 25)
       create(:budget_investment, title: "C Third Investment", budget: budget, cached_votes_up: 10)
@@ -962,12 +1015,11 @@ feature "Admin budget investments" do
 
       click_link budget_investment.title
 
+      expect(page).to have_content("Investment preview")
       expect(page).to have_content(budget_investment.title)
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("Without image")
-      expect(page).to have_content("Without documents")
       expect(page).to have_content("1234")
       expect(page).to have_content("1000")
       expect(page).to have_content("Unfeasible")
@@ -999,13 +1051,32 @@ feature "Admin budget investments" do
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("See image")
-      expect(page).to have_content("See documents (1)")
+      expect(page).to have_content("Investment preview")
+      expect(page).to have_content(budget_investment.image.title)
+      expect(page).to have_content("Documents (1)")
+      expect(page).to have_content(document.title)
+      expect(page).to have_content("Download file")
       expect(page).to have_content("1234")
       expect(page).to have_content("1000")
       expect(page).to have_content("Unfeasible")
       expect(page).to have_content("It is impossible")
       expect(page).to have_content("Ana (ana@admins.org)")
+    end
+
+    scenario "Not show related content or hide links on preview" do
+      budget_investment = create(:budget_investment,
+                                  price: 1234,
+                                  price_first_year: 1000,
+                                  feasibility: "unfeasible",
+                                  unfeasibility_explanation: "It is impossible",
+                                  administrator: administrator)
+
+      visit admin_budget_budget_investments_path(budget_investment.budget)
+
+      click_link budget_investment.title
+
+      expect(page).not_to have_content("Add related content")
+      expect(page).not_to have_content("Hide")
     end
 
     scenario "If budget is finished, investment cannot be edited or valuation comments created" do
@@ -1037,8 +1108,8 @@ feature "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: "Potatoes"
-      fill_in "budget_investment_description", with: "Carrots"
+      fill_in "Title", with: "Potatoes"
+      fill_in "Description", with: "Carrots"
       select "#{budget_investment.group.name}: Barbate", from: "budget_investment[heading_id]"
       uncheck "budget_investment_incompatible"
       check "budget_investment_selected"
@@ -1066,12 +1137,17 @@ feature "Admin budget investments" do
     scenario "Add administrator" do
       budget_investment = create(:budget_investment)
       user = create(:user, username: "Marta", email: "marta@admins.org")
-      create(:administrator, user: user)
+      create(:administrator, user: user, description: "Marta desc")
+
+      visit edit_admin_budget_path(budget_investment.budget)
+
+      check "administrator_#{user.id}"
+      click_button "Update Budget"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
-      select "Marta (marta@admins.org)", from: "budget_investment[administrator_id]"
+      select "Marta desc (marta@admins.org)", from: "budget_investment[administrator_id]"
       click_button "Update"
 
       expect(page).to have_content "Investment project updated succesfully."
@@ -1088,6 +1164,12 @@ feature "Admin budget investments" do
       valuator1 = create(:valuator, user: user1)
       valuator3 = create(:valuator, user: user3)
       create(:valuator, user: user2)
+
+      visit edit_admin_budget_path(budget_investment.budget)
+
+      check "valuator_#{user1.id}"
+      check "valuator_#{user3.id}"
+      click_button "Update Budget"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
@@ -1200,7 +1282,7 @@ feature "Admin budget investments" do
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      within("#user-tags") do
+      within("#tags_budget_investment_#{budget_investment.id}") do
         expect(page).not_to have_content "Education"
         expect(page).to have_content "Park"
       end
@@ -1213,10 +1295,11 @@ feature "Admin budget investments" do
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      within("#user-tags") do
+      within("#tags_budget_investment_#{budget_investment.id}") do
         expect(page).not_to have_content "Education"
         expect(page).not_to have_content "Environment"
-        expect(page).to have_content "Park, Trees"
+        expect(page).to have_content "Park"
+        expect(page).to have_content "Trees"
       end
 
       within("#tags") do
@@ -1288,11 +1371,28 @@ feature "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: ""
+      fill_in "Title", with: ""
 
       click_button "Update"
 
       expect(page).to have_content "can't be blank"
+    end
+
+    scenario "Add milestone tags" do
+      budget_investment = create(:budget_investment)
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      expect(page).not_to have_content("Milestone Tags:")
+
+      click_link "Edit classification"
+
+      fill_in "budget_investment_milestone_tag_list", with: "tag1, tag2"
+
+      click_button "Update"
+
+      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content("Milestone Tags: tag1, tag2")
     end
 
   end
@@ -1477,8 +1577,8 @@ feature "Admin budget investments" do
       end
     end
 
-    feature "Pagination" do
-      background { selected_bi.update(cached_votes_up: 50) }
+    describe "Pagination" do
+      before { selected_bi.update(cached_votes_up: 50) }
 
       scenario "After unselecting an investment", :js do
         create_list(:budget_investment, 30, budget: budget)
@@ -1655,20 +1755,11 @@ feature "Admin budget investments" do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Download current selection"
+      click_button "Download"
 
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"$/)
-
-      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
-                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
-                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,"\
-                     "#{first_investment.author.username}\n#{second_investment.id},"\
-                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
-                     "Unfeasible,No,No,No,#{second_investment.author.username}\n"
-      expect(page.body).to eq(csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do
@@ -1680,10 +1771,129 @@ feature "Admin budget investments" do
       check "Valuation finished"
       click_button "Filter"
 
-      click_link "Download current selection"
+      find(:css, "#downloadable_[value='title']").set(true)
+      click_button "Download"
 
       expect(page).to have_content("Finished Investment")
       expect(page).not_to have_content("Unfeasible one")
+    end
+  end
+
+  context "Columns chooser" do
+    let!(:investment) do
+      create(:budget_investment,
+              :winner,
+              budget: budget,
+              visible_to_valuators: true,
+              author: create(:user, username: "Jon Doe")
+            )
+    end
+    let(:default_columns) do
+      %w[id title supports admin valuator geozone feasibility price
+         valuation_finished visible_to_valuators selected]
+    end
+    let(:selectable_columns) do
+      %w[title supports admin author valuator geozone feasibility price
+         valuation_finished visible_to_valuators selected]
+    end
+
+    scenario "Display default columns", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("table.column-selecteable") do
+        default_columns.each do |default_column|
+          columns_header = I18n.t("admin.budget_investments.index.list.#{default_column}")
+          expect(page).to have_content(columns_header)
+        end
+
+        expect(page).to have_content(investment.title)
+      end
+    end
+
+    scenario "Display incompatible column as default if selected filter was set", :js do
+      visit admin_budget_budget_investments_path(budget, advanced_filters: ["selected"])
+
+      within("table.column-selecteable") do
+        expect(page).to have_content("Incompatible")
+      end
+
+      expect(page).to have_content(investment.title)
+    end
+
+    scenario "Set cookie with default columns value if undefined", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone," +
+        "feasibility,price,valuation_finished,visible_to_valuators,selected,incompatible")
+    end
+
+    scenario "Use column selector to display visible columns", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#js-columns-selector") do
+        find("strong", text: "Columns").click
+      end
+
+      within("#js-columns-selector-wrapper") do
+        selectable_columns.each do |column|
+          check_text = I18n.t("admin.budget_investments.index.list.#{column}")
+
+          expect(page).to have_content(check_text)
+        end
+      end
+
+      within("#js-columns-selector-wrapper") do
+        uncheck "Title"
+        uncheck "Price"
+        check "Author"
+      end
+
+      within("table.column-selecteable") do
+        expect(page).not_to have_content("Title")
+        expect(page).not_to have_content("Price")
+        expect(page).to have_content("Author")
+
+        expect(page).not_to have_content(investment.title)
+        expect(page).not_to have_content(investment.formatted_price)
+        expect(page).to have_content("Jon Doe")
+      end
+    end
+
+    scenario "Cookie will be updated after change columns selection", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#js-columns-selector") do
+        find("strong", text: "Columns").click
+      end
+
+      within("#js-columns-selector-wrapper") do
+        uncheck "Title"
+        uncheck "Price"
+        uncheck "Valuation Group / Valuator"
+        check "Author"
+      end
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,supports,admin,geozone," +
+        "feasibility,valuation_finished,visible_to_valuators,selected,incompatible,author")
+
+
+      visit admin_budget_budget_investments_path(budget)
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," +
+        "visible_to_valuators,selected,incompatible,author")
+
     end
   end
 

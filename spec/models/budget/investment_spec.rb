@@ -5,6 +5,10 @@ describe Budget::Investment do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "sanitizable"
+    it_behaves_like "globalizable", :budget_investment
+    it_behaves_like "acts as imageable", :budget_investment_image
+    it_behaves_like "acts as paranoid", :budget_investment
   end
 
   it "is valid" do
@@ -31,14 +35,6 @@ describe Budget::Investment do
       investment.title = "a" * 81
       expect(investment).not_to be_valid
     end
-  end
-
-  it_behaves_like "acts as imageable", "budget_investment_image"
-
-  it "sanitizes description" do
-    investment.description = "<script>alert('danger');</script>"
-    investment.valid?
-    expect(investment.description).to eq("alert('danger');")
   end
 
   it "set correct group and budget ids" do
@@ -382,6 +378,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "scoped_filter" do
+
+    let!(:budget)     { create(:budget, slug: "budget_slug") }
+    let!(:group)      { create(:budget_group, budget: budget) }
+    let!(:heading)    { create(:budget_heading, group: group) }
+    let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
+
+    it "finds budget by id or slug" do
+      result = described_class.scoped_filter({budget_id: budget.id}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+
+      result = described_class.scoped_filter({budget_id: "budget_slug"}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+    end
+
+    it "does not raise error if budget is not found" do
+      result = described_class.scoped_filter({budget_id: "wrong_budget"}, nil)
+      expect(result).to be_empty
+    end
+
+  end
+
   describe "scopes" do
     describe "valuation_open" do
       it "returns all investments with false valuation_finished" do
@@ -525,6 +545,53 @@ describe Budget::Investment do
         expect(described_class.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
       end
     end
+
+    describe "sort_by_title" do
+      it "sorts using the title in the current locale" do
+        create(:budget_investment, title_en: "CCCC", title_es: "BBBB", description_en: "CCCC", description_es: "BBBB")
+        create(:budget_investment, title_en: "DDDD", title_es: "AAAA", description_en: "DDDD", description_es: "AAAA")
+
+        expect(described_class.sort_by_title.map(&:title)).to eq %w[CCCC DDDD]
+      end
+
+      it "should take into consideration title fallbacks when there is no
+          translation for current locale" do
+        create(:budget_investment, title: "BBBB")
+        Globalize.with_locale(:es) do
+          I18n.with_locale(:es) do
+            create(:budget_investment, title: "AAAA")
+          end
+        end
+
+        expect(described_class.sort_by_title.map(&:title)).to eq %w[AAAA BBBB]
+      end
+    end
+
+    describe "search_by_title_or_id" do
+      before { create(:budget_investment) }
+
+      let!(:investment) do
+        I18n.with_locale(:es) do
+          Globalize.with_locale(:es) do
+            create(:budget_investment,
+              title_es: "Título del proyecto de inversión",
+              description_es: "Descripción del proyecto de inversión")
+          end
+        end
+      end
+
+      let(:all_investments) { described_class.all }
+
+      it "return investment by given id" do
+        expect(described_class.search_by_title_or_id(investment.id.to_s, all_investments)).
+          to eq([investment])
+      end
+
+      it "return investments by given title" do
+        expect(described_class.search_by_title_or_id("Título del proyecto de inversión", all_investments)).
+          to eq([investment])
+      end
+    end
   end
 
   describe "apply_filters_and_search" do
@@ -617,9 +684,20 @@ describe Budget::Investment do
 
     context "attributes" do
 
+      let(:attributes) { { title: "save the world",
+                           description: "in order to save the world one must think about...",
+                           title_es: "para salvar el mundo uno debe pensar en...",
+                           description_es: "uno debe pensar" } }
+
       it "searches by title" do
-        budget_investment = create(:budget_investment, title: "save the world")
+        budget_investment = create(:budget_investment, attributes)
         results = described_class.search("save the world")
+        expect(results).to eq([budget_investment])
+      end
+
+      it "searches by title across all languages" do
+        budget_investment = create(:budget_investment, attributes)
+        results = described_class.search("salvar el mundo")
         expect(results).to eq([budget_investment])
       end
 
@@ -1215,6 +1293,59 @@ describe Budget::Investment do
         create(:budget_investment, budget: budget)
         expect(described_class.scoped_filter(params, "all")).to eq([investment1])
         expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
+  end
+
+  describe "admin_and_valuator_users_associated" do
+    let(:investment) { create(:budget_investment) }
+    let(:valuator_group) { create(:valuator_group) }
+    let(:valuator) { create(:valuator) }
+    let(:administrator) { create(:administrator) }
+
+    it "returns empty array if not valuators or administrator assigned" do
+      expect(investment.admin_and_valuator_users_associated).to eq([])
+    end
+
+    it "returns all valuator and administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator])
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+    end
+
+    it "returns uniq valuators or administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      investment.valuators << valuator
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+
+    end
+  end
+
+  describe "milestone_tags" do
+    context "without milestone_tags" do
+      let(:investment) {create(:budget_investment)}
+
+      it "do not have milestone_tags" do
+        expect(investment.milestone_tag_list).to eq([])
+        expect(investment.milestone_tags).to eq([])
+      end
+
+      it "add a new milestone_tag" do
+        investment.milestone_tag_list = "tag1,tag2"
+
+        expect(investment.milestone_tag_list).to eq(["tag1", "tag2"])
+      end
+    end
+
+    context "with milestone_tags" do
+      let(:investment) {create(:budget_investment, :with_milestone_tags)}
+
+      it "has milestone_tags" do
+        expect(investment.milestone_tag_list.count).to eq(1)
       end
     end
   end

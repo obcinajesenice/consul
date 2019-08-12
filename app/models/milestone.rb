@@ -1,9 +1,6 @@
 class Milestone < ApplicationRecord
   include Imageable
   include Documentable
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
 
   translates :title, :description, touch: true
   include Globalizable
@@ -14,8 +11,6 @@ class Milestone < ApplicationRecord
 
   validates :milestoneable, presence: true
   validates :publication_date, presence: true
-
-  before_validation :assign_model_to_translations
   validates_translation :description, presence: true, unless: -> { status_id.present? }
 
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }

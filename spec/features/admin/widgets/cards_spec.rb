@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "Cards" do
+describe "Cards" do
 
-  background do
+  before do
     admin = create(:administrator).user
     login_as(admin)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "widget_card",
                   "edit_admin_widget_card_path",
                   %w[title description link_text label]
