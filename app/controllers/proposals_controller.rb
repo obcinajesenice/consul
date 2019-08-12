@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
   include ImageAttributes
+  include Translatable
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -37,7 +38,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-
     if @proposal.save
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
@@ -51,7 +51,9 @@ class ProposalsController < ApplicationController
     discard_draft
     discard_archived
     load_retired
+    load_selected
     load_featured
+    remove_archived_from_order_links
   end
 
   def vote
@@ -60,7 +62,7 @@ class ProposalsController < ApplicationController
   end
 
   def retire
-    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.current))
+    if @proposal.update(retired_params.merge(retired_at: Time.current))
       redirect_to proposal_path(@proposal), notice: t("proposals.notice.retired")
     else
       render action: :retire_form
@@ -96,22 +98,20 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :summary, :description, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service,
-                                       :geozone_id, :skip_map, image_attributes: image_attributes,
-                                       documents_attributes: [:id, :title, :attachment,
-                                       :cached_attachment, :user_id, :_destroy],
-                                       map_location_attributes: [:latitude, :longitude, :zoom])
+      attributes = [:video_url,:responsible_name, :tag_list,
+                    :terms_of_service, :geozone_id, :skip_map,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment,
+                                           :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
+      translations_attributes = translation_params(Proposal, except: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def retired_params
-      params.require(:proposal).permit(:retired_reason, :retired_explanation)
-    end
-
-    def valid_retired_params?
-      @proposal.errors.add(:retired_reason, I18n.t("errors.messages.blank")) if params[:proposal][:retired_reason].blank?
-      @proposal.errors.add(:retired_explanation, I18n.t("errors.messages.blank")) if params[:proposal][:retired_explanation].blank?
-      @proposal.errors.empty?
+      attributes = [:retired_reason]
+      translations_attributes = translation_params(Proposal, only: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def resource_model
@@ -127,7 +127,9 @@ class ProposalsController < ApplicationController
     end
 
     def discard_archived
-      @resources = @resources.not_archived unless @current_order == "archival_date"
+      unless @current_order == "archival_date" || params[:selected].present?
+        @resources = @resources.not_archived
+      end
     end
 
     def load_retired
@@ -136,6 +138,14 @@ class ProposalsController < ApplicationController
         @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
       else
         @resources = @resources.not_retired
+      end
+    end
+
+    def load_selected
+      if params[:selected].present?
+        @resources = @resources.selected
+      else
+        @resources = @resources.not_selected
       end
     end
 
@@ -149,6 +159,10 @@ class ProposalsController < ApplicationController
           @resources = @resources.where("proposals.id NOT IN (?)", @featured_proposals.map(&:id))
         end
       end
+    end
+
+    def remove_archived_from_order_links
+      @valid_orders.delete("archival_date")
     end
 
     def set_view

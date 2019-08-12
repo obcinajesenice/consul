@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin Budgets" do
+describe "Admin Budgets" do
 
-  background do
+  before do
     admin = create(:administrator).user
     login_as(admin)
   end
@@ -22,6 +22,24 @@ feature "Admin Budgets" do
       expect(page).to have_content(budget.name)
       expect(page).to have_content(balloting_phase.starts_at.to_date)
       expect(page).to have_content(balloting_phase.ends_at.to_date)
+
+      expect(Poll.count).to eq(1)
+      expect(Poll.last.budget).to eq(budget)
+    end
+
+    scenario "Create poll in current locale if the budget does not have a poll associated", :js do
+      budget = create(:budget,
+                      name_en: "Budget for climate change",
+                      name_fr: "Budget pour le changement climatique")
+
+
+      visit admin_budgets_path
+      select("Français", from: "locale-switcher")
+
+      click_link "Bulletins de l’admin"
+
+      expect(current_path).to match(/admin\/polls\/\d+/)
+      expect(page).to have_content("Budget pour le changement climatique")
 
       expect(Poll.count).to eq(1)
       expect(Poll.last.budget).to eq(budget)

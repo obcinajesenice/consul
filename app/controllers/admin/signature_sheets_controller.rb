@@ -21,12 +21,13 @@ class Admin::SignatureSheetsController < Admin::BaseController
 
   def show
     @signature_sheet = SignatureSheet.find(params[:id])
+    @voted_signatures = Vote.where(signature: @signature_sheet.signatures.verified).count
   end
 
   private
 
     def signature_sheet_params
-      params.require(:signature_sheet).permit(:signable_type, :signable_id, :document_numbers)
+      params.require(:signature_sheet).permit(:signable_type, :signable_id, :required_fields_to_verify)
     end
 
 end

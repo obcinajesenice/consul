@@ -6,10 +6,12 @@ module Budgets
     include FlagActions
     include RandomSeed
     include ImageAttributes
+    include Translatable
 
     PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
+    before_action :load_budget, except: :json_data
 
     load_and_authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
@@ -47,6 +49,7 @@ module Budgets
 
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+      @remote_translations = detect_remote_translations(@investments)
     end
 
     def new
@@ -59,6 +62,7 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
+      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
 
     def create
@@ -121,12 +125,12 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment)
-              .permit(:title, :description, :heading_id, :tag_list,
+        attributes = [:heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom])
+                      map_location_attributes: [:latitude, :longitude, :zoom]]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end
 
       def load_ballot
@@ -136,7 +140,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
           load_map
         end
@@ -152,6 +156,10 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def load_budget
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
       end
 
       def set_view

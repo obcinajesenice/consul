@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "Admin Active polls" do
+describe "Admin Active polls" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "active_poll",
                   "edit_admin_active_polls_path",
                   [],

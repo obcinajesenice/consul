@@ -25,16 +25,12 @@ module AdminHelper
   end
 
   def moderated_sections
-    ["hidden_proposals", "debates", "comments", "hidden_users", "activity",
+    ["hidden_proposals", "hidden_debates", "hidden_comments", "hidden_users", "activity",
      "hidden_budget_investments"]
   end
 
   def menu_budgets?
     controller_name.starts_with?("budget")
-  end
-
-  def menu_budget?
-    ["spending_proposals"].include?(controller_name)
   end
 
   def menu_polls?
@@ -51,8 +47,10 @@ module AdminHelper
   end
 
   def menu_settings?
-    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name) &&
-    controller.class.parent != Admin::Poll::Questions::Answers
+    controllers_names = ["settings", "tags", "geozones", "images", "content_blocks",
+      "local_census_records", "imports"]
+    controllers_names.include?(controller_name) &&
+      controller.class.parent != Admin::Poll::Questions::Answers
   end
 
   def menu_customization?
@@ -72,6 +70,11 @@ module AdminHelper
     ["actions", "administrator_tasks"].include?(controller_name)
   end
 
+  def submenu_local_census_records?
+    controller_name == "local_census_records" ||
+    (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|
@@ -81,7 +84,9 @@ module AdminHelper
   end
 
   def admin_select_options
-    Administrator.all.order("users.username asc").includes(:user).collect { |v| [ v.name, v.id ] }
+    Administrator.with_user
+                 .collect { |v| [ v.description_or_name, v.id ] }
+                 .sort_by { |a| a[0] }
   end
 
   def admin_submit_action(resource)

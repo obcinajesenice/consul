@@ -14,9 +14,8 @@ module Abilities
         poll.expired? && poll.stats_enabled?
       end
       can :read, Poll::Question
-      can [:read, :welcome], Budget
-      can :read, SpendingProposal
       can :read, User
+      can [:read, :welcome], Budget
       can [:read], Budget
       can [:read], Budget::Group
       can [:read, :print, :json_data], Budget::Investment
@@ -26,6 +25,9 @@ module Abilities
       can :new, DirectMessage
       can [:read, :debate, :draft_publication, :allegations, :result_publication,
            :proposals, :milestones], Legislation::Process, published: true
+      can :resume, Legislation::Process do |process|
+        process.past?
+      end
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:read, :map, :share], Legislation::Proposal

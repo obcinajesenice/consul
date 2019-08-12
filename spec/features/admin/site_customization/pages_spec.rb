@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "Admin custom pages" do
+describe "Admin custom pages" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "site_customization_page",
                   "edit_admin_site_customization_page_path",
                   %w[title subtitle],

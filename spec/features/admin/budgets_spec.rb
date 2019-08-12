@@ -1,25 +1,48 @@
 require "rails_helper"
 
-feature "Admin budgets" do
+describe "Admin budgets" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "budget",
                   "edit_admin_budget_path",
                   %w[name]
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting["process.budgets"] = nil
     end
 
     scenario "Disabled with a feature flag" do
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
+  end
+
+  context "Load" do
+
+    let!(:budget) { create(:budget, slug: "budget_slug") }
+
+    scenario "finds budget by slug" do
+      visit admin_budget_path("budget_slug")
+      expect(page).to have_content(budget.name)
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit admin_budget_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit admin_budget_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
     end
 
   end
@@ -204,7 +227,7 @@ feature "Admin budgets" do
 
       visit edit_admin_budget_path(budget)
 
-      select "Español", from: "translation_locale"
+      select "Español", from: :add_language
       fill_in "Name", with: "Spanish name"
       click_button "Update Budget"
 
@@ -213,7 +236,7 @@ feature "Admin budgets" do
 
       visit edit_admin_budget_path(budget)
 
-      click_link "English"
+      select "English", from: :select_language
       fill_in "Name", with: "New English Name"
       click_button "Update Budget"
 
@@ -226,7 +249,7 @@ feature "Admin budgets" do
 
   context "Update" do
 
-    background do
+    before do
       create(:budget)
     end
 
