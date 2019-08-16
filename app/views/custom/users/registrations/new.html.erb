@@ -32,6 +32,12 @@
 
       <%= f.email_field :email, placeholder: t("devise_views.users.registrations.new.email_label") %>
 
+      <!-- PERSONAL DATA SUBMISSION -->
+      <%= f.text_field :phone, label: t('custom.forms.phone') %>
+
+      <%= f.text_area :address, label: t('custom.form.address') %>
+      <!-- END PERSONAL DATA SUBMISSION -->
+
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.users.registrations.new.password_label") %>
 

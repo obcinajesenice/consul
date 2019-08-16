@@ -6,6 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:username, :email, :password,
                                  :password_confirmation, :terms_of_service, :locale,
                                  :document_type, :document_number,
-                                 :redeemable_code)
+                                 :redeemable_code, :phone, :address)
   end
 end
