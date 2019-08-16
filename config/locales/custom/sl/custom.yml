@@ -27,6 +27,7 @@ sl:
       balloting: Glasuj
       reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
+      select_heading: Izberi območje
     titles:
       added_proposals: Oddani predlogi
       finished_proposals: Izglasovani predlogi
