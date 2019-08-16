@@ -44,7 +44,7 @@
           <!-- <div class="callout success">
             <strong><%= t("budgets.investments.show.project_winner") %></strong>
           </div> -->
-        <% elsif not investment.winner? %>
+        <% elsif @budget.finished? and not investment.winner? %>
           <div class="callout warning">
             <%= t("custom.messages.loser") %>
           </div>

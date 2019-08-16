@@ -15,6 +15,10 @@ sl:
     meta:
       place_name: Mestna občina Koper
       guiding_questions: '<p><em>Katero temo, težavo oz. izziv naslavlja predlog?</em></p><p>&nbsp;</p><p><em>Kaj je treba storiti?</em></p><p>&nbsp;</p><p><em>Kje naj se predlagani projekt izvaja?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana cena izvedbe projekta?</em></p><p>&nbsp;</p><p><em>Kaj bo po izvedbi projekta v naši občini drugače?</em></p><p>&nbsp;</p>'
+    social:
+      fb_desc: Predlagam odločam - Participativni proračun Mestne občine Koper
+      tw_desc: "Predlagam odločam - Participativni proračun Mestne občine Koper: "
+      email_desc: Oglej si predlog proračunske naložbe v projektu Predlagam odločam - Participativni proračun Mestne občine Koper
     headings:
       drafting: Osnutek (skrito javnosti)
       informing: Informiranje
@@ -26,6 +30,7 @@ sl:
       balloting: Glasuj
       reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
+      select_heading: Izberi območje
     titles:
       added_proposals: Oddani predlogi
       finished_proposals: Izglasovani predlogi

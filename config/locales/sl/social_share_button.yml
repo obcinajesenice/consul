@@ -1,6 +1,6 @@
 sl:
   social_share_button:
-    share_to: "Deli z %{name}"
+    share_to: "%{name}"
     weibo: "Deli na Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
