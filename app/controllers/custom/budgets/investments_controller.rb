@@ -12,7 +12,7 @@ module Budgets
     def index
       @investments_count = investments.count
       @investments = investments.page(params[:page]).per(21).for_render
-      @denied_investments = Budget::Investment.where('selected = false OR feasibility = ? OR winner = false', 'unfeasible')
+      @denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible').page(params[:page]).per(21).for_render
       # @denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)

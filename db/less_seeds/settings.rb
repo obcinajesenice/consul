@@ -17,32 +17,32 @@ section "Creating Settings" do
   Setting.create(key: 'months_to_archive_proposals', value: '12')
   Setting.create(key: 'comments_body_max_length', value: '1000')
 
-  Setting.create(key: 'twitter_handle', value: '@consul_dev')
-  Setting.create(key: 'twitter_hashtag', value: '#consul_dev')
-  Setting.create(key: 'facebook_handle', value: 'CONSUL')
-  Setting.create(key: 'youtube_handle', value: 'CONSUL')
-  Setting.create(key: 'telegram_handle', value: 'CONSUL')
-  Setting.create(key: 'instagram_handle', value: 'CONSUL')
-  Setting.create(key: 'blog_url', value: '/blog')
-  Setting.create(key: 'url', value: 'http://localhost:3000')
+  Setting.create(key: 'twitter_handle', value: '')
+  Setting.create(key: 'twitter_hashtag', value: '')
+  Setting.create(key: 'facebook_handle', value: '')
+  Setting.create(key: 'youtube_handle', value: '')
+  Setting.create(key: 'telegram_handle', value: '')
+  Setting.create(key: 'instagram_handle', value: '')
+  Setting.create(key: 'blog_url', value: '')
+  Setting.create(key: 'url', value: '')
   Setting.create(key: 'org_name', value: 'Participativni proračun')
-  Setting.create(key: 'place_name', value: 'Testno Mesto')
+  Setting.create(key: 'place_name', value: I18n.t('custom.meta.place_name'))
 
-  Setting.create(key: 'feature.debates', value: "false")
-  Setting.create(key: 'feature.proposals', value: "true")
-  Setting.create(key: 'feature.polls', value: "false")
-  Setting.create(key: 'feature.spending_proposals', value: nil)
-  Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
+  Setting.create(key: 'feature.debates', value: false)
+  Setting.create(key: 'feature.proposals', value: false)
+  Setting.create(key: 'feature.polls', value: false)
+  Setting.create(key: 'feature.spending_proposals', value: false)
+  Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: false)
   Setting.create(key: 'feature.budgets', value: "true")
-  Setting.create(key: 'feature.twitter_login', value: "true")
-  Setting.create(key: 'feature.facebook_login', value: "true")
-  Setting.create(key: 'feature.google_login', value: "true")
-  Setting.create(key: 'feature.signature_sheets', value: "true")
-  Setting.create(key: 'feature.legislation', value: "false")
-  Setting.create(key: 'feature.user.recommendations', value: "true")
-  Setting.create(key: 'feature.user.recommendations_on_debates', value: "true")
-  Setting.create(key: 'feature.user.recommendations_on_proposals', value: "true")
-  Setting.create(key: 'feature.community', value: "true")
+  Setting.create(key: 'feature.twitter_login', value: false)
+  Setting.create(key: 'feature.facebook_login', value: false)
+  Setting.create(key: 'feature.google_login', value: false)
+  Setting.create(key: 'feature.signature_sheets', value: false)
+  Setting.create(key: 'feature.legislation', value: false)
+  Setting.create(key: 'feature.user.recommendations', value: false)
+  Setting.create(key: 'feature.user.recommendations_on_debates', value: false)
+  Setting.create(key: 'feature.user.recommendations_on_proposals', value: false)
+  Setting.create(key: 'feature.community', value: false)
   Setting.create(key: 'feature.map', value: "true")
   Setting.create(key: 'feature.allow_images', value: "true")
   Setting.create(key: 'feature.allow_attached_documents', value: "true")
@@ -55,11 +55,10 @@ section "Creating Settings" do
   Setting.create(key: 'comments_body_max_length', value: '1000')
   Setting.create(key: 'mailer_from_name', value: 'CONSUL')
   Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
-  Setting.create(key: 'meta_title', value: 'CONSUL')
-  Setting.create(key: 'meta_description', value: 'Citizen participation tool for an open, '\
-                                                 'transparent and democratic government')
+  Setting.create(key: 'meta_title', value: 'Participativni proračun')
+  Setting.create(key: 'meta_description', value: '')
   Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
-  Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
+  Setting.create(key: 'verification_offices_url', value: '')
   Setting.create(key: 'min_age_to_participate', value: '16')
   Setting.create(key: 'proposal_improvement_path', value: nil)
   Setting.create(key: 'map_latitude', value: 46.06)
@@ -70,7 +69,21 @@ section "Creating Settings" do
 
   # // TODO: logo_header
 
-  Setting['feature.homepage.widgets.feeds.proposals'] = true
-  Setting['feature.homepage.widgets.feeds.debates'] = true
-  Setting['feature.homepage.widgets.feeds.processes'] = true
+  Setting['feature.homepage.widgets.feeds.proposals'] = false
+  Setting['feature.homepage.widgets.feeds.debates'] = false
+  Setting['feature.homepage.widgets.feeds.processes'] = false
+  Setting['feature.twitter_login'] = false
+  Setting['feature.facebook_login'] = false
+  Setting['feature.google_login'] = false
+  Setting['feature.debates'] = false
+  Setting['feature.proposals'] = false
+  Setting['feature.polls'] = false
+  Setting['feature.spending_proposals'] = false
+  Setting['feature.spending_proposal_features.voting_allowed'] = false
+  Setting['feature.signature_sheets'] = false
+  Setting['feature.legislation'] = false
+  Setting['feature.user.recommendations'] = false
+  Setting['feature.user.recommendations_on_debates'] = false
+  Setting['feature.user.recommendations_on_proposals'] = false
+  Setting['feature.community'] = false
 end

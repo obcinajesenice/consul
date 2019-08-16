@@ -1,17 +1,15 @@
 <header>
   <div class="row">
     <div class="top-bar">
-
       <div class="site-title-holder">
         <%= link_to root_path, accesskey: "0", class: 'site-title' do %>
-          <span class="site-name"><%= t("layouts.header.budgets") %></span>&nbsp;/&nbsp;<span class="place-name"><%= setting['place_name'] %></span>
+          <span class="site-name"><%= t("custom.meta.pp_name") %></span>&nbsp;/&nbsp;<span class="place-name"><%= t('custom.meta.place_name') %></span>
         <% end %>
       </div>
 
       <div class="language-picker">
         <%= render "shared/locale_switcher" %>
       </div>
-
     </div>
   </div>
 </header>

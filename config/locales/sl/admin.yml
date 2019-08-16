@@ -90,7 +90,7 @@ sl:
         dates: Datumi
         enabled: Omogočeno
         actions: Dejanja
-        edit_phase: Faza urejanja
+        edit_phase: Uredi fazo
         active: Aktiven
         blank_dates: Datum je prazen
       destroy:

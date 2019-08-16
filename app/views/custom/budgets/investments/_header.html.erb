@@ -21,10 +21,14 @@
           <%= t("custom.headings.#{current_budget.phase}") %>
         </h1>
         <h2>
-          <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% if current_budget.current_phase.summary %>
+            <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% end %>
         </h2>
         <p class="large-description">
-          <%= strip_tags(current_budget.current_phase.description.html_safe) %>
+          <% if current_budget.current_phase.summary %>
+            <%= strip_tags(current_budget.current_phase.description.html_safe) %>
+          <% end %>
         </p>
         <% if current_budget.phase == 'accepting' %>
           <% if current_user %>
@@ -98,7 +102,7 @@
                       <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
                       <br>
                       <small>
-                        <%= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
+                        <%= t("budgets.investments.header.change_ballot", heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
                       </small>
                     </div>
                   </div>

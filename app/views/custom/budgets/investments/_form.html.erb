@@ -11,7 +11,7 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, value: t("custom.meta.guiding_questions").html_safe %>
     </div>
 
     <% if feature?(:allow_images) %>

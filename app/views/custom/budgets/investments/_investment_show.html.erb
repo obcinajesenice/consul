@@ -18,7 +18,8 @@
     <div class="row">
       <div class="small-12 medium-7 medium-centered">
 
-        <% if current_budget.phase == 'reviewing' %>
+        <% if current_budget.phase == 'accepting' %>
+        <% elsif current_budget.phase == 'reviewing' %>
           <div class="callout warning">
             <%= t("custom.messages.finished_accepting") %>
           </div>
@@ -59,6 +60,7 @@
 
         <h1><%= investment.title %></h1>
         <div class="budget-investment-info">
+          
           <%= render '/shared/author_info', resource: investment %>
 
           <span class="bullet">&nbsp;&ndash;&nbsp;</span>

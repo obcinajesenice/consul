@@ -992,6 +992,11 @@ footer {
       background: image-url('municipalities/hrpelje_kozina.png') no-repeat;
       background-size: 175px 61px;
     }
+
+    &.koper {
+      background: image-url('municipalities/koper.png') no-repeat;
+      background-size: 107px 61px; /* 344px 196px; */
+    }
   }
 
   .footer-links {
@@ -1083,6 +1088,22 @@ footer {
 
 // 06. Forms
 // ---------
+
+.language-picker {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  .language-picker  {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 8px;
+  }
+}
 
 .locale-form {
   display: inline-block;
