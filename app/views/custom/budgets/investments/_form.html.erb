@@ -13,6 +13,10 @@
     <div class="ckeditor small-12 column">
       <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, value: t("custom.meta.guiding_questions").html_safe %>
     </div>
+    <div class="small-12 column">
+      <%= f.label :price, t("budgets.investments.show.price") %>
+      <%= f.number_field :price, label: '&nbsp;(€)' %>
+    </div>
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
@@ -74,6 +78,18 @@
                        class: 'js-tag-list tag-autocomplete',
                        data: { js_url: suggest_tags_path } %>
     </div>
+
+    <!-- ANONYMOUS SUBMISSION -->
+    <div class="small-12 column">
+      <%= f.label :is_anonymous do %>
+        <%= f.check_box :is_anonymous, title: t('custom.form.submit_anonymously'), label: false %>
+        <span class="checkbox">
+          <%= t("custom.form.submit_anonymously") %>
+        </span>
+      <% end %>
+      <p><%= t('custom.form.submit_anonymously_explanation') %></p>
+    </div>
+    <!-- end anonymous submission -->
 
     <% unless current_user.manager? %>
 
