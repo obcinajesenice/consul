@@ -102,7 +102,7 @@
                       <%= t("budgets.investments.header.different_heading_assigned_html", heading_link: heading_link(@assigned_heading, @budget)) %>
                       <br>
                       <small>
-                        <%= t("budgets.investments.header.change_ballot", check_ballot: link_to(t("budgets.investments.header.check_ballot_link"), budget_ballot_path(@budget))).html_safe %>
+                        <%= t("budgets.investments.header.change_ballot", heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
                       </small>
                     </div>
                   </div>
