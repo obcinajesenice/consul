@@ -60,7 +60,7 @@
                   <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
                 <% end %>
 
-                <div>
+                <div style="position: relative;">
                   <%= render 'budgets/investments/categories' %>
                   <% if @budget.headings.count > 1 %>
                     <%= render 'budgets/investments/districts' %>

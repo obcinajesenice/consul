@@ -14,15 +14,13 @@
         <%= link_to budget_investments_path(@budget), class: 'back' do %>
           <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
         <% end %>
-        <h3><%= t("proposals.new.recommendations_title") %></h3>
+        <h3><%= t("custom.headings.instructions") %></h3>
         <ul class="custom-list recommendations">
-          <li><%= t("proposals.new.recommendation_one") %></li>
-          <li><%= t("proposals.new.recommendation_two") %></li>
-          <li><%= t("proposals.new.recommendation_three") %></li>
-          <li><%= t("proposals.new.recommendation_four") %></li>
-          <li><%= t("proposals.new.recommendation_five") %></li>
-          <li><%= t("proposals.new.recommendation_six") %></li>
-          <li><%= t("proposals.new.recommendation_seven") %></li>
+          <%= t('custom.headings.instructions_description').html_safe %>
+        </ul>
+        <h3><%= t("custom.headings.headings") %></h3>
+        <ul class="custom-list recommendations">
+          <%= t('custom.headings.headings_sidebar').html_safe %>
         </ul>
       </div>
     </div>

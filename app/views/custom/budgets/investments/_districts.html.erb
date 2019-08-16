@@ -1,7 +1,52 @@
-<select onchange="if (this.value) location = this.value;" class="on-view">
-  <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:heading_id)) %>"><%= t("custom.headings.select_heading").mb_chars.upcase %></option>
-  <% @budget.headings.order('id ASC').each do |heading| %>
+<div class="districts-container">
+  <select onchange="if (this.value) location = this.value;" class="on-view">
+    <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:heading_id)) %>"><%= t("custom.headings.select_heading").mb_chars.upcase %></option>
+    <% @budget.headings.order('id ASC').each do |heading| %>
     <%= selected = ' selected' if params[:heading_id] == heading.to_param %>
     <option value="<%= budget_investments_url(@budget, request.query_parameters.merge({ heading_id: heading.to_param })) %>" <%= selected %>><%= heading.name %></option>
-  <% end %>
-</select>
+    <% end %>
+  </select>
+  <div class="districts-info">
+    <ul>
+      <li>
+        <h4>Območje 1:</h4>Krajevne skupnosti: Koper–center, Olmo–Prisoje, Škocjan, Semedela, Žusterna, Za gradom
+      </li>
+      <li>
+        <h4>Območje 2:</h4>Krajevne skupnosti: Škofije, Hrvatini, Bertoki, Sv. Anton, Pobegi–Čežarji, Dekani
+      </li>
+      <li>
+        <h4>Območje 3:</h4>Krajevne skupnosti: Šmarje, Marezige, Vanganel, Boršt
+      </li>
+      <li>
+        <h4>Območje 4:</h4>Krajevne skupnosti: Črni kal, Gračišče, Gradin, Podgorje, Rakitovec, Zazid
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+.districts-container {
+  position: relative;
+  display: inline-block;
+}
+.districts-info {
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
+  margin: 10px;
+  top: 40px;
+  left: -9px;
+  width: 300px;
+  display: none;
+}
+.districts-container:hover .districts-info {
+  display: block;
+}
+@media (max-width: 757px) {
+  .districts-info {
+    left: 0;
+  }
+}
+</style>

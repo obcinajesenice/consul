@@ -31,8 +31,12 @@ sl:
       balloting: Glasuj
       reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
+      headings: Območja
+      headings_sidebar: "<li><h4>Območje 1:</h4>Krajevne skupnosti: Koper–center, Olmo–Prisoje, Škocjan, Semedela, Žusterna, Za gradom</li><li><h4>Območje 2:</h4>Krajevne skupnosti: Škofije, Hrvatini, Bertoki, Sv. Anton, Pobegi–Čežarji, Dekani</li><li><h4>Območje 3:</h4>Krajevne skupnosti: Šmarje, Marezige, Vanganel, Boršt</li><li><h4>Območje 4:</h4>Krajevne skupnosti: Črni kal, Gračišče, Gradin, Podgorje, Rakitovec, Zazid</li>"
       select_heading: Izberi območje
       select_heading_to_vote: Da lahko glasuješ za projekte, moraš izbrati območje.
+      instructions: "Projektni predlog mora izpolnjevati naslednje pogoje:"
+      instructions_description: "<li>Je skladen z zakonodajo in veljavnimi občinskimi akti.</li><li>Je takšen, da je izvedba v okviru zakonskih pristojnosti MOK.</li><li>Je namenjen splošni javni uporabi.</li><li>Ni že uvrščen v proračun občine oz. načrt razvojnih programov.</li><li>V preteklih 5-ih letih ni bil financiran/sofinanciran iz proračuna MOK.</li><li>Je finančno ovrednoten med 5.000,00 EUR in 20.000,00 EUR z vključenim DDV. </li><li>Ne ustreza pogojem za sofinanciranje iz sredstev, ki jih predlagatelji lahko pridobijo iz javnih razpisov MOK.</li><li>Je umeščen v enega od 4. območij občine, opredeljenih za participativni proračun.</li><li>Je realno izvedljiv v proračunskem letu 2020.</li>"
     titles:
       added_proposals: Oddani predlogi
       selected_proposals: Izbrani predlogi
