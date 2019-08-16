@@ -7,7 +7,7 @@
   <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']} #{setting['twitter_handle']}",
                               url: local_assigns[:url],
                               image: local_assigns.fetch(:image_url, ''),
-                              desc: description,
-                              'data-twitter-title': local_assigns[:mobile],
-                              'data-telegram-title': local_assigns[:mobile])%>
+                              desc: t('custom.social.fb_desc'),
+                              'data-twitter-title': t('custom.social.tw_desc') + title,
+                              'data-email-title': t('custom.social.email_desc'))%>
 </div>
