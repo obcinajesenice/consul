@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<% if @heading %>
+<% if @heading && current_budget.phase == 'balloting' %>
   <div class="bgfaf" id="bgfaf">
     <div class="main-indented-content">
       <section class="no-margin-top margin-bottom">
