@@ -13,6 +13,7 @@ sl:
     password: geslo
   custom:
     meta:
+      pp_name: Predlagam - odločam
       place_name: Mestna občina Koper
       guiding_questions: '<p><em>Katero temo, težavo oz. izziv naslavlja predlog?</em></p><p>&nbsp;</p><p><em>Kaj je treba storiti?</em></p><p>&nbsp;</p><p><em>Kje naj se predlagani projekt izvaja?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana cena izvedbe projekta?</em></p><p>&nbsp;</p><p><em>Kaj bo po izvedbi projekta v naši občini drugače?</em></p><p>&nbsp;</p>'
     social:
