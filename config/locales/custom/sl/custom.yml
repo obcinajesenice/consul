@@ -33,6 +33,7 @@ sl:
       select_heading: Izberi območje
     titles:
       added_proposals: Oddani predlogi
+      selected_proposals: Izbrani predlogi
       finished_proposals: Izglasovani predlogi
       denied_proposals: Neizbrani predlogi
       register_with: Za registracijo izpolni ta obrazec

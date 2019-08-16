@@ -49,6 +49,8 @@
                 <h2 class="phase-title">
                   <% if phase.kind == :finished %>
                     <%= t('custom.titles.finished_proposals') %> (<%= @investments_count %>)
+                  <% elsif phase.kind == :balloting %>
+                    <%= t('custom.titles.selected_proposals') %> (<%= @investments_count %>)
                   <% else %>
                     <%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)
                   <% end %>
