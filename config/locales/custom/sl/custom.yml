@@ -31,6 +31,7 @@ sl:
       reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
       select_heading: Izberi območje
+      select_heading_to_vote: Da lahko glasuješ za projekte, moraš izbrati območje.
     titles:
       added_proposals: Oddani predlogi
       selected_proposals: Izbrani predlogi
