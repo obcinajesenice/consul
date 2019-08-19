@@ -25,7 +25,11 @@
               <h2><%= strip_tags(phase.summary) %></h2>
               <% unless phase.url %>
                 <div class="abtom4">
-                  <p class="large-description"><%= strip_tags(phase.description) %></p>
+                  <% if phase.description %>
+                    <div class="large-description"><%= phase.description.html_safe %></div>
+                  <% else %>
+                    <p class="large-description">&nbsp;</p>
+                  <% end %>
                 </div>
               <% end %>
               <% if phase.url %>

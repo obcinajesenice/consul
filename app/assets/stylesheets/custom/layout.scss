@@ -272,7 +272,8 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
-.large-description {
+.large-description,
+.large-description p, {
   font-size: $large-font-size;
 }
 
