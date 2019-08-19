@@ -92,7 +92,7 @@ sl:
       print:
         print_button: Natisni
     budgets:
-      create_new_investment: Nova proračunska naložba
+      create_new_investment: Oddaj
       print_investments: Natisni proračunske naložbe
       support_investments: Podpri proračunske naložbe
     budget_investments:
