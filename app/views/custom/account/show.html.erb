@@ -81,6 +81,7 @@
             <div class="tabs-panel is-active pad-t-60" id="tab-notifications">
               <div class="small-12 medium-10">
                 <% if @account.email.present? %>
+                  <!-- REMOVE COMMENT-RELATED CHECKBOXES
                   <div>
                     <%= f.label :email_on_comment do %>
                       <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
@@ -98,6 +99,7 @@
                 </span>
                     <% end %>
                   </div>
+                  END REMOVE COMMENT-RELATED CHECKBOXES -->
 
                   <div>
                     <%= f.label :newsletter do %>
