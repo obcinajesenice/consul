@@ -55,6 +55,7 @@ sl:
       submit_anonymously_explanation: S potrditvijo te zahteve se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani.
       phone: Telefonska številka
       address: Naslov
+      name_and_last_name: Ime in priimek
     presentation:
       accepting:
         title_1: Kakšen je proračun?
