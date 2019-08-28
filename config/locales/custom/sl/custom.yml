@@ -15,7 +15,7 @@ sl:
     meta:
       pp_name: Predlagam - odločam
       place_name: Mestna občina Koper
-      guiding_questions: '<p><em>Katero temo, težavo oz. izziv naslavlja predlog?</em></p><p>&nbsp;</p><p><em>Kaj je treba storiti?</em></p><p>&nbsp;</p><p><em>Kje naj se predlagani projekt izvaja?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana cena izvedbe projekta?</em></p><p>&nbsp;</p><p><em>Kaj bo po izvedbi projekta v naši občini drugače?</em></p><p>&nbsp;</p>'
+      guiding_questions: '<p><em>Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?</em></p><p>&nbsp;</p><p><em>Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?</em></p><p>&nbsp;</p><p><em>Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?</em></p><p>&nbsp;</p><p><em>Kje konkretno naj bi se projekt izvajal?</em></p><p>&nbsp;</p><p><em>Časovni okvir: kdaj naj bi se projekt izvedel?</em></p><p>&nbsp;</p><p><em>Kaj bi se po izvedbi projekta spremenilo, izboljšalo?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana vrednost (cena) predlaganega projekta?</em></p>'
     social:
       fb_desc: Predlagam odločam - Participativni proračun Mestne občine Koper
       tw_desc: "Predlagam odločam - Participativni proračun Mestne občine Koper: "
@@ -32,11 +32,11 @@ sl:
       reviewing_ballots: Pregled glasovanj
       finished: Spremljaj
       headings: Območja
-      headings_sidebar: "<li><h4>Območje 1:</h4>Krajevne skupnosti: Koper–center, Olmo–Prisoje, Škocjan, Semedela, Žusterna, Za gradom</li><li><h4>Območje 2:</h4>Krajevne skupnosti: Škofije, Hrvatini, Bertoki, Sv. Anton, Pobegi–Čežarji, Dekani</li><li><h4>Območje 3:</h4>Krajevne skupnosti: Šmarje, Marezige, Vanganel, Boršt</li><li><h4>Območje 4:</h4>Krajevne skupnosti: Črni kal, Gračišče, Gradin, Podgorje, Rakitovec, Zazid</li>"
+      headings_sidebar: "<li><h4>Območje 1:</h4>Krajevne skupnosti: Koper – center, Olmo - Prisoje, Semedela, Žusterna, Za gradom</li><li><h4>Območje 2:</h4>Krajevne skupnosti: Škocjan, Šmarje, Vanganel</li><li><h4>Območje 3:</h4>Krajevne skupnosti: Dekani, Hrvatini, Škofije</li><li><h4>Območje 4:</h4>Krajevne skupnosti: Bertoki, Pobegi – Čežarji, Sv. Anton</li><li><h4>Območje 5:</h4>Krajevne skupnosti: Boršt, Gračišče, Gradin, Marezige</li><li><h4>Območje 6:</h4>Krajevne skupnosti: Črni Kal, Podgorje, Rakitovec, Zazid</li>"
       select_heading: Izberi območje
       select_heading_to_vote: Da lahko glasuješ za projekte, moraš izbrati območje.
       instructions: "Projektni predlog mora izpolnjevati naslednje pogoje:"
-      instructions_description: "<li>Je skladen z zakonodajo in veljavnimi občinskimi akti.</li><li>Je takšen, da je izvedba v okviru zakonskih pristojnosti MOK.</li><li>Je namenjen splošni javni uporabi.</li><li>Ni že uvrščen v proračun občine oz. načrt razvojnih programov.</li><li>V preteklih 5-ih letih ni bil financiran/sofinanciran iz proračuna MOK.</li><li>Je finančno ovrednoten med 5.000,00 EUR in 20.000,00 EUR z vključenim DDV. </li><li>Ne ustreza pogojem za sofinanciranje iz sredstev, ki jih predlagatelji lahko pridobijo iz javnih razpisov MOK.</li><li>Je umeščen v enega od 4. območij občine, opredeljenih za participativni proračun.</li><li>Je realno izvedljiv v proračunskem letu 2020.</li>"
+      instructions_description: "<li>Prispeva k uresničevanju javnega interesa in se izvaja na območju Mestne občine Koper.</li><li>Prispeva k namenom poziva — spodbuja aktivno participacijo in vključenost občanov, dviga kakovost bivanja v lokalnem okolju, gradi skupnostni pristop in je namenjen splošni javni uporabi.</li><li>Je takšne narave, da ga bo Mestna občina Koper lahko izpeljala v okviru občinskih zmogljivosti in zakonskih pristojnosti.</li><li>Ni uvrščen v proračun oz. načrt razvojnih programov občinskih vlaganj po krajevnih skupnostih in ne ustreza pogojem za nepovratna finančna sredstva, ki jih predlagatelji lahko pridobijo iz javnih razpisov Mestne občine Koper.</li><li>Je skladen z zakonodajo in veljavnimi občinskimi akti.</li><li>V preteklih petih letih ni bil financiran/sofinanciran iz proračuna Mestne občine Koper.</li><li>Je finančno ovrednoten med 5.000 in 20.000 € z vključenim DDV-jem.</li><li>Je realno izvedljiv v proračunskem letu 2020.</li><li>Je umeščen v enega od šestih območij občine, opredeljenih za participativni proračun.</li>"
     titles:
       added_proposals: Oddani predlogi
       selected_proposals: Izbrani predlogi
@@ -54,7 +54,7 @@ sl:
       submit_anonymously: Oddaj anonimno
       submit_anonymously_explanation: S potrditvijo te zahteve se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani.
       phone: Telefonska številka
-      address: Naslov
+      address: Naslov stalnega prebivališča
       name_and_last_name: Ime in priimek
     presentation:
       accepting:
