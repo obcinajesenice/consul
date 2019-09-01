@@ -1,4 +1,4 @@
-<% if resource.author %>
+<% if resource.author and not resource.author.is_anonymous %>
   <% if resource.author.hidden? || resource.author.erased? %>
     <span class="icon-deleted author-deleted"></span>
     <span class="author deleted">
@@ -30,6 +30,10 @@
     </span>
   <% end %>
 
+<% elsif %>
+  <span class="author">
+    Anonimno oddan predlog
+  </span>
 <% else %>
 
   <span class="author">
