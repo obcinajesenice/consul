@@ -81,23 +81,11 @@
     </div>
     END REMOVE TAGS -->
 
-    <!-- ANONYMOUS SUBMISSION -->
-    <div class="small-12 column">
-      <%= f.label :is_anonymous do %>
-        <%= f.check_box :is_anonymous, title: t('custom.form.submit_anonymously'), label: false %>
-        <span class="checkbox">
-          <%= t("custom.form.submit_anonymously") %>
-        </span>
-      <% end %>
-      <p><%= t('custom.form.submit_anonymously_explanation') %></p>
-    </div>
-    <!-- end anonymous submission -->
-
     <% unless current_user.manager? %>
 
-      <div class="small-12 column">
+      <div class="small-12 column hide">
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false, checked: true %>
           <span class="checkbox">
             <%= t("form.accept_terms",
                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>

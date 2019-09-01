@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20190816130803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
   enable_extension "unaccent"
+  enable_extension "pg_trgm"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -235,7 +235,6 @@ ActiveRecord::Schema.define(version: 20190816130803) do
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
     t.string   "status"
-    t.boolean  "is_anonymous",                                default: false,       null: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
