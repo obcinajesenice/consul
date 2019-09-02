@@ -170,3 +170,5 @@ it:
       doing: 'In fase di attuazione'
       done: 'Realizzato'
       nil: 'Senza status'
+    errors:
+      data_consent: "Per procedere, è necessario accettare il trattamento dei dati."

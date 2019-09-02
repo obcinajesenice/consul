@@ -170,3 +170,5 @@ sl:
       doing: 'Se izvaja'
       done: 'Izveden'
       nil: 'Ni statusa'
+    errors:
+      data_consent: "Za nadaljevanje se moraš strinjati z obdelavo podatkov."
