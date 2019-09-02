@@ -56,6 +56,7 @@ it:
       phone: Numero di telefono
       address: Indirizzo
       name_and_last_name: Nome e cognome
+      accept_terms: Acconsento alle alle %{conditions}
     presentation:
       accepting:
         title_1: Com'è il bilancio?

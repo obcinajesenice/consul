@@ -56,6 +56,7 @@ sl:
       phone: Telefonska številka
       address: Naslov stalnega prebivališča
       name_and_last_name: Ime in priimek
+      accept_terms: Strinjam se s %{conditions}
     presentation:
       accepting:
         title_1: Kakšen je proračun?
