@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190708135752) do
+ActiveRecord::Schema.define(version: 20190903130333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
   enable_extension "unaccent"
+  enable_extension "pg_trgm"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -146,6 +146,17 @@ ActiveRecord::Schema.define(version: 20190708135752) do
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
+
+  create_table "budget_heading_translations", force: :cascade do |t|
+    t.integer  "budget_heading_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+  end
+
+  add_index "budget_heading_translations", ["budget_heading_id"], name: "index_budget_heading_translations_on_budget_heading_id", using: :btree
+  add_index "budget_heading_translations", ["locale"], name: "index_budget_heading_translations_on_locale", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
@@ -1402,6 +1413,10 @@ ActiveRecord::Schema.define(version: 20190708135752) do
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
+    t.text     "phone"
+    t.text     "address"
+    t.boolean  "is_anonymous",                              default: false,                 null: false
+    t.boolean  "data_consent",                              default: false,                 null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
