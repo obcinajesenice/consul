@@ -14,10 +14,10 @@ sl:
     failure:
       already_authenticated: "Si že vpisan/-a."
       inactive: "Tvoj račun še ni bil aktiviran."
-      invalid: "Neveljavno %{authentication_keys} ali geslo."
+      invalid: "Neveljavno uporabniško ime ali geslo."
       locked: "Tvoj račun je bil zaklenjen."
       last_attempt: "Imaš še en poskus, preden bomo tvoj račun blokirali."
-      not_found_in_database: "Neveljavno %{authentication_keys} ali geslo."
+      not_found_in_database: "Neveljavno uporabniško ime ali geslo."
       timeout: "Tvoja seja je potekla. Za nadaljevanje se ponovno vpiši."
       unauthenticated: "Za nadaljevanje se moraš prijaviti ali registrirati."
       unconfirmed: "Če želiš nadaljevati, klikni na potrditveno povezavo, ki smo ti jo poslali po e-pošti."
