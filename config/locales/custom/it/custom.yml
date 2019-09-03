@@ -44,7 +44,7 @@ it:
       denied_proposals: Proposte non selezionate
       register_with: Per la registrazione compila questo modulo
       sign_in_with: Per l'accesso compila questo modulo
-      about: Più sul bilancio partecipativo
+      about: Il bilancio partecipativo
     messages:
       finished_accepting: Non è più possibile presentare progetti. É in atto la valutazione dei progetti.
       finished_voting: La votazione è chiusa. É in atto la verifica dei progetti votati.
@@ -161,8 +161,9 @@ it:
       trying: " se bo trudila, da bi tovrstne vsebine kar najhitreje umaknila s spletnega orodja in proti uporabnikom uvedla ustrezne sankcije."
       in_case_first: "V primeru kakršnega koli spora med uporabniki spletnega orodja in / ali tretjo osebo je "
       in_case_second: " izvzeta iz kakršnekoli odgovornosti za pravdne zahtevke, zahtevke za odškodnine ali odškodnine kakršne koli narave, povezane z vsebinami na spletnem orodju in / ali nastalimi v sodnem postopku."
-      terms_first_checkbox: "obdeluje moje osebne podatke (ime in priimek, naslov stalnega prebivališča, e-naslov, telefonska številka) za namen izvedbe projekta Predlagam - odločam v dokumentarni zbirki MOK,"
-      terms_second_checkbox: "objavi osebne podatke (ime in priimek) na spletni strani MOK z namenom javne objave pobud Predlagam - Odločam. (Opomba: če tega polja ne odkljuš, bo tvoj predlog anonimen. To pomeni, da se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani občine)."
+      terms_first_checkbox: "trattare i miei dati personali (nome e cognome, indirizzo di residenza, indirizzo di posta elettronica, numero di telefono) ai fini della realizzazione del progetto Propongo – decido nella base dati del CCC."
+      terms_second_checkbox: "pubblicare dati personali (nome e cognome) sul sito web del CCC assieme alla proposta per il progetto Propongo – Decido. (Nota: se non selezioni questo campo, la tua proposta rimarrà anonima. Questo significa che il tuo nome ed il tuo cognome non appariranno sotto la proposta che sarà pubblicata sul sito web del comune)."
+      terms_checkboxes_text: "Fino all’eventuale revoca, autorizzo espressamente, volontariamente, incondizionatamente e chiaramente il Comune città di Capodistria a:"
     classes:
       footer_logo: koper
     statuses:

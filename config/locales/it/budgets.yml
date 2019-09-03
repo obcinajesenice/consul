@@ -28,6 +28,9 @@ it:
         unfeasible: Mostrare gli investimenti irrealizzabili
         unselected_title: Investimenti che non sono stati selezionati per la fase di voto
         unselected: Mostrare gli investimenti non selezionati per la fase di voto
+        share_title: Inoltra
+        share: Inoltra
+        copy: Copia il link!
     phase:
       drafting: Bozza (Non visibile al pubblico)
       informing: Informazione

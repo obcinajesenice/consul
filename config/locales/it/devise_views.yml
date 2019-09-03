@@ -79,8 +79,10 @@ it:
         new_password: Password dimenticata?
         new_unlock: Non hai ricevuto le istruzioni per sbloccare la tua utenza?
         signin_with_provider: Accedere tramite %{provider}
-        signup: Non hai un account? %{signup_link}
+        signin: Hai già un account? %{signup_link}.
+        signup: Non hai un account? %{signup_link}.
         signup_link: Scollegarsi
+        signin_link: Accedi
     unlocks:
       new:
         email_label: Email
@@ -114,7 +116,7 @@ it:
           redeemable_code: Codice di verifica ricevuto via e-mail (opzionale)
           submit: Registrarsi
           terms: Registrandoti accetti %{terms}
-          terms_link: termini e condizioni d'uso
+          terms_link: termini di utilizzo.
           terms_title: Registrandoti accetti i termini e le condizioni d'uso
           title: Registrarsi
           username_is_available: Nome utente disponibile
