@@ -44,6 +44,7 @@ it:
       denied_proposals: Proposte non selezionate
       register_with: Per la registrazione compila questo modulo
       sign_in_with: Per l'accesso compila questo modulo
+      about: Più sul bilancio partecipativo
     messages:
       finished_accepting: Non è più possibile presentare progetti. É in atto la valutazione dei progetti.
       finished_voting: La votazione è chiusa. É in atto la verifica dei progetti votati.
