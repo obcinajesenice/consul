@@ -1,65 +1,76 @@
-sl:
+it:
   routes:
-    budgets: pp
-    investments: predlogi
-    account: racun
-    help: pomoc
-    sign_in: vpis
-    organizations: organizacije
-    users: uporabniki
-    sign_up: registracija
-    confirmation: potrditev
-    new: se-enkrat
-    password: geslo
+    budgets: bp
+    investments: proposte
+    account: conto
+    help: aiuto
+    sign_in: accesso
+    organizations: organizzazioni
+    users: utente
+    sign_up: registrazione
+    confirmation: conferma
+    new: riprova
+    password: password
   custom:
     meta:
-      pp_name: Predlagam - odločam
-      place_name: Mestna občina Koper
-      guiding_questions: '<p><em>Katero temo, težavo oz. izziv naslavlja predlog?</em></p><p>&nbsp;</p><p><em>Kaj je treba storiti?</em></p><p>&nbsp;</p><p><em>Kje naj se predlagani projekt izvaja?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana cena izvedbe projekta?</em></p><p>&nbsp;</p><p><em>Kaj bo po izvedbi projekta v naši občini drugače?</em></p><p>&nbsp;</p>'
+      pp_name: Propongo - decido
+      place_name: Comune città di Capodistria
+      guiding_questions: "<p><em>Perché questa proposta? Quale tema, difficoltà ossia quale sfida affronta la proposta progettuale?</em></p><p>&nbsp;</p><p><em>Che cosa concretamente propone? Qual è l'essenza della vostra proposta? Che cosa comporterà?</em></p><p>&nbsp;</p><p><em>In quale modo potrebbe venir realizzato il progetto? Quali attività dovrebbero venir attuate?</em></p><p>&nbsp;</p><p><em>In quale luogo concretamente dovrebbe venir realizzato il progetto?</em></p><p>&nbsp;</p><p><em>Tempistica: in quale periodo dovrebbe venir realizzato il progetto?</em></p><p>&nbsp;</p><p><em>Dopo la realizzazione del progetto, quali sarebbero i cambiamenti, i miglioramenti apportati?</em></p><p>&nbsp;</p><p><em>Qual è il valore previsto (costi) del progetto proposto?</em></p>"
     social:
-      fb_desc: Predlagam odločam - Participativni proračun Mestne občine Koper
-      tw_desc: "Predlagam odločam - Participativni proračun Mestne občine Koper: "
-      email_desc: Oglej si predlog proračunske naložbe v projektu Predlagam odločam - Participativni proračun Mestne občine Koper
+      fb_desc: Propongo - decido, Bilancio partecipativo del Comune città di Capodistria
+      tw_desc: "Propongo - decido, Bilancio partecipativo  del Comune città di Capodistria: "
+      email_desc: Prendi visione della proposta dell’investimento nel progetto Propongo – decido, Bilancio partecipativo del Comune città di Capodistria
     headings:
-      drafting: Osnutek (skrito javnosti)
-      informing: Informiranje
-      accepting: Predlagaj
-      reviewing: Pregled projektov
-      selecting: Izbor
-      valuating: Vrednotenje projektov
-      publishing_prices: Objavljanje cen projektov
-      balloting: Glasuj
-      reviewing_ballots: Pregled glasovanj
-      finished: Spremljaj
-      select_heading: Izberi območje
-      select_heading_to_vote: Da lahko glasuješ za projekte, moraš izbrati območje.
+      drafting: Bozza (nascosta al pubblico)
+      informing: Informazione
+      accepting: Proponi
+      reviewing: Elenco dei progetti
+      selecting: Selezione
+      valuating: Valutazione finanziaria dei progetti
+      publishing_prices: Pubblicazione dei prezzi dei progetti
+      balloting: Vota
+      reviewing_ballots: Esito della votazione
+      finished: Segui
+      headings: Le aree
+      headings_sidebar: "<li><h4>Zona 1:</h4>Comunità locali: Capodistria - centro, Olmo - Prisoje, Semedella, Giusterna, Al Castelletto</li><li><h4>Zona 2:</h4>Comunità locali: San Canziano, Šmarje, Vanganel</li><li><h4>Zona 3:</h4>Comunità locali: Dekani, Crevatini, Škofije</li><li><h4>Zona 4:</h4>Comunità locali: Bertocchi, Pobeghi, - Čežarji, Sv. Anton</li><li><h4>Zona 5:</h4>Comunità locali: Boršt, Gračišče, Gradin, Marezige</li><li><h4>Zona 6:</h4>Comunità locali: Črni Kal, Podgorje, Rakitovec, Zazid</li>"
+      select_heading: Seleziona l'area
+      select_heading_to_vote: Per votare i progetti, devi scegliere la zona
+      instructions: "La proposta progettuale deve soddisfare le seguenti condizioni:"
+      instructions_description: "<li>Contribuisce alla soddisfazione dell'interesse pubblico e si realizza nel territorio del Comune città di Capodistria</li><li>Contribuisce agli obiettivi del bando - stimola l'attiva partecipazione e l'inclusione dei cittadini, aumenta la qualità della vita nel territorio locale, costruisce un approccio congiunto ed è destinato al pubblico utilizzo</li><li>È strutturato in maniera tale che il Comune città di Capodistria lo potrà realizzare nell'ambito delle proprie capacità e competenze previste dalla legge</li><li>Non è inserito nel bilancio ovvero negli investimenti del piano dei programmi di sviluppo comunali previsti per le comunità locali e non soddisfa le condizioni per l'ottenimento di finanziamenti a fondo perduto, che i singoli beneficiari possono ottenere attraverso i bandi pubblici del Comune città di Capodistria </li><li>. È conforme alla legge e agli atti comunali in vigore</li><li>Nei precedenti cinque anni non è stato finanziato/cofinanziato dal bilancio del Comune città di Capodistria.</li><li>Ha un valore compreso tra 5.000 e 20.000€ IVA inclusa</li><li> È realmente attuabile nel bilancio del 2020</li><li>È localizzato in una delle sei aree del territorio di Capodistria, definite dal bilancio partecipativo</li>"
     titles:
-      added_proposals: Oddani predlogi
-      selected_proposals: Izbrani predlogi
-      finished_proposals: Izglasovani predlogi
-      denied_proposals: Neizbrani predlogi
-      register_with: Za registracijo izpolni ta obrazec
-      sign_in_with: Za vpis izpolni ta obrazec
-      about: O participativnem proračunu
+      added_proposals: Proposte presentate
+      selected_proposals: Proposte selezionate
+      finished_proposals: Proposte votate
+      denied_proposals: Proposte non selezionate
+      register_with: Per la registrazione compila questo modulo
+      sign_in_with: Per l'accesso compila questo modulo
+      about: Più sul bilancio partecipativo
     messages:
-      finished_accepting: Projektov ni več mogoče oddajati. Zdaj so v fazi pregleda.
-      finished_voting: Glasovanje je zaprto. Izglasovani projekti so trenutno v pregledu.
-      no_investments: Tukaj ni še nobenega predloga.
-      add_first_investment: Spiši prvega!
-      loser: Ta projekt ni bil izglasovan.
+      finished_accepting: Non è più possibile presentare progetti. É in atto la valutazione dei progetti.
+      finished_voting: La votazione è chiusa. É in atto la verifica dei progetti votati.
+      no_investments: Qui non c'è ancora nessuna proposta di progetto.
+      add_first_investment: Scrivi il primo!
+      loser: Questo progetto non è stato votato
+    form:
+      submit_anonymously: Consegna in forma anonima
+      submit_anonymously_explanation: Con la conferma di questa richiesta il tuo nome e cognome non saranno visibili accanto alla proposta progettuale che verrà pubblicata sulla pagina web.
+      phone: Numero di telefono
+      address: Indirizzo
+      name_and_last_name: Nome e cognome
+      accept_terms: Acconsento alle alle %{conditions}
     presentation:
       accepting:
-        title_1: Kakšen je proračun?
-        title_2: Kakšen naj bo predlog?
-        title_3: In če vse štima?
+        title_1: Com'è il bilancio?
+        title_2: Come dovrebbe essere la proposta?
+        title_3: E se va tutto bene?
       balloting:
-        title_1: Kaj?
-        title_2: Kdo?
-        title_3: Kako?
+        title_1: Che cosa?
+        title_2: Chi?
+        title_3: Come?
       finished:
-        title_1: Kaj potem?
-        title_2: In moja vloga?
-        title_3: In nato?
+        title_1: E poi?
+        title_2: E il mio ruolo?
+        title_3: E dopo?
     about:
       intro: "Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ prispevali k izboljšanju kakovosti bivanja v skupnosti."
       main_title: Kako deluje?
@@ -150,11 +161,15 @@ sl:
       trying: " se bo trudila, da bi tovrstne vsebine kar najhitreje umaknila s spletnega orodja in proti uporabnikom uvedla ustrezne sankcije."
       in_case_first: "V primeru kakršnega koli spora med uporabniki spletnega orodja in / ali tretjo osebo je "
       in_case_second: " izvzeta iz kakršnekoli odgovornosti za pravdne zahtevke, zahtevke za odškodnine ali odškodnine kakršne koli narave, povezane z vsebinami na spletnem orodju in / ali nastalimi v sodnem postopku."
+      terms_first_checkbox: "obdeluje moje osebne podatke (ime in priimek, naslov stalnega prebivališča, e-naslov, telefonska številka) za namen izvedbe projekta Predlagam - odločam v dokumentarni zbirki MOK,"
+      terms_second_checkbox: "objavi osebne podatke (ime in priimek) na spletni strani MOK z namenom javne objave pobud Predlagam - Odločam. (Opomba: če tega polja ne odkljuš, bo tvoj predlog anonimen. To pomeni, da se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani občine)."
     classes:
       footer_logo: koper
     statuses:
-      title: 'Izberi status predloga'
-      waiting: 'Čaka na izvedbo'
-      doing: 'Se izvaja'
-      done: 'Izveden'
-      nil: 'Ni statusa'
+      title: 'Scegli lo stato della proposta'
+      waiting: 'In attesa di realizzazione'
+      doing: 'In fase di attuazione'
+      done: 'Realizzato'
+      nil: 'Senza status'
+    errors:
+      data_consent: "Per procedere, è necessario accettare il trattamento dei dati."
