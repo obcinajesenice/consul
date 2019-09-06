@@ -10,6 +10,7 @@ section "Creating Users" do
       password_confirmation:  password,
       confirmed_at:           Time.current,
       terms_of_service:       "1",
+      data_consent:           "1",
       gender:                 ['Male', 'Female'].sample,
       date_of_birth:          rand((Time.current - 80.years)..(Time.current - 16.years)),
       public_activity:        (rand(1..100) > 30),
