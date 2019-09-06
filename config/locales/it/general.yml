@@ -175,7 +175,7 @@ it:
     direct_message: messaggio privato
     error: errore
     errors: errori
-    not_saved_html: "hanno impedito il salvataggio di quest* %{resource}. <br>Si prega di verificare i campi evidenziati per sapere come correggerli:"
+    not_saved_html: "Si è verificato un errore.<br>Controllare le caselle contrassegnate."
     policy: Informativa sulla privacy
     proposal: Proposta
     proposal_notification: "Notifica"

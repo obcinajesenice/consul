@@ -305,6 +305,8 @@ it:
           attributes:
             email:
               password_already_set: "Questo utente ha già una password"
+            document_number:
+              invalid: "Il codice anagrafico inserito non è corretto."
         debate:
           attributes:
             tag_list:

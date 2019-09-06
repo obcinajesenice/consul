@@ -187,7 +187,7 @@ sl:
     direct_message: Zasebno sporočilo
     error: Napaka
     errors: Napake
-    not_saved_html: "Nekaj je šlo narobe.<br>Prosimo, preveri označena polja."
+    not_saved_html: "Prišlo je do napake.<br>Prosimo, preveri označena polja."
     policy: politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
