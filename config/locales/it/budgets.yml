@@ -116,6 +116,8 @@ it:
         location_html: "Ubicazione: <strong>%{location}</strong>"
         organization_name_html: "Proposto per conto di: <strong>%{name}</strong>"
         share: Condividere
+        share_title: Inoltra
+        copy: Copia il link!
         title: Progetto di investimento
         supports: Sostegni
         votes: Voti
