@@ -630,7 +630,8 @@ only screen and (min-resolution: 240dpi) {
 
 @media (min-width: 576px) {
   .action-button.large.w485 {
-    min-width: 485px;
+    width: 485px;
+    max-width: 100%;
   }
 }
 

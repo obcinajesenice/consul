@@ -46,6 +46,7 @@ it:
       register_with: Per la registrazione compila questo modulo
       sign_in_with: Per l'accesso compila questo modulo
       about: Il bilancio partecipativo
+      anonymous_proposal: Proposta anonima
     messages:
       finished_accepting: Non è più possibile presentare progetti. É in atto la valutazione dei progetti.
       finished_voting: La votazione è chiusa. É in atto la verifica dei progetti votati.
