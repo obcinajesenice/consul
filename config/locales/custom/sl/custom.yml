@@ -11,6 +11,7 @@ sl:
     confirmation: potrditev
     new: se-enkrat
     password: geslo
+    edit: uredi
   custom:
     meta:
       pp_name: Predlagam - odločam
@@ -39,6 +40,8 @@ sl:
       instructions: "Projektni predlog mora izpolnjevati naslednje pogoje:"
       instructions_description: "<li>Prispeva k uresničevanju javnega interesa in se izvaja na območju Mestne občine Koper.</li><li>Prispeva k namenom poziva — spodbuja aktivno participacijo in vključenost občanov, dviga kakovost bivanja v lokalnem okolju, gradi skupnostni pristop in je namenjen splošni javni uporabi.</li><li>Je takšne narave, da ga bo Mestna občina Koper lahko izpeljala v okviru občinskih zmogljivosti in zakonskih pristojnosti.</li><li>Ni uvrščen v proračun oz. načrt razvojnih programov občinskih vlaganj po krajevnih skupnostih in ne ustreza pogojem za nepovratna finančna sredstva, ki jih predlagatelji lahko pridobijo iz javnih razpisov Mestne občine Koper.</li><li>Je skladen z zakonodajo in veljavnimi občinskimi akti.</li><li>V preteklih petih letih ni bil financiran/sofinanciran iz proračuna Mestne občine Koper.</li><li>Je finančno ovrednoten med 5.000 in 20.000 € z vključenim DDV-jem.</li><li>Je realno izvedljiv v proračunskem letu 2020.</li><li>Je umeščen v enega od šestih območij občine, opredeljenih za participativni proračun.</li>"
     titles:
+      edit: Uredi predlog
+      investment_updated: Predlog uspešno posodobljen
       added_proposals: Oddani predlogi
       selected_proposals: Izbrani predlogi
       finished_proposals: Izglasovani predlogi

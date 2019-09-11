@@ -5,6 +5,7 @@ module Budgets
     include CustomPhasesHelper
 
     before_action :load_custom_phases, only: [:index]
+    before_action :load_categories, only: [:index, :new, :create, :edit, :update]
 
     has_orders %w{most_voted newest}, only: :show
     has_orders ->(c) { c.investments_orders }, only: :index
@@ -17,6 +18,24 @@ module Budgets
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+    end
+
+    def edit
+      @investment.author = current_user
+      load_investment_votes(@investment)
+      @investment_ids = [@investment.id]
+    end
+
+    def update
+      @investment.update(title: params[:budget_investment][:title],
+                         description: params[:budget_investment][:description],
+                         price: params[:budget_investment][:price],
+                         map_location_attributes: {latitude: params[:budget_investment][:map_location_attributes][:latitude],
+                                                   longitude: params[:budget_investment][:map_location_attributes][:longitude],
+                                                   zoom: params[:budget_investment][:map_location_attributes][:zoom]})
+      
+      redirect_to budget_investment_path(@budget, @investment),
+                  notice: t('custom.titles.investment_updated')
     end
 
     def investments_orders

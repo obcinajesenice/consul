@@ -1,7 +1,7 @@
 localized do
   resources :budgets, only: [:show, :index] do
     resources :groups, controller: "budgets/groups", only: [:show]
-    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
+    resources :investments, controller: "budgets/investments", only: [:index, :new, :edit, :update, :create, :show, :destroy] do
       member do
         post :vote
         put :flag
