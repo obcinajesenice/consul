@@ -11,7 +11,7 @@ it:
     confirmation: conferma
     new: riprova
     password: password
-    edit: uredi
+    edit: modifica
   custom:
     meta:
       pp_name: Propongo - decido

@@ -58,6 +58,8 @@ module ApplicationHelper
   end
 
   def kaminari_path(url)
-    "#{root_url.chomp("\/")}#{url}"
+    # this doesn't work any more because of forced locale
+    # "#{root_url.chomp("\/")}"
+    "#{url}"
   end
 end
