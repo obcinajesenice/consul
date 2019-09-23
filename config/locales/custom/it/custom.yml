@@ -49,7 +49,7 @@ it:
       about: Il bilancio partecipativo
       anonymous_proposal: Proposta anonima
       edit: Modifica proposta
-      investment_updated: Proposta aggiornata con successo
+      investment_updated: Aggiornamento riuscito
     messages:
       finished_accepting: Non è più possibile presentare progetti. É in atto la valutazione dei progetti.
       finished_voting: La votazione è chiusa. É in atto la verifica dei progetti votati.
