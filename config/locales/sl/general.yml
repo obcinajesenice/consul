@@ -656,7 +656,7 @@ sl:
         message: "Ogleduješ si %{limit} od %{count} predlogov, ki vsebuejo besedo '%{query}'"
         see_all: "Poglej vse"
     tags_cloud:
-      tags: Trending
+      tags: Popularno
       districts: "Področja"
       districts_list: "Seznam področij"
       categories: "Kategorije"
@@ -677,6 +677,14 @@ sl:
       title: Način prikaza
       cards: Kartice
       list: Seznam
+    download:
+      title: "Pretoči na računalnik"
+      link:
+        proposal: "Pretoči predloge"
+        debate: "Pretoči debate"
+        legislation_process: "Pretoči legislativne procese"
+        budget: "Pretoči proračune"
+        investments: "Pretoči projekte"
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

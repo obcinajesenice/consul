@@ -94,8 +94,9 @@ sl:
         key_dates: Ključni datumi
         debate_dates: Razprava
         draft_publication_date: Objava osnutka
-        allegations_dates: Obtožbe
+        allegations_dates: Komentarji
         result_publication_date: Objava končnega rezultata
+        milestones_date: Mejniki
         proposals_dates: Predlogi
     questions:
       comments:
@@ -136,3 +137,26 @@ sl:
         tags_label: "Kategorije"
       not_verified: "Za glasovanje o predlogih %{verify_account}."
       closed: "Ta proces je zaprt in ne more sprejemati glasov."
+    proposals:
+      form:
+        tags_label: "Kategorije"
+      not_verified: "Za glasovanje o predlogih %{verify_account}."
+      process_title: Kolaborativni zakonodajni proces
+      total:
+        zero: Ni predlogov
+        one: "%{count} predlog"
+        other: "%{count} predlogov"
+    summary:
+      title: Povzetek
+      votes: glasov
+      debates_phase: Faza debate
+      proposal_phase: Faza predlogov
+      comments_phase: Faza komentiranja zakona
+      comments:
+        zero: Ni komentarjev
+        one: "%{count} komentar"
+        other: "%{count} komentarjev"
+      most_voted_comments: "Predlogi z največ glasovi: "
+      no_allegation: Ni komentarjev na besedilo zakona
+      version: verzija
+      process_empty: Proces nima faz.

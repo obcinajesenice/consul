@@ -296,11 +296,18 @@ sl:
         description: Dobrodošel na %{org} administratorski vmesnik.
     debates:
       index:
+        id: ID
+        author: Avtor
+        title: Debate
+        no_debates: Ni debat
+        link: Pretoči debate
+    hidden_debates:
+      index:
         filter: Filter
         filters:
           all: Vse
-          with_confirmed_hide: Potrjen
-          without_confirmed_hide: V teku
+          with_confirmed_hide: Potrjene
+          without_confirmed_hide: Čakajoče
         title: Skrite debate
         no_hidden_debates: Ni skritih debat.
     hidden_users:

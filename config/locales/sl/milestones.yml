@@ -2,5 +2,7 @@ sl:
   milestones:
     index:
       no_milestones: Ni mejnikov
+      progress: Spremljaj
     show:
       publication_date: "Datum objave %{publication_date}"
+      status_changed: Status spremenjen v
