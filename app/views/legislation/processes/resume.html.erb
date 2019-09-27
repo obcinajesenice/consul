@@ -9,9 +9,10 @@
     <p><%= t("legislation.summary.process_empty") %></p>
   </div>
 <% else %>
+  <!--
   <button class="button hollow download-button">
     <%= link_to 'Download', resume_legislation_process_path(format: :xlsx) %>
-  </button>
+  </button> -->
 
   <% if @process.debate_phase.enabled? %>
     <%= render "debate_phase", process: @process %>
