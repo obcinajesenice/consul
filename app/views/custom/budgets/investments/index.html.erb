@@ -51,6 +51,8 @@
                     <%= t('custom.titles.finished_proposals') %> (<%= @investments_count %>)
                   <% elsif phase.kind == :balloting %>
                     <%= t('custom.titles.selected_proposals') %> (<%= @investments_count %>)
+                  <% elsif @budget.phase == 'reviewing' %>
+                    <%= t('custom.titles.added_proposals') %> (<%= @all_investments_count  %>)
                   <% else %>
                     <%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)
                   <% end %>
@@ -69,21 +71,39 @@
                   <% end %>
                 </div>
 
-                <div class="row small-up-1 medium-up-1 large-up-3">
-                  <% @investments.each_with_index do |investment, index| %>
+                <% if @budget.phase == 'reviewing' %>
+                  <div class="row small-up-1 medium-up-1 large-up-3">
+                  <% @all_investments.each_with_index do |investment, index| %>
                     <% investment_class = 'column column-block budget-investment-holder' %>
                     <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
                     <div class="<%= investment_class %>">
                       <%= render partial: '/budgets/investments/investment',
-                                 locals: {
-                                   investment: investment,
-                                   investment_ids: @investment_ids,
-                                   investment_votes: @investment_votes,
-                                   ballot: @ballot
-                                 } %>
+                                locals: {
+                                  investment: investment,
+                                  investment_ids: @all_investment_ids,
+                                  
+                                  ballot: @ballot
+                                } %>
                     </div>
                   <% end %>
                 </div>
+                <% else %>
+                  <div class="row small-up-1 medium-up-1 large-up-3">
+                    <% @investments.each_with_index do |investment, index| %>
+                      <% investment_class = 'column column-block budget-investment-holder' %>
+                      <% investment_class = investment_class + ' last-in-row' if (index != 0 && (index + 1) % 4 == 0) %>
+                      <div class="<%= investment_class %>">
+                        <%= render partial: '/budgets/investments/investment',
+                                  locals: {
+                                    investment: investment,
+                                    investment_ids: @investment_ids,
+                                    investment_votes: @investment_votes,
+                                    ballot: @ballot
+                                  } %>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
 
               </div>
 

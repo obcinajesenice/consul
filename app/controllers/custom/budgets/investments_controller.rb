@@ -13,9 +13,23 @@ module Budgets
     def index
       @investments_count = investments.count
       @investments = investments.page(params[:page]).per(21).for_render
-      @denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible').page(params[:page]).per(21).for_render
-      # @denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
       @investment_ids = @investments.pluck(:id)
+      
+      # left over from long ago
+      # @denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
+      denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible')
+      @denied_investments_count = denied_investments.count
+      @denied_investments = denied_investments.page(params[:page]).per(21).for_render
+      
+      # unfeasible_investments = Budget::Investment.where('feasibility = ?', 'unfeasible')
+      # @unfeasible_investments_count = unfeasible_investments.count
+      # @unfesible_investments = unfeasible_investments.page(params[:page]).per(21).for_render
+      
+      all_investments = Budget::Investment.where('confirmed_hide_at IS NULL')
+      @all_investments_count = all_investments.count
+      @all_investments = all_investments.page(params[:page]).per(21).for_render
+      @all_investment_ids = @investments.pluck(:id)
+      
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
     end
