@@ -17,4 +17,27 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
   end
 
+  def heading_filters
+    investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
+                                     .visible_to_valuators.distinct
+
+    investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id).uniq)
+                                         .order(id: :asc)
+
+    all_headings_filter = [
+                            {
+                              name: t('valuation.budget_investments.index.headings_filter_all'),
+                              id: nil,
+                              count: investments.size
+                            }
+                          ]
+    filters = investment_headings.inject(all_headings_filter) do |filters, heading|
+                filters << {
+                             name: heading.name,
+                             id: heading.id,
+                             count: investments.select{|i| i.heading_id == heading.id}.size
+                           }
+              end
+  end
+
 end
