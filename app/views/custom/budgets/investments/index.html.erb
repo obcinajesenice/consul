@@ -51,7 +51,7 @@
                     <%= t('custom.titles.finished_proposals') %> (<%= @investments_count %>)
                   <% elsif phase.kind == :balloting %>
                     <%= t('custom.titles.selected_proposals') %> (<%= @investments_count %>)
-                  <% elsif @budget.phase == 'reviewing' %>
+                  <% elsif @budget.phase == 'valuating' %>
                     <%= t('custom.titles.added_proposals') %> (<%= @all_investments_count  %>)
                   <% else %>
                     <%= t('custom.titles.added_proposals') %> (<%= @investments_count %>)
@@ -71,7 +71,7 @@
                   <% end %>
                 </div>
 
-                <% if @budget.phase == 'reviewing' %>
+                <% if @budget.phase == 'valuating' %>
                   <div class="row small-up-1 medium-up-1 large-up-3">
                   <% @all_investments.each_with_index do |investment, index| %>
                     <% investment_class = 'column column-block budget-investment-holder' %>
