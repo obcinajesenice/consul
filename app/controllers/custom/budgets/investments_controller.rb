@@ -25,7 +25,7 @@ module Budgets
       # @unfeasible_investments_count = unfeasible_investments.count
       # @unfesible_investments = unfeasible_investments.page(params[:page]).per(21).for_render
       
-      all_investments = Budget::Investment.where('confirmed_hide_at IS NULL')
+      all_investments = Budget::Investment.where('budget_id = ?', @budget.id).order('id DESC')
       @all_investments_count = all_investments.count
       @all_investments = all_investments.page(params[:page]).per(21).for_render
       @all_investment_ids = @investments.pluck(:id)
