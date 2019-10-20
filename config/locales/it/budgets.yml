@@ -108,6 +108,7 @@ it:
           random: casuale
           confidence_score: più apprezzati
           price: per costi
+          created_at: per data
       show:
         author_deleted: Utente cancellato
         price_explanation: Informazioni sui costi
