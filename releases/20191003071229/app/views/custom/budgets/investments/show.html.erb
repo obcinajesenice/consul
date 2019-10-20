@@ -1,0 +1,33 @@
+<% provide :title do %><%= @investment.title %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_investment_url %>
+<% end %>
+
+<%= render partial: '/budgets/investments/investment_show', locals: {
+  investment: @investment,
+  investment_ids: @investment_ids,
+  investment_votes: @investment_votes,
+  ballot: @ballot
+} %>
+
+
+<!-- remove comments
+<section>
+  <div class="row">
+    <div class="small-12 medium-7 medium-centered">
+      <div class="small-12 medium-9 medium-centered" data-tabs-content="investments_tabs">
+        <%= render "budgets/investments/filter_subnav" %>
+
+        <div class="tabs-panel is-active" id="tab-comments">
+          <%= render partial: '/comments/comment_tree', locals: {comment_tree: @comment_tree,
+                                                                 comment_flags: @comment_flags,
+                                                                 display_comments_count: false} %>
+        </div>
+
+        <%= render "milestones/milestones", milestoneable: @investment %>
+      </div>
+    </div>
+  </div>
+</section>
+end remove comments -->

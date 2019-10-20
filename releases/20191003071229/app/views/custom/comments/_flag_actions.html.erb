@@ -1,0 +1,11 @@
+<span class="flag-content">
+  <% if show_flag_action? comment %>
+    <%= link_to t("shared.flag"), flag_comment_path(comment), method: :put,
+                remote: true, id: "flag-comment-#{comment.id}" %>
+  <% end %>
+
+  <% if show_unflag_action? comment %>
+    <%= link_to t("shared.unflag"), unflag_comment_path(comment), method: :put,
+                remote: true, id: "unflag-comment-#{comment.id}" %>
+  <% end %>
+</span>

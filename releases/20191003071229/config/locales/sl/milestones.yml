@@ -1,0 +1,6 @@
+sl:
+  milestones:
+    index:
+      no_milestones: Ni mejnikov
+    show:
+      publication_date: "Datum objave %{publication_date}"

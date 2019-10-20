@@ -1,0 +1,15 @@
+<span class="flag-content">
+  <% if show_flag_action? investment %>
+    <%= link_to t("shared.flag"), flag_budget_investment_path(investment.budget, investment.id),
+                method: :put,
+                remote: true,
+                id: "flag-investment-#{ investment.id }" %>
+  <% end %>
+
+  <% if show_unflag_action? investment %>
+    <%= link_to t("shared.unflag"), unflag_budget_investment_path(investment.budget, investment.id),
+                method: :put,
+                remote: true,
+                id: "unflag-investment-#{ investment.id }" %>
+  <% end %>
+</span>

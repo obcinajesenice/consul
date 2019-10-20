@@ -1,0 +1,227 @@
+<% provide :title do %><%= t("pages.titles.conditions") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: page_url("conditions") %>
+<% end %>
+
+
+<div class="row privacy">
+  <div class="main-indented-content">
+    <div class="small-12 medium-10 column medium-centered">
+
+      <h3 dir="ltr"><span><%= t("custom.terms.main_title").html_safe %></span></h3>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.active_use").html_safe %></span>
+      </p>
+
+      <p dir="ltr"><span><%= t('custom.meta.place_name') %></span> <%= t("custom.terms.changes").html_safe %></p>
+
+      <h3 dir="ltr"><span><%= t("custom.terms.about_title").html_safe %></span></h3>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.about_intro").html_safe %></span>
+      </p>
+
+      <h3 dir="ltr"><span><%= t("custom.terms.registration_title").html_safe %></span></h3>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.registration_intro_first").html_safe %></span> <%= t("custom.terms.registration_intro_second").html_safe %></p>
+
+
+      <p dir="ltr"><span><%= t("custom.terms.registration_requirements").html_safe %></span></p>
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.email").html_safe %></span></p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.username").html_safe %></span></p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.emso").html_safe %></span></p>
+        </li>
+      </ul>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.registration_activation").html_safe %></span>
+      </p>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.registration_failure").html_safe %></span>
+      </p>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.registration_cancel").html_safe %></span>
+      </p>
+
+      <h3 dir="ltr"><span><%= t("custom.terms.rules_title").html_safe %></span></h3>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.rules_intro").html_safe %></span></p>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.rules_promise").html_safe %></span>
+      </p>
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.rules_promise_first").html_safe %></span>
+          </p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.rules_promise_second").html_safe %></span></p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.rules_promise_third").html_safe %></span>
+          </p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.rules_promise_fourth").html_safe %></span>
+          </p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.rules_promise_fifth").html_safe %></span>
+          </p>
+        </li>
+      </ul>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.punishment").html_safe %></span>
+      </p>
+
+      <h3 dir="ltr"><span><%= t("custom.terms.use_title").html_safe %></span></h3>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.use_intro").html_safe %></span>
+      </p>
+
+
+      <p dir="ltr"><span><%= t("custom.terms.use_list").html_safe %></span></p>
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.use_list_first").html_safe %></span></p>
+        </li>
+      </ul>
+
+      <p dir="ltr" style="margin-left:36pt;">
+        <span><%= t("custom.terms.use_submit").html_safe %></span>
+      </p>
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.voting_title").html_safe %></span></p>
+        </li>
+      </ul>
+
+      <p dir="ltr" style="margin-left:36pt;">
+        <span><%= t("custom.terms.voting_intro").html_safe %></span>
+      </p>
+
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.commenting_title").html_safe %></span></p>
+        </li>
+      </ul>
+
+      <p dir="ltr" style="margin-left:36pt;">
+        <span><%= t("custom.terms.commenting_intro").html_safe %></span></p>
+
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.following_title").html_safe %></span></p>
+        </li>
+      </ul>
+
+      <p dir="ltr" style="margin-left:36pt;"><span><%= t("custom.terms.following_intro").html_safe %></span>
+      </p>
+
+      <h3 dir="ltr"><span><%= t("custom.terms.data_protection_title").html_safe %></span></h3>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.data_protection_intro").html_safe %> </span><%= t('custom.meta.place_name') %>.
+      </p>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.data_protection_second").html_safe %></p>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.data_protection_edit").html_safe %></span>
+      </p>
+
+
+      <h3 dir="ltr"><span><%= t("custom.terms.cookies_title").html_safe %></span></h3>
+
+
+      <p dir="ltr"><span><%= t("custom.terms.cookies_intro").html_safe %></span></p>
+
+      <h3 dir="ltr"><%= t("custom.terms.ip_title").html_safe %></h3>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.ip_intro").html_safe %></span>
+      </p>
+
+
+      <h3 dir="ltr"><span><%= t("custom.terms.responsibilities_title").html_safe %></span></h3>
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.responsibilities_intro").html_safe %></span>
+      </p>
+
+
+      <p dir="ltr"><span><%= t('custom.meta.place_name') %></span> <%= t("custom.terms.responsibilities_long").html_safe %></p>
+
+
+      <p dir="ltr">
+        <span>V<%= t("custom.terms.responsibilities_short").html_safe %> </span>
+        <%= t('custom.meta.place_name') %> <%= t("custom.terms.responsibilities_also").html_safe %></p>
+
+      <ul style="list-style-type:disc;">
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.responsibilities_also_first").html_safe %></span>
+          </p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.responsibilities_also_second").html_safe %></span>
+          </p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr"><span><%= t("custom.terms.responsibilities_also_third").html_safe %></span></p>
+        </li>
+        <li dir="ltr">
+          <p dir="ltr">
+            <span><%= t("custom.terms.responsibilities_also_fourth").html_safe %></span>
+          </p>
+        </li>
+      </ul>
+
+
+      <p dir="ltr"><span><%= t('custom.meta.place_name') %></span> <%= t("custom.terms.trying").html_safe %></p>
+
+
+      <p dir="ltr">
+        <span><%= t("custom.terms.in_case_first").html_safe %> </span>
+        <%= t('custom.meta.place_name') %> <%= t("custom.terms.in_case_second").html_safe %></p>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+en:
+  mailers:
+    no_reply: "This message was sent from an email address that does not accept replies."
+    comment:
+      hi: Hi
+      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      subject: Someone has commented on your %{commentable}
+      title: New comment
+    config:
+      manage_email_subscriptions: To stop receiving these emails change your settings in
+    email_verification:
+      click_here_to_verify: this link
+      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
+      instructions_html: To complete the verification of your user account you must click %{verification_link}.
+      subject: Confirm your email
+      thanks: Thank you very much.
+      title: Confirm your account using the following link
+    reply:
+      hi: Hi
+      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      subject: Someone has responded to your comment
+      title: New response to your comment
+    unfeasible_spending_proposal:
+      hi: "Dear user,"
+      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
+      new_href: "new investment project"
+      sincerely: "Sincerely"
+      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      subject: "Your investment project '%{code}' has been marked as unfeasible"
+    proposal_notification_digest:
+      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
+      title: "Proposal notifications in %{org_name}"
+      share: Share proposal
+      comment: Comment proposal
+      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
+      unsubscribe_account: My account
+    direct_message_for_receiver:
+      subject: "You have received a new private message"
+      reply: Reply to %{sender}
+      unsubscribe: "If you don't want receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
+      unsubscribe_account: My account
+    direct_message_for_sender:
+      subject: "You have sent a new private message"
+      title_html: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
+    user_invite:
+      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
+      text: "Thank you for applying to join %{org}! In seconds you can start to participate, just fill the form below:"
+      thanks: "Thank you very much."
+      title: "Welcome to %{org}"
+      button: Complete registration
+      subject: "Invitation to %{org_name}"
+    budget_investment_created:
+      subject: "Thank you for creating an investment!"
+      title: "Thank you for creating an investment!"
+      intro_html: "Hi <strong>%{author}</strong>,"
+      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
+      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
+      follow_link: "Participatory Budgets"
+      sincerely: "Sincerely,"
+      share: "Share your project"
+    budget_investment_unfeasible:
+      hi: "Dear user,"
+      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
+      new_href: "new investment project"
+      sincerely: "Sincerely"
+      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      subject: "Your investment project '%{code}' has been marked as unfeasible"
+    budget_investment_selected:
+      subject: "Your investment project '%{code}' has been selected"
+      hi: "Dear user,"
+      share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
+      share_button: "Share your investment project"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"
+    budget_investment_unselected:
+      subject: "Your investment project '%{code}' has not been selected"
+      hi: "Dear user,"
+      thanks: "Thank you again for participating."
+      sincerely: "Sincererly"

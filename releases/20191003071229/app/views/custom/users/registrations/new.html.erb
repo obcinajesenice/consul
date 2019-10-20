@@ -1,0 +1,100 @@
+<% provide :title do %><%= t("devise_views.users.registrations.new.title") %>
+<% end %>
+
+<h2><%= t("custom.titles.register_with") %></h2>
+
+<%= render 'devise/omniauth_form' %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render 'shared/errors', resource: resource %>
+
+  <!-- REMOVE ORGANISATION REGISTSRATION
+  <%= t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
+  END REMOVE ORGANISATION REGISTSRATION -->
+
+  <div class="row">
+    <div class="small-12 column">
+
+      <%= f.hidden_field :use_redeemable_code %>
+      <%= f.hidden_field :locale, value: I18n.locale %>
+
+      <%= f.label t('custom.form.name_and_last_name') %>
+      <p class="help-text" id="username-help-text"><%= t("devise_views.users.registrations.new.username_note") %></p>
+      <%= f.text_field :username, autofocus: true, maxlength: User.username_max_length,
+                       placeholder: t("devise_views.users.registrations.new.username_label"),
+                       label: false,
+                       aria: { describedby: "username-help-text" } %>
+
+      <%= f.invisible_captcha :family_name %>
+
+      <%= f.hidden_field :document_type, value: "1" %>
+
+      <%= f.text_field :document_number, placeholder: t("devise_views.users.registrations.new.document_number") %>
+
+      <%= f.email_field :email, placeholder: t("devise_views.users.registrations.new.email_label") %>
+
+      <!-- PERSONAL DATA SUBMISSION -->
+      <%= f.text_field :phone, label: t('custom.form.phone'), required: true%>
+
+      <%= f.text_area :address, label: t('custom.form.address'), required: true %>
+      <!-- END PERSONAL DATA SUBMISSION -->
+
+      <%= f.password_field :password, autocomplete: "off",
+                           placeholder: t("devise_views.users.registrations.new.password_label") %>
+
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+                           label: t("devise_views.users.registrations.new.password_confirmation_label"),
+                           placeholder: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+      <% if resource.use_redeemable_code %>
+        <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
+      <% end %>
+
+      <%= f.label :terms_of_service do %>
+        <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.terms",
+                terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/" + t('custom.meta.tos'),
+                               title: t('shared.target_blank_html'),
+                               target: "_blank")).html_safe %>
+        </span>
+      <% end %>
+
+      <p><%= t("custom.terms.terms_checkboxes_text") %></p>
+
+      <%= f.label :data_consent do %>
+        <%= f.check_box :data_consent, title: t('custom.terms.terms_first_checkbox'), label: false %>
+        <span class="checkbox">
+          <%= t("custom.terms.terms_first_checkbox") %>
+        </span>
+      <% end %>
+
+      <%= f.label :is_anonymous do %>
+        <%= f.check_box :is_anonymous, title: t('custom.terms.terms_second_checkbox'), label: false %>
+        <span class="checkbox">
+          <%= t("custom.terms.terms_second_checkbox") %>
+        </span>
+      <% end %>
+
+      <div class="small-12 medium-10 small-centered button-holder pad-t-60">
+        <%= button_tag(type: 'submit', class: "action-button huge") do %>
+          <%= t("devise_views.users.registrations.new.submit") %>&nbsp;<i class="custom-icon arrow-large-right"></i>
+        <% end %>
+
+        <div class="signuplinkposition">
+          <div>
+            <%= t("devise_views.shared.links.signin",
+                  signup_link: link_to(t("devise_views.shared.links.signin_link"), new_session_path(resource_name))).html_safe %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="small-12 column auth-divider custom-divider">
+</div>
+
+<%= render "devise/shared/links" %>

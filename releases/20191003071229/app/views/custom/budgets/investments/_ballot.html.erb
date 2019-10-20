@@ -1,0 +1,68 @@
+<% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
+<div class="js-participation supports ballot">
+  <% if ballot.has_investment?(investment) %>
+
+    <div class="remove supported inline-block">
+      <% if investment.budget.balloting? && investment.selected? %>
+        <%= link_to t('budgets.ballots.show.remove'),
+                           budget_ballot_line_path(id: investment.id,
+                                                   budget_id: investment.budget_id,
+                                                   investments_ids: investment_ids),
+                           class: "delete small expanded",
+                           method: :delete,
+                           remote: true %>
+      <% elsif investment.budget.reviewing_ballots? %>
+        <button class="votingdisabled">
+          <%= t('budgets.ballots.show.remove') %>
+        </button>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <div class="add in-favor">
+      <% if investment.budget.balloting? && investment.selected? %>
+        <% if reason.present? && !ballot.has_investment?(investment) %>
+
+
+              <% verify_account = link_to(t("votes.verify_account"), verification_path) %>
+              <% signin = link_to(t("votes.signin"), new_user_session_path) %>
+              <% signup = link_to(t("votes.signup"), new_user_registration_path) %>
+              <% my_heading = link_to(investment.heading.name,
+                                      budget_investments_path(budget_id: investment.budget_id,
+                                                              heading_id: investment.heading_id)) %>
+              <% change_ballot = link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
+                                         budget_ballot_path(@budget)) %>
+
+          <div class="callout warning">
+                  <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
+                        verify_account: verify_account, signin: signin,
+                        signup: signup, my_heading: my_heading,
+                        change_ballot: change_ballot,
+                        heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
+          </div>
+
+        <% else %>
+          <%= link_to budget_ballot_lines_url(investment_id: investment.id,
+                                              budget_id: investment.budget_id,
+                                              investments_ids: investment_ids),
+                      class: "button button-support small expanded addinfavor",
+                      title: t('budgets.investments.investment.support_title'),
+                      method: :post,
+                      remote: true do %>
+            <i></i><%= t("budgets.investments.investment.add") %>
+          <% end %>
+        <% end %>
+
+
+      <% elsif investment.budget.reviewing_ballots? %>
+        <button class="votingdisabled">
+          <i></i><%= t('budgets.investments.investment.add') %>
+        </button>
+      <% end %>
+    </div>
+
+  <% end %>
+
+
+</div>

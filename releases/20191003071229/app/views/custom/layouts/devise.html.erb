@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%= render "layouts/common_head", default_title: "Login" %>
+  <%= render "layouts/meta_tags" %>
+</head>
+
+<body class="auth-page">
+<div class="wrapper clearfix">
+  <div class="small-12 column">
+    <div class="row">
+      <div class="small-12 large-6 small-centered column">
+        <div class="site-title-holder">
+          <%= link_to root_path, accesskey: "0", class: 'site-title' do %>
+            <span class="site-name"><%= t("custom.meta.pp_name") %></span>&nbsp;/&nbsp;<span class="place-name"><%= t('custom.meta.place_name') %></span>
+          <% end %>
+        </div>
+        <div class="auth-form margin">
+          <div class="auth-form-content">
+            <%= render 'layouts/flash' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<footer>
+  <div class="bgblue">
+    <div class="row loginlinks ">
+      <div class="main-indented-content clearfix">
+      <div class="small-12 large-6 column">
+        <ul class="no-bullet inline-block footer-links">
+          <%= render "devise/menu/login_items" %>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="main-indented-content clearfix">
+    <div class="small-12 large-6 column ">
+      <h1 class="logo <%= t("custom.classes.footer_logo") %>"></h1>
+    </div>
+
+    <div class="small-12 large-6 column links-holder">
+      <ul class="no-bullet inline-block footer-links">
+        <li class="inline-block"><%= link_to t("custom.titles.about"), page_path('o-participativnem-proracunu') %>&nbsp;&nbsp;|&nbsp;</li>
+        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path(t('custom.meta.tos')) %>&nbsp;|&nbsp;</li>
+        <li class="inline-block">
+          <%= layout_menu_link_to t("layouts.header.help"),
+                                  help_path,
+                                  current_page?(help_path),
+                                  accesskey: "6",
+                                  title: t("shared.go_to_page") + t("layouts.header.help") %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <!-- analytics -->
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setDoNotTrack", true]);
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//track.djnd.si/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '8']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="//track.djnd.si/piwik.php?idsite=8&rec=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Matomo Code -->
+  <!-- end of analytics -->
+</footer>
