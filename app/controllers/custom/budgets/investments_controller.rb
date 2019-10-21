@@ -17,7 +17,7 @@ module Budgets
       
       # left over from long ago
       # @denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
-      denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible')
+      denied_investments = Budget::Investment.where('selected = false OR feasibility = ?', 'unfeasible').where('budget_id = ?', @budget.id)
       @denied_investments_count = denied_investments.count
       @denied_investments = denied_investments.page(params[:page]).per(21).for_render
       
