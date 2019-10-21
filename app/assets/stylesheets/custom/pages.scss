@@ -2213,3 +2213,26 @@ input.error {
   }
 }
 
+/* muki overrides */
+.custombackbutton {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  .arrow-large-left {
+    background-image: image-url('arrow.svg');
+    background-position: center;
+    background-size: 25px 22px;
+    width: 23px;
+    height: 30px;
+    transform: rotate(180deg);
+    top: -1.5px;
+    position: relative;
+  }
+  a {
+    text-decoration: underline;
+    line-height: 30px;
+  }
+}
+/* end muki overrides */
+
